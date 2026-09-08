@@ -6,7 +6,8 @@
     "build": "node scripts/build.mjs",
     "check": "node scripts/build.mjs --check",
     "verify": "node scripts/verify.mjs",
-    "review": "node scripts/review.mjs"
+    "review": "node scripts/review.mjs",
+    "package:site": "node scripts/package-site.mjs"
   },
   "engines": {
     "node": ">=20"

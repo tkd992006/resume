@@ -1,6 +1,11 @@
+--- a/.gitignore
++++ b/.gitignore
+@@ -1 +1,2 @@
+ .DS_Store
++.pages-dist/
 --- a/README.md
 +++ b/README.md
-@@ -1,18 +1,94 @@
+@@ -1,18 +1,111 @@
  # Resume
  
 -지원용 포트폴리오를 폴더별로 관리하는 독립 저장소입니다. 루트 `index.html`은 빈 페이지이며, 지원본 목록이나 이동 링크를 표시하지 않습니다.
@@ -45,6 +50,7 @@
 +npm run check
 +npm run verify
 +npm run review
++npm run package:site
 +python3 -m http.server 8000
 +```
 +
@@ -62,7 +68,7 @@
 +- `reports/changes.md`, `reports/changes.json`: 공백·줄바꿈·HTML 태그를 보존한 정확한 원문 대조와 수정 이유.
 +- `reports/modoodoc-vs-toss.patch`, `reports/daangn-vs-toss.patch`: 기존 토스본 대비 생성된 HTML·JS의 모든 변경.
 +- `reports/implementation.patch`: 공통 템플릿·JSON·빌드 스크립트·문서의 전체 소스 변경.
-+- `reports/file-manifest.json`: 보고서와 Git 메타데이터를 제외한 모든 파일의 크기·SHA-256 목록.
++- `reports/file-manifest.json`: 보고서, Git 메타데이터, `.pages-dist/`를 제외한 모든 파일의 크기·SHA-256 목록.
 +
 +로컬 서버에서 `/reports/`를 열면 됩니다. 보고서의 화면 문구는 연속 공백을 합쳐 읽기 쉽게 표시하지만, 펼쳐 보는 HTML 원문과 JSON에는 실제 문자열을 생략 없이 유지합니다. 상세 사례의 표시 번호는 순서에 맞게 변경하며 본문·코드·표는 그대로 둡니다.
 +
@@ -101,12 +107,28 @@
 +
 +`toss/`는 기존 `portfolio` 저장소 루트(커밋 `c521665`)의 스냅샷입니다. 기존 토스 제출 주소 `https://tkd992006.github.io/portfolio/`와 해당 저장소의 remote 설정은 그대로 유지합니다. 이 빌드는 기존 저장소를 읽거나 쓰지 않습니다.
 +
-+현재 기업별 결과는 로컬 검토용이며, 이 변경에는 배포 작업을 추가하지 않았습니다. 현행 GitHub Pages 설정은 **Deploy from a branch → main → /(root)**입니다. 이 방식으로 소스와 보고서까지 커밋하여 배포하면 해당 파일도 주소로 접근할 수 있습니다. 게시할 때는 루트 진입 파일과 승인된 지원본 폴더만 배포 결과물에 포함하도록 별도 설정해야 합니다.
++GitHub Pages는 **Deploy from a branch → codex/pages → /(root)**를 사용합니다. `main`은 공통 템플릿·JSON·검토 보고서를 관리하는 소스 브랜치이고, `codex/pages`는 게시할 정적 파일만 담는 배포 브랜치입니다.
++
++`npm run package:site`는 공통 소스로 페이지를 생성하고 `.pages-dist/`에 빈 루트 `index.html`, `.nojekyll`, `toss/`, `modoodoc/`, `daangn/`의 HTML·CSS·JS·이미지만 모읍니다. `src/`, `reports/`, JSON, README는 배포 산출물에 포함하지 않습니다. `.pages-dist/`는 Git에 추적하지 않습니다.
++
++게시할 때는 `.pages-dist/`의 파일을 배포 브랜치 작업 폴더에 반영하고 `codex/pages`를 push합니다. 이후 GitHub Pages가 해당 브랜치를 자동 게시합니다. 소스 `main`에만 push하면 게시 사이트는 바뀌지 않습니다. 공개 GitHub 레포의 소스 자체는 공개이며, 여기서 제외하는 대상은 Pages 웹사이트의 파일입니다.
++
++- 모두닥: https://tkd992006.github.io/resume/modoodoc/
++- 당근: https://tkd992006.github.io/resume/daangn/
++- 기존 스냅샷: https://tkd992006.github.io/resume/toss/
++
++CLI에서 설정과 배포 상태를 확인할 수 있습니다.
++
++```sh
++gh api repos/tkd992006/resume/pages
++gh api repos/tkd992006/resume/pages/builds/latest
++gh run list --repo tkd992006/resume
++```
 +
 +제출한 지원본을 보존하려면 이후 빌드 대상에서 제외하고 스냅샷으로 관리합니다. 현재 자동 생성 대상은 `scripts/build.mjs`의 `ACTIVE_PROFILES`에 명시된 두 초안뿐이며, `toss`는 허용하지 않습니다.
 --- /dev/null
 +++ b/package.json
-@@ -0,0 +1,14 @@
+@@ -0,0 +1,15 @@
 +{
 +  "name": "resume-applications",
 +  "private": true,
@@ -115,7 +137,8 @@
 +    "build": "node scripts/build.mjs",
 +    "check": "node scripts/build.mjs --check",
 +    "verify": "node scripts/verify.mjs",
-+    "review": "node scripts/review.mjs"
++    "review": "node scripts/review.mjs",
++    "package:site": "node scripts/package-site.mjs"
 +  },
 +  "engines": {
 +    "node": ">=20"
@@ -599,6 +622,82 @@
 +console.log(JSON.stringify({ report: 'reports/implementation.patch', baseline,
 +  changed: totals.added + totals.modified + totals.deleted, ...totals }, null, 2));
 --- /dev/null
++++ b/scripts/package-site.mjs
+@@ -0,0 +1,73 @@
++import fs from 'node:fs';
++import path from 'node:path';
++import { fileURLToPath } from 'node:url';
++import { ROOT, ACTIVE_PROFILES, build, verifyFrozen } from './build.mjs';
++
++const destination = path.join(ROOT, '.pages-dist');
++const pages = ['toss', ...ACTIVE_PROFILES];
++const pageFiles = ['index.html', 'styles.css', 'script.js'];
++const stat = filename => fs.lstatSync(filename, { throwIfNoEntry: false });
++function inspect(directory) {
++  const result = [];
++  const visit = (filename, relative = '') => {
++    const entry = stat(filename);
++    if (!entry) return;
++    if (entry.isSymbolicLink() || (!entry.isDirectory() && !entry.isFile())) throw Error(`Unsafe package input: ${filename}`);
++    if (relative) result.push({ relative, directory: entry.isDirectory() });
++    if (entry.isDirectory()) for (const name of fs.readdirSync(filename).sort()) visit(path.join(filename, name), relative ? `${relative}/${name}` : name);
++    else if (!relative) throw Error(`Expected directory: ${filename}`);
++  };
++  visit(directory);
++  return result;
++}
++function requireFile(filename) {
++  const entry = stat(filename);
++  if (!entry?.isFile() || entry.isSymbolicLink()) throw Error(`Expected regular file: ${filename}`);
++}
++
++export function packageSite() {
++  // Reject links before build() can write through an existing output directory.
++  inspect(path.join(ROOT, 'src/assets'));
++  for (const page of pages) inspect(path.join(ROOT, page));
++  build();
++  const frozenCount = verifyFrozen();
++  const allowed = new Set(['index.html', '.nojekyll']);
++  for (const page of pages) {
++    for (const name of pageFiles) allowed.add(`${page}/${name}`);
++    for (const entry of inspect(path.join(ROOT, page))) {
++      const asset = entry.relative === 'assets' || entry.relative.startsWith('assets/');
++      if ((!asset && (entry.directory || !pageFiles.includes(entry.relative))) || /\.json$/i.test(entry.relative)) {
++        throw Error(`Unexpected page content: ${page}/${entry.relative}`);
++      }
++      if (!entry.directory) allowed.add(`${page}/${entry.relative}`);
++    }
++  }
++  const files = [...allowed].sort();
++  for (const filename of files) requireFile(path.join(ROOT, filename));
++  const directories = new Set(files.flatMap(filename => {
++    const parts = filename.split('/');
++    return parts.slice(0, -1).map((_, index) => parts.slice(0, index + 1).join('/'));
++  }));
++  for (const entry of inspect(destination)) {
++    if (!(entry.directory ? directories : allowed).has(entry.relative)) throw Error(`Refusing to remove unknown package content: ${entry.relative}`);
++  }
++  fs.rmSync(destination, { recursive: true, force: true });
++  fs.mkdirSync(destination);
++  for (const filename of files) {
++    const output = path.join(destination, filename);
++    fs.mkdirSync(path.dirname(output), { recursive: true });
++    fs.copyFileSync(path.join(ROOT, filename), output);
++  }
++  const packaged = inspect(destination).filter(entry => !entry.directory).map(entry => entry.relative).sort();
++  if (JSON.stringify(packaged) !== JSON.stringify(files)) throw Error('Packaged file set does not match source allowlist');
++  for (const filename of files) {
++    if (!fs.readFileSync(path.join(ROOT, filename)).equals(fs.readFileSync(path.join(destination, filename)))) throw Error(`Packaged bytes differ: ${filename}`);
++  }
++  verifyFrozen();
++  return { directory: destination, files: files.length, pages, frozenCount };
++}
++
++if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
++  if (process.argv.length > 2) throw Error('Usage: node scripts/package-site.mjs');
++  console.log(JSON.stringify(packageSite(), null, 2));
++}
+--- /dev/null
 +++ b/scripts/review.mjs
 @@ -0,0 +1,72 @@
 +import { mkdirSync, readFileSync, writeFileSync, readdirSync } from 'node:fs';
@@ -628,7 +727,7 @@
 +const orderText = values => values.map(v => titles[v] ? `${titles[v]} (${v})` : v).join('\n→ ');
 +const all = [];
 +let sections = '';
-+let markdown = '# 지원본 변경사항 전체 대조\n\n기준: 기존 toss/index.html 및 toss/script.js. 아래 원문 블록은 공백·줄바꿈·HTML 태그까지 보존하며 생략하지 않습니다. 화면에서 공백이 합쳐져 보이는 경우에도 HTML 원문과 JSON에는 그대로 남습니다.\n\n초안은 로컬에서만 생성했습니다. 기업별 문구 변경과 순서 변경, 자동 파생된 제목·메타데이터, 전체 HTML·JS diff를 포함합니다. 기존 toss/와 빈 루트는 수정하지 않습니다.\n';
++let markdown = '# 지원본 변경사항 전체 대조\n\n기준: 기존 toss/index.html 및 toss/script.js. 아래 원문 블록은 공백·줄바꿈·HTML 태그까지 보존하며 생략하지 않습니다. 화면에서 공백이 합쳐져 보이는 경우에도 HTML 원문과 JSON에는 그대로 남습니다.\n\n지원본은 별도 배포 산출물로 게시하며, 이 보고서는 배포 산출물에 포함하지 않습니다. 기업별 문구 변경과 순서 변경, 자동 파생된 제목·메타데이터, 전체 HTML·JS diff를 포함합니다. 기존 toss/와 빈 루트는 수정하지 않습니다.\n';
 +for (const slug of ['modoodoc', 'daangn']) {
 +  const data = renderProfile(slug);
 +  const prefix = slug === 'modoodoc' ? 'M' : 'D';
@@ -658,7 +757,7 @@
 +  sections += `<section id="${slug}"><h2>${labels[slug]} · ${changes.length}개 문구·메타 항목 / ${data.orderChanges.length}개 순서 변경</h2><p><a href="${escape(data.profile.jobUrl)}" target="_blank" rel="noreferrer">채용 공고</a> · <a href="../${slug}/" target="_blank">페이지 미리보기</a> · <a href="${slug}-vs-toss.patch">전체 HTML·JS diff</a></p>${cards}<details class="full-diff"><summary>${labels[slug]} 전체 HTML·JS 변경 원문</summary>${code(htmlDiff + jsDiff)}</details></section>`;
 +}
 +
-+const walk = dir => readdirSync(dir, { withFileTypes: true }).filter(e => !['.git', 'reports'].includes(e.name)).flatMap(e => e.isDirectory() ? walk(resolve(dir, e.name)) : [resolve(dir, e.name)]);
++const walk = dir => readdirSync(dir, { withFileTypes: true }).filter(e => !['.git', 'reports', '.pages-dist'].includes(e.name)).flatMap(e => e.isDirectory() ? walk(resolve(dir, e.name)) : [resolve(dir, e.name)]);
 +const manifest = walk(root).sort().map(file => {
 +  const bytes = readFileSync(file);
 +  return { path: relative(root, file), bytes: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex') };
@@ -670,7 +769,7 @@
 +if (implementation.status !== 0) throw Error(implementation.stderr);
 +const document = `<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>지원본 변경사항 전체 대조</title><style>
 +:root{color-scheme:light;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",sans-serif;color:#202733;background:#f4f5f7}*{box-sizing:border-box}body{margin:0}header,main,nav{max-width:1440px;margin:auto;padding:24px 32px}header p{max-width:920px;line-height:1.7}nav{position:sticky;top:0;background:#f4f5f7f5;border-bottom:1px solid #d6dce5;display:flex;gap:22px;flex-wrap:wrap;z-index:2;padding-top:14px;padding-bottom:14px}a{color:#164eba;text-decoration-thickness:1px;text-underline-offset:3px}h1{font-size:30px;margin:8px 0 18px}h2{margin-top:22px;font-size:24px}h3{font-size:17px;overflow-wrap:anywhere;margin:0 0 9px}h4{font-size:12px;letter-spacing:.05em;color:#526176;margin:0 0 12px}section,article{scroll-margin-top:90px}article{background:white;border:1px solid #d6dce5;border-radius:9px;padding:22px;margin:18px 0}.location{font:12px ui-monospace,monospace;color:#64748b;overflow-wrap:anywhere}.comparison{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}.comparison>div{min-width:0;padding:16px;border:1px solid #e0e5ec;border-radius:5px}.comparison>div:last-child{background:#f4f8ff}.copy{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.85;font-size:15px;margin:0}details{margin-top:18px}summary{cursor:pointer;color:#244b84;font-size:14px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.65 ui-monospace,SFMono-Regular,monospace;margin:0;tab-size:2}.full-diff pre{padding:20px;background:white;border:1px solid #d6dce5;margin-top:12px}.note{background:#fff;border-left:4px solid #235aca;padding:15px 20px}footer{padding:36px;color:#526176;text-align:center}@media(max-width:760px){header,main,nav{padding-left:16px;padding-right:16px}.comparison{grid-template-columns:1fr;gap:12px}article{padding:16px}h1{font-size:24px}}@media print{nav{position:static}article{break-inside:avoid}details{display:block}}
-+</style></head><body><header><h1>지원본 변경사항 전체 대조</h1><p>기준은 기존 <strong>/toss/</strong>입니다. 모든 변경 전·후 문구를 생략 없이 수록했습니다. 화면 문구는 브라우저처럼 연속 공백을 합쳐 보여주며, 각 항목의 <strong>HTML 원문 전체</strong>에는 공백·줄바꿈·태그까지 그대로 보존했습니다.</p><p class="note">피드백은 <strong>M01, D03, D-O01</strong>처럼 항목 번호로 주시면 됩니다. 초안은 로컬에서만 생성했고, 기존 토스 제출본과 빈 루트는 유지했습니다. 코드·표를 포함한 상세 사례 6개 본문과 CSS·이미지는 동일합니다.</p></header><nav><a href="#modoodoc">모두닥</a><a href="#daangn">당근</a><a href="changes.md">전체 Markdown</a><a href="changes.json">정확한 변경 데이터 JSON</a><a href="file-manifest.json">전체 파일·해시 목록</a><a href="implementation.patch">구조 변경 전체 diff</a></nav><main>${sections}</main><footer>실제 콘텐츠 데이터와 생성된 HTML·JS에서 자동 생성한 대조표입니다.</footer></body></html>`;
++</style></head><body><header><h1>지원본 변경사항 전체 대조</h1><p>기준은 기존 <strong>/toss/</strong>입니다. 모든 변경 전·후 문구를 생략 없이 수록했습니다. 화면 문구는 브라우저처럼 연속 공백을 합쳐 보여주며, 각 항목의 <strong>HTML 원문 전체</strong>에는 공백·줄바꿈·태그까지 그대로 보존했습니다.</p><p class="note">피드백은 <strong>M01, D03, D-O01</strong>처럼 항목 번호로 주시면 됩니다. 지원본은 별도 배포 산출물로 게시하며, 이 보고서는 웹사이트에 포함하지 않습니다. 기존 토스 제출본과 빈 루트는 유지했습니다. 코드·표를 포함한 상세 사례 6개 본문과 CSS·이미지는 동일합니다.</p></header><nav><a href="#modoodoc">모두닥</a><a href="#daangn">당근</a><a href="changes.md">전체 Markdown</a><a href="changes.json">정확한 변경 데이터 JSON</a><a href="file-manifest.json">전체 파일·해시 목록</a><a href="implementation.patch">구조 변경 전체 diff</a></nav><main>${sections}</main><footer>실제 콘텐츠 데이터와 생성된 HTML·JS에서 자동 생성한 대조표입니다.</footer></body></html>`;
 +put('index.html', document);
 +console.log(JSON.stringify(all.map(d => ({ slug: d.slug, changes: d.changes.length, orderChanges: d.orderChanges.length, runtimeChanges: d.runtimeChanges.length })), null, 2));
 --- /dev/null

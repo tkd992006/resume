@@ -33,6 +33,7 @@ npm run build
 npm run check
 npm run verify
 npm run review
+npm run package:site
 python3 -m http.server 8000
 ```
 
@@ -50,7 +51,7 @@ python3 -m http.server 8000
 - `reports/changes.md`, `reports/changes.json`: 공백·줄바꿈·HTML 태그를 보존한 정확한 원문 대조와 수정 이유.
 - `reports/modoodoc-vs-toss.patch`, `reports/daangn-vs-toss.patch`: 기존 토스본 대비 생성된 HTML·JS의 모든 변경.
 - `reports/implementation.patch`: 공통 템플릿·JSON·빌드 스크립트·문서의 전체 소스 변경.
-- `reports/file-manifest.json`: 보고서와 Git 메타데이터를 제외한 모든 파일의 크기·SHA-256 목록.
+- `reports/file-manifest.json`: 보고서, Git 메타데이터, `.pages-dist/`를 제외한 모든 파일의 크기·SHA-256 목록.
 
 로컬 서버에서 `/reports/`를 열면 됩니다. 보고서의 화면 문구는 연속 공백을 합쳐 읽기 쉽게 표시하지만, 펼쳐 보는 HTML 원문과 JSON에는 실제 문자열을 생략 없이 유지합니다. 상세 사례의 표시 번호는 순서에 맞게 변경하며 본문·코드·표는 그대로 둡니다.
 
@@ -89,6 +90,22 @@ python3 -m http.server 8000
 
 `toss/`는 기존 `portfolio` 저장소 루트(커밋 `c521665`)의 스냅샷입니다. 기존 토스 제출 주소 `https://tkd992006.github.io/portfolio/`와 해당 저장소의 remote 설정은 그대로 유지합니다. 이 빌드는 기존 저장소를 읽거나 쓰지 않습니다.
 
-현재 기업별 결과는 로컬 검토용이며, 이 변경에는 배포 작업을 추가하지 않았습니다. 현행 GitHub Pages 설정은 **Deploy from a branch → main → /(root)**입니다. 이 방식으로 소스와 보고서까지 커밋하여 배포하면 해당 파일도 주소로 접근할 수 있습니다. 게시할 때는 루트 진입 파일과 승인된 지원본 폴더만 배포 결과물에 포함하도록 별도 설정해야 합니다.
+GitHub Pages는 **Deploy from a branch → codex/pages → /(root)**를 사용합니다. `main`은 공통 템플릿·JSON·검토 보고서를 관리하는 소스 브랜치이고, `codex/pages`는 게시할 정적 파일만 담는 배포 브랜치입니다.
+
+`npm run package:site`는 공통 소스로 페이지를 생성하고 `.pages-dist/`에 빈 루트 `index.html`, `.nojekyll`, `toss/`, `modoodoc/`, `daangn/`의 HTML·CSS·JS·이미지만 모읍니다. `src/`, `reports/`, JSON, README는 배포 산출물에 포함하지 않습니다. `.pages-dist/`는 Git에 추적하지 않습니다.
+
+게시할 때는 `.pages-dist/`의 파일을 배포 브랜치 작업 폴더에 반영하고 `codex/pages`를 push합니다. 이후 GitHub Pages가 해당 브랜치를 자동 게시합니다. 소스 `main`에만 push하면 게시 사이트는 바뀌지 않습니다. 공개 GitHub 레포의 소스 자체는 공개이며, 여기서 제외하는 대상은 Pages 웹사이트의 파일입니다.
+
+- 모두닥: https://tkd992006.github.io/resume/modoodoc/
+- 당근: https://tkd992006.github.io/resume/daangn/
+- 기존 스냅샷: https://tkd992006.github.io/resume/toss/
+
+CLI에서 설정과 배포 상태를 확인할 수 있습니다.
+
+```sh
+gh api repos/tkd992006/resume/pages
+gh api repos/tkd992006/resume/pages/builds/latest
+gh run list --repo tkd992006/resume
+```
 
 제출한 지원본을 보존하려면 이후 빌드 대상에서 제외하고 스냅샷으로 관리합니다. 현재 자동 생성 대상은 `scripts/build.mjs`의 `ACTIVE_PROFILES`에 명시된 두 초안뿐이며, `toss`는 허용하지 않습니다.
