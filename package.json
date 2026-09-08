@@ -1,0 +1,14 @@
+{
+  "name": "resume-applications",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/build.mjs --check",
+    "verify": "node scripts/verify.mjs",
+    "review": "node scripts/review.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,82 @@
+<dialog
+      class="case-modal"
+      id="otm-receipt-case"
+      aria-labelledby="receipt-case-title"
+      aria-describedby="receipt-case-description"
+    >
+      <div class="case-modal-shell">
+        <header class="case-modal-header">
+          <div>
+            <p class="case-modal-kicker">OnTheMarket · Solved issue 03</p>
+            <h2 id="receipt-case-title">영수증 한 장으로 “온더마켓이었으면 얼마”를 보여주는 캠페인</h2>
+            <p id="receipt-case-description">
+              앱 설치 전 점주가 영수증 사진만 올리면, 그 날짜의 온더마켓 최저가와 비교해 품목별 차액과 절감액을 보여주는
+              신규 유입 캠페인입니다. Gemini 구조화 OCR, 카탈로그 매칭 검증, 날짜별 최저가 조회 순서로 처리합니다.
+            </p>
+          </div>
+          <button class="case-modal-close" type="button" data-case-close aria-label="문제 해결 사례 닫기">×</button>
+        </header>
+
+        <div class="case-modal-content case-narrative is-compact">
+          <section class="case-section" aria-labelledby="receipt-context">
+            <header class="case-section-header">
+              <p class="case-section-kicker">Problem &amp; constraints</p>
+              <h3 id="receipt-context">가입 전 점주에게 “우리 가게 야채값이 비싼가?”를 영수증 한 장으로 답해야 했습니다.</h3>
+              <p>
+                온더마켓은 음식점 점주가 식자재 유통사를 비교해 주문하는 B2B 서비스인데, 점주 입장에서는 앱을 깔고 장부를 만들기 전까지
+                “여기서 사면 얼마나 싸지는지”를 알 방법이 없었습니다. 그래서 신규 유입용으로 가입 없이 쓰는 랜딩 페이지를 만들었습니다.
+                점주가 지금 거래하는 유통사의 영수증이나 납품서 사진을 올리면, 그 영수증 날짜에 같은 품목을 온더마켓 최저가로 샀을 때의 금액을
+                품목별로 비교해 “이만큼 손해보셨어요”와 연간 환산 절감액을 보여주고, 상세 리포트를 문자로 받겠다며 전화번호를 남기면 영업 리드로 이어지는 흐름입니다.
+                이 사례에 얽힌 데이터는 아래 세 가지입니다.
+              </p>
+            </header>
+            <dl class="domain-model-list" aria-label="도메인 모델 정리">
+              <dt><code>Catalog</code> 상품 마스터</dt>
+              <dd>온더마켓이 파는 모든 식자재의 원장. 이름·규격·<code>description</code>을 갖고 있고, 유통사 가격표와 주문 품목이 모두 이 id를 참조합니다. 영수증의 품목명을 결국 이 id로 바꿔야 가격을 찾을 수 있습니다.</dd>
+              <dt><code>PricingLog</code> 일일 최저가 기록</dt>
+              <dd>매일 17시 배치가 활성 유통사들의 가격표에서 상품별 최저 판매가를 모아 <code>daily_lowest_price</code> 타입으로 저장한 스냅샷. “그 날짜의 온더마켓 최저가”는 이 기록에서 나옵니다.</dd>
+              <dt><code>PriceCompare</code> 진단 요청</dt>
+              <dd>점주가 올린 영수증 이미지 한 건. 생성 직후 서버가 OCR과 가격 조회를 돌려 품목별 <code>receiptResult</code>(영수증 단가·온더마켓 단가·차액·매칭 여부)와 기준 날짜를 채우고, 나중에 남긴 전화번호를 같이 담습니다.</dd>
+            </dl>
+            <p>
+              어려운 부분은 영수증에 적힌 “양파 10kg”, “감자(상)” 같은 축약 품목명을 카탈로그 id로 신뢰할 수 있게 연결하는 일과,
+              영수증 날짜에 해당하는 최저가 기록이 없을 때도 결과 화면이 비지 않게 하는 일이었습니다.
+              점주가 처음 보는 화면에서 엉뚱한 상품과 비교되거나 빈 결과가 나오면 캠페인 자체가 신뢰를 잃기 때문입니다.
+            </p>
+            <div class="pipeline-strip" aria-label="영수증 가격 진단 파이프라인">
+              <div><span>01</span><strong>이미지 정규화</strong></div>
+              <i aria-hidden="true">→</i>
+              <div><span>02</span><strong>구조화 OCR</strong></div>
+              <i aria-hidden="true">→</i>
+              <div><span>03</span><strong>catalog ID 검증</strong></div>
+              <i aria-hidden="true">→</i>
+              <div><span>04</span><strong>날짜별 최저가</strong></div>
+              <i aria-hidden="true">→</i>
+              <div><span>05</span><strong>품목별 차액</strong></div>
+            </div>
+            <p class="case-afterthought">
+              이미지는 sharp로 800px·JPEG 80%로 줄여 Gemini에 보내고, 변환이 실패하면 원본을 그대로 씁니다.
+              Gemini에는 활성 카탈로그 전체의 id·이름·description 목록을 프롬프트에 같이 넣고, 응답 스키마로 영수증 날짜와
+              품목별 <code>databaseId</code>·수량·단가만 JSON으로 받게 강제했습니다. 포괄적인 이름은 가장 일반적이거나 저렴한 등급으로 매칭하도록 규칙을 뒀습니다.
+              모델이 돌려준 id는 그대로 믿지 않고 실제 카탈로그 목록에서 다시 찾아, 존재하고 그날 가격까지 있는 품목만 매칭으로 인정했습니다.
+              가격은 영수증 날짜의 <code>daily_lowest_price</code> 기록을 먼저 찾고, 없으면 가장 최근 기록을 쓰되 화면에는 실제 기준 날짜를 표시합니다.
+              결과 화면에서는 온더마켓 가격이 영수증보다 싼 품목만 절감액 계산에 넣고, 나머지는 “비교 불가”로 따로 보여줍니다.
+            </p>
+          </section>
+          <section class="case-section" aria-labelledby="receipt-result">
+            <header class="case-section-header">
+              <p class="case-section-kicker">Outcome &amp; remaining limit</p>
+              <h3 id="receipt-result">AI 응답을 바로 노출하지 않고, 검증 가능한 제품 흐름으로 완성했습니다.</h3>
+            </header>
+          </section>
+
+          <footer class="case-evidence">
+            <span>Code evidence</span>
+            <a href="https://github.com/tkd992006/onTheMarket/blob/1be39643542c7926a0b841f14984af6883128d65/apps/otmcli/nest/receiptOCR.ts" target="_blank" rel="noreferrer">receiptOCR.ts · structured OCR</a>
+            <a href="https://github.com/tkd992006/onTheMarket/blob/1be39643542c7926a0b841f14984af6883128d65/apps/otmcli/lib/priceCompare/priceCompare.service.ts" target="_blank" rel="noreferrer">priceCompare.service.ts · data join</a>
+            <a href="https://github.com/tkd992006/onTheMarket/commit/85c405e5ff436d8b46910a20cb51da5505e0a29a" target="_blank" rel="noreferrer">85c405e · result view</a>
+            <a href="https://github.com/tkd992006/onTheMarket/commit/348242cbd8d61b9a3152678ae610d8bccecdf8a9" target="_blank" rel="noreferrer">348242c · landing flow</a>
+          </footer>
+        </div>
+      </div>
+    </dialog>

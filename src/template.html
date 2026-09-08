@@ -1,0 +1,935 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{field:meta.title}}</title>
+    <meta
+      name="description"
+      content="{{field:meta.description}}"
+    >
+    <meta property="og:title" content="{{field:meta.og.title}}">
+    <meta
+      property="og:description"
+      content="{{field:meta.og.description}}"
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{field:meta.og.url}}">
+    <meta property="og:image" content="{{field:meta.og.image}}">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    >
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,300..900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap"
+    >
+    <link rel="stylesheet" href="styles.css?v=36">
+    <noscript>
+      <style>
+        html, body { height: auto; }
+        .app { height: auto; overflow: visible; }
+        .panel { display: grid; gap: 1.35rem; }
+      </style>
+    </noscript>
+  </head>
+  <body>
+    <a class="skip-link" href="#stage">{{field:ui.skip.link}}</a>
+    <div class="app">
+      <header class="masthead">
+        <div>
+          <h1 class="masthead-name">{{field:profile.name}}</h1>
+          <p class="masthead-meta mono">{{field:profile.role}}</p>
+        </div>
+        <div class="masthead-side mono">
+          <a href="{{field:profile.contact.email.href}}">{{field:profile.a}}</a>
+          <a href="{{field:profile.contact.github.href}}" target="_blank" rel="noreferrer">{{field:profile.a.2}}</a>
+        </div>
+      </header>
+
+      <section class="chrono" id="chrono" aria-label="연표 · 2018 – 현재">
+        <div class="chrono-main">
+          <div class="chrono-scroller" id="chrono-chart">
+            <div class="chrono-grid" data-chrono>
+              <p class="chrono-fallback">{{field:chrono.chart.chrono.fallback}}</p>
+            </div>
+          </div>
+          <ul class="chrono-legend mono" aria-label="범례">
+            <li>{{field:chrono.li}}</li>
+            <li>{{field:chrono.li.2}}</li>
+            <li>{{field:chrono.li.3}}</li>
+            <li>{{field:chrono.li.4}}</li>
+          </ul>
+        </div>
+        <aside class="chrono-side">
+          <p class="chrono-hint mono">{{field:chrono.chrono.hint}}</p>
+        </aside>
+        <div class="chrono-tip" role="tooltip" hidden></div>
+      </section>
+
+      <div class="workspace">
+        <nav class="rail" aria-label="섹션">
+          <p class="rail-label mono">{{field:ui.rail.label}}</p>
+          <ol class="rail-list">
+            <li class="rail-item is-active" data-panel="who-am-i">
+              <a class="rail-link" href="#who-am-i" aria-current="page">{{field:ui.rail.link}}</a>
+            </li>
+            <li class="rail-item" data-panel="ai-experience">
+              <a class="rail-link" href="#ai-experience">{{field:ui.rail.link.2}}</a>
+            </li>
+            <li class="rail-item" data-panel="experience">
+              <a class="rail-link" href="#experience">{{field:ui.rail.link.3}}</a>
+            </li>
+            <li class="rail-item" data-panel="selected-work">
+              <a class="rail-link" href="#selected-work">{{field:ui.rail.link.4}}</a>
+            </li>
+            <li class="rail-item" data-panel="portfolio">
+              <a class="rail-link" href="#portfolio">{{field:ui.rail.link.5}}</a>
+            </li>
+          </ol>
+          <p class="rail-foot mono">{{field:ui.rail.foot}}</p>
+        </nav>
+
+        <main class="stage" id="stage" tabindex="-1">
+          <section class="panel is-active" id="who-am-i" aria-labelledby="who-title" tabindex="-1">
+            <h2 class="sr-only" id="who-title">{{field:who.title.sr.only}}</h2>
+            <div class="intro">
+              <div>
+                <p class="eyebrow mono">{{field:who.am.i.eyebrow}}</p>
+                <p class="intro-lead">{{field:intro.lead}}</p>
+                <div class="facts" id="profile">
+                  <div class="fact">
+                    <span class="mono">{{field:intro.facts.education.label}}</span>
+                    <strong>{{field:intro.facts.education.value}}</strong>
+                  </div>
+                  <div class="fact">
+                    <span class="mono">{{field:intro.facts.stack.label}}</span>
+                    <strong>{{field:intro.facts.stack.value}}</strong>
+                  </div>
+                  <div class="fact">
+                    <span class="mono">{{field:intro.facts.projects.label}}</span>
+                    <strong>{{field:intro.facts.projects.value}}</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="hero-media" aria-hidden="true">
+                <img class="hero-shot shot-a" src="assets/images/onthemarket-app-1.webp" alt="" width="520" height="1128">
+                <img class="hero-shot shot-b" src="assets/images/syrs-1.webp" alt="" width="520" height="1136">
+                <img class="hero-shot shot-c" src="assets/images/gagageul.webp" alt="" width="1400" height="814">
+                <img class="hero-shot shot-d" src="assets/images/playai-1.webp" alt="" width="1400" height="788">
+              </div>
+            </div>
+            <div class="block" id="ama">
+              <div class="block-head">
+                <div>
+                  <p class="eyebrow mono">{{field:ama.eyebrow}}</p>
+                  <h2 id="ama-title">{{field:ama.title.h2}}</h2>
+                </div>
+              </div>
+              <div class="ama-panel">
+                            <div class="ama-questions" role="tablist" aria-label="포트폴리오 AMA 질문">
+                              <button class="ama-question is-active" type="button" role="tab" aria-selected="true" aria-controls="ama-answer-work" id="ama-question-work" data-ama-target="ama-answer-work">{{field:ama.work.question}}</button>
+                              <button class="ama-question" type="button" role="tab" aria-selected="false" aria-controls="ama-answer-founder" id="ama-question-founder" data-ama-target="ama-answer-founder" tabindex="-1">{{field:ama.founder.question}}</button>
+                              <button class="ama-question" type="button" role="tab" aria-selected="false" aria-controls="ama-answer-collab" id="ama-question-collab" data-ama-target="ama-answer-collab" tabindex="-1">{{field:ama.collab.question}}</button>
+                              <button class="ama-question" type="button" role="tab" aria-selected="false" aria-controls="ama-answer-growth" id="ama-question-growth" data-ama-target="ama-answer-growth" tabindex="-1">{{field:ama.growth.question}}</button>
+                            </div>
+                            <div class="ama-answers">
+                              <article class="ama-answer is-active" role="tabpanel" id="ama-answer-work" aria-labelledby="ama-question-work">
+                                <p class="project-kicker">{{field:ama.work.kicker}}</p>
+                                <h3>{{field:ama.work.heading}}</h3>
+                                <p>{{field:ama.work.body}}</p>
+                                <div class="ama-followups" aria-label="이어질 수 있는 질문">
+                                  <div class="ama-followup">
+                                    <button class="ama-followup-toggle" type="button" aria-expanded="false" aria-controls="ama-work-followup-1">{{field:ama.work.followup1.question}}</button>
+                                    <div class="ama-followup-answer" id="ama-work-followup-1">
+                                      <div>
+                                        <p>{{field:ama.work.followup1.answer}}</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="ama-followup">
+                                    <button class="ama-followup-toggle" type="button" aria-expanded="false" aria-controls="ama-work-followup-2">{{field:ama.work.followup2.question}}</button>
+                                    <div class="ama-followup-answer" id="ama-work-followup-2">
+                                      <div>
+                                        <p>{{field:ama.work.followup2.answer}}</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="ama-followup">
+                                    <button class="ama-followup-toggle" type="button" aria-expanded="false" aria-controls="ama-work-followup-3">{{field:ama.work.followup3.question}}</button>
+                                    <div class="ama-followup-answer" id="ama-work-followup-3">
+                                      <div>
+                                        <p>{{field:ama.work.followup3.answer}}</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </article>
+                              <article class="ama-answer" role="tabpanel" id="ama-answer-founder" aria-labelledby="ama-question-founder" hidden>
+                                <p class="project-kicker">{{field:ama.founder.kicker}}</p>
+                                <h3>{{field:ama.founder.heading}}</h3>
+                                <p>{{field:ama.founder.body}}</p>
+                                <div class="ama-followups" aria-label="이어질 수 있는 질문">
+                                  <div class="ama-followup">
+                                    <button class="ama-followup-toggle" type="button" aria-expanded="false" aria-controls="ama-founder-followup-1">{{field:ama.founder.followup1.question}}</button>
+                                    <div class="ama-followup-answer" id="ama-founder-followup-1">
+                                      <div>
+                                        <p>{{field:ama.founder.followup1.answer}}</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="ama-followup">
+                                    <button class="ama-followup-toggle" type="button" aria-expanded="false" aria-controls="ama-founder-followup-2">{{field:ama.founder.followup2.question}}</button>
+                                    <div class="ama-followup-answer" id="ama-founder-followup-2">
+                                      <div>
+                                        <p>{{field:ama.founder.followup2.answer}}</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </article>
+                              <article class="ama-answer" role="tabpanel" id="ama-answer-collab" aria-labelledby="ama-question-collab" hidden>
+                                <p class="project-kicker">{{field:ama.collab.kicker}}</p>
+                                <h3>{{field:ama.collab.heading}}</h3>
+                                <p>{{field:ama.collab.body}}</p>
+                                <div class="ama-followups" aria-label="이어질 수 있는 질문">
+                                  <div class="ama-followup">
+                                    <button class="ama-followup-toggle" type="button" aria-expanded="false" aria-controls="ama-collab-followup-3">{{field:ama.collab.followup3.question}}</button>
+                                    <div class="ama-followup-answer" id="ama-collab-followup-3">
+                                      <div>
+                                        <p>{{field:ama.collab.followup3.answer}}</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </article>
+                              <article class="ama-answer" role="tabpanel" id="ama-answer-growth" aria-labelledby="ama-question-growth" hidden>
+                                <p class="project-kicker">{{field:ama.growth.kicker}}</p>
+                                <div class="ama-followups" aria-label="이어질 수 있는 질문">
+                                  <div class="ama-followup">
+                                    <button class="ama-followup-toggle" type="button" aria-expanded="false" aria-controls="ama-growth-followup-1">{{field:ama.growth.followup1.question}}</button>
+                                    <div class="ama-followup-answer" id="ama-growth-followup-1">
+                                      <div>
+                                        <p>{{field:ama.growth.followup1.answer}}</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </article>
+                            </div>
+                          </div>
+            </div>
+          </section>
+
+          <section class="panel" id="ai-experience" aria-labelledby="ai-title" tabindex="-1">
+            <div class="block">
+              <div class="block-head">
+                <div>
+                  <p class="eyebrow mono">{{field:ai.experience.eyebrow}}</p>
+                  <h2 id="ai-title">{{field:ai.title.h2}}</h2>
+                </div>
+              </div>
+              <div class="ai-card">
+                <div class="ai-timeline" aria-label="AI 도구 사용 이력">
+                  <span>{{field:ai.experience.span}}</span>
+                  <span>{{field:ai.experience.span.2}}</span>
+                  <span>{{field:ai.experience.span.3}}</span>
+                  <span>{{field:ai.experience.span.4}}</span>
+                  <span>{{field:ai.experience.span.5}}</span>
+                </div>
+                <div class="ai-copy">
+                  <p>{{field:ai.experience.p}}</p>
+                  <p>{{field:ai.experience.p.2}}</p>
+                  <p>{{field:ai.experience.p.3}}</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" id="experience" aria-label="학력 · 경력" tabindex="-1">
+            <div class="block" id="education">
+              <div class="block-head">
+                <div>
+                  <p class="eyebrow mono">{{field:education.eyebrow}}</p>
+                  <h2>{{field:education.h2}}</h2>
+                </div>
+              </div>
+              <div class="cards">
+                <article class="card" id="edu-kaist">
+                  <h3>{{field:edu.kaist.h3}}</h3>
+                  <p>{{field:edu.kaist.p}}</p>
+                  <p>{{field:edu.kaist.p.2}}</p>
+                </article>
+                <article class="card" id="edu-etc">
+                  <h3>{{field:edu.etc.h3}}</h3>
+                  <p>{{field:edu.etc.p}}</p>
+                  <p>{{field:edu.etc.p.2}}</p>
+                </article>
+              </div>
+            </div>
+            <div class="block" id="work">
+              <div class="block-head">
+                <div>
+                  <p class="eyebrow mono">{{field:work.eyebrow}}</p>
+                  <h2>{{field:work.h2}}</h2>
+                </div>
+              </div>
+              <div class="work-rows">
+                <article class="work-row" id="work-onthemarket">
+                  <p class="period mono">{{field:work.onthemarket.period}}</p>
+                  <div>
+                    <h3>{{field:work.onthemarket.h3}}</h3>
+                    <p class="role mono">{{field:work.onthemarket.role}}</p>
+                    <p>{{field:work.onthemarket.p}}</p>
+                  </div>
+                </article>
+                <article class="work-row" id="work-tingtingplanet">
+                  <p class="period mono">{{field:work.tingtingplanet.period}}</p>
+                  <div>
+                    <h3>{{field:work.tingtingplanet.h3}}</h3>
+                    <p class="role mono">{{field:work.tingtingplanet.role}}</p>
+                    <p>{{field:work.tingtingplanet.p}}</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="block" id="skills">
+              <div class="block-head">
+                <div>
+                  <p class="eyebrow mono">{{field:skills.eyebrow}}</p>
+                  <h2>{{field:skills.h2}}</h2>
+                </div>
+              </div>
+              <div class="skills">
+                <div class="skill">
+                  <h3 class="mono">{{field:skills.frontend.title}}</h3>
+                  <p>{{field:skills.frontend.summary}}</p>
+                </div>
+                <div class="skill">
+                  <h3 class="mono">{{field:skills.multi-platform-build.title}}</h3>
+                  <p>{{field:skills.multi-platform-build.summary}}</p>
+                </div>
+                <div class="skill">
+                  <h3 class="mono">{{field:skills.product-integration.title}}</h3>
+                  <p>{{field:skills.product-integration.summary}}</p>
+                </div>
+                <div class="skill">
+                  <h3 class="mono">{{field:skills.backend-data-ops.title}}</h3>
+                  <p>{{field:skills.backend-data-ops.summary}}</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" id="selected-work" aria-labelledby="projects-title" tabindex="-1">
+            <div class="block">
+              <div class="block-head">
+                <div>
+                  <p class="eyebrow mono">{{field:selected.work.eyebrow}}</p>
+                  <h2 id="projects-title">{{field:projects.title.h2}}</h2>
+                </div>
+                <p class="block-lead">{{field:selected.work.block.lead}}</p>
+              </div>
+              <div class="work-list">
+              <button class="work-item is-feature" type="button" data-sheet-open="project-onthemarket">
+                <span class="work-period mono">{{field:selectedWork.onthemarket.work-period}}</span>
+                <span class="work-main">
+                  <span class="work-kicker mono">{{field:selectedWork.onthemarket.work-kicker}}</span>
+                  <span class="work-title">{{field:selectedWork.onthemarket.work-title}}</span>
+                  <span class="work-chips"><span>{{field:selectedWork.onthemarket.span}}</span><span>{{field:selectedWork.onthemarket.span.2}}</span><span>{{field:selectedWork.onthemarket.span.3}}</span><span>{{field:selectedWork.onthemarket.span.4}}</span></span>
+                </span>
+                <span class="work-side"><span class="work-tag mono">{{field:selectedWork.onthemarket.work-tag}}</span><span class="work-open mono">{{field:selectedWork.onthemarket.work-open}}</span></span>
+              </button>
+              <button class="work-item" type="button" data-sheet-open="project-syrs">
+                <span class="work-period mono">{{field:selectedWork.syrs.work-period}}</span>
+                <span class="work-main">
+                  <span class="work-kicker mono">{{field:selectedWork.syrs.work-kicker}}</span>
+                  <span class="work-title">{{field:selectedWork.syrs.work-title}}</span>
+                  <span class="work-chips"><span>{{field:selectedWork.syrs.span}}</span><span>{{field:selectedWork.syrs.span.2}}</span></span>
+                </span>
+                <span class="work-side"><span class="work-tag mono">{{field:selectedWork.syrs.work-tag}}</span><span class="work-open mono">{{field:selectedWork.syrs.work-open}}</span></span>
+              </button>
+              <button class="work-item" type="button" data-sheet-open="project-gagageul">
+                <span class="work-period mono">{{field:selectedWork.gagageul.work-period}}</span>
+                <span class="work-main">
+                  <span class="work-kicker mono">{{field:selectedWork.gagageul.work-kicker}}</span>
+                  <span class="work-title">{{field:selectedWork.gagageul.work-title}}</span>
+                  <span class="work-chips"><span>{{field:selectedWork.gagageul.span}}</span><span>{{field:selectedWork.gagageul.span.2}}</span></span>
+                </span>
+                <span class="work-side"><span class="work-open mono">{{field:selectedWork.gagageul.work-open}}</span></span>
+              </button>
+              <button class="work-item" type="button" data-sheet-open="project-akasys">
+                <span class="work-period mono">{{field:selectedWork.akasys.work-period}}</span>
+                <span class="work-main">
+                  <span class="work-kicker mono">{{field:selectedWork.akasys.work-kicker}}</span>
+                  <span class="work-title">{{field:selectedWork.akasys.work-title}}</span>
+                </span>
+                <span class="work-side"><span class="work-open mono">{{field:selectedWork.akasys.work-open}}</span></span>
+              </button>
+              <button class="work-item" type="button" data-sheet-open="project-local-jobs">
+                <span class="work-period mono">{{field:selectedWork.local-jobs.work-period}}</span>
+                <span class="work-main">
+                  <span class="work-kicker mono">{{field:selectedWork.local-jobs.work-kicker}}</span>
+                  <span class="work-title">{{field:selectedWork.local-jobs.work-title}}</span>
+                  <span class="work-chips"><span>{{field:selectedWork.local-jobs.span}}</span><span>{{field:selectedWork.local-jobs.span.2}}</span></span>
+                </span>
+                <span class="work-side"><span class="work-open mono">{{field:selectedWork.local-jobs.work-open}}</span></span>
+              </button>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" id="portfolio" aria-labelledby="portfolio-title" tabindex="-1">
+            <div class="block">
+              <div class="block-head">
+                <div>
+                  <p class="eyebrow mono">{{field:portfolio.eyebrow}}</p>
+                  <h2 id="portfolio-title">{{field:portfolio.title.h2}}</h2>
+                </div>
+                <p class="block-lead">{{field:portfolio.block.lead}}</p>
+              </div>
+              <div class="folio-grid">
+              <button class="folio-card" type="button" data-sheet-open="portfolio-chaptertwo">
+                <span class="folio-thumb two-up"><img src="assets/images/chaptertwo-1.webp" alt="ChapterTwo 리포트 화면" loading="lazy" decoding="async" width="900" height="488"><img src="assets/images/chaptertwo-2.webp" alt="ChapterTwo 설문 화면" loading="lazy" decoding="async" width="900" height="933"></span>
+                <span class="folio-title">{{field:portfolioCards.chaptertwo.folio-title}}</span>
+                <span class="folio-sub">{{field:portfolioCards.chaptertwo.folio-sub}}</span>
+              </button>
+              <button class="folio-card" type="button" data-sheet-open="portfolio-clackclack">
+                <span class="folio-thumb two-up"><img src="assets/images/clackclack-1.webp" alt="ClackClack 매장 정보 화면" loading="lazy" decoding="async" width="520" height="495"><img src="assets/images/clackclack-2.webp" alt="ClackClack 일정 화면" loading="lazy" decoding="async" width="520" height="502"></span>
+                <span class="folio-title">{{field:portfolioCards.clackclack.folio-title}}</span>
+                <span class="folio-sub">{{field:portfolioCards.clackclack.folio-sub}}</span>
+              </button>
+              <button class="folio-card" type="button" data-sheet-open="portfolio-jobonger">
+                <span class="folio-thumb"><img src="assets/images/jobonger-1.webp" alt="JoBonger 작품 선택 화면" loading="lazy" decoding="async" width="1400" height="996"></span>
+                <span class="folio-title">{{field:portfolioCards.jobonger.folio-title}}</span>
+                <span class="folio-sub">{{field:portfolioCards.jobonger.folio-sub}}</span>
+              </button>
+              <button class="folio-card" type="button" data-sheet-open="portfolio-playai">
+                <span class="folio-thumb"><img src="assets/images/playai-1.webp" alt="Play AI SSO 화면" loading="lazy" decoding="async" width="1400" height="788"></span>
+                <span class="folio-title">{{field:portfolioCards.playai.folio-title}}</span>
+                <span class="folio-sub">{{field:portfolioCards.playai.folio-sub}}</span>
+              </button>
+              <button class="folio-card" type="button" data-sheet-open="portfolio-sloths">
+                <span class="folio-thumb"><img src="assets/images/sloths.webp" alt="SLOTHS ON THE RUN 랜딩 화면" loading="lazy" decoding="async" width="700" height="806"></span>
+                <span class="folio-title">{{field:portfolioCards.sloths.folio-title}}</span>
+                <span class="folio-sub">{{field:portfolioCards.sloths.folio-sub}}</span>
+              </button>
+              <button class="folio-card" type="button" data-sheet-open="portfolio-hashmoss">
+                <span class="folio-thumb"><img src="assets/images/hashmoss.webp" alt="Hashmoss NFT SNS 화면" loading="lazy" decoding="async" width="1400" height="751"></span>
+                <span class="folio-title">{{field:portfolioCards.hashmoss.folio-title}}</span>
+                <span class="folio-sub">{{field:portfolioCards.hashmoss.folio-sub}}</span>
+              </button>
+              <button class="folio-card" type="button" data-sheet-open="portfolio-watchwise">
+                <span class="folio-thumb is-text mono">{{field:portfolioCards.watchwise.folio-thumb}}</span>
+                <span class="folio-title">{{field:portfolioCards.watchwise.folio-title}}</span>
+                <span class="folio-sub">{{field:portfolioCards.watchwise.folio-sub}}</span>
+              </button>
+              <button class="folio-card" type="button" data-sheet-open="portfolio-mounting">
+                <span class="folio-thumb is-text mono">{{field:portfolioCards.mounting.folio-thumb}}</span>
+                <span class="folio-title">{{field:portfolioCards.mounting.folio-title}}</span>
+                <span class="folio-sub">{{field:portfolioCards.mounting.folio-sub}}</span>
+              </button>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <dialog class="sheet" id="project-onthemarket" data-panel="selected-work" aria-labelledby="project-onthemarket-title">
+      <div class="sheet-shell">
+        <header class="sheet-head">
+          <div>
+            <p class="project-kicker">{{field:projects.onthemarket.project-kicker}}</p>
+            <h2 id="project-onthemarket-title">{{field:projects.onthemarket.title}}</h2>
+            <p class="project-subtitle">{{field:projects.onthemarket.project-subtitle}}</p>
+            <div class="project-links"><a href="https://github.com/tkd992006/onTheMarket" target="_blank" rel="noreferrer">{{field:projects.onthemarket.a}}</a></div>
+          </div>
+          <button class="sheet-close" type="button" data-sheet-close aria-label="닫기">×</button>
+        </header>
+        <div class="sheet-body">
+          <div class="impact-list" aria-label="OnTheMarket 성과"><span>{{field:projects.onthemarket.span}}</span><span>{{field:projects.onthemarket.span.2}}</span><span>{{field:projects.onthemarket.span.3}}</span><span>{{field:projects.onthemarket.span.4}}</span></div>
+          <p>{{field:projects.onthemarket.body}}</p>
+
+          <div class="case-study-list" aria-label="OnTheMarket 문제 해결 사례">
+            <button
+              class="case-study-trigger is-wide is-highlighted"
+              type="button"
+              data-case-open="otm-payment-webview-case"
+              aria-haspopup="dialog"
+              aria-controls="otm-payment-webview-case"
+            >
+              <span class="case-study-trigger-meta">
+                <span class="case-study-trigger-index">{{field:caseSummaries.otm-payment-webview-case.case-study-trigger-index}}</span>
+                <span>{{field:caseSummaries.otm-payment-webview-case.span}}</span>
+              </span>
+              <span class="case-study-trigger-copy">
+                <strong>{{field:caseSummaries.otm-payment-webview-case.title}}</strong>
+                <span>{{field:caseSummaries.otm-payment-webview-case.span.2}}</span>
+              </span>
+              <span class="case-study-trigger-action">
+                사례 보기 <span aria-hidden="true">{{field:caseSummaries.otm-payment-webview-case.span.3}}</span>
+              </span>
+            </button>
+
+            <button
+              class="case-study-trigger is-wide"
+              type="button"
+              data-case-open="otm-order-case"
+              aria-haspopup="dialog"
+              aria-controls="otm-order-case"
+            >
+              <span class="case-study-trigger-meta">
+                <span class="case-study-trigger-index">{{field:caseSummaries.otm-order-case.case-study-trigger-index}}</span>
+                <span>{{field:caseSummaries.otm-order-case.span}}</span>
+              </span>
+              <span class="case-study-trigger-copy">
+                <strong>{{field:caseSummaries.otm-order-case.title}}</strong>
+                <span>{{field:caseSummaries.otm-order-case.span.2}}</span>
+              </span>
+              <span class="case-study-trigger-action">
+                사례 보기 <span aria-hidden="true">{{field:caseSummaries.otm-order-case.span.3}}</span>
+              </span>
+            </button>
+            <button
+              class="case-study-trigger is-compact"
+              type="button"
+              data-case-open="otm-receipt-case"
+              aria-haspopup="dialog"
+              aria-controls="otm-receipt-case"
+            >
+              <span class="case-study-trigger-meta">
+                <span class="case-study-trigger-index">{{field:caseSummaries.otm-receipt-case.case-study-trigger-index}}</span>
+                <span>{{field:caseSummaries.otm-receipt-case.span}}</span>
+              </span>
+              <span class="case-study-trigger-copy">
+                <strong>{{field:caseSummaries.otm-receipt-case.title}}</strong>
+                <span>{{field:caseSummaries.otm-receipt-case.span.2}}</span>
+              </span>
+              <span class="case-study-trigger-action">사례 보기 <span aria-hidden="true">{{field:caseSummaries.otm-receipt-case.span.3}}</span></span>
+            </button>
+
+            <button
+              class="case-study-trigger is-compact"
+              type="button"
+              data-case-open="otm-ledger-cycle-case"
+              aria-haspopup="dialog"
+              aria-controls="otm-ledger-cycle-case"
+            >
+              <span class="case-study-trigger-meta">
+                <span class="case-study-trigger-index">{{field:caseSummaries.otm-ledger-cycle-case.case-study-trigger-index}}</span>
+                <span>{{field:caseSummaries.otm-ledger-cycle-case.span}}</span>
+              </span>
+              <span class="case-study-trigger-copy">
+                <strong>{{field:caseSummaries.otm-ledger-cycle-case.title}}</strong>
+                <span>{{field:caseSummaries.otm-ledger-cycle-case.span.2}}</span>
+              </span>
+              <span class="case-study-trigger-action">사례 보기 <span aria-hidden="true">{{field:caseSummaries.otm-ledger-cycle-case.span.3}}</span></span>
+            </button>
+            <button
+              class="case-study-trigger is-full"
+              type="button"
+              data-case-open="otm-signal-types-case"
+              aria-haspopup="dialog"
+              aria-controls="otm-signal-types-case"
+            >
+              <span class="case-study-trigger-meta">
+                <span class="case-study-trigger-index">{{field:caseSummaries.otm-signal-types-case.case-study-trigger-index}}</span>
+                <span>{{field:caseSummaries.otm-signal-types-case.span}}</span>
+              </span>
+              <span class="case-study-trigger-copy">
+                <strong>{{field:caseSummaries.otm-signal-types-case.title}}</strong>
+                <span>{{field:caseSummaries.otm-signal-types-case.span.2}}</span>
+              </span>
+              <span class="case-study-trigger-action">사례 보기 <span aria-hidden="true">{{field:caseSummaries.otm-signal-types-case.span.3}}</span></span>
+            </button>
+          </div>
+
+          <div class="project-grid">
+            <div>
+              <h4>{{field:projects.onthemarket.what-i-did.h4}}</h4>
+              <ul>{{field:projects.onthemarket.what-i-did.items}}</ul>
+            </div>
+            <div>
+              <h4>{{field:projects.onthemarket.tech-stack.h4}}</h4>
+              <p class="tag-cloud">{{field:projects.onthemarket.tech-stack.tag-cloud}}</p>
+            </div>
+            <div>
+              <h4>{{field:projects.onthemarket.learned.h4}}</h4>
+              <p>{{field:projects.onthemarket.learned.body}}</p>
+            </div>
+          </div>
+
+          <div class="media-strip phone-strip" aria-label="OnTheMarket 앱 화면">
+            <button class="media-button phone-frame" data-lightbox="assets/images/onthemarket-app-1.webp" aria-label="OnTheMarket 앱 화면 1 크게 보기">
+              <img src="assets/images/onthemarket-app-1.webp" alt="OnTheMarket 모바일 앱 상품 화면" loading="lazy" decoding="async" width="520" height="1128">
+            </button>
+            <button class="media-button phone-frame" data-lightbox="assets/images/onthemarket-app-2.webp" aria-label="OnTheMarket 앱 화면 2 크게 보기">
+              <img src="assets/images/onthemarket-app-2.webp" alt="OnTheMarket 모바일 앱 주문 화면" loading="lazy" decoding="async" width="520" height="1128">
+            </button>
+            <button class="media-button phone-frame" data-lightbox="assets/images/onthemarket-app-3.webp" aria-label="OnTheMarket 앱 화면 3 크게 보기">
+              <img src="assets/images/onthemarket-app-3.webp" alt="OnTheMarket 모바일 앱 장바구니 화면" loading="lazy" decoding="async" width="520" height="1128">
+            </button>
+            <button class="media-button phone-frame" data-lightbox="assets/images/onthemarket-app-4.webp" aria-label="OnTheMarket 앱 화면 4 크게 보기">
+              <img src="assets/images/onthemarket-app-4.webp" alt="OnTheMarket 모바일 앱 결제 화면" loading="lazy" decoding="async" width="520" height="1128">
+            </button>
+            <button class="media-button phone-frame" data-lightbox="assets/images/onthemarket-app-5.webp" aria-label="OnTheMarket 앱 화면 5 크게 보기">
+              <img src="assets/images/onthemarket-app-5.webp" alt="OnTheMarket 모바일 앱 주문 확인 화면" loading="lazy" decoding="async" width="520" height="1128">
+            </button>
+            <button class="media-button phone-frame" data-lightbox="assets/images/onthemarket-app-6.webp" aria-label="OnTheMarket 앱 화면 6 크게 보기">
+              <img src="assets/images/onthemarket-app-6.webp" alt="OnTheMarket 모바일 앱 알림 화면" loading="lazy" decoding="async" width="520" height="1128">
+            </button>
+          </div>
+
+          <div class="campaign-block">
+            <div>
+              <p class="project-kicker">{{field:projects.onthemarket.project-kicker.2}}</p>
+              <h4>{{field:projects.onthemarket.h4}}</h4>
+              <p>{{field:projects.onthemarket.body.2}}</p>
+            </div>
+            <div class="media-grid compact-grid" aria-label="OnTheMarket 가격 진단 화면">
+              <button class="media-button wide-shot" data-lightbox="assets/images/onthemarket-price-1.webp" aria-label="가격 진단 캠페인 화면 1 크게 보기">
+                <img src="assets/images/onthemarket-price-1.webp" alt="가격 진단 캠페인 업로드 화면" loading="lazy" decoding="async" width="1100" height="583">
+              </button>
+              <button class="media-button wide-shot" data-lightbox="assets/images/onthemarket-price-2.webp" aria-label="가격 진단 캠페인 화면 2 크게 보기">
+                <img src="assets/images/onthemarket-price-2.webp" alt="가격 진단 캠페인 결과 화면" loading="lazy" decoding="async" width="1100" height="583">
+              </button>
+              <button class="media-button tall-shot" data-lightbox="assets/images/onthemarket-price-5.webp" aria-label="가격 비교 결과 화면 1 크게 보기">
+                <img src="assets/images/onthemarket-price-5.webp" alt="품목별 가격 비교 결과 화면" loading="lazy" decoding="async" width="620" height="1042">
+              </button>
+              <button class="media-button tall-shot" data-lightbox="assets/images/onthemarket-price-6.webp" aria-label="가격 비교 결과 화면 2 크게 보기">
+                <img src="assets/images/onthemarket-price-6.webp" alt="예상 절감액 결과 화면" loading="lazy" decoding="async" width="620" height="1042">
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="sheet" id="project-syrs" data-panel="selected-work" aria-labelledby="project-syrs-title">
+      <div class="sheet-shell">
+        <header class="sheet-head">
+          <div>
+            <p class="project-kicker">{{field:projects.syrs.project-kicker}}</p>
+            <h2 id="project-syrs-title">{{field:projects.syrs.title}}</h2>
+            <p class="project-subtitle">{{field:projects.syrs.project-subtitle}}</p>
+            <div class="project-links"><a href="https://www.instagram.com/reel/C7Q5fhJOSKa/" target="_blank" rel="noreferrer">{{field:projects.syrs.a}}</a></div>
+          </div>
+          <button class="sheet-close" type="button" data-sheet-close aria-label="닫기">×</button>
+        </header>
+        <div class="sheet-body">
+          <div class="impact-list" aria-label="SYRS AI Lab 성과"><span>{{field:projects.syrs.span}}</span><span>{{field:projects.syrs.span.2}}</span></div>
+          <p>{{field:projects.syrs.body}}</p>
+
+          <div class="case-study-list" aria-label="SYRS 문제 해결 사례">
+            <button
+              class="case-study-trigger is-full is-highlighted"
+              type="button"
+              data-case-open="syrs-llm-reliability-case"
+              aria-haspopup="dialog"
+              aria-controls="syrs-llm-reliability-case"
+            >
+              <span class="case-study-trigger-meta">
+                <span class="case-study-trigger-index">{{field:caseSummaries.syrs-llm-reliability-case.case-study-trigger-index}}</span>
+                <span>{{field:caseSummaries.syrs-llm-reliability-case.span}}</span>
+              </span>
+              <span class="case-study-trigger-copy">
+                <strong>{{field:caseSummaries.syrs-llm-reliability-case.title}}</strong>
+                <span>{{field:caseSummaries.syrs-llm-reliability-case.span.2}}</span>
+              </span>
+              <span class="case-study-trigger-action">
+                사례 보기 <span aria-hidden="true">{{field:caseSummaries.syrs-llm-reliability-case.span.3}}</span>
+              </span>
+            </button>
+          </div>
+
+          <div class="project-grid">
+            <div>
+              <h4>{{field:projects.syrs.what-i-did.h4}}</h4>
+              <ul>{{field:projects.syrs.what-i-did.items}}</ul>
+            </div>
+            <div>
+              <h4>{{field:projects.syrs.tech-stack.h4}}</h4>
+              <p class="tag-cloud">{{field:projects.syrs.tech-stack.tag-cloud}}</p>
+            </div>
+            <div>
+              <h4>{{field:projects.syrs.learned.h4}}</h4>
+              <p>{{field:projects.syrs.learned.body}}</p>
+            </div>
+          </div>
+          <div class="media-grid three-grid">
+            <button class="media-button tall-shot" data-lightbox="assets/images/syrs-1.webp" aria-label="SYRS 상담 화면 1 크게 보기">
+              <img src="assets/images/syrs-1.webp" alt="SYRS AI Lab 피부 분석 결과 화면" loading="lazy" decoding="async" width="520" height="1136">
+            </button>
+            <button class="media-button tall-shot" data-lightbox="assets/images/syrs-2.webp" aria-label="SYRS 상담 화면 2 크게 보기">
+              <img src="assets/images/syrs-2.webp" alt="SYRS AI Lab 추천 제품 화면" loading="lazy" decoding="async" width="560" height="785">
+            </button>
+            <button class="media-button square-shot" data-lightbox="assets/images/syrs-reel.webp" aria-label="SYRS 매장 릴스 크게 보기">
+              <img src="assets/images/syrs-reel.webp" alt="SYRS 매장 상담 서비스 릴스" loading="lazy" decoding="async" width="400" height="366">
+            </button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="sheet" id="project-gagageul" data-panel="selected-work" aria-labelledby="project-gagageul-title">
+      <div class="sheet-shell">
+        <header class="sheet-head">
+          <div>
+            <p class="project-kicker">{{field:projects.gagageul.project-kicker}}</p>
+            <h2 id="project-gagageul-title">{{field:projects.gagageul.title}}</h2>
+            <p class="project-subtitle">{{field:projects.gagageul.project-subtitle}}</p>
+            <div class="project-links"><a href="https://tingtingplanet.github.io/gagageul/" target="_blank" rel="noreferrer">{{field:projects.gagageul.a}}</a><a href="https://github.com/tingtingplanet/gagageul" target="_blank" rel="noreferrer">{{field:projects.gagageul.a.2}}</a></div>
+          </div>
+          <button class="sheet-close" type="button" data-sheet-close aria-label="닫기">×</button>
+        </header>
+        <div class="sheet-body">
+          <div class="impact-list" aria-label="Gagageul 성과"><span>{{field:projects.gagageul.span}}</span><span>{{field:projects.gagageul.span.2}}</span></div>
+          <p>{{field:projects.gagageul.body}}</p>
+          <div class="project-grid">
+            <div>
+              <h4>{{field:projects.gagageul.what-i-did.h4}}</h4>
+              <ul>{{field:projects.gagageul.what-i-did.items}}</ul>
+            </div>
+            <div>
+              <h4>{{field:projects.gagageul.tech-stack.h4}}</h4>
+              <p class="tag-cloud">{{field:projects.gagageul.tech-stack.tag-cloud}}</p>
+            </div>
+            <div>
+              <h4>{{field:projects.gagageul.learned.h4}}</h4>
+              <p>{{field:projects.gagageul.learned.body}}</p>
+            </div>
+          </div>
+          <button class="media-button full-shot" data-lightbox="assets/images/gagageul.webp" aria-label="Gagageul 화면 크게 보기">
+            <img src="assets/images/gagageul.webp" alt="Gagageul 조건 커스텀 탐색 화면" loading="lazy" decoding="async" width="1400" height="814">
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="sheet" id="project-akasys" data-panel="selected-work" aria-labelledby="project-akasys-title">
+      <div class="sheet-shell">
+        <header class="sheet-head">
+          <div>
+            <p class="project-kicker">{{field:projects.akasys.project-kicker}}</p>
+            <h2 id="project-akasys-title">{{field:projects.akasys.title}}</h2>
+            <p class="project-subtitle">{{field:projects.akasys.project-subtitle}}</p>
+          </div>
+          <button class="sheet-close" type="button" data-sheet-close aria-label="닫기">×</button>
+        </header>
+        <div class="sheet-body">
+          <p>{{field:projects.akasys.body}}</p>
+          <div class="project-grid">
+            <div>
+              <h4>{{field:projects.akasys.what-i-did.h4}}</h4>
+              <ul>{{field:projects.akasys.what-i-did.items}}</ul>
+            </div>
+            <div>
+              <h4>{{field:projects.akasys.tech-stack.h4}}</h4>
+              <p class="tag-cloud">{{field:projects.akasys.tech-stack.tag-cloud}}</p>
+            </div>
+            <div>
+              <h4>{{field:projects.akasys.learned.h4}}</h4>
+              <p>{{field:projects.akasys.learned.body}}</p>
+            </div>
+          </div>
+          <button class="media-button full-shot tall-desktop-shot contain-shot" data-lightbox="assets/images/akasys.webp" aria-label="Akasys 화면 크게 보기">
+            <img src="assets/images/akasys.webp" alt="Akasys 내부 프로젝트 관리 화면" loading="lazy" decoding="async" width="1100" height="2011">
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="sheet" id="project-local-jobs" data-panel="selected-work" aria-labelledby="project-local-jobs-title">
+      <div class="sheet-shell">
+        <header class="sheet-head">
+          <div>
+            <p class="project-kicker">{{field:projects.local-jobs.project-kicker}}</p>
+            <h2 id="project-local-jobs-title">{{field:projects.local-jobs.title}}</h2>
+            <p class="project-subtitle">{{field:projects.local-jobs.project-subtitle}}</p>
+          </div>
+          <button class="sheet-close" type="button" data-sheet-close aria-label="닫기">×</button>
+        </header>
+        <div class="sheet-body">
+          <div class="impact-list" aria-label="Local Jobs 성과"><span>{{field:projects.local-jobs.span}}</span><span>{{field:projects.local-jobs.span.2}}</span></div>
+          <p>{{field:projects.local-jobs.body}}</p>
+          <div class="project-grid">
+            <div>
+              <h4>{{field:projects.local-jobs.what-i-did.h4}}</h4>
+              <ul>{{field:projects.local-jobs.what-i-did.items}}</ul>
+            </div>
+            <div>
+              <h4>{{field:projects.local-jobs.tech-stack.h4}}</h4>
+              <p class="tag-cloud">{{field:projects.local-jobs.tech-stack.tag-cloud}}</p>
+            </div>
+          </div>
+          <button class="media-button phone-frame single-phone" data-lightbox="assets/images/local-jobs.webp" aria-label="Local Jobs 화면 크게 보기">
+            <img src="assets/images/local-jobs.webp" alt="Local Jobs 모바일 일자리 공고 화면" loading="lazy" decoding="async" width="520" height="1069">
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="sheet is-compact" id="portfolio-chaptertwo" data-panel="portfolio" aria-labelledby="portfolio-chaptertwo-title">
+      <div class="sheet-shell">
+        <header class="sheet-head">
+          <div>
+            <p class="project-kicker">{{field:projects.chaptertwo.project-kicker}}</p>
+            <h2 id="portfolio-chaptertwo-title">{{field:projects.chaptertwo.title}}</h2>
+            <p class="project-subtitle">{{field:projects.chaptertwo.project-subtitle}}</p>
+          </div>
+          <button class="sheet-close" type="button" data-sheet-close aria-label="닫기">×</button>
+        </header>
+        <div class="sheet-body">
+          <div class="mini-media two-up"><button class="media-button" type="button" data-lightbox="assets/images/chaptertwo-1.webp" aria-label="ChapterTwo 화면 1 크게 보기"><img src="assets/images/chaptertwo-1.webp" alt="ChapterTwo 리포트 화면" loading="lazy" decoding="async" width="900" height="488"></button><button class="media-button" type="button" data-lightbox="assets/images/chaptertwo-2.webp" aria-label="ChapterTwo 화면 2 크게 보기"><img src="assets/images/chaptertwo-2.webp" alt="ChapterTwo 설문 화면" loading="lazy" decoding="async" width="900" height="933"></button></div>
+          <p>{{field:projects.chaptertwo.body}}</p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="sheet is-compact" id="portfolio-clackclack" data-panel="portfolio" aria-labelledby="portfolio-clackclack-title">
+      <div class="sheet-shell">
+        <header class="sheet-head">
+          <div>
+            <p class="project-kicker">{{field:projects.clackclack.project-kicker}}</p>
+            <h2 id="portfolio-clackclack-title">{{field:projects.clackclack.title}}</h2>
+            <p class="project-subtitle">{{field:projects.clackclack.project-subtitle}}</p>
+          </div>
+          <button class="sheet-close" type="button" data-sheet-close aria-label="닫기">×</button>
+        </header>
+        <div class="sheet-body">
+          <div class="mini-media two-up"><button class="media-button" type="button" data-lightbox="assets/images/clackclack-1.webp" aria-label="ClackClack Platform 화면 1 크게 보기"><img src="assets/images/clackclack-1.webp" alt="ClackClack 매장 정보 화면" loading="lazy" decoding="async" width="520" height="495"></button><button class="media-button" type="button" data-lightbox="assets/images/clackclack-2.webp" aria-label="ClackClack Platform 화면 2 크게 보기"><img src="assets/images/clackclack-2.webp" alt="ClackClack 일정 화면" loading="lazy" decoding="async" width="520" height="502"></button></div>
+          <p>{{field:projects.clackclack.body}}</p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="sheet is-compact" id="portfolio-jobonger" data-panel="portfolio" aria-labelledby="portfolio-jobonger-title">
+      <div class="sheet-shell">
+        <header class="sheet-head">
+          <div>
+            <p class="project-kicker">{{field:projects.jobonger.project-kicker}}</p>
+            <h2 id="portfolio-jobonger-title">{{field:projects.jobonger.title}}</h2>
+            <p class="project-subtitle">{{field:projects.jobonger.project-subtitle}}</p>
+          </div>
+          <button class="sheet-close" type="button" data-sheet-close aria-label="닫기">×</button>
+        </header>
+        <div class="sheet-body">
+          <div class="mini-media"><button class="media-button" type="button" data-lightbox="assets/images/jobonger-1.webp" aria-label="JoBonger 화면 1 크게 보기"><img src="assets/images/jobonger-1.webp" alt="JoBonger 작품 선택 화면" loading="lazy" decoding="async" width="1400" height="996"></button></div>
+          <p>{{field:projects.jobonger.body}}</p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="sheet is-compact" id="portfolio-playai" data-panel="portfolio" aria-labelledby="portfolio-playai-title">
+      <div class="sheet-shell">
+        <header class="sheet-head">
+          <div>
+            <p class="project-kicker">{{field:projects.playai.project-kicker}}</p>
+            <h2 id="portfolio-playai-title">{{field:projects.playai.title}}</h2>
+            <p class="project-subtitle">{{field:projects.playai.project-subtitle}}</p>
+          </div>
+          <button class="sheet-close" type="button" data-sheet-close aria-label="닫기">×</button>
+        </header>
+        <div class="sheet-body">
+          <div class="mini-media"><button class="media-button" type="button" data-lightbox="assets/images/playai-1.webp" aria-label="Play AI SSO 화면 1 크게 보기"><img src="assets/images/playai-1.webp" alt="Play AI SSO 화면" loading="lazy" decoding="async" width="1400" height="788"></button></div>
+          <p>{{field:projects.playai.body}}</p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="sheet is-compact" id="portfolio-sloths" data-panel="portfolio" aria-labelledby="portfolio-sloths-title">
+      <div class="sheet-shell">
+        <header class="sheet-head">
+          <div>
+            <p class="project-kicker">{{field:projects.sloths.project-kicker}}</p>
+            <h2 id="portfolio-sloths-title">{{field:projects.sloths.title}}</h2>
+            <p class="project-subtitle">{{field:projects.sloths.project-subtitle}}</p>
+          </div>
+          <button class="sheet-close" type="button" data-sheet-close aria-label="닫기">×</button>
+        </header>
+        <div class="sheet-body">
+          <div class="mini-media"><button class="media-button" type="button" data-lightbox="assets/images/sloths.webp" aria-label="SLOTHS ON THE RUN 화면 1 크게 보기"><img src="assets/images/sloths.webp" alt="SLOTHS ON THE RUN 랜딩 화면" loading="lazy" decoding="async" width="700" height="806"></button></div>
+          <p>{{field:projects.sloths.body}}</p>
+          <p class="tag-cloud">{{field:projects.sloths.tag-cloud}}</p>
+          <div class="project-links"><a href="https://youtu.be/YgUZfjVnLFM" target="_blank" rel="noreferrer">{{field:projects.sloths.a}}</a></div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="sheet is-compact" id="portfolio-hashmoss" data-panel="portfolio" aria-labelledby="portfolio-hashmoss-title">
+      <div class="sheet-shell">
+        <header class="sheet-head">
+          <div>
+            <p class="project-kicker">{{field:projects.hashmoss.project-kicker}}</p>
+            <h2 id="portfolio-hashmoss-title">{{field:projects.hashmoss.title}}</h2>
+            <p class="project-subtitle">{{field:projects.hashmoss.project-subtitle}}</p>
+          </div>
+          <button class="sheet-close" type="button" data-sheet-close aria-label="닫기">×</button>
+        </header>
+        <div class="sheet-body">
+          <div class="mini-media"><button class="media-button" type="button" data-lightbox="assets/images/hashmoss.webp" aria-label="Hashmoss 화면 1 크게 보기"><img src="assets/images/hashmoss.webp" alt="Hashmoss NFT SNS 화면" loading="lazy" decoding="async" width="1400" height="751"></button></div>
+          <p>{{field:projects.hashmoss.body}}</p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="sheet is-compact" id="portfolio-watchwise" data-panel="portfolio" aria-labelledby="portfolio-watchwise-title">
+      <div class="sheet-shell">
+        <header class="sheet-head">
+          <div>
+            <p class="project-kicker">{{field:projects.watchwise.project-kicker}}</p>
+            <h2 id="portfolio-watchwise-title">{{field:projects.watchwise.title}}</h2>
+            <p class="project-subtitle">{{field:projects.watchwise.project-subtitle}}</p>
+          </div>
+          <button class="sheet-close" type="button" data-sheet-close aria-label="닫기">×</button>
+        </header>
+        <div class="sheet-body">
+          <p>{{field:projects.watchwise.body}}</p>
+          <p class="tag-cloud">{{field:projects.watchwise.tag-cloud}}</p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="sheet is-compact" id="portfolio-mounting" data-panel="portfolio" aria-labelledby="portfolio-mounting-title">
+      <div class="sheet-shell">
+        <header class="sheet-head">
+          <div>
+            <p class="project-kicker">{{field:projects.mounting.project-kicker}}</p>
+            <h2 id="portfolio-mounting-title">{{field:projects.mounting.title}}</h2>
+            <p class="project-subtitle">{{field:projects.mounting.project-subtitle}}</p>
+          </div>
+          <button class="sheet-close" type="button" data-sheet-close aria-label="닫기">×</button>
+        </header>
+        <div class="sheet-body">
+          <p>{{field:projects.mounting.body}}</p>
+          <p class="tag-cloud">{{field:projects.mounting.tag-cloud}}</p>
+        </div>
+      </div>
+    </dialog>
+
+    {{case:otm-ledger-cycle-case}}
+
+    {{case:otm-signal-types-case}}
+
+    {{case:otm-order-case}}
+
+    {{case:otm-payment-webview-case}}
+    {{case:otm-receipt-case}}
+
+    {{case:syrs-llm-reliability-case}}
+
+    <dialog class="lightbox" aria-label="이미지 크게 보기">
+      <button class="lightbox-close" type="button" aria-label="닫기">×</button>
+      <img alt="">
+    </dialog>
+
+    <script src="script.js?v=31"></script>
+  </body>
+</html>

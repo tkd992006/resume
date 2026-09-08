@@ -1,0 +1,150 @@
+{
+  "slug": "modoodoc",
+  "company": "modoodoc",
+  "jobUrl": "https://modoodoc.career.greetinghr.com/ko/o/202796",
+  "changes": [
+    {
+      "key": "meta.title",
+      "selector": "title",
+      "before": "이상화 · Frontend / Product Engineer",
+      "after": "이상화 · Full-stack / Product Engineer",
+      "reason": "기존에 명시된 프론트엔드·백엔드 담당 범위를 제목에 함께 드러냅니다."
+    },
+    {
+      "key": "meta.description",
+      "selector": "meta[name=\"description\"]",
+      "before": "프론트엔드·프로덕트 엔지니어 이상화의 포트폴리오. iOS·Android·Web 멀티플랫폼 주문 앱, 결제 흐름, AI 상담 서비스를 설계부터 운영까지 만들었습니다.",
+      "after": "풀스택·프로덕트 엔지니어 이상화의 포트폴리오. B2B 식자재 주문 제품의 개발·영업·운영을 맡고, 고객 요구를 화면·API·데이터 모델로 구체화해 납품했습니다.",
+      "reason": "검색 설명에서 창업과 전체 제품 개발 경험을 먼저 보여줍니다.",
+      "attribute": "content"
+    },
+    {
+      "key": "meta.ogDescription",
+      "selector": "meta[property=\"og:description\"]",
+      "before": "iOS·Android·Web 멀티플랫폼 주문 앱, 결제 흐름, AI 상담 서비스를 설계부터 운영까지 만든 프론트엔드·프로덕트 엔지니어입니다.",
+      "after": "B2B 식자재 주문 제품의 개발·영업·운영을 맡고, 고객 요구를 화면·API·데이터 모델로 구체화해 납품한 풀스택·프로덕트 엔지니어입니다.",
+      "reason": "링크 공유 설명을 본문 소개와 맞춥니다.",
+      "attribute": "content"
+    },
+    {
+      "key": "profile.role",
+      "selector": ".masthead-meta strong",
+      "before": "Frontend / Product Engineer",
+      "after": "Full-stack / Product Engineer",
+      "reason": "기존 경력에 있는 풀스택 개발 범위를 헤더에 반영합니다."
+    },
+    {
+      "key": "profile.intro",
+      "selector": ".intro-lead",
+      "before": "\n                      최근에는 <strong>iOS·Android·Web을 한 코드베이스로 다루는 식자재 주문 앱과 실결제 흐름</strong>을\n                  설계부터 운영까지 직접 맡아봤습니다. 음식점 식자재 발주, AI 스킨케어 상담,\n                  매장 비치용 iPad 웹앱처럼 사용 맥락이 다른 제품을 주로 웹 기반으로 개발하고 납품해왔습니다.\n                ",
+      "after": "\n                      최근에는 <strong>B2B 식자재 주문 제품을 2인 팀으로 창업해 개발·점주 영업·운영</strong>까지 직접 맡았습니다.\n                      음식점용 앱과 유통업체 웹사이트, API·DB·결제 흐름을 만들고, 점주가 가격을 먼저 확인할 수 있는 캠페인도 구현했습니다.\n                      외주에서는 고객의 요구를 화면과 데이터 구조로 구체화해 제품을 개발하고 납품해왔습니다.\n                ",
+      "reason": "제품 구현과 사업 현장을 함께 맡았던 기존 경험을 소개의 중심으로 둡니다."
+    },
+    {
+      "key": "ama.work.title",
+      "selector": "#ama-answer-work > h3",
+      "before": "고객 요구를 화면·API·데이터 모델로 구체화해 납품했습니다. 온더마켓에서는 2인 팀으로 개발뿐 아니라 점주 영업과 운영까지 맡았습니다.",
+      "after": "온더마켓에서는 2인 팀으로 개발·점주 영업·운영을 맡았습니다. 외주에서는 고객 요구를 화면·API·데이터 모델로 구체화해 납품했습니다.",
+      "reason": "같은 사실을 창업 및 운영 경험부터 읽히도록 재배치합니다."
+    },
+    {
+      "key": "ama.work.body",
+      "selector": "#ama-answer-work > p:not(.project-kicker)",
+      "before": "\n                                  외주개발에서는 고객이 설명한 요구사항을 화면, API, 데이터 구조로 정리해 납품했고,\n                                  창업에서는 문제 발견부터 제품 구현, 영업, 운영까지 직접 부딪혔습니다.\n                                  음식점 식자재 발주, AI 스킨케어 상담, 개발외주사 내부 운영 도구 등 다양한 사용 맥락이 있는 제품을 만들었습니다.\n                                ",
+      "after": "\n                                  창업에서는 문제 발견부터 제품 구현, 영업, 운영까지 직접 부딪혔습니다.\n                                  음식점 식자재 발주 제품을 만들면서 점주 영업을 하고, 주문 흐름과 가격을 보여주는 방식을 고쳤습니다.\n                                  외주개발에서는 AI 스킨케어 상담, 개발외주사 내부 운영 도구 등 사용 맥락이 다른 제품의 요구사항을 화면, API, 데이터 구조로 정리해 납품했습니다.\n                                ",
+      "reason": "창업에서 맡은 일과 외주 납품 경험을 구분하되 역할의 연속성을 보여줍니다."
+    },
+    {
+      "key": "ama.work.requirements",
+      "selector": "#ama-work-followup-2 p",
+      "before": "먼저 사용자나 클라이언트의 요구사항을 긴밀히 파악하고, 그 안에서 가장 중요한 지점을 화면과 데이터 구조로 옮겼습니다. Akasys라는 개발사 외주 관리 툴을 맡았을 때에는, 단순한 고객사 CS관리 툴 요청을 내부 티켓, 고객 요구사항, 주간/월간 리포트가 연결되는 운영 도구로 확장 제안하여 좋은 반응을 이끌었습니다. 클라이언트의 실제 깊은 니즈는 고객사와의 관계 관리이지, 매끄러운 CS처리가 전부가 아니라는 것을 파악하여 제안했습니다.",
+      "after": "먼저 고객이 요청한 기능과 그 기능으로 해결하려는 일을 함께 확인했습니다. Akasys에서는 고객사 CS 관리 툴 요청을 받고, 실제 필요가 고객사와의 관계 관리에 있다고 판단했습니다. 그래서 내부 티켓, 고객 요구사항, 주간·월간 리포트가 연결되는 운영 도구로 확장 제안했고 좋은 반응을 얻었습니다.",
+      "reason": "기존 사례의 요청·판단·제안을 짧고 구체적인 순서로 정리합니다."
+    },
+    {
+      "key": "ama.founder.body",
+      "selector": "#ama-answer-founder > p:not(.project-kicker)",
+      "before": "\n                                  음식점 식자재 주문 플랫폼 온더마켓을 운영하면서 점주가 가격을 빨리 알고 싶어한다는 문제는 명확했고, 가격 진단 캠페인으로 일부 가입 전환도 만들었습니다.\n                                  다만 B2B 식자재 시장은 신뢰 확보, 공급가 경쟁력, 대면 영업, 공급 운영이 함께 돌아가야 했고, 심지어 시장 구조와 경쟁사를 잘못 파악하여\n                                  작은 팀이 감당하기엔 사업 구조가 무겁다는 것을 알게되었습니다.\n                                  그래서 제품의 완성도만큼 유통 구조와 영업 비용을 빨리 검증했어야 한다는 걸 배웠습니다.\n                                ",
+      "after": "\n                                  온더마켓에서는 점주가 가격을 빨리 알고 싶어한다는 문제를 확인했고, 가격 진단 캠페인으로 일부 가입 전환도 만들었습니다.\n                                  하지만 시장 구조와 경쟁사를 잘못 파악했습니다. 더 싼 공급가, 신뢰 확보, 대면 영업, 안정적인 공급 운영이 함께 필요했고,\n                                  작은 팀이 제품 개발과 시장 운영을 동시에 감당하기에는 사업 구조가 무거웠습니다.\n                                  제품 완성도를 높이기 전에 유통 구조와 영업 비용부터 더 빨리 검증했어야 한다는 걸 배웠습니다.\n                                ",
+      "reason": "가입 전환과 실패 원인을 함께 남겨 사업 경험을 과장하지 않고 판단의 교훈을 명확히 합니다."
+    },
+    {
+      "key": "experience.onthemarket.summary",
+      "selector": "#work-onthemarket > div > p:not(.role)",
+      "before": "\n                      음식점과 유통업체 사이의 B2B 식자재 발주 제품을 2인 팀에서 만들었습니다.\n                      음식점용 크로스 플랫폼 웹앱, 유통업체 웹사이트, 관리자 페이지, 서버, DB 스키마,\n                      결제, 푸시, 분석 연동과 운영 개선까지 개발과 운영 전체를 맡았습니다. 전단지와 전화로 음식점 영업도 직접 했습니다.\n                    ",
+      "after": "\n                      음식점과 유통업체 사이의 B2B 식자재 발주 제품을 2인 팀으로 창업해 개발과 운영을 맡았습니다.\n                      음식점용 크로스 플랫폼 웹앱, 유통업체 웹사이트, 관리자 페이지, 서버·DB 스키마와 결제·푸시·분석 연동을 구현했습니다.\n                      전단지와 전화로 음식점 영업을 직접 했고, 점주의 주문 흐름과 가격 확인 시점을 제품에 반영했습니다.\n                    ",
+      "reason": "개발 범위와 점주 영업·운영 경험을 연결해서 설명합니다."
+    },
+    {
+      "key": "experience.tingtingplanet.summary",
+      "selector": "#work-tingtingplanet > div > p:not(.role)",
+      "before": "\n                      외주와 자체 서비스를 오가며 AI, 채팅, 내부 운영 도구, 모바일 웹앱 프로젝트를\n                      개발 및 납품했습니다. 고객 상담에서 나온 기대 수준과 우선순위를 화면 순서와 기능 범위로 옮기는 일을 주로 했습니다.\n                    ",
+      "after": "\n                      외주와 자체 서비스를 오가며 AI, 채팅, 내부 운영 도구, 모바일 웹앱 프로젝트를 개발하고 납품했습니다.\n                      고객 상담에서 기대 수준과 우선순위를 확인하고, 화면·API·데이터 구조와 납품할 기능 범위로 구체화했습니다.\n                    ",
+      "reason": "상담에서 구현·납품으로 이어지는 담당 범위를 기존 AMA 근거와 맞춥니다."
+    },
+    {
+      "key": "projects.onthemarket.cardSubtitle",
+      "selector": "[data-sheet-open=\"project-onthemarket\"] .work-title small",
+      "before": "음식점 점주가 유통업체에 식자재를 발주하는 모바일 중심 제품",
+      "after": "2인 팀으로 개발·영업·운영을 맡은 B2B 식자재 발주 제품",
+      "reason": "대표 프로젝트 목록에서 담당 범위가 먼저 읽히도록 합니다. 같은 문구가 상세 부제에도 적용됩니다."
+    },
+    {
+      "key": "projects.onthemarket.subtitle",
+      "selector": "#project-onthemarket .project-subtitle",
+      "before": "음식점 점주가 유통업체에 식자재를 발주하는 모바일 중심 제품",
+      "after": "2인 팀으로 개발·영업·운영을 맡은 B2B 식자재 발주 제품",
+      "reason": "목록과 상세 부제의 표현을 일치시킵니다."
+    },
+    {
+      "key": "projects.onthemarket.summary",
+      "selector": "#project-onthemarket .sheet-body > p",
+      "before": "\n            상품 탐색, 식자재 추가, 빠른 주문, 주문 확인, 결제로 이어지는 주문 흐름을 구현했습니다.\n            점주가 실제로 주문하는 순서에 맞춰 가격을 보여주는 시점과 확인 화면을 여러 번 고쳤습니다.\n          ",
+      "after": "\n            음식점용 앱과 유통업체 웹사이트, 관리자 페이지, 서버·DB를 만들고 점주 영업과 운영도 직접 맡았습니다.\n            상품 탐색부터 주문 확인·결제까지 구현하면서 가격을 보여주는 시점과 확인 화면을 여러 번 고쳤습니다.\n            앱 설치 전에 가격을 비교할 수 있는 영수증 진단 캠페인을 만들었고, 일부 가입 전환으로 이어졌습니다.\n          ",
+      "reason": "제품 개발 범위를 사업 운영·신규 유입 캠페인과 함께 제시합니다. 전환 수치는 새로 만들지 않습니다."
+    },
+    {
+      "key": "projects.onthemarket.responsibility.client",
+      "selector": "#project-onthemarket .project-grid > div:first-child li:nth-of-type(1)",
+      "before": "React, Capacitor 기반 iOS / Android / Web 클라이언트 구현",
+      "after": "음식점용 iOS / Android / Web 앱, 유통업체 웹사이트, 관리자 페이지 개발 및 운영",
+      "reason": "기존 경력 본문에 있는 클라이언트별 담당 범위를 상세 목록에 반영합니다."
+    },
+    {
+      "key": "projects.onthemarket.responsibility.workflow",
+      "selector": "#project-onthemarket .project-grid > div:first-child li:nth-of-type(4)",
+      "before": "큰 글씨 설정, 기기별 레이아웃, 가격 표시 시점 조정",
+      "after": "점주의 주문 흐름에 맞춰 가격 표시 시점, 큰 글씨 설정, 기기별 레이아웃 조정",
+      "reason": "기존 UI 조정 사항이 어떤 사용 맥락에서 나온 것인지 드러냅니다."
+    },
+    {
+      "key": "projects.akasys.summary",
+      "selector": "#project-akasys .sheet-body > p",
+      "before": "\n            반복해서 확인하는 정보를 빠르게 읽을 수 있도록 프로젝트 클러스터, 티켓 상태, 리포트 화면의 정보 구조를 정리했습니다.\n          ",
+      "after": "\n            고객사 CS 관리 툴 요청에서 고객 관계 관리의 필요를 파악해, 내부 티켓·고객 요구사항·주간·월간 리포트가 연결되는 운영 도구로 확장 제안했습니다.\n            반복해서 확인하는 정보를 빠르게 읽을 수 있도록 프로젝트 클러스터, 티켓 상태, 리포트 화면의 정보 구조를 정리했습니다.\n          ",
+      "reason": "기존 AMA에만 있던 고객 요구 해석 및 확장 제안 과정을 프로젝트 상세에도 연결합니다."
+    }
+  ],
+  "projectOrder": [
+    "project-onthemarket",
+    "project-akasys",
+    "project-syrs",
+    "project-gagageul",
+    "project-local-jobs"
+  ],
+  "caseOrder": {
+    "project-onthemarket": [
+      "otm-receipt-case",
+      "otm-order-case",
+      "otm-ledger-cycle-case",
+      "otm-payment-webview-case",
+      "otm-signal-types-case"
+    ]
+  },
+  "skillOrder": [
+    "Backend / Data / Ops",
+    "Frontend",
+    "Product Integration",
+    "Multi-platform / Build"
+  ]
+}

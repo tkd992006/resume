@@ -1,0 +1,2358 @@
+{
+  "schemaVersion": 1,
+  "fields": [
+    {
+      "key": "meta.title",
+      "selector": "html > head > title",
+      "sourceLine": 6,
+      "start": 153,
+      "end": 186,
+      "elementStart": 146
+    },
+    {
+      "key": "meta.description",
+      "selector": "html > head > meta:nth-of-type(3)",
+      "attribute": "content",
+      "sourceLine": 9,
+      "start": 245,
+      "end": 336,
+      "elementStart": 199
+    },
+    {
+      "key": "meta.og.title",
+      "selector": "html > head > meta:nth-of-type(4)",
+      "attribute": "content",
+      "sourceLine": 11,
+      "start": 383,
+      "end": 396,
+      "elementStart": 348
+    },
+    {
+      "key": "meta.og.description",
+      "selector": "html > head > meta:nth-of-type(5)",
+      "attribute": "content",
+      "sourceLine": 14,
+      "start": 456,
+      "end": 534,
+      "elementStart": 403
+    },
+    {
+      "key": "meta.og.url",
+      "selector": "html > head > meta:nth-of-type(7)",
+      "attribute": "content",
+      "sourceLine": 17,
+      "start": 627,
+      "end": 667,
+      "elementStart": 594
+    },
+    {
+      "key": "meta.og.image",
+      "selector": "html > head > meta:nth-of-type(8)",
+      "attribute": "content",
+      "sourceLine": 18,
+      "start": 709,
+      "end": 785,
+      "elementStart": 674
+    },
+    {
+      "key": "ui.skip.link",
+      "selector": "html > body > a",
+      "sourceLine": 43,
+      "start": 1836,
+      "end": 1843,
+      "elementStart": 1801
+    },
+    {
+      "key": "profile.name",
+      "selector": "html > body > div > header > div:nth-of-type(1) > h1",
+      "sourceLine": 47,
+      "start": 1952,
+      "end": 1981,
+      "elementStart": 1926
+    },
+    {
+      "key": "profile.role",
+      "selector": "html > body > div > header > div:nth-of-type(1) > p",
+      "sourceLine": 48,
+      "start": 2027,
+      "end": 2119,
+      "elementStart": 1997
+    },
+    {
+      "key": "profile.contact.email.href",
+      "selector": "html > body > div > header > div:nth-of-type(2) > a:nth-of-type(1)",
+      "attribute": "href",
+      "sourceLine": 53,
+      "start": 2199,
+      "end": 2227,
+      "elementStart": 2190
+    },
+    {
+      "key": "profile.a",
+      "selector": "html > body > div > header > div:nth-of-type(2) > a:nth-of-type(1)",
+      "sourceLine": 53,
+      "start": 2229,
+      "end": 2250,
+      "elementStart": 2190
+    },
+    {
+      "key": "profile.contact.github.href",
+      "selector": "html > body > div > header > div:nth-of-type(2) > a:nth-of-type(2)",
+      "attribute": "href",
+      "sourceLine": 54,
+      "start": 2274,
+      "end": 2302,
+      "elementStart": 2265
+    },
+    {
+      "key": "profile.a.2",
+      "selector": "html > body > div > header > div:nth-of-type(2) > a:nth-of-type(2)",
+      "sourceLine": 54,
+      "start": 2337,
+      "end": 2359,
+      "elementStart": 2265
+    },
+    {
+      "key": "chrono.chart.chrono.fallback",
+      "selector": "#chrono-chart > div > p",
+      "sourceLine": 62,
+      "start": 2650,
+      "end": 2680,
+      "elementStart": 2623
+    },
+    {
+      "key": "chrono.li",
+      "selector": "#chrono > div:nth-of-type(1) > ul > li:nth-of-type(1)",
+      "sourceLine": 66,
+      "start": 2795,
+      "end": 2826,
+      "elementStart": 2791
+    },
+    {
+      "key": "chrono.li.2",
+      "selector": "#chrono > div:nth-of-type(1) > ul > li:nth-of-type(2)",
+      "sourceLine": 67,
+      "start": 2848,
+      "end": 2888,
+      "elementStart": 2844
+    },
+    {
+      "key": "chrono.li.3",
+      "selector": "#chrono > div:nth-of-type(1) > ul > li:nth-of-type(3)",
+      "sourceLine": 68,
+      "start": 2910,
+      "end": 2957,
+      "elementStart": 2906
+    },
+    {
+      "key": "chrono.li.4",
+      "selector": "#chrono > div:nth-of-type(1) > ul > li:nth-of-type(4)",
+      "sourceLine": 69,
+      "start": 2979,
+      "end": 3016,
+      "elementStart": 2975
+    },
+    {
+      "key": "chrono.chrono.hint",
+      "selector": "#chrono > aside > p",
+      "sourceLine": 73,
+      "start": 3127,
+      "end": 3157,
+      "elementStart": 3099
+    },
+    {
+      "key": "ui.rail.label",
+      "selector": "html > body > div > div > nav > p:nth-of-type(1)",
+      "sourceLine": 80,
+      "start": 3368,
+      "end": 3381,
+      "elementStart": 3341
+    },
+    {
+      "key": "ui.rail.link",
+      "selector": "html > body > div > div > nav > ol > li:nth-of-type(1) > a",
+      "sourceLine": 83,
+      "start": 3558,
+      "end": 3754,
+      "elementStart": 3500
+    },
+    {
+      "key": "ui.rail.link.2",
+      "selector": "html > body > div > div > nav > ol > li:nth-of-type(2) > a",
+      "sourceLine": 90,
+      "start": 3896,
+      "end": 4115,
+      "elementStart": 3853
+    },
+    {
+      "key": "ui.rail.link.3",
+      "selector": "html > body > div > div > nav > ol > li:nth-of-type(3) > a",
+      "sourceLine": 97,
+      "start": 4251,
+      "end": 4480,
+      "elementStart": 4211
+    },
+    {
+      "key": "ui.rail.link.4",
+      "selector": "html > body > div > div > nav > ol > li:nth-of-type(4) > a",
+      "sourceLine": 104,
+      "start": 4622,
+      "end": 4825,
+      "elementStart": 4579
+    },
+    {
+      "key": "ui.rail.link.5",
+      "selector": "html > body > div > div > nav > ol > li:nth-of-type(5) > a",
+      "sourceLine": 111,
+      "start": 4959,
+      "end": 5155,
+      "elementStart": 4920
+    },
+    {
+      "key": "ui.rail.foot",
+      "selector": "html > body > div > div > nav > p:nth-of-type(2)",
+      "sourceLine": 118,
+      "start": 5230,
+      "end": 5248,
+      "elementStart": 5204
+    },
+    {
+      "key": "who.title.sr.only",
+      "selector": "#who-title",
+      "sourceLine": 123,
+      "start": 5470,
+      "end": 5472,
+      "elementStart": 5435
+    },
+    {
+      "key": "who.am.i.eyebrow",
+      "selector": "#who-am-i > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "sourceLine": 126,
+      "start": 5570,
+      "end": 5578,
+      "elementStart": 5546
+    },
+    {
+      "key": "intro.lead",
+      "selector": "#who-am-i > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "sourceLine": 127,
+      "start": 5621,
+      "end": 5866,
+      "elementStart": 5599
+    },
+    {
+      "key": "intro.facts.education.label",
+      "selector": "#profile > div:nth-of-type(1) > span",
+      "sourceLine": 134,
+      "start": 5996,
+      "end": 6005,
+      "elementStart": 5977
+    },
+    {
+      "key": "intro.facts.education.value",
+      "selector": "#profile > div:nth-of-type(1) > strong",
+      "sourceLine": 135,
+      "start": 6041,
+      "end": 6085,
+      "elementStart": 6033
+    },
+    {
+      "key": "intro.facts.stack.label",
+      "selector": "#profile > div:nth-of-type(2) > span",
+      "sourceLine": 138,
+      "start": 6196,
+      "end": 6201,
+      "elementStart": 6177
+    },
+    {
+      "key": "intro.facts.stack.value",
+      "selector": "#profile > div:nth-of-type(2) > strong",
+      "sourceLine": 139,
+      "start": 6237,
+      "end": 6306,
+      "elementStart": 6229
+    },
+    {
+      "key": "intro.facts.projects.label",
+      "selector": "#profile > div:nth-of-type(3) > span",
+      "sourceLine": 142,
+      "start": 6417,
+      "end": 6425,
+      "elementStart": 6398
+    },
+    {
+      "key": "intro.facts.projects.value",
+      "selector": "#profile > div:nth-of-type(3) > strong",
+      "sourceLine": 143,
+      "start": 6461,
+      "end": 6498,
+      "elementStart": 6453
+    },
+    {
+      "key": "ama.eyebrow",
+      "selector": "#ama > div:nth-of-type(1) > div > p",
+      "sourceLine": 157,
+      "start": 7282,
+      "end": 7297,
+      "elementStart": 7258
+    },
+    {
+      "key": "ama.title.h2",
+      "selector": "#ama-title",
+      "sourceLine": 158,
+      "start": 7339,
+      "end": 7349,
+      "elementStart": 7320
+    },
+    {
+      "key": "ama.work.question",
+      "selector": "#ama-question-work",
+      "sourceLine": 163,
+      "start": 7738,
+      "end": 7813,
+      "elementStart": 7564
+    },
+    {
+      "key": "ama.founder.question",
+      "selector": "#ama-question-founder",
+      "sourceLine": 166,
+      "start": 8041,
+      "end": 8119,
+      "elementStart": 7853
+    },
+    {
+      "key": "ama.collab.question",
+      "selector": "#ama-question-collab",
+      "sourceLine": 169,
+      "start": 8344,
+      "end": 8419,
+      "elementStart": 8159
+    },
+    {
+      "key": "ama.growth.question",
+      "selector": "#ama-question-growth",
+      "sourceLine": 172,
+      "start": 8644,
+      "end": 8723,
+      "elementStart": 8459
+    },
+    {
+      "key": "ama.work.kicker",
+      "selector": "#ama-answer-work > p:nth-of-type(1)",
+      "sourceLine": 178,
+      "start": 9022,
+      "end": 9041,
+      "elementStart": 8996
+    },
+    {
+      "key": "ama.work.heading",
+      "selector": "#ama-answer-work > h3",
+      "sourceLine": 179,
+      "start": 9082,
+      "end": 9158,
+      "elementStart": 9078
+    },
+    {
+      "key": "ama.work.body",
+      "selector": "#ama-answer-work > p:nth-of-type(2)",
+      "sourceLine": 180,
+      "start": 9199,
+      "end": 9491,
+      "elementStart": 9196
+    },
+    {
+      "key": "ama.work.followup1.question",
+      "selector": "#ama-answer-work > div > div:nth-of-type(1) > button",
+      "sourceLine": 187,
+      "start": 9786,
+      "end": 9879,
+      "elementStart": 9678
+    },
+    {
+      "key": "ama.work.followup1.answer",
+      "selector": "#ama-work-followup-1 > div > p",
+      "sourceLine": 192,
+      "start": 10071,
+      "end": 10187,
+      "elementStart": 10068
+    },
+    {
+      "key": "ama.work.followup2.question",
+      "selector": "#ama-answer-work > div > div:nth-of-type(2) > button",
+      "sourceLine": 197,
+      "start": 10526,
+      "end": 10622,
+      "elementStart": 10418
+    },
+    {
+      "key": "ama.work.followup2.answer",
+      "selector": "#ama-work-followup-2 > div > p",
+      "sourceLine": 202,
+      "start": 10814,
+      "end": 11060,
+      "elementStart": 10811
+    },
+    {
+      "key": "ama.work.followup3.question",
+      "selector": "#ama-answer-work > div > div:nth-of-type(3) > button",
+      "sourceLine": 207,
+      "start": 11399,
+      "end": 11489,
+      "elementStart": 11291
+    },
+    {
+      "key": "ama.work.followup3.answer",
+      "selector": "#ama-work-followup-3 > div > p",
+      "sourceLine": 212,
+      "start": 11681,
+      "end": 11804,
+      "elementStart": 11678
+    },
+    {
+      "key": "ama.founder.kicker",
+      "selector": "#ama-answer-founder > p:nth-of-type(1)",
+      "sourceLine": 219,
+      "start": 12221,
+      "end": 12235,
+      "elementStart": 12195
+    },
+    {
+      "key": "ama.founder.heading",
+      "selector": "#ama-answer-founder > h3",
+      "sourceLine": 220,
+      "start": 12276,
+      "end": 12310,
+      "elementStart": 12272
+    },
+    {
+      "key": "ama.founder.body",
+      "selector": "#ama-answer-founder > p:nth-of-type(2)",
+      "sourceLine": 221,
+      "start": 12351,
+      "end": 12774,
+      "elementStart": 12348
+    },
+    {
+      "key": "ama.founder.followup1.question",
+      "selector": "#ama-answer-founder > div > div:nth-of-type(1) > button",
+      "sourceLine": 229,
+      "start": 13072,
+      "end": 13157,
+      "elementStart": 12961
+    },
+    {
+      "key": "ama.founder.followup1.answer",
+      "selector": "#ama-founder-followup-1 > div > p",
+      "sourceLine": 234,
+      "start": 13352,
+      "end": 13476,
+      "elementStart": 13349
+    },
+    {
+      "key": "ama.founder.followup2.question",
+      "selector": "#ama-answer-founder > div > div:nth-of-type(2) > button",
+      "sourceLine": 239,
+      "start": 13818,
+      "end": 13908,
+      "elementStart": 13707
+    },
+    {
+      "key": "ama.founder.followup2.answer",
+      "selector": "#ama-founder-followup-2 > div > p",
+      "sourceLine": 244,
+      "start": 14103,
+      "end": 14282,
+      "elementStart": 14100
+    },
+    {
+      "key": "ama.collab.kicker",
+      "selector": "#ama-answer-collab > p:nth-of-type(1)",
+      "sourceLine": 251,
+      "start": 14697,
+      "end": 14710,
+      "elementStart": 14671
+    },
+    {
+      "key": "ama.collab.heading",
+      "selector": "#ama-answer-collab > h3",
+      "sourceLine": 252,
+      "start": 14751,
+      "end": 14795,
+      "elementStart": 14747
+    },
+    {
+      "key": "ama.collab.body",
+      "selector": "#ama-answer-collab > p:nth-of-type(2)",
+      "sourceLine": 253,
+      "start": 14836,
+      "end": 15299,
+      "elementStart": 14833
+    },
+    {
+      "key": "ama.collab.followup3.question",
+      "selector": "#ama-answer-collab > div > div > button",
+      "sourceLine": 261,
+      "start": 15596,
+      "end": 15691,
+      "elementStart": 15486
+    },
+    {
+      "key": "ama.collab.followup3.answer",
+      "selector": "#ama-collab-followup-3 > div > p",
+      "sourceLine": 266,
+      "start": 15885,
+      "end": 16019,
+      "elementStart": 15882
+    },
+    {
+      "key": "ama.growth.kicker",
+      "selector": "#ama-answer-growth > p",
+      "sourceLine": 273,
+      "start": 16434,
+      "end": 16446,
+      "elementStart": 16408
+    },
+    {
+      "key": "ama.growth.followup1.question",
+      "selector": "#ama-answer-growth > div > div > button",
+      "sourceLine": 276,
+      "start": 16743,
+      "end": 16845,
+      "elementStart": 16633
+    },
+    {
+      "key": "ama.growth.followup1.answer",
+      "selector": "#ama-growth-followup-1 > div > p",
+      "sourceLine": 281,
+      "start": 17039,
+      "end": 17191,
+      "elementStart": 17036
+    },
+    {
+      "key": "ai.experience.eyebrow",
+      "selector": "#ai-experience > div > div:nth-of-type(1) > div > p",
+      "sourceLine": 296,
+      "start": 17743,
+      "end": 17769,
+      "elementStart": 17719
+    },
+    {
+      "key": "ai.title.h2",
+      "selector": "#ai-title",
+      "sourceLine": 297,
+      "start": 17810,
+      "end": 17837,
+      "elementStart": 17792
+    },
+    {
+      "key": "ai.experience.span",
+      "selector": "#ai-experience > div > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "sourceLine": 302,
+      "start": 18014,
+      "end": 18048,
+      "elementStart": 18008
+    },
+    {
+      "key": "ai.experience.span.2",
+      "selector": "#ai-experience > div > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(2)",
+      "sourceLine": 303,
+      "start": 18080,
+      "end": 18106,
+      "elementStart": 18074
+    },
+    {
+      "key": "ai.experience.span.3",
+      "selector": "#ai-experience > div > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(3)",
+      "sourceLine": 304,
+      "start": 18138,
+      "end": 18159,
+      "elementStart": 18132
+    },
+    {
+      "key": "ai.experience.span.4",
+      "selector": "#ai-experience > div > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(4)",
+      "sourceLine": 305,
+      "start": 18191,
+      "end": 18222,
+      "elementStart": 18185
+    },
+    {
+      "key": "ai.experience.span.5",
+      "selector": "#ai-experience > div > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(5)",
+      "sourceLine": 306,
+      "start": 18254,
+      "end": 18288,
+      "elementStart": 18248
+    },
+    {
+      "key": "ai.experience.p",
+      "selector": "#ai-experience > div > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "sourceLine": 309,
+      "start": 18378,
+      "end": 18536,
+      "elementStart": 18375
+    },
+    {
+      "key": "ai.experience.p.2",
+      "selector": "#ai-experience > div > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(2)",
+      "sourceLine": 313,
+      "start": 18562,
+      "end": 18827,
+      "elementStart": 18559
+    },
+    {
+      "key": "ai.experience.p.3",
+      "selector": "#ai-experience > div > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(3)",
+      "sourceLine": 318,
+      "start": 18853,
+      "end": 19088,
+      "elementStart": 18850
+    },
+    {
+      "key": "education.eyebrow",
+      "selector": "#education > div:nth-of-type(1) > div > p",
+      "sourceLine": 332,
+      "start": 19413,
+      "end": 19433,
+      "elementStart": 19389
+    },
+    {
+      "key": "education.h2",
+      "selector": "#education > div:nth-of-type(1) > div > h2",
+      "sourceLine": 333,
+      "start": 19460,
+      "end": 19462,
+      "elementStart": 19456
+    },
+    {
+      "key": "edu.kaist.h3",
+      "selector": "#edu-kaist > h3",
+      "sourceLine": 338,
+      "start": 19622,
+      "end": 19635,
+      "elementStart": 19618
+    },
+    {
+      "key": "edu.kaist.p",
+      "selector": "#edu-kaist > p:nth-of-type(1)",
+      "sourceLine": 339,
+      "start": 19662,
+      "end": 19681,
+      "elementStart": 19659
+    },
+    {
+      "key": "edu.kaist.p.2",
+      "selector": "#edu-kaist > p:nth-of-type(2)",
+      "sourceLine": 340,
+      "start": 19707,
+      "end": 19761,
+      "elementStart": 19704
+    },
+    {
+      "key": "edu.etc.h3",
+      "selector": "#edu-etc > h3",
+      "sourceLine": 343,
+      "start": 19867,
+      "end": 19871,
+      "elementStart": 19863
+    },
+    {
+      "key": "edu.etc.p",
+      "selector": "#edu-etc > p:nth-of-type(1)",
+      "sourceLine": 344,
+      "start": 19898,
+      "end": 19934,
+      "elementStart": 19895
+    },
+    {
+      "key": "edu.etc.p.2",
+      "selector": "#edu-etc > p:nth-of-type(2)",
+      "sourceLine": 345,
+      "start": 19960,
+      "end": 19984,
+      "elementStart": 19957
+    },
+    {
+      "key": "work.eyebrow",
+      "selector": "#work > div:nth-of-type(1) > div > p",
+      "sourceLine": 352,
+      "start": 20201,
+      "end": 20211,
+      "elementStart": 20177
+    },
+    {
+      "key": "work.h2",
+      "selector": "#work > div:nth-of-type(1) > div > h2",
+      "sourceLine": 353,
+      "start": 20238,
+      "end": 20240,
+      "elementStart": 20234
+    },
+    {
+      "key": "work.onthemarket.period",
+      "selector": "#work-onthemarket > p",
+      "sourceLine": 358,
+      "start": 20434,
+      "end": 20451,
+      "elementStart": 20411
+    },
+    {
+      "key": "work.onthemarket.h3",
+      "selector": "#work-onthemarket > div > h3",
+      "sourceLine": 360,
+      "start": 20504,
+      "end": 20515,
+      "elementStart": 20500
+    },
+    {
+      "key": "work.onthemarket.role",
+      "selector": "#work-onthemarket > div > p:nth-of-type(1)",
+      "sourceLine": 361,
+      "start": 20562,
+      "end": 20600,
+      "elementStart": 20541
+    },
+    {
+      "key": "work.onthemarket.p",
+      "selector": "#work-onthemarket > div > p:nth-of-type(2)",
+      "sourceLine": 362,
+      "start": 20628,
+      "end": 20875,
+      "elementStart": 20625
+    },
+    {
+      "key": "work.tingtingplanet.period",
+      "selector": "#work-tingtingplanet > p",
+      "sourceLine": 370,
+      "start": 21041,
+      "end": 21053,
+      "elementStart": 21018
+    },
+    {
+      "key": "work.tingtingplanet.h3",
+      "selector": "#work-tingtingplanet > div > h3",
+      "sourceLine": 372,
+      "start": 21106,
+      "end": 21120,
+      "elementStart": 21102
+    },
+    {
+      "key": "work.tingtingplanet.role",
+      "selector": "#work-tingtingplanet > div > p:nth-of-type(1)",
+      "sourceLine": 373,
+      "start": 21167,
+      "end": 21196,
+      "elementStart": 21146
+    },
+    {
+      "key": "work.tingtingplanet.p",
+      "selector": "#work-tingtingplanet > div > p:nth-of-type(2)",
+      "sourceLine": 374,
+      "start": 21224,
+      "end": 21403,
+      "elementStart": 21221
+    },
+    {
+      "key": "skills.eyebrow",
+      "selector": "#skills > div:nth-of-type(1) > div > p",
+      "sourceLine": 385,
+      "start": 21647,
+      "end": 21653,
+      "elementStart": 21623
+    },
+    {
+      "key": "skills.h2",
+      "selector": "#skills > div:nth-of-type(1) > div > h2",
+      "sourceLine": 386,
+      "start": 21680,
+      "end": 21685,
+      "elementStart": 21676
+    },
+    {
+      "key": "skills.frontend.title",
+      "selector": "#skills > div:nth-of-type(2) > div:nth-of-type(1) > h3",
+      "sourceLine": 391,
+      "start": 21841,
+      "end": 21849,
+      "elementStart": 21824
+    },
+    {
+      "key": "skills.frontend.summary",
+      "selector": "#skills > div:nth-of-type(2) > div:nth-of-type(1) > p",
+      "sourceLine": 392,
+      "start": 21876,
+      "end": 21931,
+      "elementStart": 21873
+    },
+    {
+      "key": "skills.multi-platform-build.title",
+      "selector": "#skills > div:nth-of-type(2) > div:nth-of-type(2) > h3",
+      "sourceLine": 395,
+      "start": 22030,
+      "end": 22052,
+      "elementStart": 22013
+    },
+    {
+      "key": "skills.multi-platform-build.summary",
+      "selector": "#skills > div:nth-of-type(2) > div:nth-of-type(2) > p",
+      "sourceLine": 396,
+      "start": 22079,
+      "end": 22160,
+      "elementStart": 22076
+    },
+    {
+      "key": "skills.product-integration.title",
+      "selector": "#skills > div:nth-of-type(2) > div:nth-of-type(3) > h3",
+      "sourceLine": 399,
+      "start": 22259,
+      "end": 22278,
+      "elementStart": 22242
+    },
+    {
+      "key": "skills.product-integration.summary",
+      "selector": "#skills > div:nth-of-type(2) > div:nth-of-type(3) > p",
+      "sourceLine": 400,
+      "start": 22305,
+      "end": 22395,
+      "elementStart": 22302
+    },
+    {
+      "key": "skills.backend-data-ops.title",
+      "selector": "#skills > div:nth-of-type(2) > div:nth-of-type(4) > h3",
+      "sourceLine": 403,
+      "start": 22494,
+      "end": 22514,
+      "elementStart": 22477
+    },
+    {
+      "key": "skills.backend-data-ops.summary",
+      "selector": "#skills > div:nth-of-type(2) > div:nth-of-type(4) > p",
+      "sourceLine": 404,
+      "start": 22541,
+      "end": 22621,
+      "elementStart": 22538
+    },
+    {
+      "key": "selected.work.eyebrow",
+      "selector": "#selected-work > div > div:nth-of-type(1) > div > p",
+      "sourceLine": 414,
+      "start": 22946,
+      "end": 22973,
+      "elementStart": 22922
+    },
+    {
+      "key": "projects.title.h2",
+      "selector": "#projects-title",
+      "sourceLine": 415,
+      "start": 23020,
+      "end": 23027,
+      "elementStart": 22996
+    },
+    {
+      "key": "selected.work.block.lead",
+      "selector": "#selected-work > div > div:nth-of-type(1) > p",
+      "sourceLine": 417,
+      "start": 23094,
+      "end": 23141,
+      "elementStart": 23072
+    },
+    {
+      "key": "selectedWork.onthemarket.work-period",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1)",
+      "sourceLine": 421,
+      "start": 23356,
+      "end": 23373,
+      "elementStart": 23325
+    },
+    {
+      "key": "selectedWork.onthemarket.work-kicker",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "sourceLine": 423,
+      "start": 23471,
+      "end": 23483,
+      "elementStart": 23440
+    },
+    {
+      "key": "selectedWork.onthemarket.work-title",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "sourceLine": 424,
+      "start": 23534,
+      "end": 23594,
+      "elementStart": 23509
+    },
+    {
+      "key": "selectedWork.onthemarket.span",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "sourceLine": 425,
+      "start": 23651,
+      "end": 23679,
+      "elementStart": 23645
+    },
+    {
+      "key": "selectedWork.onthemarket.span.2",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "sourceLine": 425,
+      "start": 23692,
+      "end": 23699,
+      "elementStart": 23686
+    },
+    {
+      "key": "selectedWork.onthemarket.span.3",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(3) > span:nth-of-type(3)",
+      "sourceLine": 425,
+      "start": 23712,
+      "end": 23723,
+      "elementStart": 23706
+    },
+    {
+      "key": "selectedWork.onthemarket.span.4",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(2) > span:nth-of-type(3) > span:nth-of-type(4)",
+      "sourceLine": 425,
+      "start": 23736,
+      "end": 23751,
+      "elementStart": 23730
+    },
+    {
+      "key": "selectedWork.onthemarket.work-tag",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "sourceLine": 427,
+      "start": 23858,
+      "end": 23866,
+      "elementStart": 23830
+    },
+    {
+      "key": "selectedWork.onthemarket.work-open",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "sourceLine": 427,
+      "start": 23902,
+      "end": 23906,
+      "elementStart": 23873
+    },
+    {
+      "key": "selectedWork.syrs.work-period",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(2) > span:nth-of-type(1)",
+      "sourceLine": 430,
+      "start": 24078,
+      "end": 24082,
+      "elementStart": 24047
+    },
+    {
+      "key": "selectedWork.syrs.work-kicker",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "sourceLine": 432,
+      "start": 24180,
+      "end": 24195,
+      "elementStart": 24149
+    },
+    {
+      "key": "selectedWork.syrs.work-title",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "sourceLine": 433,
+      "start": 24246,
+      "end": 24296,
+      "elementStart": 24221
+    },
+    {
+      "key": "selectedWork.syrs.span",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "sourceLine": 434,
+      "start": 24353,
+      "end": 24372,
+      "elementStart": 24347
+    },
+    {
+      "key": "selectedWork.syrs.span.2",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(2) > span:nth-of-type(2) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "sourceLine": 434,
+      "start": 24385,
+      "end": 24399,
+      "elementStart": 24379
+    },
+    {
+      "key": "selectedWork.syrs.work-tag",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(2) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "sourceLine": 436,
+      "start": 24506,
+      "end": 24514,
+      "elementStart": 24478
+    },
+    {
+      "key": "selectedWork.syrs.work-open",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(2) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "sourceLine": 436,
+      "start": 24550,
+      "end": 24554,
+      "elementStart": 24521
+    },
+    {
+      "key": "selectedWork.gagageul.work-period",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(3) > span:nth-of-type(1)",
+      "sourceLine": 439,
+      "start": 24730,
+      "end": 24734,
+      "elementStart": 24699
+    },
+    {
+      "key": "selectedWork.gagageul.work-kicker",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(3) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "sourceLine": 441,
+      "start": 24832,
+      "end": 24846,
+      "elementStart": 24801
+    },
+    {
+      "key": "selectedWork.gagageul.work-title",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(3) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "sourceLine": 442,
+      "start": 24897,
+      "end": 24940,
+      "elementStart": 24872
+    },
+    {
+      "key": "selectedWork.gagageul.span",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(3) > span:nth-of-type(2) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "sourceLine": 443,
+      "start": 24997,
+      "end": 25013,
+      "elementStart": 24991
+    },
+    {
+      "key": "selectedWork.gagageul.span.2",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(3) > span:nth-of-type(2) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "sourceLine": 443,
+      "start": 25026,
+      "end": 25034,
+      "elementStart": 25020
+    },
+    {
+      "key": "selectedWork.gagageul.work-open",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(3) > span:nth-of-type(3) > span",
+      "sourceLine": 445,
+      "start": 25142,
+      "end": 25146,
+      "elementStart": 25113
+    },
+    {
+      "key": "selectedWork.akasys.work-period",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(4) > span:nth-of-type(1)",
+      "sourceLine": 448,
+      "start": 25320,
+      "end": 25324,
+      "elementStart": 25289
+    },
+    {
+      "key": "selectedWork.akasys.work-kicker",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(4) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "sourceLine": 450,
+      "start": 25422,
+      "end": 25435,
+      "elementStart": 25391
+    },
+    {
+      "key": "selectedWork.akasys.work-title",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(4) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "sourceLine": 451,
+      "start": 25486,
+      "end": 25548,
+      "elementStart": 25461
+    },
+    {
+      "key": "selectedWork.akasys.work-open",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(4) > span:nth-of-type(3) > span",
+      "sourceLine": 453,
+      "start": 25649,
+      "end": 25653,
+      "elementStart": 25620
+    },
+    {
+      "key": "selectedWork.local-jobs.work-period",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(5) > span:nth-of-type(1)",
+      "sourceLine": 456,
+      "start": 25831,
+      "end": 25835,
+      "elementStart": 25800
+    },
+    {
+      "key": "selectedWork.local-jobs.work-kicker",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(5) > span:nth-of-type(2) > span:nth-of-type(1)",
+      "sourceLine": 458,
+      "start": 25933,
+      "end": 25947,
+      "elementStart": 25902
+    },
+    {
+      "key": "selectedWork.local-jobs.work-title",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(5) > span:nth-of-type(2) > span:nth-of-type(2)",
+      "sourceLine": 459,
+      "start": 25998,
+      "end": 26042,
+      "elementStart": 25973
+    },
+    {
+      "key": "selectedWork.local-jobs.span",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(5) > span:nth-of-type(2) > span:nth-of-type(3) > span:nth-of-type(1)",
+      "sourceLine": 460,
+      "start": 26099,
+      "end": 26111,
+      "elementStart": 26093
+    },
+    {
+      "key": "selectedWork.local-jobs.span.2",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(5) > span:nth-of-type(2) > span:nth-of-type(3) > span:nth-of-type(2)",
+      "sourceLine": 460,
+      "start": 26124,
+      "end": 26140,
+      "elementStart": 26118
+    },
+    {
+      "key": "selectedWork.local-jobs.work-open",
+      "selector": "#selected-work > div > div:nth-of-type(2) > button:nth-of-type(5) > span:nth-of-type(3) > span",
+      "sourceLine": 462,
+      "start": 26248,
+      "end": 26252,
+      "elementStart": 26219
+    },
+    {
+      "key": "portfolio.eyebrow",
+      "selector": "#portfolio > div > div:nth-of-type(1) > div > p",
+      "sourceLine": 472,
+      "start": 26585,
+      "end": 26608,
+      "elementStart": 26561
+    },
+    {
+      "key": "portfolio.title.h2",
+      "selector": "#portfolio-title",
+      "sourceLine": 473,
+      "start": 26656,
+      "end": 26661,
+      "elementStart": 26631
+    },
+    {
+      "key": "portfolio.block.lead",
+      "selector": "#portfolio > div > div:nth-of-type(1) > p",
+      "sourceLine": 475,
+      "start": 26728,
+      "end": 26759,
+      "elementStart": 26706
+    },
+    {
+      "key": "portfolioCards.chaptertwo.folio-title",
+      "selector": "#portfolio > div > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(2)",
+      "sourceLine": 480,
+      "start": 27265,
+      "end": 27275,
+      "elementStart": 27239
+    },
+    {
+      "key": "portfolioCards.chaptertwo.folio-sub",
+      "selector": "#portfolio > div > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(3)",
+      "sourceLine": 481,
+      "start": 27323,
+      "end": 27356,
+      "elementStart": 27299
+    },
+    {
+      "key": "portfolioCards.clackclack.folio-title",
+      "selector": "#portfolio > div > div:nth-of-type(2) > button:nth-of-type(2) > span:nth-of-type(2)",
+      "sourceLine": 485,
+      "start": 27831,
+      "end": 27850,
+      "elementStart": 27805
+    },
+    {
+      "key": "portfolioCards.clackclack.folio-sub",
+      "selector": "#portfolio > div > div:nth-of-type(2) > button:nth-of-type(2) > span:nth-of-type(3)",
+      "sourceLine": 486,
+      "start": 27898,
+      "end": 27922,
+      "elementStart": 27874
+    },
+    {
+      "key": "portfolioCards.jobonger.folio-title",
+      "selector": "#portfolio > div > div:nth-of-type(2) > button:nth-of-type(3) > span:nth-of-type(2)",
+      "sourceLine": 490,
+      "start": 28262,
+      "end": 28270,
+      "elementStart": 28236
+    },
+    {
+      "key": "portfolioCards.jobonger.folio-sub",
+      "selector": "#portfolio > div > div:nth-of-type(2) > button:nth-of-type(3) > span:nth-of-type(3)",
+      "sourceLine": 491,
+      "start": 28318,
+      "end": 28341,
+      "elementStart": 28294
+    },
+    {
+      "key": "portfolioCards.playai.folio-title",
+      "selector": "#portfolio > div > div:nth-of-type(2) > button:nth-of-type(4) > span:nth-of-type(2)",
+      "sourceLine": 495,
+      "start": 28674,
+      "end": 28685,
+      "elementStart": 28648
+    },
+    {
+      "key": "portfolioCards.playai.folio-sub",
+      "selector": "#portfolio > div > div:nth-of-type(2) > button:nth-of-type(4) > span:nth-of-type(3)",
+      "sourceLine": 496,
+      "start": 28733,
+      "end": 28762,
+      "elementStart": 28709
+    },
+    {
+      "key": "portfolioCards.sloths.folio-title",
+      "selector": "#portfolio > div > div:nth-of-type(2) > button:nth-of-type(5) > span:nth-of-type(2)",
+      "sourceLine": 500,
+      "start": 29101,
+      "end": 29118,
+      "elementStart": 29075
+    },
+    {
+      "key": "portfolioCards.sloths.folio-sub",
+      "selector": "#portfolio > div > div:nth-of-type(2) > button:nth-of-type(5) > span:nth-of-type(3)",
+      "sourceLine": 501,
+      "start": 29166,
+      "end": 29186,
+      "elementStart": 29142
+    },
+    {
+      "key": "portfolioCards.hashmoss.folio-title",
+      "selector": "#portfolio > div > div:nth-of-type(2) > button:nth-of-type(6) > span:nth-of-type(2)",
+      "sourceLine": 505,
+      "start": 29526,
+      "end": 29534,
+      "elementStart": 29500
+    },
+    {
+      "key": "portfolioCards.hashmoss.folio-sub",
+      "selector": "#portfolio > div > div:nth-of-type(2) > button:nth-of-type(6) > span:nth-of-type(3)",
+      "sourceLine": 506,
+      "start": 29582,
+      "end": 29604,
+      "elementStart": 29558
+    },
+    {
+      "key": "portfolioCards.watchwise.folio-thumb",
+      "selector": "#portfolio > div > div:nth-of-type(2) > button:nth-of-type(7) > span:nth-of-type(1)",
+      "sourceLine": 509,
+      "start": 29785,
+      "end": 29830,
+      "elementStart": 29746
+    },
+    {
+      "key": "portfolioCards.watchwise.folio-title",
+      "selector": "#portfolio > div > div:nth-of-type(2) > button:nth-of-type(7) > span:nth-of-type(2)",
+      "sourceLine": 510,
+      "start": 29880,
+      "end": 29890,
+      "elementStart": 29854
+    },
+    {
+      "key": "portfolioCards.watchwise.folio-sub",
+      "selector": "#portfolio > div > div:nth-of-type(2) > button:nth-of-type(7) > span:nth-of-type(3)",
+      "sourceLine": 511,
+      "start": 29938,
+      "end": 29967,
+      "elementStart": 29914
+    },
+    {
+      "key": "portfolioCards.mounting.folio-thumb",
+      "selector": "#portfolio > div > div:nth-of-type(2) > button:nth-of-type(8) > span:nth-of-type(1)",
+      "sourceLine": 514,
+      "start": 30147,
+      "end": 30206,
+      "elementStart": 30108
+    },
+    {
+      "key": "portfolioCards.mounting.folio-title",
+      "selector": "#portfolio > div > div:nth-of-type(2) > button:nth-of-type(8) > span:nth-of-type(2)",
+      "sourceLine": 515,
+      "start": 30256,
+      "end": 30264,
+      "elementStart": 30230
+    },
+    {
+      "key": "portfolioCards.mounting.folio-sub",
+      "selector": "#portfolio > div > div:nth-of-type(2) > button:nth-of-type(8) > span:nth-of-type(3)",
+      "sourceLine": 516,
+      "start": 30312,
+      "end": 30337,
+      "elementStart": 30288
+    },
+    {
+      "key": "projects.onthemarket.project-kicker",
+      "selector": "#project-onthemarket > div > header > div > p:nth-of-type(1)",
+      "sourceLine": 529,
+      "start": 30716,
+      "end": 30748,
+      "elementStart": 30690
+    },
+    {
+      "key": "projects.onthemarket.title",
+      "selector": "#project-onthemarket-title",
+      "sourceLine": 530,
+      "start": 30800,
+      "end": 30811,
+      "elementStart": 30765
+    },
+    {
+      "key": "projects.onthemarket.project-subtitle",
+      "selector": "#project-onthemarket > div > header > div > p:nth-of-type(2)",
+      "sourceLine": 531,
+      "start": 30857,
+      "end": 30890,
+      "elementStart": 30829
+    },
+    {
+      "key": "projects.onthemarket.a",
+      "selector": "#project-onthemarket > div > header > div > div > a",
+      "sourceLine": 532,
+      "start": 31018,
+      "end": 31024,
+      "elementStart": 30934
+    },
+    {
+      "key": "projects.onthemarket.span",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(1) > span:nth-of-type(1)",
+      "sourceLine": 537,
+      "start": 31268,
+      "end": 31296,
+      "elementStart": 31262
+    },
+    {
+      "key": "projects.onthemarket.span.2",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(1) > span:nth-of-type(2)",
+      "sourceLine": 537,
+      "start": 31309,
+      "end": 31316,
+      "elementStart": 31303
+    },
+    {
+      "key": "projects.onthemarket.span.3",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(1) > span:nth-of-type(3)",
+      "sourceLine": 537,
+      "start": 31329,
+      "end": 31353,
+      "elementStart": 31323
+    },
+    {
+      "key": "projects.onthemarket.span.4",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(1) > span:nth-of-type(4)",
+      "sourceLine": 537,
+      "start": 31366,
+      "end": 31384,
+      "elementStart": 31360
+    },
+    {
+      "key": "projects.onthemarket.body",
+      "selector": "#project-onthemarket > div > div > p",
+      "sourceLine": 538,
+      "start": 31411,
+      "end": 31551,
+      "elementStart": 31408
+    },
+    {
+      "key": "caseSummaries.otm-payment-webview-case.case-study-trigger-index",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1) > span:nth-of-type(1)",
+      "sourceLine": 552,
+      "start": 32013,
+      "end": 32028,
+      "elementStart": 31974
+    },
+    {
+      "key": "caseSummaries.otm-payment-webview-case.span",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(1) > span:nth-of-type(2)",
+      "sourceLine": 553,
+      "start": 32058,
+      "end": 32094,
+      "elementStart": 32052
+    },
+    {
+      "key": "caseSummaries.otm-payment-webview-case.title",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(2) > strong",
+      "sourceLine": 556,
+      "start": 32201,
+      "end": 32230,
+      "elementStart": 32193
+    },
+    {
+      "key": "caseSummaries.otm-payment-webview-case.span.2",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(2) > span",
+      "sourceLine": 557,
+      "start": 32262,
+      "end": 32428,
+      "elementStart": 32256
+    },
+    {
+      "key": "caseSummaries.otm-payment-webview-case.span.3",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(3) > span",
+      "sourceLine": 563,
+      "start": 32560,
+      "end": 32561,
+      "elementStart": 32535
+    },
+    {
+      "key": "caseSummaries.otm-order-case.case-study-trigger-index",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(2) > span:nth-of-type(1) > span:nth-of-type(1)",
+      "sourceLine": 575,
+      "start": 32961,
+      "end": 32976,
+      "elementStart": 32922
+    },
+    {
+      "key": "caseSummaries.otm-order-case.span",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(2) > span:nth-of-type(1) > span:nth-of-type(2)",
+      "sourceLine": 576,
+      "start": 33006,
+      "end": 33043,
+      "elementStart": 33000
+    },
+    {
+      "key": "caseSummaries.otm-order-case.title",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(2) > span:nth-of-type(2) > strong",
+      "sourceLine": 579,
+      "start": 33150,
+      "end": 33166,
+      "elementStart": 33142
+    },
+    {
+      "key": "caseSummaries.otm-order-case.span.2",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(2) > span:nth-of-type(2) > span",
+      "sourceLine": 580,
+      "start": 33198,
+      "end": 33334,
+      "elementStart": 33192
+    },
+    {
+      "key": "caseSummaries.otm-order-case.span.3",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(2) > span:nth-of-type(3) > span",
+      "sourceLine": 586,
+      "start": 33466,
+      "end": 33467,
+      "elementStart": 33441
+    },
+    {
+      "key": "caseSummaries.otm-receipt-case.case-study-trigger-index",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(3) > span:nth-of-type(1) > span:nth-of-type(1)",
+      "sourceLine": 597,
+      "start": 33873,
+      "end": 33888,
+      "elementStart": 33834
+    },
+    {
+      "key": "caseSummaries.otm-receipt-case.span",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(3) > span:nth-of-type(1) > span:nth-of-type(2)",
+      "sourceLine": 598,
+      "start": 33918,
+      "end": 33945,
+      "elementStart": 33912
+    },
+    {
+      "key": "caseSummaries.otm-receipt-case.title",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(3) > span:nth-of-type(2) > strong",
+      "sourceLine": 601,
+      "start": 34052,
+      "end": 34085,
+      "elementStart": 34044
+    },
+    {
+      "key": "caseSummaries.otm-receipt-case.span.2",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(3) > span:nth-of-type(2) > span",
+      "sourceLine": 602,
+      "start": 34117,
+      "end": 34192,
+      "elementStart": 34111
+    },
+    {
+      "key": "caseSummaries.otm-receipt-case.span.3",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(3) > span:nth-of-type(3) > span",
+      "sourceLine": 604,
+      "start": 34307,
+      "end": 34308,
+      "elementStart": 34282
+    },
+    {
+      "key": "caseSummaries.otm-ledger-cycle-case.case-study-trigger-index",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(4) > span:nth-of-type(1) > span:nth-of-type(1)",
+      "sourceLine": 615,
+      "start": 34710,
+      "end": 34725,
+      "elementStart": 34671
+    },
+    {
+      "key": "caseSummaries.otm-ledger-cycle-case.span",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(4) > span:nth-of-type(1) > span:nth-of-type(2)",
+      "sourceLine": 616,
+      "start": 34755,
+      "end": 34794,
+      "elementStart": 34749
+    },
+    {
+      "key": "caseSummaries.otm-ledger-cycle-case.title",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(4) > span:nth-of-type(2) > strong",
+      "sourceLine": 619,
+      "start": 34901,
+      "end": 34920,
+      "elementStart": 34893
+    },
+    {
+      "key": "caseSummaries.otm-ledger-cycle-case.span.2",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(4) > span:nth-of-type(2) > span",
+      "sourceLine": 620,
+      "start": 34952,
+      "end": 35069,
+      "elementStart": 34946
+    },
+    {
+      "key": "caseSummaries.otm-ledger-cycle-case.span.3",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(4) > span:nth-of-type(3) > span",
+      "sourceLine": 622,
+      "start": 35184,
+      "end": 35185,
+      "elementStart": 35159
+    },
+    {
+      "key": "caseSummaries.otm-signal-types-case.case-study-trigger-index",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(5) > span:nth-of-type(1) > span:nth-of-type(1)",
+      "sourceLine": 632,
+      "start": 35583,
+      "end": 35598,
+      "elementStart": 35544
+    },
+    {
+      "key": "caseSummaries.otm-signal-types-case.span",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(5) > span:nth-of-type(1) > span:nth-of-type(2)",
+      "sourceLine": 633,
+      "start": 35628,
+      "end": 35674,
+      "elementStart": 35622
+    },
+    {
+      "key": "caseSummaries.otm-signal-types-case.title",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(5) > span:nth-of-type(2) > strong",
+      "sourceLine": 636,
+      "start": 35781,
+      "end": 35815,
+      "elementStart": 35773
+    },
+    {
+      "key": "caseSummaries.otm-signal-types-case.span.2",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(5) > span:nth-of-type(2) > span",
+      "sourceLine": 637,
+      "start": 35847,
+      "end": 35937,
+      "elementStart": 35841
+    },
+    {
+      "key": "caseSummaries.otm-signal-types-case.span.3",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(2) > button:nth-of-type(5) > span:nth-of-type(3) > span",
+      "sourceLine": 639,
+      "start": 36052,
+      "end": 36053,
+      "elementStart": 36027
+    },
+    {
+      "key": "projects.onthemarket.what-i-did.h4",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(3) > div:nth-of-type(1) > h4",
+      "sourceLine": 645,
+      "start": 36181,
+      "end": 36191,
+      "elementStart": 36177
+    },
+    {
+      "key": "projects.onthemarket.what-i-did.items",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(3) > div:nth-of-type(1) > ul",
+      "sourceLine": 646,
+      "start": 36215,
+      "end": 36499,
+      "elementStart": 36211
+    },
+    {
+      "key": "projects.onthemarket.tech-stack.h4",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(3) > div:nth-of-type(2) > h4",
+      "sourceLine": 654,
+      "start": 36560,
+      "end": 36570,
+      "elementStart": 36556
+    },
+    {
+      "key": "projects.onthemarket.tech-stack.tag-cloud",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(3) > div:nth-of-type(2) > p",
+      "sourceLine": 655,
+      "start": 36611,
+      "end": 36829,
+      "elementStart": 36590
+    },
+    {
+      "key": "projects.onthemarket.learned.h4",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(3) > div:nth-of-type(3) > h4",
+      "sourceLine": 661,
+      "start": 36889,
+      "end": 36896,
+      "elementStart": 36885
+    },
+    {
+      "key": "projects.onthemarket.learned.body",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(3) > div:nth-of-type(3) > p",
+      "sourceLine": 662,
+      "start": 36919,
+      "end": 37099,
+      "elementStart": 36916
+    },
+    {
+      "key": "projects.onthemarket.project-kicker.2",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "sourceLine": 693,
+      "start": 39247,
+      "end": 39262,
+      "elementStart": 39221
+    },
+    {
+      "key": "projects.onthemarket.h4",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(5) > div:nth-of-type(1) > h4",
+      "sourceLine": 694,
+      "start": 39285,
+      "end": 39294,
+      "elementStart": 39281
+    },
+    {
+      "key": "projects.onthemarket.body.2",
+      "selector": "#project-onthemarket > div > div > div:nth-of-type(5) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "sourceLine": 695,
+      "start": 39317,
+      "end": 39471,
+      "elementStart": 39314
+    },
+    {
+      "key": "projects.syrs.project-kicker",
+      "selector": "#project-syrs > div > header > div > p:nth-of-type(1)",
+      "sourceLine": 723,
+      "start": 41141,
+      "end": 41163,
+      "elementStart": 41115
+    },
+    {
+      "key": "projects.syrs.title",
+      "selector": "#project-syrs-title",
+      "sourceLine": 724,
+      "start": 41208,
+      "end": 41219,
+      "elementStart": 41180
+    },
+    {
+      "key": "projects.syrs.project-subtitle",
+      "selector": "#project-syrs > div > header > div > p:nth-of-type(2)",
+      "sourceLine": 725,
+      "start": 41265,
+      "end": 41288,
+      "elementStart": 41237
+    },
+    {
+      "key": "projects.syrs.a",
+      "selector": "#project-syrs > div > header > div > div > a",
+      "sourceLine": 726,
+      "start": 41419,
+      "end": 41423,
+      "elementStart": 41332
+    },
+    {
+      "key": "projects.syrs.span",
+      "selector": "#project-syrs > div > div > div:nth-of-type(1) > span:nth-of-type(1)",
+      "sourceLine": 731,
+      "start": 41667,
+      "end": 41686,
+      "elementStart": 41661
+    },
+    {
+      "key": "projects.syrs.span.2",
+      "selector": "#project-syrs > div > div > div:nth-of-type(1) > span:nth-of-type(2)",
+      "sourceLine": 731,
+      "start": 41699,
+      "end": 41713,
+      "elementStart": 41693
+    },
+    {
+      "key": "projects.syrs.body",
+      "selector": "#project-syrs > div > div > p",
+      "sourceLine": 732,
+      "start": 41740,
+      "end": 41861,
+      "elementStart": 41737
+    },
+    {
+      "key": "caseSummaries.syrs-llm-reliability-case.case-study-trigger-index",
+      "selector": "#project-syrs > div > div > div:nth-of-type(2) > button > span:nth-of-type(1) > span:nth-of-type(1)",
+      "sourceLine": 746,
+      "start": 42318,
+      "end": 42333,
+      "elementStart": 42279
+    },
+    {
+      "key": "caseSummaries.syrs-llm-reliability-case.span",
+      "selector": "#project-syrs > div > div > div:nth-of-type(2) > button > span:nth-of-type(1) > span:nth-of-type(2)",
+      "sourceLine": 747,
+      "start": 42363,
+      "end": 42414,
+      "elementStart": 42357
+    },
+    {
+      "key": "caseSummaries.syrs-llm-reliability-case.title",
+      "selector": "#project-syrs > div > div > div:nth-of-type(2) > button > span:nth-of-type(2) > strong",
+      "sourceLine": 750,
+      "start": 42521,
+      "end": 42534,
+      "elementStart": 42513
+    },
+    {
+      "key": "caseSummaries.syrs-llm-reliability-case.span.2",
+      "selector": "#project-syrs > div > div > div:nth-of-type(2) > button > span:nth-of-type(2) > span",
+      "sourceLine": 751,
+      "start": 42566,
+      "end": 42708,
+      "elementStart": 42560
+    },
+    {
+      "key": "caseSummaries.syrs-llm-reliability-case.span.3",
+      "selector": "#project-syrs > div > div > div:nth-of-type(2) > button > span:nth-of-type(3) > span",
+      "sourceLine": 757,
+      "start": 42840,
+      "end": 42841,
+      "elementStart": 42815
+    },
+    {
+      "key": "projects.syrs.what-i-did.h4",
+      "selector": "#project-syrs > div > div > div:nth-of-type(3) > div:nth-of-type(1) > h4",
+      "sourceLine": 764,
+      "start": 42984,
+      "end": 42994,
+      "elementStart": 42980
+    },
+    {
+      "key": "projects.syrs.what-i-did.items",
+      "selector": "#project-syrs > div > div > div:nth-of-type(3) > div:nth-of-type(1) > ul",
+      "sourceLine": 765,
+      "start": 43018,
+      "end": 43218,
+      "elementStart": 43014
+    },
+    {
+      "key": "projects.syrs.tech-stack.h4",
+      "selector": "#project-syrs > div > div > div:nth-of-type(3) > div:nth-of-type(2) > h4",
+      "sourceLine": 773,
+      "start": 43279,
+      "end": 43289,
+      "elementStart": 43275
+    },
+    {
+      "key": "projects.syrs.tech-stack.tag-cloud",
+      "selector": "#project-syrs > div > div > div:nth-of-type(3) > div:nth-of-type(2) > p",
+      "sourceLine": 774,
+      "start": 43330,
+      "end": 43469,
+      "elementStart": 43309
+    },
+    {
+      "key": "projects.syrs.learned.h4",
+      "selector": "#project-syrs > div > div > div:nth-of-type(3) > div:nth-of-type(3) > h4",
+      "sourceLine": 777,
+      "start": 43529,
+      "end": 43536,
+      "elementStart": 43525
+    },
+    {
+      "key": "projects.syrs.learned.body",
+      "selector": "#project-syrs > div > div > div:nth-of-type(3) > div:nth-of-type(3) > p",
+      "sourceLine": 778,
+      "start": 43559,
+      "end": 43700,
+      "elementStart": 43556
+    },
+    {
+      "key": "projects.gagageul.project-kicker",
+      "selector": "#project-gagageul > div > header > div > p:nth-of-type(1)",
+      "sourceLine": 803,
+      "start": 44945,
+      "end": 44966,
+      "elementStart": 44919
+    },
+    {
+      "key": "projects.gagageul.title",
+      "selector": "#project-gagageul-title",
+      "sourceLine": 804,
+      "start": 45015,
+      "end": 45023,
+      "elementStart": 44983
+    },
+    {
+      "key": "projects.gagageul.project-subtitle",
+      "selector": "#project-gagageul > div > header > div > p:nth-of-type(2)",
+      "sourceLine": 805,
+      "start": 45069,
+      "end": 45088,
+      "elementStart": 45041
+    },
+    {
+      "key": "projects.gagageul.a",
+      "selector": "#project-gagageul > div > header > div > div > a:nth-of-type(1)",
+      "sourceLine": 806,
+      "start": 45218,
+      "end": 45222,
+      "elementStart": 45132
+    },
+    {
+      "key": "projects.gagageul.a.2",
+      "selector": "#project-gagageul > div > header > div > div > a:nth-of-type(2)",
+      "sourceLine": 806,
+      "start": 45312,
+      "end": 45318,
+      "elementStart": 45226
+    },
+    {
+      "key": "projects.gagageul.span",
+      "selector": "#project-gagageul > div > div > div:nth-of-type(1) > span:nth-of-type(1)",
+      "sourceLine": 811,
+      "start": 45559,
+      "end": 45575,
+      "elementStart": 45553
+    },
+    {
+      "key": "projects.gagageul.span.2",
+      "selector": "#project-gagageul > div > div > div:nth-of-type(1) > span:nth-of-type(2)",
+      "sourceLine": 811,
+      "start": 45588,
+      "end": 45607,
+      "elementStart": 45582
+    },
+    {
+      "key": "projects.gagageul.body",
+      "selector": "#project-gagageul > div > div > p",
+      "sourceLine": 812,
+      "start": 45634,
+      "end": 45769,
+      "elementStart": 45631
+    },
+    {
+      "key": "projects.gagageul.what-i-did.h4",
+      "selector": "#project-gagageul > div > div > div:nth-of-type(2) > div:nth-of-type(1) > h4",
+      "sourceLine": 818,
+      "start": 45847,
+      "end": 45857,
+      "elementStart": 45843
+    },
+    {
+      "key": "projects.gagageul.what-i-did.items",
+      "selector": "#project-gagageul > div > div > div:nth-of-type(2) > div:nth-of-type(1) > ul",
+      "sourceLine": 819,
+      "start": 45881,
+      "end": 46090,
+      "elementStart": 45877
+    },
+    {
+      "key": "projects.gagageul.tech-stack.h4",
+      "selector": "#project-gagageul > div > div > div:nth-of-type(2) > div:nth-of-type(2) > h4",
+      "sourceLine": 826,
+      "start": 46151,
+      "end": 46161,
+      "elementStart": 46147
+    },
+    {
+      "key": "projects.gagageul.tech-stack.tag-cloud",
+      "selector": "#project-gagageul > div > div > div:nth-of-type(2) > div:nth-of-type(2) > p",
+      "sourceLine": 827,
+      "start": 46202,
+      "end": 46268,
+      "elementStart": 46181
+    },
+    {
+      "key": "projects.gagageul.learned.h4",
+      "selector": "#project-gagageul > div > div > div:nth-of-type(2) > div:nth-of-type(3) > h4",
+      "sourceLine": 830,
+      "start": 46328,
+      "end": 46335,
+      "elementStart": 46324
+    },
+    {
+      "key": "projects.gagageul.learned.body",
+      "selector": "#project-gagageul > div > div > div:nth-of-type(2) > div:nth-of-type(3) > p",
+      "sourceLine": 831,
+      "start": 46358,
+      "end": 46477,
+      "elementStart": 46355
+    },
+    {
+      "key": "projects.akasys.project-kicker",
+      "selector": "#project-akasys > div > header > div > p:nth-of-type(1)",
+      "sourceLine": 848,
+      "start": 47079,
+      "end": 47099,
+      "elementStart": 47053
+    },
+    {
+      "key": "projects.akasys.title",
+      "selector": "#project-akasys-title",
+      "sourceLine": 849,
+      "start": 47146,
+      "end": 47152,
+      "elementStart": 47116
+    },
+    {
+      "key": "projects.akasys.project-subtitle",
+      "selector": "#project-akasys > div > header > div > p:nth-of-type(2)",
+      "sourceLine": 850,
+      "start": 47198,
+      "end": 47238,
+      "elementStart": 47170
+    },
+    {
+      "key": "projects.akasys.body",
+      "selector": "#project-akasys > div > div > p",
+      "sourceLine": 855,
+      "start": 47420,
+      "end": 47511,
+      "elementStart": 47417
+    },
+    {
+      "key": "projects.akasys.what-i-did.h4",
+      "selector": "#project-akasys > div > div > div > div:nth-of-type(1) > h4",
+      "sourceLine": 860,
+      "start": 47589,
+      "end": 47599,
+      "elementStart": 47585
+    },
+    {
+      "key": "projects.akasys.what-i-did.items",
+      "selector": "#project-akasys > div > div > div > div:nth-of-type(1) > ul",
+      "sourceLine": 861,
+      "start": 47623,
+      "end": 47777,
+      "elementStart": 47619
+    },
+    {
+      "key": "projects.akasys.tech-stack.h4",
+      "selector": "#project-akasys > div > div > div > div:nth-of-type(2) > h4",
+      "sourceLine": 868,
+      "start": 47838,
+      "end": 47848,
+      "elementStart": 47834
+    },
+    {
+      "key": "projects.akasys.tech-stack.tag-cloud",
+      "selector": "#project-akasys > div > div > div > div:nth-of-type(2) > p",
+      "sourceLine": 869,
+      "start": 47889,
+      "end": 48010,
+      "elementStart": 47868
+    },
+    {
+      "key": "projects.akasys.learned.h4",
+      "selector": "#project-akasys > div > div > div > div:nth-of-type(3) > h4",
+      "sourceLine": 872,
+      "start": 48070,
+      "end": 48077,
+      "elementStart": 48066
+    },
+    {
+      "key": "projects.akasys.learned.body",
+      "selector": "#project-akasys > div > div > div > div:nth-of-type(3) > p",
+      "sourceLine": 873,
+      "start": 48100,
+      "end": 48162,
+      "elementStart": 48097
+    },
+    {
+      "key": "projects.local-jobs.project-kicker",
+      "selector": "#project-local-jobs > div > header > div > p:nth-of-type(1)",
+      "sourceLine": 887,
+      "start": 48797,
+      "end": 48818,
+      "elementStart": 48771
+    },
+    {
+      "key": "projects.local-jobs.title",
+      "selector": "#project-local-jobs-title",
+      "sourceLine": 888,
+      "start": 48869,
+      "end": 48879,
+      "elementStart": 48835
+    },
+    {
+      "key": "projects.local-jobs.project-subtitle",
+      "selector": "#project-local-jobs > div > header > div > p:nth-of-type(2)",
+      "sourceLine": 889,
+      "start": 48925,
+      "end": 48943,
+      "elementStart": 48897
+    },
+    {
+      "key": "projects.local-jobs.span",
+      "selector": "#project-local-jobs > div > div > div:nth-of-type(1) > span:nth-of-type(1)",
+      "sourceLine": 894,
+      "start": 49180,
+      "end": 49192,
+      "elementStart": 49174
+    },
+    {
+      "key": "projects.local-jobs.span.2",
+      "selector": "#project-local-jobs > div > div > div:nth-of-type(1) > span:nth-of-type(2)",
+      "sourceLine": 894,
+      "start": 49205,
+      "end": 49221,
+      "elementStart": 49199
+    },
+    {
+      "key": "projects.local-jobs.body",
+      "selector": "#project-local-jobs > div > div > p",
+      "sourceLine": 895,
+      "start": 49248,
+      "end": 49348,
+      "elementStart": 49245
+    },
+    {
+      "key": "projects.local-jobs.what-i-did.h4",
+      "selector": "#project-local-jobs > div > div > div:nth-of-type(2) > div:nth-of-type(1) > h4",
+      "sourceLine": 900,
+      "start": 49426,
+      "end": 49436,
+      "elementStart": 49422
+    },
+    {
+      "key": "projects.local-jobs.what-i-did.items",
+      "selector": "#project-local-jobs > div > div > div:nth-of-type(2) > div:nth-of-type(1) > ul",
+      "sourceLine": 901,
+      "start": 49460,
+      "end": 49604,
+      "elementStart": 49456
+    },
+    {
+      "key": "projects.local-jobs.tech-stack.h4",
+      "selector": "#project-local-jobs > div > div > div:nth-of-type(2) > div:nth-of-type(2) > h4",
+      "sourceLine": 908,
+      "start": 49665,
+      "end": 49675,
+      "elementStart": 49661
+    },
+    {
+      "key": "projects.local-jobs.tech-stack.tag-cloud",
+      "selector": "#project-local-jobs > div > div > div:nth-of-type(2) > div:nth-of-type(2) > p",
+      "sourceLine": 909,
+      "start": 49716,
+      "end": 49840,
+      "elementStart": 49695
+    },
+    {
+      "key": "projects.chaptertwo.project-kicker",
+      "selector": "#portfolio-chaptertwo > div > header > div > p:nth-of-type(1)",
+      "sourceLine": 923,
+      "start": 50485,
+      "end": 50506,
+      "elementStart": 50459
+    },
+    {
+      "key": "projects.chaptertwo.title",
+      "selector": "#portfolio-chaptertwo-title",
+      "sourceLine": 924,
+      "start": 50559,
+      "end": 50569,
+      "elementStart": 50523
+    },
+    {
+      "key": "projects.chaptertwo.project-subtitle",
+      "selector": "#portfolio-chaptertwo > div > header > div > p:nth-of-type(2)",
+      "sourceLine": 925,
+      "start": 50615,
+      "end": 50636,
+      "elementStart": 50587
+    },
+    {
+      "key": "projects.chaptertwo.body",
+      "selector": "#portfolio-chaptertwo > div > div > p",
+      "sourceLine": 931,
+      "start": 51383,
+      "end": 51430,
+      "elementStart": 51380
+    },
+    {
+      "key": "projects.clackclack.project-kicker",
+      "selector": "#portfolio-clackclack > div > header > div > p:nth-of-type(1)",
+      "sourceLine": 940,
+      "start": 51732,
+      "end": 51748,
+      "elementStart": 51706
+    },
+    {
+      "key": "projects.clackclack.title",
+      "selector": "#portfolio-clackclack-title",
+      "sourceLine": 941,
+      "start": 51801,
+      "end": 51820,
+      "elementStart": 51765
+    },
+    {
+      "key": "projects.clackclack.project-subtitle",
+      "selector": "#portfolio-clackclack > div > header > div > p:nth-of-type(2)",
+      "sourceLine": 942,
+      "start": 51866,
+      "end": 51883,
+      "elementStart": 51838
+    },
+    {
+      "key": "projects.clackclack.body",
+      "selector": "#portfolio-clackclack > div > div > p",
+      "sourceLine": 948,
+      "start": 52650,
+      "end": 52702,
+      "elementStart": 52647
+    },
+    {
+      "key": "projects.jobonger.project-kicker",
+      "selector": "#portfolio-jobonger > div > header > div > p:nth-of-type(1)",
+      "sourceLine": 957,
+      "start": 53000,
+      "end": 53016,
+      "elementStart": 52974
+    },
+    {
+      "key": "projects.jobonger.title",
+      "selector": "#portfolio-jobonger-title",
+      "sourceLine": 958,
+      "start": 53067,
+      "end": 53075,
+      "elementStart": 53033
+    },
+    {
+      "key": "projects.jobonger.project-subtitle",
+      "selector": "#portfolio-jobonger > div > header > div > p:nth-of-type(2)",
+      "sourceLine": 959,
+      "start": 53121,
+      "end": 53137,
+      "elementStart": 53093
+    },
+    {
+      "key": "projects.jobonger.body",
+      "selector": "#portfolio-jobonger > div > div > p",
+      "sourceLine": 965,
+      "start": 53614,
+      "end": 53660,
+      "elementStart": 53611
+    },
+    {
+      "key": "projects.playai.project-kicker",
+      "selector": "#portfolio-playai > div > header > div > p:nth-of-type(1)",
+      "sourceLine": 974,
+      "start": 53954,
+      "end": 53970,
+      "elementStart": 53928
+    },
+    {
+      "key": "projects.playai.title",
+      "selector": "#portfolio-playai-title",
+      "sourceLine": 975,
+      "start": 54019,
+      "end": 54030,
+      "elementStart": 53987
+    },
+    {
+      "key": "projects.playai.project-subtitle",
+      "selector": "#portfolio-playai > div > header > div > p:nth-of-type(2)",
+      "sourceLine": 976,
+      "start": 54076,
+      "end": 54098,
+      "elementStart": 54048
+    },
+    {
+      "key": "projects.playai.body",
+      "selector": "#portfolio-playai > div > div > p",
+      "sourceLine": 982,
+      "start": 54571,
+      "end": 54629,
+      "elementStart": 54568
+    },
+    {
+      "key": "projects.sloths.project-kicker",
+      "selector": "#portfolio-sloths > div > header > div > p:nth-of-type(1)",
+      "sourceLine": 991,
+      "start": 54923,
+      "end": 54939,
+      "elementStart": 54897
+    },
+    {
+      "key": "projects.sloths.title",
+      "selector": "#portfolio-sloths-title",
+      "sourceLine": 992,
+      "start": 54988,
+      "end": 55005,
+      "elementStart": 54956
+    },
+    {
+      "key": "projects.sloths.project-subtitle",
+      "selector": "#portfolio-sloths > div > header > div > p:nth-of-type(2)",
+      "sourceLine": 993,
+      "start": 55051,
+      "end": 55064,
+      "elementStart": 55023
+    },
+    {
+      "key": "projects.sloths.body",
+      "selector": "#portfolio-sloths > div > div > p:nth-of-type(1)",
+      "sourceLine": 999,
+      "start": 55547,
+      "end": 55594,
+      "elementStart": 55544
+    },
+    {
+      "key": "projects.sloths.tag-cloud",
+      "selector": "#portfolio-sloths > div > div > p:nth-of-type(2)",
+      "sourceLine": 1000,
+      "start": 55630,
+      "end": 55672,
+      "elementStart": 55609
+    },
+    {
+      "key": "projects.sloths.a",
+      "selector": "#portfolio-sloths > div > div > div:nth-of-type(2) > a",
+      "sourceLine": 1001,
+      "start": 55786,
+      "end": 55790,
+      "elementStart": 55714
+    },
+    {
+      "key": "projects.hashmoss.project-kicker",
+      "selector": "#portfolio-hashmoss > div > header > div > p:nth-of-type(1)",
+      "sourceLine": 1010,
+      "start": 56094,
+      "end": 56110,
+      "elementStart": 56068
+    },
+    {
+      "key": "projects.hashmoss.title",
+      "selector": "#portfolio-hashmoss-title",
+      "sourceLine": 1011,
+      "start": 56161,
+      "end": 56169,
+      "elementStart": 56127
+    },
+    {
+      "key": "projects.hashmoss.project-subtitle",
+      "selector": "#portfolio-hashmoss > div > header > div > p:nth-of-type(2)",
+      "sourceLine": 1012,
+      "start": 56215,
+      "end": 56230,
+      "elementStart": 56187
+    },
+    {
+      "key": "projects.hashmoss.body",
+      "selector": "#portfolio-hashmoss > div > div > p",
+      "sourceLine": 1018,
+      "start": 56705,
+      "end": 56752,
+      "elementStart": 56702
+    },
+    {
+      "key": "projects.watchwise.project-kicker",
+      "selector": "#portfolio-watchwise > div > header > div > p:nth-of-type(1)",
+      "sourceLine": 1027,
+      "start": 57052,
+      "end": 57068,
+      "elementStart": 57026
+    },
+    {
+      "key": "projects.watchwise.title",
+      "selector": "#portfolio-watchwise-title",
+      "sourceLine": 1028,
+      "start": 57120,
+      "end": 57130,
+      "elementStart": 57085
+    },
+    {
+      "key": "projects.watchwise.project-subtitle",
+      "selector": "#portfolio-watchwise > div > header > div > p:nth-of-type(2)",
+      "sourceLine": 1029,
+      "start": 57176,
+      "end": 57198,
+      "elementStart": 57148
+    },
+    {
+      "key": "projects.watchwise.body",
+      "selector": "#portfolio-watchwise > div > div > p:nth-of-type(1)",
+      "sourceLine": 1034,
+      "start": 57380,
+      "end": 57444,
+      "elementStart": 57377
+    },
+    {
+      "key": "projects.watchwise.tag-cloud",
+      "selector": "#portfolio-watchwise > div > div > p:nth-of-type(2)",
+      "sourceLine": 1035,
+      "start": 57480,
+      "end": 57568,
+      "elementStart": 57459
+    },
+    {
+      "key": "projects.mounting.project-kicker",
+      "selector": "#portfolio-mounting > div > header > div > p:nth-of-type(1)",
+      "sourceLine": 1044,
+      "start": 57866,
+      "end": 57882,
+      "elementStart": 57840
+    },
+    {
+      "key": "projects.mounting.title",
+      "selector": "#portfolio-mounting-title",
+      "sourceLine": 1045,
+      "start": 57933,
+      "end": 57941,
+      "elementStart": 57899
+    },
+    {
+      "key": "projects.mounting.project-subtitle",
+      "selector": "#portfolio-mounting > div > header > div > p:nth-of-type(2)",
+      "sourceLine": 1046,
+      "start": 57987,
+      "end": 58005,
+      "elementStart": 57959
+    },
+    {
+      "key": "projects.mounting.body",
+      "selector": "#portfolio-mounting > div > div > p:nth-of-type(1)",
+      "sourceLine": 1051,
+      "start": 58187,
+      "end": 58239,
+      "elementStart": 58184
+    },
+    {
+      "key": "projects.mounting.tag-cloud",
+      "selector": "#portfolio-mounting > div > div > p:nth-of-type(2)",
+      "sourceLine": 1052,
+      "start": 58275,
+      "end": 58387,
+      "elementStart": 58254
+    }
+  ],
+  "cases": [
+    {
+      "id": "otm-ledger-cycle-case",
+      "sourceLine": 1057
+    },
+    {
+      "id": "otm-signal-types-case",
+      "sourceLine": 1239
+    },
+    {
+      "id": "otm-order-case",
+      "sourceLine": 1409
+    },
+    {
+      "id": "otm-payment-webview-case",
+      "sourceLine": 1648
+    },
+    {
+      "id": "otm-receipt-case",
+      "sourceLine": 1973
+    },
+    {
+      "id": "syrs-llm-reliability-case",
+      "sourceLine": 2056
+    }
+  ]
+}

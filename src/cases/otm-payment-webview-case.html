@@ -1,0 +1,325 @@
+<dialog
+      class="case-modal"
+      id="otm-payment-webview-case"
+      aria-labelledby="payment-webview-case-title"
+      aria-describedby="payment-webview-case-description"
+    >
+      <div class="case-modal-shell">
+        <header class="case-modal-header">
+          <div>
+            <p class="case-modal-kicker">OnTheMarket · Solved issue 01</p>
+            <h2 id="payment-webview-case-title">PG 페이지를 다녀온 뒤 WebView 레이아웃 복원</h2>
+            <p id="payment-webview-case-description">
+              다른 앱으로 내보내지 않고 웹뷰 안에서 결제사 페이지를 오가게 하면서 생긴 inset 문제를
+              한 단계씩 좁혀, 복귀 시 safe-area·viewport가 다시 계산되도록 native에서 맞춰줬습니다.
+            </p>
+          </div>
+          <button class="case-modal-close" type="button" data-case-close aria-label="문제 해결 사례 닫기">×</button>
+        </header>
+
+        <div class="case-modal-content case-narrative">
+          <section class="case-section" aria-labelledby="payment-context">
+            <header class="case-section-header is-prose">
+              <p class="case-section-kicker">Problem &amp; constraints</p>
+              <h3 id="payment-context">결제는 직접 제어할 수 없는 외부 페이지를 웹뷰 안에서 다녀와야 했습니다.</h3>
+              <p>
+                앱 안에서 결제를 하려면 직접 제어하기 곤란한 TossPayments 같은 외부 결제사(PG) 페이지를 거쳐야 했습니다.
+                팝업이나 별도 앱·브라우저로 나갔다가 다시 돌아오는 방식은, 휴대폰에 시간을 많이 쓰고 싶어 하지 않고 연령대가 꽤 있는
+                식당 점주들에게 어려울 수 있다고 판단했습니다. 그래서 다른 앱으로 나가는 리다이렉트를 최소화하고,
+                웹뷰 안에서 실제 URL을 바꿔 결제사 페이지로 갔다가 돌아오는 플로우를 택했습니다.
+              </p>
+              <p>
+                기존 웹앱 구조는 웹페이지와 앱을 같은 코드로 운영하기 위해 휴대폰 화면 전체를 웹뷰로 덮고,
+                노치·홈 인디케이터 같은 safe-area(inset)는 Capacitor로 감지해 CSS 값으로 웹 레이아웃에 넘겨주는 방식이었습니다.
+                내부 화면에서는 웹이 safe-area를 소유했습니다.
+              </p>
+              <p>
+                외부 PG 페이지에서는 이 방법을 쓸 수 없었습니다. PG사 웹사이트는 CSS로 제어할 수 없는 외부 문서라 native 단에서 WebView의 inset을 직접 다뤄야 했고,
+                그 과정에서 아래 문제들이 순서대로 나타났습니다.
+              </p>
+            </header>
+            <div class="case-inline-trace compact-trace is-ownership" aria-label="결제 왕복 경로와 각 구간의 safe-area 담당">
+              <strong>내부 주문 화면<small>웹이 safe-area 소유</small></strong><span aria-hidden="true">→</span>
+              <strong class="is-native">외부 PG 페이지<small>native가 inset 소유</small></strong><span aria-hidden="true">→</span>
+              <strong class="is-native">카드·은행 앱<small>intent / scheme으로 OS에 위임</small></strong><span aria-hidden="true">→</span>
+              <strong>내부 결과 화면<small>다시 웹이 소유해야 함</small></strong>
+            </div>
+          </section>
+
+          <section class="case-section" aria-labelledby="payment-broken-state">
+            <header class="case-section-header is-prose">
+              <p class="case-section-kicker">Observed before</p>
+              <h3 id="payment-broken-state">inset을 안 넣으면 결제 버튼이 가려지고, 넣으면 돌아온 화면이 깨졌습니다.</h3>
+              <p>
+                처음에는 PG 페이지를 그냥 두었습니다. 웹뷰가 화면 전체를 덮는 구조라 외부 문서는 inset이나 margin 없이 떴고,
+                Android에서 메뉴·홈·뒤로가기 3버튼 내비게이션 바를 켜 둔 기기에서는
+                시스템 바가 결제사의 “결제하기” 버튼을 그대로 덮었습니다. 불편한 수준이 아니라 결제 자체가 불가능한 경우였습니다.
+              </p>
+              <p>
+                그래서 외부 URL일 때 native에서 URL을 감지해 inset을 넣어줬더니, 결제를 마치고 앱 페이지로 돌아오면 바텀 탭이 위로 떠 버렸습니다.
+                복귀 시점에 inset과 safeArea를 초기화하는 코드를 넣었더니, 이번에는 바텀 탭이 화면 아래에 박혀 버렸습니다.
+              </p>
+            </header>
+
+            <div class="broken-state-grid is-three" aria-label="inset을 다루면서 순서대로 나타난 세 가지 레이아웃 문제 목업">
+              <article class="broken-state-card">
+                <header>
+                  <span class="platform-badge is-step">① 그대로 둠</span>
+                  <div><strong>결제 버튼이 시스템 바에 가려짐</strong><p>Android 3버튼 내비 · PG 페이지에 inset 없음</p></div>
+                </header>
+                <div class="broken-phone-wrap">
+                  <div class="phone-shell is-android" aria-hidden="true">
+                    <div class="android-camera"></div>
+                    <div class="phone-screen is-broken-covered">
+                      <div class="mock-status"><span>9:42</span><span>▰ ◔</span></div>
+                      <div class="mock-appbar is-pg"><i>🔒</i>결제사 페이지</div>
+                      <div class="mock-content">
+                        <span class="mock-eyebrow">EXTERNAL PG PAGE</span>
+                        <strong>결제수단 선택</strong>
+                        <div class="mock-row"><i></i><span></span></div>
+                        <div class="mock-row"><i></i><span></span></div>
+                      </div>
+                      <div class="mock-pay-button">결제하기 · 128,000원</div>
+                      <div class="mock-system-bar"><b>◁</b><b>○</b><b>□</b></div>
+                    </div>
+                  </div>
+                  <div class="broken-callout">
+                    <span>결제 불가</span>
+                    <strong>제어할 수 없는 외부 문서에 시스템 바가 겹침</strong>
+                    <p>내부 화면은 웹이 safe-area를 알아서 비워 두지만, 외부 문서에는 그 값이 전달되지 않았습니다. 3버튼 내비 바가 뜬 기기에서는 버튼을 누를 방법이 없었습니다.</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="broken-state-card">
+                <header>
+                  <span class="platform-badge is-step">② inset 추가</span>
+                  <div><strong>복귀하면 바텀 탭이 위로 떠오름</strong><p>외부용 native inset 위에 웹 safe-area padding이 한 번 더</p></div>
+                </header>
+                <div class="broken-phone-wrap">
+                  <div class="phone-shell is-ios" aria-hidden="true">
+                    <div class="ios-island"></div>
+                    <div class="phone-screen is-broken-double">
+                      <div class="mock-status"><span>9:42</span><span>◉ ▰</span></div>
+                      <div class="mock-appbar">주문 내역</div>
+                      <div class="mock-content">
+                        <span class="mock-eyebrow">RETURNED FROM PG</span>
+                        <strong>결제 완료</strong>
+                        <div class="mock-row"><i></i><span></span></div>
+                        <div class="mock-row"><i></i><span></span></div>
+                      </div>
+                      <div class="mock-bottom-nav is-lifted"><b>홈</b><b>식자재</b><b>내 정보</b></div>
+                      <div class="mock-inset-band is-css">web safe-area</div>
+                      <div class="mock-inset-band is-native">native inset (외부용)</div>
+                      <div class="ios-home">━</div>
+                    </div>
+                  </div>
+                  <div class="broken-callout">
+                    <span>이중 계산</span>
+                    <strong>native inset(외부용) + 웹 safe-area padding</strong>
+                    <p>외부 URL에서 켠 inset이 내부 화면으로 돌아온 뒤에도 남아 있었고, 웹은 자기 몫의 safe-area를 그 위에 그대로 더했습니다.</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="broken-state-card">
+                <header>
+                  <span class="platform-badge is-step">③ inset 초기화</span>
+                  <div><strong>초기화하면 바텀 탭이 아래에 박힘</strong><p>복귀 시 inset·safeArea를 0으로 되돌린 뒤</p></div>
+                </header>
+                <div class="broken-phone-wrap">
+                  <div class="phone-shell is-android" aria-hidden="true">
+                    <div class="android-camera"></div>
+                    <div class="phone-screen is-broken-missing">
+                      <div class="mock-status"><span>9:42</span><span>▰ ◔</span></div>
+                      <div class="mock-appbar">주문 내역</div>
+                      <div class="mock-content">
+                        <span class="mock-eyebrow">RETURNED FROM PG</span>
+                        <strong>결제 완료</strong>
+                        <div class="mock-row"><i></i><span></span></div>
+                        <div class="mock-row"><i></i><span></span></div>
+                      </div>
+                      <div class="mock-bottom-nav is-buried"><b>홈</b><b>식자재</b><b>내 정보</b></div>
+                      <div class="mock-system-cover">system gesture area</div>
+                      <div class="android-nav">━</div>
+                    </div>
+                  </div>
+                  <div class="broken-callout">
+                    <span>여백 유실</span>
+                    <strong>native는 돌아왔지만 웹은 다시 재지 않음</strong>
+                    <p>inset을 0으로 되돌려도 웹이 부팅 때 저장해 둔 safe-area·innerHeight 값은 외부 페이지 기준으로 남아, 하단 안전 영역 없이 배치됐습니다.</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="case-section-header is-prose is-followup">
+              <p>
+                초기화만으로 왜 안 되는지 알아야 했는데, safe-area를 계산하는 코드가 앱 코드 어디에도 보이지 않았습니다.
+                Capacitor에서 inset을 웹으로 전달하는 부분이 사용중이던 akanjs 프레임워크의 node_modules 안에 들어 있었기 때문입니다.
+                AI 도구로도 원인을 찾지 못해서 node_modules를 직접 열어 조사했습니다.
+              </p>
+              <p>
+                읽어 보니 <code>@akanjs/client</code>의 <code>device.init()</code>이 앱 부팅 시 <code>capacitor-plugin-safe-area</code>의
+                <code>getSafeAreaInsets()</code>를 한 번 호출해 상·하단 safe-area를 저장하고, <code>@akanjs/next</code>는 <code>window.innerHeight</code>도
+                부팅 시 한 번 <code>useRef</code>에 잡아 페이지 높이와 하단 safe-area 밴드 위치 계산에 계속 사용했습니다.
+                <code>@akanjs/ui</code>는 <code>#topSafeArea</code>·<code>#bottomSafeArea</code>라는 fixed div를 웹이 직접 그렸습니다.
+                safe-area와 viewport 높이는 웹 레이어가 부팅 시 한 번 재고, 그 뒤로는 다시 재지 않는 구조였습니다.
+                결제 왕복 중 native가 inset을 켰다 끄면 WebView의 geometry가 바뀌는데 웹은 그 사실을 모르니,
+                복귀 시 native 값을 원복하는 것만으로는 부족했고 웹이 다시 재도록 신호까지 보내야 했습니다.
+              </p>
+            </div>
+          </section>
+
+          <section class="case-section" aria-labelledby="payment-solution">
+            <header class="case-section-header is-prose">
+              <p class="case-section-kicker">Solution</p>
+              <h3 id="payment-solution">복귀 시 native inset을 원복하는 데서 그치지 않고, 웹이 다시 재도록 신호를 보냈습니다.</h3>
+              <p>
+                웹 레이어의 설계를 바꾸는 대신 native가 맞춰주기로 했습니다.
+                먼저 로드되는 main-frame URL이 내부(<code>capacitor</code>·<code>localhost</code>·개발 서버 사설 IP)인지 외부인지 판별합니다.
+                외부면 native가 inset을 켜서 PG 페이지가 잘리지 않게 하고, 카드·은행 앱 호출은 intent나 custom scheme으로 OS에 넘깁니다.
+                내부로 돌아오면 inset을 끄고, 그 자리에서 웹 레이어가 safe-area와 viewport를 다시 재도록 OS마다 다른 방식으로 신호를 보냈습니다.
+              </p>
+            </header>
+
+            <article class="platform-story">
+              <header class="platform-story-header is-solo">
+                <div><span class="platform-badge is-android">Android</span><strong>WindowInsets → margin + CSS 변수 재주입</strong></div>
+              </header>
+              <div class="broken-phone-wrap is-fixed">
+                <div class="phone-shell is-android" aria-hidden="true">
+                  <div class="android-camera"></div>
+                  <div class="phone-screen is-restored">
+                    <div class="mock-status"><span>9:42</span><span>▰ ◔</span></div>
+                    <div class="mock-appbar">주문 내역</div>
+                    <div class="mock-content">
+                      <span class="mock-eyebrow">RETURNED FROM PG</span>
+                      <strong>결제 완료</strong>
+                      <div class="mock-row"><i></i><span></span></div>
+                      <div class="mock-row"><i></i><span></span></div>
+                    </div>
+                    <div class="mock-bottom-nav is-restored"><b>홈</b><b>식자재</b><b>내 정보</b></div>
+                    <div class="mock-inset-band is-restored">safe-area · 웹이 다시 잼</div>
+                    <div class="android-nav">━</div>
+                  </div>
+                </div>
+                <div class="broken-callout is-fixed">
+                  <span>복귀 후 · 정상</span>
+                  <strong>margin 0 + 마지막으로 주입한 safe-area 스크립트 재실행</strong>
+                  <p>
+                    <code>onPageFinished</code>에서 최종 URL을 판별합니다. 외부 URL이면 WindowInsets 값으로 WebView에 4방향 margin을 주고,
+                    내부로 돌아오면 margin을 0으로 만든 뒤 마지막으로 주입했던 <code>--sat</code>·<code>--sab</code> CSS 변수 스크립트를 다시 실행했습니다.
+                    새로 부팅된 내부 문서에는 inset 콜백이 다시 오지 않을 수 있어서, margin을 되돌리는 자리에서 직접 한 번 더 넣어줬습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="change-ledger" aria-label="Android 결제 왕복의 세 단계">
+                <div><span>01 · 내부 주문 화면</span><strong>margin 0 · 웹 CSS가 safe-area 담당</strong></div>
+                <span aria-hidden="true">→</span>
+                <div><span>02 · 외부 PG · 앱 호출</span><strong>WindowInsets 4방향 margin · intent/scheme은 OS로</strong></div>
+                <span aria-hidden="true">→</span>
+                <div><span>03 · 내부 결과로 복귀</span><strong>margin 0 + CSS 변수 스크립트 재주입</strong></div>
+              </div>
+            </article>
+
+            <article class="platform-story">
+              <header class="platform-story-header is-solo">
+                <div><span class="platform-badge is-ios">iOS</span><strong>contentInset 전환 + frame reflow</strong></div>
+              </header>
+              <div class="broken-phone-wrap is-fixed">
+                <div class="phone-shell is-ios" aria-hidden="true">
+                  <div class="ios-island"></div>
+                  <div class="phone-screen is-restored">
+                    <div class="mock-status"><span>9:42</span><span>◉ ▰</span></div>
+                    <div class="mock-appbar">주문 내역</div>
+                    <div class="mock-content">
+                      <span class="mock-eyebrow">RETURNED FROM PG</span>
+                      <strong>결제 완료</strong>
+                      <div class="mock-row"><i></i><span></span></div>
+                      <div class="mock-row"><i></i><span></span></div>
+                    </div>
+                    <div class="mock-bottom-nav is-restored"><b>홈</b><b>식자재</b><b>내 정보</b></div>
+                    <div class="mock-inset-band is-restored">safe-area · 웹이 다시 잼</div>
+                    <div class="ios-home">━</div>
+                  </div>
+                </div>
+                <div class="broken-callout is-fixed">
+                  <span>복귀 후 · 정상</span>
+                  <strong>.never + inset 0 → 0.1pt reflow → resize 재계산</strong>
+                  <p>
+                    <code>WKNavigationDelegate</code>에서 main-frame URL이 allowlist 밖이면 <code>contentInsetAdjustmentBehavior</code>를
+                    <code>.always</code>로, 내부로 돌아오면 <code>.never</code>와 inset 0으로 되돌립니다.
+                    여기서 끝내면 이미 그려진 WKWebView의 visual viewport 높이가 외부 문서 기준으로 남는 경우가 있어서,
+                    프레임 높이를 0.1pt 바꿨다 50ms 뒤 원복해 native layout을 무효화하고, <code>resize</code> 이벤트를 보낸 뒤
+                    <code>visualViewport</code>의 다음 resize를 한 번 더 감지해 fixed·vh 기반 요소가 다시 배치되게 했습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="change-ledger" aria-label="iOS 결제 왕복의 세 단계">
+                <div><span>01 · 내부 주문 화면</span><strong>.never + inset 0 · 웹 레이아웃이 safe-area 담당</strong></div>
+                <span aria-hidden="true">→</span>
+                <div><span>02 · 외부 PG · 앱 호출</span><strong>.always + safeAreaInsets · UIApplication.open</strong></div>
+                <span aria-hidden="true">→</span>
+                <div><span>03 · 내부 결과로 복귀</span><strong>inset 원복 → 0.1pt 리사이즈 → resize 재계산</strong></div>
+              </div>
+            </article>
+
+            <div class="case-rule-note">
+              <span>진행 순서</span>
+              <p>
+                2025-10-01 Android에서 intent·custom scheme으로 외부 결제 앱을 호출하는 것부터 시작했고, 10-30 iOS도 custom scheme을
+                <code>UIApplication.open</code>으로 넘겼습니다. 10-31 iOS에 URL별 inset 전환과 <code>didFinish</code> 재판별을 넣고,
+                11-02 결제 결과 페이지와 레이아웃을 정리한 뒤, 11-10 Android에 WindowInsets margin과 CSS 변수 재주입을 붙였습니다.
+                iOS의 0.1pt reflow와 resize 재계산은 그 뒤에 추가했습니다.
+              </p>
+            </div>
+          </section>
+
+          <section class="case-section" aria-labelledby="payment-result">
+            <header class="case-section-header is-prose">
+              <p class="case-section-kicker">Outcome &amp; trade-off</p>
+              <h3 id="payment-result">웹이 레이아웃을 소유하는 프레임워크의 설계를 깨지 않고 결제 왕복을 붙였습니다.</h3>
+              <p>
+                akanjs가 safe-area를 웹으로 넘겨 웹이 레이아웃을 소유하게 한 것은, 웹과 크로스플랫폼 앱을 한 코드베이스로 만들고
+                제스처·페이지 트랜지션을 웹에서 구현하기 쉽게 하려는 의도였고, 맞는 설계였다고 생각합니다. 다만 그 설계를 유지하려면
+                외부 PG 페이지처럼 웹이 손댈 수 없는 구간을 native가 대신 맞춰줘야 했고, 이 작업이 그 번잡한 부분이었습니다.
+                덕분에 “유지보수성이 높고 웹 코드로 모든 것을 제어할 수 있는 시스템”이라는 프레임워크의 의도를 깨지 않고 이어갈 수 있었습니다.
+              </p>
+            </header>
+            <div class="result-card-grid">
+              <article class="result-card is-strong">
+                <span>Kept</span>
+                <strong>웹이 safe-area·레이아웃 소유</strong>
+                <p>akanjs의 부팅 시 측정 구조와 웹 제스처·트랜지션 코드를 그대로 두었습니다.</p>
+              </article>
+              <article class="result-card">
+                <span>Added</span>
+                <strong>native가 URL 경계에서 inset 전환</strong>
+                <p>Android는 margin + CSS 변수 재주입, iOS는 contentInset 전환 + reflow로 웹이 다시 재게 했습니다.</p>
+              </article>
+              <article class="result-card">
+                <span>Fixed</span>
+                <strong>PG 결제 버튼 잘림 · 복귀 후 레이아웃 붕괴</strong>
+                <p>다른 앱으로 내보내지 않는 웹뷰 내 결제 플로우를 두 OS에서 유지할 수 있게 됐습니다.</p>
+              </article>
+            </div>
+            <div class="case-rule-note is-tradeoff">
+              <span>Trade-off</span>
+              <p>
+                iOS 복귀 reflow가 0.1pt 프레임 변경·50ms 지연 같은 휴리스틱에 기대고 있어 WebKit 동작이 바뀌면 깨질 수 있습니다.
+              </p>
+            </div>
+          </section>
+
+          <footer class="case-evidence">
+            <span>Code evidence</span>
+            <a href="https://github.com/tkd992006/onTheMarket/commit/1ae08345e8010d1725d3fd9fa5f2cb9a90640aaa" target="_blank" rel="noreferrer">1ae0834 · Android intent</a>
+            <a href="https://github.com/tkd992006/onTheMarket/commit/351ed3ca6a5f27cd3504e0690675094be972f185" target="_blank" rel="noreferrer">351ed3c · iOS scheme</a>
+            <a href="https://github.com/tkd992006/onTheMarket/commit/b2061fb87a6cb8e575d6f7b8ed490f937bc57c0a" target="_blank" rel="noreferrer">b2061fb · iOS inset</a>
+            <a href="https://github.com/tkd992006/onTheMarket/commit/18cc9b918286cb9e90c03d4b9eeaf72253938731" target="_blank" rel="noreferrer">18cc9b9 · viewport restore</a>
+            <a href="https://github.com/tkd992006/onTheMarket/commit/58b38035bfaa6e0057f95e5a32a85c998b78eb3d" target="_blank" rel="noreferrer">58b3803 · Android safe-area</a>
+          </footer>
+        </div>
+      </div>
+    </dialog>

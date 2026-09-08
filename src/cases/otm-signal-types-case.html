@@ -1,0 +1,169 @@
+<dialog
+      class="case-modal"
+      id="otm-signal-types-case"
+      aria-labelledby="signal-types-case-title"
+      aria-describedby="signal-types-case-description"
+    >
+      <div class="case-modal-shell">
+        <header class="case-modal-header">
+          <div>
+            <p class="case-modal-kicker">OnTheMarket · Solved issue 05</p>
+            <h2 id="signal-types-case-title">타입 서버를 느리게 만든 nullable 인자 타입 폭발 추적</h2>
+            <p id="signal-types-case-description">
+              웹 빌드가 10분을 넘기기 시작했을 때, 타입이 퍼져 나가는 곳은 signal뿐이라고 보고
+              프레임워크의 인자 튜플 타입에서 2ⁿ으로 불어나는 지점을 찾아냈습니다.
+            </p>
+          </div>
+          <button class="case-modal-close" type="button" data-case-close aria-label="문제 해결 사례 닫기">×</button>
+        </header>
+
+        <div class="case-modal-content case-narrative is-compact">
+          <section class="case-section" aria-labelledby="signal-types-problem">
+            <header class="case-section-header">
+              <p class="case-section-kicker">Problem &amp; constraints</p>
+              <h3 id="signal-types-problem">코드는 조금씩 늘었을 뿐인데 타입 검사 시간이 감당이 안 되기 시작했습니다.</h3>
+              <p>
+                온더마켓은 AkanJS 프레임워크 위에서 만든 서비스입니다. AkanJS에서는 GraphQL resolver를 <code>*.signal.ts</code>에 선언하면,
+                그 메서드 시그니처 하나에서 클라이언트 fetch 함수, store의 <code>queryArgsOf…</code>, 페이지 init 타입까지 TypeScript 타입으로 자동 파생됩니다.
+                서버 코드를 한 번만 쓰면 클라이언트 타입이 따라오는 구조라, 목록 조회에는 <code>statuses</code>·<code>skip</code>·<code>limit</code>·<code>sort</code>처럼
+                생략 가능한 필터 인자를 <code>{ nullable: true }</code>로 자유롭게 붙여 왔습니다.
+              </p>
+            </header>
+            <p class="case-afterthought">
+              2025년 8월 중순, 유통사·상품·장부·식당 목록 화면을 한꺼번에 붙이면서 전체 API 인자 중 nullable 인자가 132개까지 늘었습니다.
+              그 무렵부터 에디터 타입 서버가 응답을 멈추기 일쑤였고, 웹 빌드는 10분을 넘겼습니다. 1인 개발이라 빌드 한 번이 곧 배포 주기여서,
+              출시 전 검수 일정 안에 원인을 찾아야 했습니다.
+            </p>
+          </section>
+
+          <section class="case-section" aria-labelledby="signal-types-observed">
+            <header class="case-section-header">
+              <p class="case-section-kicker">Observed before</p>
+              <h3 id="signal-types-observed">타입이 퍼지는 곳은 signal뿐이니, 프레임워크의 인자 타입부터 열어 봤습니다.</h3>
+              <p>
+                서비스나 문서 모델은 타입이 그 파일 안에서 끝나지만, signal 메서드의 인자 타입은 프레임워크가 튜플로 받아 앱의 모든 클라이언트 타입으로 다시 찍어 냅니다.
+                그래서 느려진 원인이 어디든 증폭되는 지점은 signal이라고 보고, <code>@akanjs/signal</code>의 <code>gql.ts</code>에서 인자 튜플을 가공하는
+                <code>FilterOutInternalArgs</code>를 읽었습니다. 이 타입은 튜플을 앞에서부터 재귀하면서 <code>Head extends undefined | null</code>로 nullable 인자를 판정하고,
+                nullable이면 <code>[...Acc, Head?]</code>로 optional 요소를 하나씩 쌓는 방식이었습니다.
+              </p>
+            </header>
+            <p>
+              문제는 <code>infer Head</code>로 뽑은 타입 파라미터에 조건부 타입을 걸면 TypeScript가 유니온을 분배한다는 점이었습니다.
+              <code>string | null</code>은 <code>string</code> 가지와 <code>null</code> 가지로 갈라지고, 누적 중이던 튜플도 둘로 복제됩니다.
+              nullable 인자를 하나 지날 때마다 튜플 유니온이 두 배가 되니, 인자 7개짜리 목록 조회 하나가 128개의 튜플 조합을 만들고,
+              그 조합이 fetch 함수·store·init 타입마다 다시 계산됐습니다.
+            </p>
+            <div class="case-inline-trace compact-trace" aria-label="타입 폭발 경로">
+              <strong>nullable 인자 n개</strong><span aria-hidden="true">→</span>
+              <strong>분배 조건부 타입</strong><span aria-hidden="true">→</span>
+              <strong>튜플 유니온 2ⁿ개</strong><span aria-hidden="true">→</span>
+              <strong>파생 타입마다 재계산</strong>
+            </div>
+          </section>
+
+          <section class="case-section" aria-labelledby="signal-types-solution">
+            <header class="case-section-header">
+              <p class="case-section-kicker">Solution</p>
+              <h3 id="signal-types-solution">당장은 nullable을 걷어내 출시를 지키고, 근본 수정은 프레임워크에 반영되게 했습니다.</h3>
+              <p>
+                먼저 온더마켓 쪽에서 목록 조회의 <code>statuses</code>·<code>skip</code>·<code>limit</code>과 검색 필터 인자에서 <code>nullable</code>을 빼고
+                클라이언트가 항상 값을 넘기도록 바꿨습니다. 마지막 인자인 <code>sort</code>만 nullable로 남겼는데, 튜플 끝에 하나 있는 nullable은 분기가 한 번뿐이라 부담이 없었기 때문입니다.
+                8월 19일부터 25일까지 두 커밋에 걸쳐 132개였던 nullable 인자를 80개, 다시 52개로 줄였고, 타입 서버와 빌드가 다시 돌아왔습니다.
+              </p>
+            </header>
+            <p>
+              동시에 원인 위치와 재현 조건을 AkanJS 쪽에 공유했고, 8월 28일 프레임워크 PR에서 <code>FilterOutInternalArgs</code>가 세 단계로 다시 쓰였습니다.
+              내부 인자 제거(<code>FilterInternalArgs</code>)와 타입 변환(<code>ConvertArgs</code>)을 분리하고, nullable 판정은 분배가 일어나지 않는
+              <code>null extends Head</code>로 바꾼 뒤, 첫 nullable 인자를 만나는 순간 나머지를 <code>Partial&lt;T&gt;</code> 한 번으로 처리합니다.
+              분기가 사라져 인자 수에 선형으로 끝납니다. 온더마켓은 9월 초 이 수정이 담긴 0.9.44로 올렸습니다.
+            </p>
+            <div class="change-ledger is-four" aria-label="조치 순서">
+              <div><span>08.18 · 증상</span><strong>nullable 132개 · 빌드 10분 초과</strong></div>
+              <span aria-hidden="true">→</span>
+              <div><span>08.19 → 08.25 · 완화</span><strong>목록 인자 nullable 제거 · 52개</strong></div>
+              <span aria-hidden="true">→</span>
+              <div><span>08.28 · 근본 수정</span><strong>AkanJS PR #58 · 타입 선형화</strong></div>
+              <span aria-hidden="true">→</span>
+              <div><span>09.09 · 반영</span><strong>@akanjs 0.9.44 마이그레이션</strong></div>
+            </div>
+          </section>
+
+          <section class="case-section" aria-labelledby="signal-types-code-change">
+            <header class="case-section-header">
+              <p class="case-section-kicker">Code change</p>
+              <h3 id="signal-types-code-change">분배되는 조건부 타입 하나를 비분배 판정과 Partial 한 번으로 바꿨습니다.</h3>
+            </header>
+            <div class="code-change-grid">
+              <article class="code-card is-before">
+                <header><span>Before</span><strong>@akanjs/signal gql.ts · nullable마다 튜플이 두 갈래로</strong></header>
+                <pre><code>export type FilterOutInternalArgs&lt;
+  T extends any[], Acc extends any[] = []
+&gt; = T extends readonly [infer Head, ...infer Rest]
+  ? IsInternalArg&lt;Head&gt; extends true
+    ? FilterOutInternalArgs&lt;Rest, Acc&gt;
+    // Head가 string | null이면 여기서 분배 →
+    // Acc가 [.., string]과 [.., null?] 둘로 복제
+    : Head extends undefined | null
+      ? FilterOutInternalArgs&lt;Rest, [...Acc, ConvertArg&lt;Head&gt;?]&gt;
+      : FilterOutInternalArgs&lt;Rest, [...Acc, ConvertArg&lt;Head&gt;]&gt;
+  : Acc;</code></pre>
+              </article>
+              <article class="code-card is-after">
+                <header><span>After</span><strong>비분배 판정 + 첫 nullable부터 Partial 한 번</strong></header>
+                <pre><code>type FilterInternalArgs&lt;T extends any[]&gt; =
+  T extends [...infer Rest, infer Last]
+    ? IsInternalArg&lt;Last&gt; extends true
+      ? FilterInternalArgs&lt;Rest&gt; : T
+    : [];
+
+type PartialNullableArgs&lt;T extends any[]&gt; =
+  T extends [infer Head, ...infer Rest]
+    ? null extends Head        // 분배 없음
+      ? Partial&lt;T&gt;             // 나머지를 한 번에
+      : [Head, ...PartialNullableArgs&lt;Rest&gt;]
+    : [];
+
+export type FilterOutInternalArgs&lt;Args extends any[]&gt; =
+  PartialNullableArgs&lt;ConvertArgs&lt;FilterInternalArgs&lt;Args&gt;&gt;&gt;;</code></pre>
+              </article>
+            </div>
+            <p class="code-caption">
+              온더마켓 쪽 완화 조치는 <code>restaurant.signal.ts</code> 같은 목록 조회에서
+              <code>@Arg.Query("skip", () =&gt; Int, { nullable: true }) skip: number | null</code>을
+              <code>@Arg.Query("skip", () =&gt; Int) skip: number</code>로 바꾸는 식이었습니다. 서비스 계층은 이미 값이 있을 때만 필터를 적용하고 있어 시그니처만 손댔습니다.
+            </p>
+          </section>
+
+          <section class="case-section" aria-labelledby="signal-types-result">
+            <header class="case-section-header">
+              <p class="case-section-kicker">Outcome &amp; trade-off</p>
+              <h3 id="signal-types-result">타입 서버와 빌드는 정상으로 돌아왔고, 3주 동안 인자 contract가 빡빡해지는 대가를 치렀습니다.</h3>
+            </header>
+            <div class="compact-outcome-grid">
+              <article>
+                <span>Outcome</span>
+                <strong>2ⁿ → n, 프레임워크 레벨에서 해결</strong>
+                <p>nullable 인자 수와 무관하게 파생 타입이 선형으로 계산됩니다. 프레임워크 수정 이후에는 signal에 nullable을 다시 자유롭게 쓰고 있고, 현재 100개가 넘는 nullable 인자에서도 같은 증상은 재발하지 않았습니다.</p>
+              </article>
+              <article>
+                <span>Trade-off</span>
+                <strong>완화 기간 동안 클라이언트가 값을 항상 넘겨야 함</strong>
+                <p>nullable을 뺀 3주 동안은 목록 조회마다 <code>statuses</code>·<code>skip</code>·<code>limit</code>을 클라이언트가 채워 보내야 했고, "생략하면 전체"라는 API 유연성을 포기했습니다. 프레임워크 반영 후 필요한 곳부터 되돌렸습니다.</p>
+              </article>
+            </div>
+            <p class="case-afterthought">
+              프레임워크 코드를 직접 고치지 않고 두 단계로 나눈 이유는, 패키지를 포크해 패치하면 이후 버전을 따라갈 때마다 같은 패치를 얹어야 하기 때문이었습니다.
+              당장 출시를 막는 증상은 코드에서 걷어내고, 근본 원인은 원래 주인이 고치도록 넘기는 편이 1인 개발에서 유지 비용이 가장 낮았습니다.
+            </p>
+          </section>
+
+          <footer class="case-evidence">
+            <span>Code evidence</span>
+            <a href="https://github.com/tkd992006/onTheMarket/commit/256b825a49949868e47d1883f9d806915a802dcc" target="_blank" rel="noreferrer">256b825 · fix-compsig (nullable 132 → 80)</a>
+            <a href="https://github.com/tkd992006/onTheMarket/commit/8c6e1810cd290c0a3aa4b8ed6266ce96a92269af" target="_blank" rel="noreferrer">8c6e181 · restaurant·order signal 정리 (→ 52)</a>
+            <a href="https://github.com/akan-team/akansoft/pull/58" target="_blank" rel="noreferrer">akansoft #58 · FilterOutInternalArgs 선형화</a>
+            <a href="https://github.com/tkd992006/onTheMarket/commit/0382e9e" target="_blank" rel="noreferrer">0382e9e · akan 0.9.44 buildable</a>
+          </footer>
+        </div>
+      </div>
+    </dialog>

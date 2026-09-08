@@ -1,0 +1,157 @@
+{
+  "CHRONO": {
+    "value": {
+      "startYear": 2018,
+      "end": "2027-02",
+      "omitFrom": 2019,
+      "omitTo": 2021,
+      "gapColumn": "22px",
+      "firstYearScale": 0.55,
+      "now": "2026-09"
+    },
+    "source": "{\n  startYear: 2018,\n  end: \"2027-02\", // 축의 마지막 달(포함). now 뒤에 약간의 여백\n  omitFrom: 2019, // 사건이 없는 2019–2021은 축에서 생략하고 // 단절로 잇는다\n  omitTo: 2021,\n  gapColumn: \"22px\",\n  firstYearScale: 0.55, // 2018은 폭을 조금 좁게\n  now: \"2026-09\",\n}"
+  },
+  "CHRONO_TRACKS": {
+    "value": [
+      {
+        "label": "Education",
+        "items": [
+          {
+            "label": "KAIST 전산학부 · 수리과학 부전공",
+            "start": "2018-03",
+            "end": "2025-08",
+            "href": "#edu-kaist"
+          }
+        ]
+      },
+      {
+        "label": "AI tools",
+        "items": [
+          {
+            "label": "GitHub Copilot",
+            "start": "2022-11",
+            "end": "2023-02",
+            "href": "#ai-experience"
+          },
+          {
+            "label": "Cursor",
+            "start": "2023-03",
+            "end": "2025-10",
+            "href": "#ai-experience"
+          },
+          {
+            "label": "Antigravity → Claude Code",
+            "start": "2025-11",
+            "end": "2026-04",
+            "href": "#ai-experience"
+          },
+          {
+            "label": "Codex + Claude Code",
+            "start": "2026-05",
+            "end": "now",
+            "href": "#ai-experience"
+          }
+        ]
+      },
+      {
+        "label": "Work",
+        "items": [
+          {
+            "label": "TingtingPlanet · Founder",
+            "start": "2023-03",
+            "end": "now",
+            "href": "#work-tingtingplanet"
+          },
+          {
+            "label": "OnTheMarket · Co-founder / CTO",
+            "start": "2025-06",
+            "end": "2026-02",
+            "href": "#work-onthemarket"
+          }
+        ]
+      },
+      {
+        "label": "Projects",
+        "items": [
+          {
+            "label": "OnTheMarket",
+            "start": "2025-06",
+            "end": "2026-02",
+            "href": "#project-onthemarket",
+            "featured": true
+          },
+          {
+            "label": "Gagageul",
+            "year": 2025,
+            "href": "#project-gagageul",
+            "featured": true
+          },
+          {
+            "label": "ChapterTwo",
+            "boundary": 2025,
+            "href": "#portfolio-chaptertwo"
+          },
+          {
+            "label": "SYRS AI Lab",
+            "year": 2024,
+            "href": "#project-syrs",
+            "featured": true
+          },
+          {
+            "label": "JoBonger",
+            "year": 2024,
+            "href": "#portfolio-jobonger"
+          },
+          {
+            "label": "Play AI SSO",
+            "year": 2024,
+            "href": "#portfolio-playai"
+          },
+          {
+            "label": "Akasys",
+            "year": 2023,
+            "href": "#project-akasys",
+            "featured": true
+          },
+          {
+            "label": "Local Jobs",
+            "year": 2023,
+            "href": "#project-local-jobs",
+            "featured": true
+          },
+          {
+            "label": "ClackClack Platform",
+            "year": 2023,
+            "href": "#portfolio-clackclack"
+          },
+          {
+            "label": "Watch Wise",
+            "year": 2023,
+            "href": "#portfolio-watchwise"
+          },
+          {
+            "label": "Mounting",
+            "year": 2023,
+            "href": "#portfolio-mounting"
+          },
+          {
+            "label": "SLOTHS ON THE RUN · ETH Denver",
+            "start": "2023-02",
+            "end": "2023-03",
+            "href": "#portfolio-sloths"
+          },
+          {
+            "label": "Hashmoss",
+            "year": 2022,
+            "href": "#portfolio-hashmoss"
+          }
+        ]
+      }
+    ],
+    "source": "[\n  {\n    label: \"Education\",\n    items: [{ label: \"KAIST 전산학부 · 수리과학 부전공\", start: \"2018-03\", end: \"2025-08\", href: \"#edu-kaist\" }],\n  },\n  {\n    label: \"AI tools\",\n    items: [\n      { label: \"GitHub Copilot\", start: \"2022-11\", end: \"2023-02\", href: \"#ai-experience\" },\n      { label: \"Cursor\", start: \"2023-03\", end: \"2025-10\", href: \"#ai-experience\" },\n      { label: \"Antigravity → Claude Code\", start: \"2025-11\", end: \"2026-04\", href: \"#ai-experience\" },\n      { label: \"Codex + Claude Code\", start: \"2026-05\", end: \"now\", href: \"#ai-experience\" },\n    ],\n  },\n  {\n    label: \"Work\",\n    items: [\n      { label: \"TingtingPlanet · Founder\", start: \"2023-03\", end: \"now\", href: \"#work-tingtingplanet\" },\n      { label: \"OnTheMarket · Co-founder / CTO\", start: \"2025-06\", end: \"2026-02\", href: \"#work-onthemarket\" },\n    ],\n  },\n  {\n    label: \"Projects\",\n    items: [\n      { label: \"OnTheMarket\", start: \"2025-06\", end: \"2026-02\", href: \"#project-onthemarket\", featured: true },\n      { label: \"Gagageul\", year: 2025, href: \"#project-gagageul\", featured: true },\n      { label: \"ChapterTwo\", boundary: 2025, href: \"#portfolio-chaptertwo\" },\n      { label: \"SYRS AI Lab\", year: 2024, href: \"#project-syrs\", featured: true },\n      { label: \"JoBonger\", year: 2024, href: \"#portfolio-jobonger\" },\n      { label: \"Play AI SSO\", year: 2024, href: \"#portfolio-playai\" },\n      { label: \"Akasys\", year: 2023, href: \"#project-akasys\", featured: true },\n      { label: \"Local Jobs\", year: 2023, href: \"#project-local-jobs\", featured: true },\n      { label: \"ClackClack Platform\", year: 2023, href: \"#portfolio-clackclack\" },\n      { label: \"Watch Wise\", year: 2023, href: \"#portfolio-watchwise\" },\n      { label: \"Mounting\", year: 2023, href: \"#portfolio-mounting\" },\n      { label: \"SLOTHS ON THE RUN · ETH Denver\", start: \"2023-02\", end: \"2023-03\", href: \"#portfolio-sloths\" },\n      { label: \"Hashmoss\", year: 2022, href: \"#portfolio-hashmoss\" },\n    ],\n  },\n]"
+  },
+  "BASE_TITLE": {
+    "value": "이상화 · Frontend / Product Engineer",
+    "source": "\"이상화 · Frontend / Product Engineer\""
+  }
+}
