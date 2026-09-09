@@ -1,0 +1,1370 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "2a11ee8a7fc57d8664b732996bbd655fb9f031a2",
+  "files": [
+    {
+      "revision": "before",
+      "slug": "toss",
+      "name": "index.html",
+      "sourcePath": "toss/index.html",
+      "snapshot": "snapshots/before/toss/index.html.txt",
+      "bytes": 152528,
+      "sha256": "86ea1a0f4fa6794ad7952ddc35272efd2a875338bf3daa3f8cd09bf9bb43daea"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "name": "script.js",
+      "sourcePath": "toss/script.js",
+      "snapshot": "snapshots/before/toss/script.js.txt",
+      "bytes": 23133,
+      "sha256": "25fde7aef78c4c471691eb908513ba424618da1086d5b4bac52710806c13cff5"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "name": "styles.css",
+      "sourcePath": "toss/styles.css",
+      "snapshot": "snapshots/before/toss/styles.css.txt",
+      "bytes": 67073,
+      "sha256": "c0ad3dbdabc74cd688efc019cd621abcbcb0222db997fe3d390dadbaceba87f6"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "name": "index.html",
+      "sourcePath": "modoodoc/index.html",
+      "snapshot": "snapshots/before/modoodoc/index.html.txt",
+      "bytes": 153021,
+      "sha256": "cc058cecd2376ee8fda9a42cf63d844192e48c319c91710ac1fe763741fe259e"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "name": "script.js",
+      "sourcePath": "modoodoc/script.js",
+      "snapshot": "snapshots/before/modoodoc/script.js.txt",
+      "bytes": 23135,
+      "sha256": "a8eea66b86c9022805e28145f1ff79ead89b7661361987b0bf0b39f1dd6d844e"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "name": "styles.css",
+      "sourcePath": "modoodoc/styles.css",
+      "snapshot": "snapshots/before/modoodoc/styles.css.txt",
+      "bytes": 67073,
+      "sha256": "c0ad3dbdabc74cd688efc019cd621abcbcb0222db997fe3d390dadbaceba87f6"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "name": "index.html",
+      "sourcePath": "daangn/index.html",
+      "snapshot": "snapshots/before/daangn/index.html.txt",
+      "bytes": 153060,
+      "sha256": "c5c0786bde960dbc070ced905023ee2cf2fc2e581a6449afc51842fcfde9d0c3"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "name": "script.js",
+      "sourcePath": "daangn/script.js",
+      "snapshot": "snapshots/before/daangn/script.js.txt",
+      "bytes": 23123,
+      "sha256": "3ba22102a88fd7669405cacd9f061b909bb67572e7792775a71bec895ffb06cd"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "name": "styles.css",
+      "sourcePath": "daangn/styles.css",
+      "snapshot": "snapshots/before/daangn/styles.css.txt",
+      "bytes": 67073,
+      "sha256": "c0ad3dbdabc74cd688efc019cd621abcbcb0222db997fe3d390dadbaceba87f6"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "name": "index.html",
+      "sourcePath": "toss/index.html",
+      "snapshot": "snapshots/current/toss/index.html.txt",
+      "bytes": 152528,
+      "sha256": "86ea1a0f4fa6794ad7952ddc35272efd2a875338bf3daa3f8cd09bf9bb43daea"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "name": "script.js",
+      "sourcePath": "toss/script.js",
+      "snapshot": "snapshots/current/toss/script.js.txt",
+      "bytes": 23133,
+      "sha256": "25fde7aef78c4c471691eb908513ba424618da1086d5b4bac52710806c13cff5"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "name": "styles.css",
+      "sourcePath": "toss/styles.css",
+      "snapshot": "snapshots/current/toss/styles.css.txt",
+      "bytes": 67073,
+      "sha256": "c0ad3dbdabc74cd688efc019cd621abcbcb0222db997fe3d390dadbaceba87f6"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "name": "index.html",
+      "sourcePath": "modoodoc/index.html",
+      "snapshot": "snapshots/current/modoodoc/index.html.txt",
+      "bytes": 154359,
+      "sha256": "9754d5c05be76c68ab6ce534a120c77da12b776d69adfc3dc79ae6d3d6b7bd59"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "name": "script.js",
+      "sourcePath": "modoodoc/script.js",
+      "snapshot": "snapshots/current/modoodoc/script.js.txt",
+      "bytes": 23135,
+      "sha256": "a8eea66b86c9022805e28145f1ff79ead89b7661361987b0bf0b39f1dd6d844e"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "name": "styles.css",
+      "sourcePath": "modoodoc/styles.css",
+      "snapshot": "snapshots/current/modoodoc/styles.css.txt",
+      "bytes": 67073,
+      "sha256": "c0ad3dbdabc74cd688efc019cd621abcbcb0222db997fe3d390dadbaceba87f6"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "name": "index.html",
+      "sourcePath": "daangn/index.html",
+      "snapshot": "snapshots/current/daangn/index.html.txt",
+      "bytes": 154457,
+      "sha256": "66886a740eeff692c97e69b9e68c991ca185c0b99399fdb9a8aaedf4c5a5b557"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "name": "script.js",
+      "sourcePath": "daangn/script.js",
+      "snapshot": "snapshots/current/daangn/script.js.txt",
+      "bytes": 23123,
+      "sha256": "3ba22102a88fd7669405cacd9f061b909bb67572e7792775a71bec895ffb06cd"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "name": "styles.css",
+      "sourcePath": "daangn/styles.css",
+      "snapshot": "snapshots/current/daangn/styles.css.txt",
+      "bytes": 67073,
+      "sha256": "c0ad3dbdabc74cd688efc019cd621abcbcb0222db997fe3d390dadbaceba87f6"
+    }
+  ],
+  "assets": [
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/favicon.svg",
+      "asset": "assets/favicon.svg",
+      "bytes": 518,
+      "sha256": "d9abf268746963c9988ca633c363bde3d23c6a1b263e7368a81a490767e14ea4"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/akasys.webp",
+      "asset": "assets/images/akasys.webp",
+      "bytes": 48336,
+      "sha256": "4157a9b19a412bdda83a6e4b42f6ab5ecc839f9bec1b44cbdcffc96985fd7db2"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/chaptertwo-1.webp",
+      "asset": "assets/images/chaptertwo-1.webp",
+      "bytes": 4854,
+      "sha256": "df1e9211a2a00394cc7c95a16d817a3859c656614b5e3e718af979b40da35b7f"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/chaptertwo-2.webp",
+      "asset": "assets/images/chaptertwo-2.webp",
+      "bytes": 37886,
+      "sha256": "8b532246e0f5bc52d47d387f11e66d931e68473cde7805182c22cb3e6dfa3e70"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/clackclack-1.webp",
+      "asset": "assets/images/clackclack-1.webp",
+      "bytes": 19318,
+      "sha256": "5d597e4d80cee42ebe7c6bba712686b97d4784c57d9177ff65c578d59fe3c1fa"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/clackclack-2.webp",
+      "asset": "assets/images/clackclack-2.webp",
+      "bytes": 32922,
+      "sha256": "c7e1a31d33659f43365c6c03d695cd8bfe189d22a37b7f611c333fea585cb803"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/gagageul.webp",
+      "asset": "assets/images/gagageul.webp",
+      "bytes": 51820,
+      "sha256": "7fc26872a600bf3bec12144b66efd429c38f6b0dac7dcbb0ea42b7498a5b353b"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/hashmoss.webp",
+      "asset": "assets/images/hashmoss.webp",
+      "bytes": 71262,
+      "sha256": "8ccad4a44097ec2393c8a7c0a1a7455999e3eb58d18cfe7365e034dbc572b5f3"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/jobonger-1.webp",
+      "asset": "assets/images/jobonger-1.webp",
+      "bytes": 52512,
+      "sha256": "3ee48a23ffffdc236caaafd18deecf572a0086c8282bc13063c30565bb11ab1a"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/local-jobs.webp",
+      "asset": "assets/images/local-jobs.webp",
+      "bytes": 45656,
+      "sha256": "8f7f35fff48534671aee54876352f215d1535efc828d649ad3a8930ec40f2a1c"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/onthemarket-app-1.webp",
+      "asset": "assets/images/onthemarket-app-1.webp",
+      "bytes": 31638,
+      "sha256": "11b52031be30d6d61e0f0fc2e67dafcc1f96ba4280c7ec2d1aca644db3fe7f4b"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/onthemarket-app-2.webp",
+      "asset": "assets/images/onthemarket-app-2.webp",
+      "bytes": 22486,
+      "sha256": "3ef26e903900ed704ad0bddc35bc6845851b45769c9f68a9c5c1ec29a73d2115"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/onthemarket-app-3.webp",
+      "asset": "assets/images/onthemarket-app-3.webp",
+      "bytes": 29552,
+      "sha256": "8440082907150155c2711f4fbb96398f384ec410cab2f931fa0c91443513d902"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/onthemarket-app-4.webp",
+      "asset": "assets/images/onthemarket-app-4.webp",
+      "bytes": 29250,
+      "sha256": "233c892f09e756e6e095930f7b548a0b54cd09d46cb6217d604dd999de6ad458"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/onthemarket-app-5.webp",
+      "asset": "assets/images/onthemarket-app-5.webp",
+      "bytes": 31940,
+      "sha256": "8e7aab3aa0a805fddac9441c8a1d4c08f8c1c35f5ffce9b478ff44f6b30b58d3"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/onthemarket-app-6.webp",
+      "asset": "assets/images/onthemarket-app-6.webp",
+      "bytes": 18078,
+      "sha256": "fdce2e9b14f461c5a26e9147add12b5c877624a48a0074b0afbbf869dc492732"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/onthemarket-price-1.webp",
+      "asset": "assets/images/onthemarket-price-1.webp",
+      "bytes": 23770,
+      "sha256": "736d3b73d5b0da2fa4a42cda9543934d21cac0c05b809aa94a15c8a52f2054dc"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/onthemarket-price-2.webp",
+      "asset": "assets/images/onthemarket-price-2.webp",
+      "bytes": 19486,
+      "sha256": "4f44d7681dc0615a0b9797a7d55c62b0842d6c5b75332f85a9ae2694808974cd"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/onthemarket-price-5.webp",
+      "asset": "assets/images/onthemarket-price-5.webp",
+      "bytes": 19868,
+      "sha256": "e33a72f883239cfc774c357d409a38f8662e4fe80b0863eb01dce6067f9dcb29"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/onthemarket-price-6.webp",
+      "asset": "assets/images/onthemarket-price-6.webp",
+      "bytes": 34974,
+      "sha256": "a4869ed9acf1e9be5c65f454d1ff7637798f4775eb3522309a553256f6d1ccd4"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/playai-1.webp",
+      "asset": "assets/images/playai-1.webp",
+      "bytes": 14744,
+      "sha256": "2b31f2ad022b94046e1c979216b2ad599d5edf1d540717b7c053d78a4ce441a9"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/sloths.webp",
+      "asset": "assets/images/sloths.webp",
+      "bytes": 22220,
+      "sha256": "383a177e4d0af55aea8cac88afb0d39c0a43f2a32f7cd31263743820c5565ea3"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/syrs-1.webp",
+      "asset": "assets/images/syrs-1.webp",
+      "bytes": 17570,
+      "sha256": "5103c0bd73e96af82c0f7adb0fd2000625b87d93ec6df5a4655dd55aa6025ece"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/syrs-2.webp",
+      "asset": "assets/images/syrs-2.webp",
+      "bytes": 15638,
+      "sha256": "360722044a1e94625ed90ec5fd072d5d6272957e4249b52672e4d1e6c733b76c"
+    },
+    {
+      "revision": "before",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/syrs-reel.webp",
+      "asset": "assets/images/syrs-reel.webp",
+      "bytes": 793806,
+      "sha256": "5507cbceb866a10b51c5392e0e75d678f6fed1af8ea823dbaf1a9dcf7d54d281"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/favicon.svg",
+      "asset": "assets/favicon.svg",
+      "bytes": 518,
+      "sha256": "d9abf268746963c9988ca633c363bde3d23c6a1b263e7368a81a490767e14ea4"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/akasys.webp",
+      "asset": "assets/images/akasys.webp",
+      "bytes": 48336,
+      "sha256": "4157a9b19a412bdda83a6e4b42f6ab5ecc839f9bec1b44cbdcffc96985fd7db2"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/chaptertwo-1.webp",
+      "asset": "assets/images/chaptertwo-1.webp",
+      "bytes": 4854,
+      "sha256": "df1e9211a2a00394cc7c95a16d817a3859c656614b5e3e718af979b40da35b7f"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/chaptertwo-2.webp",
+      "asset": "assets/images/chaptertwo-2.webp",
+      "bytes": 37886,
+      "sha256": "8b532246e0f5bc52d47d387f11e66d931e68473cde7805182c22cb3e6dfa3e70"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/clackclack-1.webp",
+      "asset": "assets/images/clackclack-1.webp",
+      "bytes": 19318,
+      "sha256": "5d597e4d80cee42ebe7c6bba712686b97d4784c57d9177ff65c578d59fe3c1fa"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/clackclack-2.webp",
+      "asset": "assets/images/clackclack-2.webp",
+      "bytes": 32922,
+      "sha256": "c7e1a31d33659f43365c6c03d695cd8bfe189d22a37b7f611c333fea585cb803"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/gagageul.webp",
+      "asset": "assets/images/gagageul.webp",
+      "bytes": 51820,
+      "sha256": "7fc26872a600bf3bec12144b66efd429c38f6b0dac7dcbb0ea42b7498a5b353b"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/hashmoss.webp",
+      "asset": "assets/images/hashmoss.webp",
+      "bytes": 71262,
+      "sha256": "8ccad4a44097ec2393c8a7c0a1a7455999e3eb58d18cfe7365e034dbc572b5f3"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/jobonger-1.webp",
+      "asset": "assets/images/jobonger-1.webp",
+      "bytes": 52512,
+      "sha256": "3ee48a23ffffdc236caaafd18deecf572a0086c8282bc13063c30565bb11ab1a"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/local-jobs.webp",
+      "asset": "assets/images/local-jobs.webp",
+      "bytes": 45656,
+      "sha256": "8f7f35fff48534671aee54876352f215d1535efc828d649ad3a8930ec40f2a1c"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/onthemarket-app-1.webp",
+      "asset": "assets/images/onthemarket-app-1.webp",
+      "bytes": 31638,
+      "sha256": "11b52031be30d6d61e0f0fc2e67dafcc1f96ba4280c7ec2d1aca644db3fe7f4b"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/onthemarket-app-2.webp",
+      "asset": "assets/images/onthemarket-app-2.webp",
+      "bytes": 22486,
+      "sha256": "3ef26e903900ed704ad0bddc35bc6845851b45769c9f68a9c5c1ec29a73d2115"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/onthemarket-app-3.webp",
+      "asset": "assets/images/onthemarket-app-3.webp",
+      "bytes": 29552,
+      "sha256": "8440082907150155c2711f4fbb96398f384ec410cab2f931fa0c91443513d902"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/onthemarket-app-4.webp",
+      "asset": "assets/images/onthemarket-app-4.webp",
+      "bytes": 29250,
+      "sha256": "233c892f09e756e6e095930f7b548a0b54cd09d46cb6217d604dd999de6ad458"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/onthemarket-app-5.webp",
+      "asset": "assets/images/onthemarket-app-5.webp",
+      "bytes": 31940,
+      "sha256": "8e7aab3aa0a805fddac9441c8a1d4c08f8c1c35f5ffce9b478ff44f6b30b58d3"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/onthemarket-app-6.webp",
+      "asset": "assets/images/onthemarket-app-6.webp",
+      "bytes": 18078,
+      "sha256": "fdce2e9b14f461c5a26e9147add12b5c877624a48a0074b0afbbf869dc492732"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/onthemarket-price-1.webp",
+      "asset": "assets/images/onthemarket-price-1.webp",
+      "bytes": 23770,
+      "sha256": "736d3b73d5b0da2fa4a42cda9543934d21cac0c05b809aa94a15c8a52f2054dc"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/onthemarket-price-2.webp",
+      "asset": "assets/images/onthemarket-price-2.webp",
+      "bytes": 19486,
+      "sha256": "4f44d7681dc0615a0b9797a7d55c62b0842d6c5b75332f85a9ae2694808974cd"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/onthemarket-price-5.webp",
+      "asset": "assets/images/onthemarket-price-5.webp",
+      "bytes": 19868,
+      "sha256": "e33a72f883239cfc774c357d409a38f8662e4fe80b0863eb01dce6067f9dcb29"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/onthemarket-price-6.webp",
+      "asset": "assets/images/onthemarket-price-6.webp",
+      "bytes": 34974,
+      "sha256": "a4869ed9acf1e9be5c65f454d1ff7637798f4775eb3522309a553256f6d1ccd4"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/playai-1.webp",
+      "asset": "assets/images/playai-1.webp",
+      "bytes": 14744,
+      "sha256": "2b31f2ad022b94046e1c979216b2ad599d5edf1d540717b7c053d78a4ce441a9"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/sloths.webp",
+      "asset": "assets/images/sloths.webp",
+      "bytes": 22220,
+      "sha256": "383a177e4d0af55aea8cac88afb0d39c0a43f2a32f7cd31263743820c5565ea3"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/syrs-1.webp",
+      "asset": "assets/images/syrs-1.webp",
+      "bytes": 17570,
+      "sha256": "5103c0bd73e96af82c0f7adb0fd2000625b87d93ec6df5a4655dd55aa6025ece"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/syrs-2.webp",
+      "asset": "assets/images/syrs-2.webp",
+      "bytes": 15638,
+      "sha256": "360722044a1e94625ed90ec5fd072d5d6272957e4249b52672e4d1e6c733b76c"
+    },
+    {
+      "revision": "before",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/syrs-reel.webp",
+      "asset": "assets/images/syrs-reel.webp",
+      "bytes": 793806,
+      "sha256": "5507cbceb866a10b51c5392e0e75d678f6fed1af8ea823dbaf1a9dcf7d54d281"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/favicon.svg",
+      "asset": "assets/favicon.svg",
+      "bytes": 518,
+      "sha256": "d9abf268746963c9988ca633c363bde3d23c6a1b263e7368a81a490767e14ea4"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/akasys.webp",
+      "asset": "assets/images/akasys.webp",
+      "bytes": 48336,
+      "sha256": "4157a9b19a412bdda83a6e4b42f6ab5ecc839f9bec1b44cbdcffc96985fd7db2"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/chaptertwo-1.webp",
+      "asset": "assets/images/chaptertwo-1.webp",
+      "bytes": 4854,
+      "sha256": "df1e9211a2a00394cc7c95a16d817a3859c656614b5e3e718af979b40da35b7f"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/chaptertwo-2.webp",
+      "asset": "assets/images/chaptertwo-2.webp",
+      "bytes": 37886,
+      "sha256": "8b532246e0f5bc52d47d387f11e66d931e68473cde7805182c22cb3e6dfa3e70"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/clackclack-1.webp",
+      "asset": "assets/images/clackclack-1.webp",
+      "bytes": 19318,
+      "sha256": "5d597e4d80cee42ebe7c6bba712686b97d4784c57d9177ff65c578d59fe3c1fa"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/clackclack-2.webp",
+      "asset": "assets/images/clackclack-2.webp",
+      "bytes": 32922,
+      "sha256": "c7e1a31d33659f43365c6c03d695cd8bfe189d22a37b7f611c333fea585cb803"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/gagageul.webp",
+      "asset": "assets/images/gagageul.webp",
+      "bytes": 51820,
+      "sha256": "7fc26872a600bf3bec12144b66efd429c38f6b0dac7dcbb0ea42b7498a5b353b"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/hashmoss.webp",
+      "asset": "assets/images/hashmoss.webp",
+      "bytes": 71262,
+      "sha256": "8ccad4a44097ec2393c8a7c0a1a7455999e3eb58d18cfe7365e034dbc572b5f3"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/jobonger-1.webp",
+      "asset": "assets/images/jobonger-1.webp",
+      "bytes": 52512,
+      "sha256": "3ee48a23ffffdc236caaafd18deecf572a0086c8282bc13063c30565bb11ab1a"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/local-jobs.webp",
+      "asset": "assets/images/local-jobs.webp",
+      "bytes": 45656,
+      "sha256": "8f7f35fff48534671aee54876352f215d1535efc828d649ad3a8930ec40f2a1c"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/onthemarket-app-1.webp",
+      "asset": "assets/images/onthemarket-app-1.webp",
+      "bytes": 31638,
+      "sha256": "11b52031be30d6d61e0f0fc2e67dafcc1f96ba4280c7ec2d1aca644db3fe7f4b"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/onthemarket-app-2.webp",
+      "asset": "assets/images/onthemarket-app-2.webp",
+      "bytes": 22486,
+      "sha256": "3ef26e903900ed704ad0bddc35bc6845851b45769c9f68a9c5c1ec29a73d2115"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/onthemarket-app-3.webp",
+      "asset": "assets/images/onthemarket-app-3.webp",
+      "bytes": 29552,
+      "sha256": "8440082907150155c2711f4fbb96398f384ec410cab2f931fa0c91443513d902"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/onthemarket-app-4.webp",
+      "asset": "assets/images/onthemarket-app-4.webp",
+      "bytes": 29250,
+      "sha256": "233c892f09e756e6e095930f7b548a0b54cd09d46cb6217d604dd999de6ad458"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/onthemarket-app-5.webp",
+      "asset": "assets/images/onthemarket-app-5.webp",
+      "bytes": 31940,
+      "sha256": "8e7aab3aa0a805fddac9441c8a1d4c08f8c1c35f5ffce9b478ff44f6b30b58d3"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/onthemarket-app-6.webp",
+      "asset": "assets/images/onthemarket-app-6.webp",
+      "bytes": 18078,
+      "sha256": "fdce2e9b14f461c5a26e9147add12b5c877624a48a0074b0afbbf869dc492732"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/onthemarket-price-1.webp",
+      "asset": "assets/images/onthemarket-price-1.webp",
+      "bytes": 23770,
+      "sha256": "736d3b73d5b0da2fa4a42cda9543934d21cac0c05b809aa94a15c8a52f2054dc"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/onthemarket-price-2.webp",
+      "asset": "assets/images/onthemarket-price-2.webp",
+      "bytes": 19486,
+      "sha256": "4f44d7681dc0615a0b9797a7d55c62b0842d6c5b75332f85a9ae2694808974cd"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/onthemarket-price-5.webp",
+      "asset": "assets/images/onthemarket-price-5.webp",
+      "bytes": 19868,
+      "sha256": "e33a72f883239cfc774c357d409a38f8662e4fe80b0863eb01dce6067f9dcb29"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/onthemarket-price-6.webp",
+      "asset": "assets/images/onthemarket-price-6.webp",
+      "bytes": 34974,
+      "sha256": "a4869ed9acf1e9be5c65f454d1ff7637798f4775eb3522309a553256f6d1ccd4"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/playai-1.webp",
+      "asset": "assets/images/playai-1.webp",
+      "bytes": 14744,
+      "sha256": "2b31f2ad022b94046e1c979216b2ad599d5edf1d540717b7c053d78a4ce441a9"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/sloths.webp",
+      "asset": "assets/images/sloths.webp",
+      "bytes": 22220,
+      "sha256": "383a177e4d0af55aea8cac88afb0d39c0a43f2a32f7cd31263743820c5565ea3"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/syrs-1.webp",
+      "asset": "assets/images/syrs-1.webp",
+      "bytes": 17570,
+      "sha256": "5103c0bd73e96af82c0f7adb0fd2000625b87d93ec6df5a4655dd55aa6025ece"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/syrs-2.webp",
+      "asset": "assets/images/syrs-2.webp",
+      "bytes": 15638,
+      "sha256": "360722044a1e94625ed90ec5fd072d5d6272957e4249b52672e4d1e6c733b76c"
+    },
+    {
+      "revision": "before",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/syrs-reel.webp",
+      "asset": "assets/images/syrs-reel.webp",
+      "bytes": 793806,
+      "sha256": "5507cbceb866a10b51c5392e0e75d678f6fed1af8ea823dbaf1a9dcf7d54d281"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/favicon.svg",
+      "asset": "assets/favicon.svg",
+      "bytes": 518,
+      "sha256": "d9abf268746963c9988ca633c363bde3d23c6a1b263e7368a81a490767e14ea4"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/akasys.webp",
+      "asset": "assets/images/akasys.webp",
+      "bytes": 48336,
+      "sha256": "4157a9b19a412bdda83a6e4b42f6ab5ecc839f9bec1b44cbdcffc96985fd7db2"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/chaptertwo-1.webp",
+      "asset": "assets/images/chaptertwo-1.webp",
+      "bytes": 4854,
+      "sha256": "df1e9211a2a00394cc7c95a16d817a3859c656614b5e3e718af979b40da35b7f"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/chaptertwo-2.webp",
+      "asset": "assets/images/chaptertwo-2.webp",
+      "bytes": 37886,
+      "sha256": "8b532246e0f5bc52d47d387f11e66d931e68473cde7805182c22cb3e6dfa3e70"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/clackclack-1.webp",
+      "asset": "assets/images/clackclack-1.webp",
+      "bytes": 19318,
+      "sha256": "5d597e4d80cee42ebe7c6bba712686b97d4784c57d9177ff65c578d59fe3c1fa"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/clackclack-2.webp",
+      "asset": "assets/images/clackclack-2.webp",
+      "bytes": 32922,
+      "sha256": "c7e1a31d33659f43365c6c03d695cd8bfe189d22a37b7f611c333fea585cb803"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/gagageul.webp",
+      "asset": "assets/images/gagageul.webp",
+      "bytes": 51820,
+      "sha256": "7fc26872a600bf3bec12144b66efd429c38f6b0dac7dcbb0ea42b7498a5b353b"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/hashmoss.webp",
+      "asset": "assets/images/hashmoss.webp",
+      "bytes": 71262,
+      "sha256": "8ccad4a44097ec2393c8a7c0a1a7455999e3eb58d18cfe7365e034dbc572b5f3"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/jobonger-1.webp",
+      "asset": "assets/images/jobonger-1.webp",
+      "bytes": 52512,
+      "sha256": "3ee48a23ffffdc236caaafd18deecf572a0086c8282bc13063c30565bb11ab1a"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/local-jobs.webp",
+      "asset": "assets/images/local-jobs.webp",
+      "bytes": 45656,
+      "sha256": "8f7f35fff48534671aee54876352f215d1535efc828d649ad3a8930ec40f2a1c"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/onthemarket-app-1.webp",
+      "asset": "assets/images/onthemarket-app-1.webp",
+      "bytes": 31638,
+      "sha256": "11b52031be30d6d61e0f0fc2e67dafcc1f96ba4280c7ec2d1aca644db3fe7f4b"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/onthemarket-app-2.webp",
+      "asset": "assets/images/onthemarket-app-2.webp",
+      "bytes": 22486,
+      "sha256": "3ef26e903900ed704ad0bddc35bc6845851b45769c9f68a9c5c1ec29a73d2115"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/onthemarket-app-3.webp",
+      "asset": "assets/images/onthemarket-app-3.webp",
+      "bytes": 29552,
+      "sha256": "8440082907150155c2711f4fbb96398f384ec410cab2f931fa0c91443513d902"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/onthemarket-app-4.webp",
+      "asset": "assets/images/onthemarket-app-4.webp",
+      "bytes": 29250,
+      "sha256": "233c892f09e756e6e095930f7b548a0b54cd09d46cb6217d604dd999de6ad458"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/onthemarket-app-5.webp",
+      "asset": "assets/images/onthemarket-app-5.webp",
+      "bytes": 31940,
+      "sha256": "8e7aab3aa0a805fddac9441c8a1d4c08f8c1c35f5ffce9b478ff44f6b30b58d3"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/onthemarket-app-6.webp",
+      "asset": "assets/images/onthemarket-app-6.webp",
+      "bytes": 18078,
+      "sha256": "fdce2e9b14f461c5a26e9147add12b5c877624a48a0074b0afbbf869dc492732"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/onthemarket-price-1.webp",
+      "asset": "assets/images/onthemarket-price-1.webp",
+      "bytes": 23770,
+      "sha256": "736d3b73d5b0da2fa4a42cda9543934d21cac0c05b809aa94a15c8a52f2054dc"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/onthemarket-price-2.webp",
+      "asset": "assets/images/onthemarket-price-2.webp",
+      "bytes": 19486,
+      "sha256": "4f44d7681dc0615a0b9797a7d55c62b0842d6c5b75332f85a9ae2694808974cd"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/onthemarket-price-5.webp",
+      "asset": "assets/images/onthemarket-price-5.webp",
+      "bytes": 19868,
+      "sha256": "e33a72f883239cfc774c357d409a38f8662e4fe80b0863eb01dce6067f9dcb29"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/onthemarket-price-6.webp",
+      "asset": "assets/images/onthemarket-price-6.webp",
+      "bytes": 34974,
+      "sha256": "a4869ed9acf1e9be5c65f454d1ff7637798f4775eb3522309a553256f6d1ccd4"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/playai-1.webp",
+      "asset": "assets/images/playai-1.webp",
+      "bytes": 14744,
+      "sha256": "2b31f2ad022b94046e1c979216b2ad599d5edf1d540717b7c053d78a4ce441a9"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/sloths.webp",
+      "asset": "assets/images/sloths.webp",
+      "bytes": 22220,
+      "sha256": "383a177e4d0af55aea8cac88afb0d39c0a43f2a32f7cd31263743820c5565ea3"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/syrs-1.webp",
+      "asset": "assets/images/syrs-1.webp",
+      "bytes": 17570,
+      "sha256": "5103c0bd73e96af82c0f7adb0fd2000625b87d93ec6df5a4655dd55aa6025ece"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/syrs-2.webp",
+      "asset": "assets/images/syrs-2.webp",
+      "bytes": 15638,
+      "sha256": "360722044a1e94625ed90ec5fd072d5d6272957e4249b52672e4d1e6c733b76c"
+    },
+    {
+      "revision": "current",
+      "slug": "toss",
+      "sourcePath": "toss/assets/images/syrs-reel.webp",
+      "asset": "assets/images/syrs-reel.webp",
+      "bytes": 793806,
+      "sha256": "5507cbceb866a10b51c5392e0e75d678f6fed1af8ea823dbaf1a9dcf7d54d281"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/favicon.svg",
+      "asset": "assets/favicon.svg",
+      "bytes": 518,
+      "sha256": "d9abf268746963c9988ca633c363bde3d23c6a1b263e7368a81a490767e14ea4"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/akasys.webp",
+      "asset": "assets/images/akasys.webp",
+      "bytes": 48336,
+      "sha256": "4157a9b19a412bdda83a6e4b42f6ab5ecc839f9bec1b44cbdcffc96985fd7db2"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/chaptertwo-1.webp",
+      "asset": "assets/images/chaptertwo-1.webp",
+      "bytes": 4854,
+      "sha256": "df1e9211a2a00394cc7c95a16d817a3859c656614b5e3e718af979b40da35b7f"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/chaptertwo-2.webp",
+      "asset": "assets/images/chaptertwo-2.webp",
+      "bytes": 37886,
+      "sha256": "8b532246e0f5bc52d47d387f11e66d931e68473cde7805182c22cb3e6dfa3e70"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/clackclack-1.webp",
+      "asset": "assets/images/clackclack-1.webp",
+      "bytes": 19318,
+      "sha256": "5d597e4d80cee42ebe7c6bba712686b97d4784c57d9177ff65c578d59fe3c1fa"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/clackclack-2.webp",
+      "asset": "assets/images/clackclack-2.webp",
+      "bytes": 32922,
+      "sha256": "c7e1a31d33659f43365c6c03d695cd8bfe189d22a37b7f611c333fea585cb803"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/gagageul.webp",
+      "asset": "assets/images/gagageul.webp",
+      "bytes": 51820,
+      "sha256": "7fc26872a600bf3bec12144b66efd429c38f6b0dac7dcbb0ea42b7498a5b353b"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/hashmoss.webp",
+      "asset": "assets/images/hashmoss.webp",
+      "bytes": 71262,
+      "sha256": "8ccad4a44097ec2393c8a7c0a1a7455999e3eb58d18cfe7365e034dbc572b5f3"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/jobonger-1.webp",
+      "asset": "assets/images/jobonger-1.webp",
+      "bytes": 52512,
+      "sha256": "3ee48a23ffffdc236caaafd18deecf572a0086c8282bc13063c30565bb11ab1a"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/local-jobs.webp",
+      "asset": "assets/images/local-jobs.webp",
+      "bytes": 45656,
+      "sha256": "8f7f35fff48534671aee54876352f215d1535efc828d649ad3a8930ec40f2a1c"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/onthemarket-app-1.webp",
+      "asset": "assets/images/onthemarket-app-1.webp",
+      "bytes": 31638,
+      "sha256": "11b52031be30d6d61e0f0fc2e67dafcc1f96ba4280c7ec2d1aca644db3fe7f4b"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/onthemarket-app-2.webp",
+      "asset": "assets/images/onthemarket-app-2.webp",
+      "bytes": 22486,
+      "sha256": "3ef26e903900ed704ad0bddc35bc6845851b45769c9f68a9c5c1ec29a73d2115"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/onthemarket-app-3.webp",
+      "asset": "assets/images/onthemarket-app-3.webp",
+      "bytes": 29552,
+      "sha256": "8440082907150155c2711f4fbb96398f384ec410cab2f931fa0c91443513d902"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/onthemarket-app-4.webp",
+      "asset": "assets/images/onthemarket-app-4.webp",
+      "bytes": 29250,
+      "sha256": "233c892f09e756e6e095930f7b548a0b54cd09d46cb6217d604dd999de6ad458"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/onthemarket-app-5.webp",
+      "asset": "assets/images/onthemarket-app-5.webp",
+      "bytes": 31940,
+      "sha256": "8e7aab3aa0a805fddac9441c8a1d4c08f8c1c35f5ffce9b478ff44f6b30b58d3"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/onthemarket-app-6.webp",
+      "asset": "assets/images/onthemarket-app-6.webp",
+      "bytes": 18078,
+      "sha256": "fdce2e9b14f461c5a26e9147add12b5c877624a48a0074b0afbbf869dc492732"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/onthemarket-price-1.webp",
+      "asset": "assets/images/onthemarket-price-1.webp",
+      "bytes": 23770,
+      "sha256": "736d3b73d5b0da2fa4a42cda9543934d21cac0c05b809aa94a15c8a52f2054dc"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/onthemarket-price-2.webp",
+      "asset": "assets/images/onthemarket-price-2.webp",
+      "bytes": 19486,
+      "sha256": "4f44d7681dc0615a0b9797a7d55c62b0842d6c5b75332f85a9ae2694808974cd"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/onthemarket-price-5.webp",
+      "asset": "assets/images/onthemarket-price-5.webp",
+      "bytes": 19868,
+      "sha256": "e33a72f883239cfc774c357d409a38f8662e4fe80b0863eb01dce6067f9dcb29"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/onthemarket-price-6.webp",
+      "asset": "assets/images/onthemarket-price-6.webp",
+      "bytes": 34974,
+      "sha256": "a4869ed9acf1e9be5c65f454d1ff7637798f4775eb3522309a553256f6d1ccd4"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/playai-1.webp",
+      "asset": "assets/images/playai-1.webp",
+      "bytes": 14744,
+      "sha256": "2b31f2ad022b94046e1c979216b2ad599d5edf1d540717b7c053d78a4ce441a9"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/sloths.webp",
+      "asset": "assets/images/sloths.webp",
+      "bytes": 22220,
+      "sha256": "383a177e4d0af55aea8cac88afb0d39c0a43f2a32f7cd31263743820c5565ea3"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/syrs-1.webp",
+      "asset": "assets/images/syrs-1.webp",
+      "bytes": 17570,
+      "sha256": "5103c0bd73e96af82c0f7adb0fd2000625b87d93ec6df5a4655dd55aa6025ece"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/syrs-2.webp",
+      "asset": "assets/images/syrs-2.webp",
+      "bytes": 15638,
+      "sha256": "360722044a1e94625ed90ec5fd072d5d6272957e4249b52672e4d1e6c733b76c"
+    },
+    {
+      "revision": "current",
+      "slug": "modoodoc",
+      "sourcePath": "modoodoc/assets/images/syrs-reel.webp",
+      "asset": "assets/images/syrs-reel.webp",
+      "bytes": 793806,
+      "sha256": "5507cbceb866a10b51c5392e0e75d678f6fed1af8ea823dbaf1a9dcf7d54d281"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/favicon.svg",
+      "asset": "assets/favicon.svg",
+      "bytes": 518,
+      "sha256": "d9abf268746963c9988ca633c363bde3d23c6a1b263e7368a81a490767e14ea4"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/akasys.webp",
+      "asset": "assets/images/akasys.webp",
+      "bytes": 48336,
+      "sha256": "4157a9b19a412bdda83a6e4b42f6ab5ecc839f9bec1b44cbdcffc96985fd7db2"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/chaptertwo-1.webp",
+      "asset": "assets/images/chaptertwo-1.webp",
+      "bytes": 4854,
+      "sha256": "df1e9211a2a00394cc7c95a16d817a3859c656614b5e3e718af979b40da35b7f"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/chaptertwo-2.webp",
+      "asset": "assets/images/chaptertwo-2.webp",
+      "bytes": 37886,
+      "sha256": "8b532246e0f5bc52d47d387f11e66d931e68473cde7805182c22cb3e6dfa3e70"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/clackclack-1.webp",
+      "asset": "assets/images/clackclack-1.webp",
+      "bytes": 19318,
+      "sha256": "5d597e4d80cee42ebe7c6bba712686b97d4784c57d9177ff65c578d59fe3c1fa"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/clackclack-2.webp",
+      "asset": "assets/images/clackclack-2.webp",
+      "bytes": 32922,
+      "sha256": "c7e1a31d33659f43365c6c03d695cd8bfe189d22a37b7f611c333fea585cb803"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/gagageul.webp",
+      "asset": "assets/images/gagageul.webp",
+      "bytes": 51820,
+      "sha256": "7fc26872a600bf3bec12144b66efd429c38f6b0dac7dcbb0ea42b7498a5b353b"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/hashmoss.webp",
+      "asset": "assets/images/hashmoss.webp",
+      "bytes": 71262,
+      "sha256": "8ccad4a44097ec2393c8a7c0a1a7455999e3eb58d18cfe7365e034dbc572b5f3"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/jobonger-1.webp",
+      "asset": "assets/images/jobonger-1.webp",
+      "bytes": 52512,
+      "sha256": "3ee48a23ffffdc236caaafd18deecf572a0086c8282bc13063c30565bb11ab1a"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/local-jobs.webp",
+      "asset": "assets/images/local-jobs.webp",
+      "bytes": 45656,
+      "sha256": "8f7f35fff48534671aee54876352f215d1535efc828d649ad3a8930ec40f2a1c"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/onthemarket-app-1.webp",
+      "asset": "assets/images/onthemarket-app-1.webp",
+      "bytes": 31638,
+      "sha256": "11b52031be30d6d61e0f0fc2e67dafcc1f96ba4280c7ec2d1aca644db3fe7f4b"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/onthemarket-app-2.webp",
+      "asset": "assets/images/onthemarket-app-2.webp",
+      "bytes": 22486,
+      "sha256": "3ef26e903900ed704ad0bddc35bc6845851b45769c9f68a9c5c1ec29a73d2115"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/onthemarket-app-3.webp",
+      "asset": "assets/images/onthemarket-app-3.webp",
+      "bytes": 29552,
+      "sha256": "8440082907150155c2711f4fbb96398f384ec410cab2f931fa0c91443513d902"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/onthemarket-app-4.webp",
+      "asset": "assets/images/onthemarket-app-4.webp",
+      "bytes": 29250,
+      "sha256": "233c892f09e756e6e095930f7b548a0b54cd09d46cb6217d604dd999de6ad458"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/onthemarket-app-5.webp",
+      "asset": "assets/images/onthemarket-app-5.webp",
+      "bytes": 31940,
+      "sha256": "8e7aab3aa0a805fddac9441c8a1d4c08f8c1c35f5ffce9b478ff44f6b30b58d3"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/onthemarket-app-6.webp",
+      "asset": "assets/images/onthemarket-app-6.webp",
+      "bytes": 18078,
+      "sha256": "fdce2e9b14f461c5a26e9147add12b5c877624a48a0074b0afbbf869dc492732"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/onthemarket-price-1.webp",
+      "asset": "assets/images/onthemarket-price-1.webp",
+      "bytes": 23770,
+      "sha256": "736d3b73d5b0da2fa4a42cda9543934d21cac0c05b809aa94a15c8a52f2054dc"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/onthemarket-price-2.webp",
+      "asset": "assets/images/onthemarket-price-2.webp",
+      "bytes": 19486,
+      "sha256": "4f44d7681dc0615a0b9797a7d55c62b0842d6c5b75332f85a9ae2694808974cd"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/onthemarket-price-5.webp",
+      "asset": "assets/images/onthemarket-price-5.webp",
+      "bytes": 19868,
+      "sha256": "e33a72f883239cfc774c357d409a38f8662e4fe80b0863eb01dce6067f9dcb29"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/onthemarket-price-6.webp",
+      "asset": "assets/images/onthemarket-price-6.webp",
+      "bytes": 34974,
+      "sha256": "a4869ed9acf1e9be5c65f454d1ff7637798f4775eb3522309a553256f6d1ccd4"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/playai-1.webp",
+      "asset": "assets/images/playai-1.webp",
+      "bytes": 14744,
+      "sha256": "2b31f2ad022b94046e1c979216b2ad599d5edf1d540717b7c053d78a4ce441a9"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/sloths.webp",
+      "asset": "assets/images/sloths.webp",
+      "bytes": 22220,
+      "sha256": "383a177e4d0af55aea8cac88afb0d39c0a43f2a32f7cd31263743820c5565ea3"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/syrs-1.webp",
+      "asset": "assets/images/syrs-1.webp",
+      "bytes": 17570,
+      "sha256": "5103c0bd73e96af82c0f7adb0fd2000625b87d93ec6df5a4655dd55aa6025ece"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/syrs-2.webp",
+      "asset": "assets/images/syrs-2.webp",
+      "bytes": 15638,
+      "sha256": "360722044a1e94625ed90ec5fd072d5d6272957e4249b52672e4d1e6c733b76c"
+    },
+    {
+      "revision": "current",
+      "slug": "daangn",
+      "sourcePath": "daangn/assets/images/syrs-reel.webp",
+      "asset": "assets/images/syrs-reel.webp",
+      "bytes": 793806,
+      "sha256": "5507cbceb866a10b51c5392e0e75d678f6fed1af8ea823dbaf1a9dcf7d54d281"
+    }
+  ]
+}

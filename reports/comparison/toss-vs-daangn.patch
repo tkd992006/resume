@@ -1,5 +1,5 @@
---- toss/index.html
-+++ daangn/index.html
+--- current/toss/index.html
++++ current/daangn/index.html
 @@ -3,19 +3,19 @@
    <head>
      <meta charset="utf-8">
@@ -497,8 +497,8 @@
              <h2 id="receipt-case-title">영수증 한 장으로 “온더마켓이었으면 얼마”를 보여주는 캠페인</h2>
              <p id="receipt-case-description">
                앱 설치 전 점주가 영수증 사진만 올리면, 그 날짜의 온더마켓 최저가와 비교해 품목별 차액과 절감액을 보여주는
---- toss/script.js
-+++ daangn/script.js
+--- current/toss/script.js
++++ current/daangn/script.js
 @@ -462,7 +462,7 @@
  const railItems = $$(".rail-item");
  const stage = $("#stage");

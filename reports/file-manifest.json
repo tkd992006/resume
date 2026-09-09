@@ -11,8 +11,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 7695,
-    "sha256": "44448bae608a0fac8b79ee7c7602ad32be6eef2f361e3ae888544a5ccf8c34e1"
+    "bytes": 9595,
+    "sha256": "ed43f05dd28ac23521ba6fd46c061764301c5dc7400d19cba3f26663ab233971"
   },
   {
     "path": "daangn/assets/favicon.svg",
@@ -141,8 +141,8 @@
   },
   {
     "path": "daangn/index.html",
-    "bytes": 153060,
-    "sha256": "c5c0786bde960dbc070ced905023ee2cf2fc2e581a6449afc51842fcfde9d0c3"
+    "bytes": 154457,
+    "sha256": "66886a740eeff692c97e69b9e68c991ca185c0b99399fdb9a8aaedf4c5a5b557"
   },
   {
     "path": "daangn/script.js",
@@ -286,8 +286,8 @@
   },
   {
     "path": "modoodoc/index.html",
-    "bytes": 153021,
-    "sha256": "cc058cecd2376ee8fda9a42cf63d844192e48c319c91710ac1fe763741fe259e"
+    "bytes": 154359,
+    "sha256": "9754d5c05be76c68ab6ce534a120c77da12b776d69adfc3dc79ae6d3d6b7bd59"
   },
   {
     "path": "modoodoc/script.js",
@@ -306,8 +306,13 @@
   },
   {
     "path": "scripts/build.mjs",
-    "bytes": 16489,
-    "sha256": "a8e456135a943943eae99e64fd5c94365424684323ba8611df9a06e64f5b1330"
+    "bytes": 18398,
+    "sha256": "0174739097f6884fe048bed06ddd8dbdbeb52d7769ccdb0450ee230c47985974"
+  },
+  {
+    "path": "scripts/compare.mjs",
+    "bytes": 21239,
+    "sha256": "95143549d8d783db196c0e88e30c6a55ae0da8e027049d0869e0d22c1e04662a"
   },
   {
     "path": "scripts/html.mjs",
@@ -326,8 +331,8 @@
   },
   {
     "path": "scripts/review.mjs",
-    "bytes": 10442,
-    "sha256": "1049aafdb32008461ee3b0d6a826dc37452a3c1b811589812a7ae40f100a29cc"
+    "bytes": 10682,
+    "sha256": "48c4664180cd1e4b538b54702497e68208a4e6f3dc17319c5fc6821fe1c1972f"
   },
   {
     "path": "scripts/verify.mjs",
@@ -496,8 +501,8 @@
   },
   {
     "path": "src/content/daangn.json",
-    "bytes": 16303,
-    "sha256": "865860ef8ee0ad84937c7835f01fbe9904330832899aaa47b2289d1f4f3894d3"
+    "bytes": 21931,
+    "sha256": "65b8fa6c331b2d6c9f1d41db3957d6600fd2883c39c205d9840e1d31e9ed8716"
   },
   {
     "path": "src/content/locators.json",
@@ -506,8 +511,8 @@
   },
   {
     "path": "src/content/modoodoc.json",
-    "bytes": 14733,
-    "sha256": "536617b6c174e3bd693a2e18467743d75447c8fc9937b29d8fee452e312524ad"
+    "bytes": 18906,
+    "sha256": "0014ce976a98f66d9f8f051342b494e3d224fcd153e15ea2c2339ec3162755e9"
   },
   {
     "path": "src/content/runtime-format.json",
@@ -531,8 +536,8 @@
   },
   {
     "path": "src/template.html",
-    "bytes": 56137,
-    "sha256": "705ac6d513fe8c18a800d905217f46e1a07cae3bc2e22e58df4d46c577026033"
+    "bytes": 56163,
+    "sha256": "ca2d3323f48aa336bae4e9a6739acef15288bab027a552ac103d71f100949570"
   },
   {
     "path": "toss/assets/favicon.svg",

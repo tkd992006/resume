@@ -52,8 +52,14 @@ python3 -m http.server 8000
 - `reports/modoodoc-vs-toss.patch`, `reports/daangn-vs-toss.patch`: 기존 토스본 대비 생성된 HTML·JS의 모든 변경.
 - `reports/implementation.patch`: 공통 템플릿·JSON·빌드 스크립트·문서의 전체 소스 변경.
 - `reports/file-manifest.json`: 보고서, Git 메타데이터, `.pages-dist/`를 제외한 모든 파일의 크기·SHA-256 목록.
+- `reports/comparison/index.html`: 세 회사 간 모든 조합과 이번 수정 전·후를 따로 선택하는 비교 목록.
+- `reports/comparison/previous-*.html`: 2026-09-09 수정 전 게시본(소스 커밋 `2a11ee8`)과 현재 결과의 대조. 토스의 변경 없음도 기록합니다.
+- `reports/comparison/*-vs-*.html`: 토스 ↔ 모두닥, 토스 ↔ 당근, 모두닥 ↔ 당근의 문구·속성·구조·순서·공백 대조.
+- `reports/comparison/*.patch`, `*.json`, `snapshots/`, `manifest.json`: 각 비교의 전체 HTML·JS·CSS 차이, 정확한 항목 데이터, 비교에 사용한 원본 파일, 이미지까지 포함한 SHA-256 기록.
 
 로컬 서버에서 `/reports/`를 열면 됩니다. 보고서의 화면 문구는 연속 공백을 합쳐 읽기 쉽게 표시하지만, 펼쳐 보는 HTML 원문과 JSON에는 실제 문자열을 생략 없이 유지합니다. 상세 사례의 표시 번호는 순서에 맞게 변경하며 본문·코드·표는 그대로 둡니다.
+
+이번 수정만 검토하려면 `/reports/comparison/`의 **이전 게시본과 이번 결과**에서 시작합니다. 항목 번호 `PM-004`(모두닥 이전→현재), `PD-004`(당근 이전→현재) 또는 `TM-004`, `TD-004`, `MD-004`(회사 간 비교)로 피드백할 수 있습니다. HTML 항목 수에는 문구뿐 아니라 삽입에 따른 구조·공백 변경도 포함됩니다. 전체 파일 차이의 최종 근거는 patch와 원본 스냅샷입니다. 스냅샷은 원문 확인을 위해 `.txt`로 저장하며 실행용 페이지가 아닙니다.
 
 ## 문구 편집
 
@@ -85,6 +91,18 @@ python3 -m http.server 8000
 `projectOrder`, `portfolioOrder`, `caseOrder`, `skillOrder`는 각 목록의 모든 ID 또는 제목을 한 번씩 나열합니다. 항목을 숨기거나 제거하지 않습니다. 카드 크기와 강조 스타일은 화면상의 원래 위치에 유지하며, 사례 번호는 카드와 상세 본문에서 함께 다시 매깁니다. 공유 URL과 이미지 URL은 각 지원본 폴더에 맞게 자동 생성됩니다.
 
 회사별 데이터는 `main`에서 함께 관리하고, 작업 브랜치는 수정 중에만 사용합니다. 생성된 HTML을 직접 고치면 다음 빌드에서 덮어쓰므로 원본 데이터와 템플릿을 수정합니다.
+
+Who am I 안의 지원 동기 소개는 각 회사 JSON 최상위의 `personalIntro`로 관리합니다. `eyebrow`, `title`, `paragraphs`에는 HTML이 아닌 일반 문장을 넣습니다. 빌드가 문자를 안전하게 이스케이프하고, 기존 소개와 AMA 사이에 공통 카드 디자인으로 표시합니다. 이 항목이 없으면 섹션도 생성하지 않으며, 토스 스냅샷에는 적용하지 않습니다.
+
+```json
+{
+  "personalIntro": {
+    "eyebrow": "Who am I",
+    "title": "지원 방향을 담은 소개 제목",
+    "paragraphs": ["관심과 경험을 설명하는 문단", "다음 팀에서의 기여와 성장 방향"]
+  }
+}
+```
 
 ## 제출본과 배포
 

@@ -110,7 +110,7 @@ Full-stack / Product Engineer
 
 위치: #ama-answer-work > h3
 
-이유: 같은 사실을 창업 및 운영 경험부터 읽히도록 재배치합니다.
+이유: 여러 도메인을 이해하고 제품으로 구체화하는 관심을 실제 담당 경험과 연결합니다.
 
 변경 전 원문:
 
@@ -121,14 +121,14 @@ Full-stack / Product Engineer
 변경 후 원문:
 
 `````html
-온더마켓에서는 2인 팀으로 개발·점주 영업·운영을 맡았습니다. 외주에서는 고객 요구를 화면·API·데이터 모델로 구체화해 납품했습니다.
+서로 다른 분야의 요구를 분석해 제품으로 만들고, 창업에서는 영업과 운영까지 맡았습니다.
 `````
 
 ### M07 · ama.work.body
 
 위치: #ama-answer-work > p:not(.project-kicker)
 
-이유: 창업에서 맡은 일과 외주 납품 경험을 구분하되 역할의 연속성을 보여줍니다.
+이유: 도메인 이해, 제품 제안, 사용자 반응 확인을 기존 사례로 설명하며 성과를 과장하지 않습니다.
 
 변경 전 원문:
 
@@ -144,9 +144,9 @@ Full-stack / Product Engineer
 
 `````html
 
-                                  창업에서는 문제 발견부터 제품 구현, 영업, 운영까지 직접 부딪혔습니다.
-                                  음식점 식자재 발주 제품을 만들면서 점주 영업을 하고, 주문 흐름과 가격을 보여주는 방식을 고쳤습니다.
-                                  외주개발에서는 AI 스킨케어 상담, 개발외주사 내부 운영 도구 등 사용 맥락이 다른 제품의 요구사항을 화면, API, 데이터 구조로 정리해 납품했습니다.
+                                  식자재 발주, AI 스킨케어 상담, 개발외주사 내부 운영 도구를 만들며 사용 맥락이 다른 요구를 화면, API, 데이터 구조로 정리했습니다.
+                                  Akasys에서는 고객사 CS 관리 요청을 고객 관계 관리의 문제로 보고, 티켓과 리포트가 연결되는 운영 도구로 확장 제안했습니다.
+                                  온더마켓에서는 제품 개발과 점주 영업·운영을 함께 맡았고, 가격 진단 캠페인으로 일부 가입 전환도 만들었습니다.
                                 
 `````
 
@@ -366,7 +366,61 @@ React, Capacitor 기반 iOS / Android / Web 클라이언트 구현
           
 `````
 
-### M18 · meta.og.url · 자동 파생
+### M18 · ama.founder.followup2.answer
+
+위치: #ama-founder-followup-2 > div > p
+
+이유: 창업 실패에서 배운 사업 조건과 동료들과 성과를 내며 성장하려는 다음 커리어 방향을 연결합니다.
+
+변경 전 원문:
+
+`````html
+당분간은 없습니다. 커리어 대부분을 1인 개발로 보냈고, 다음에는 저보다 뛰어난 사람들과 같은 제품을 오래 만들어 보고 싶습니다. 큰 임팩트를 내려면 이미 인프라와 사용자가 있는 조직이 빠르다는 것도 온더마켓에서 배웠습니다. 그래서 다음 커리어는 규모와 상관없이 서비스와 인프라가 갖춰진 곳에 기여하는 것으로 정했습니다.
+`````
+
+변경 후 원문:
+
+`````html
+당분간은 없습니다. 혼자 개발하는 시간을 많이 보냈고, 이제는 동료들과 같은 제품을 오래 만들며 성과를 내고 싶습니다. 온더마켓에서 제품 구현뿐 아니라 유통과 영업, 운영까지 맞아야 사업이 된다는 걸 배웠습니다. 이미 서비스와 운영 기반이 있는 곳에서 더 나은 판단을 배우고, 제품의 성장에 기여하고 싶습니다.
+`````
+
+### M19 · ama.collab.followup3.answer
+
+위치: #ama-collab-followup-3 > div > p
+
+이유: 기존 문제 해결 방식을 유지하고 동료의 관점과 결과 확인을 통해 성장하려는 방향을 덧붙입니다.
+
+변경 전 원문:
+
+`````html
+정답을 먼저 정하지 않고, 사용 맥락과 제약을 맞춘 뒤 작은 단위로 만들어 확인합니다. 온더마켓 결제 웹뷰 문제도 native와 웹 중 어느 쪽이 safe-area를 소유할지부터 정한 뒤 Android와 iOS를 따로 한 단계씩 붙였습니다.
+`````
+
+변경 후 원문:
+
+`````html
+정답을 먼저 정하지 않고, 함께 풀 문제와 제약을 맞춘 뒤 작은 단위로 만들어 확인합니다. 온더마켓 결제 웹뷰 문제도 native와 웹 중 어느 쪽이 safe-area를 소유할지부터 정하고 Android와 iOS를 단계별로 붙였습니다. 앞으로도 동료의 관점에서 놓친 가정을 찾고, 결과를 함께 확인하며 판단을 개선하고 싶습니다.
+`````
+
+### M20 · ama.growth.followup1.answer
+
+위치: #ama-growth-followup-1 > div > p
+
+이유: 조직 경험의 한계를 솔직히 유지하면서 동료와 성과를 확인하고 배우려는 구체적인 성장 방향을 설명합니다.
+
+변경 전 원문:
+
+`````html
+적은 것은 사실입니다. 대신 문제 정의부터 화면, API, 운영까지 전체를 맡아 왔고, 고객·공동창업자·프레임워크 팀의 피드백을 제품에 바로 반영하는 데 익숙합니다. 지금은 코드 리뷰와 문서화, 공동 의사결정이 촘촘한 환경에서 이 넓은 시야를 팀의 방식으로 쓰고 싶습니다.
+`````
+
+변경 후 원문:
+
+`````html
+규모 있는 제품 조직 경험이 적은 것은 사실입니다. 지금까지는 문제 정의부터 화면, API, 운영까지 맡으며 고객·공동창업자·프레임워크 팀의 피드백을 제품에 반영해 왔습니다. 앞으로는 코드 리뷰와 문서화, 공동 의사결정이 촘촘한 환경에서 제 판단을 점검받고 싶습니다. 동료들과 사용자 반응과 사업의 결과를 함께 확인하면서 제품을 개선하는 법을 더 배우고 싶습니다.
+`````
+
+### M21 · meta.og.url · 자동 파생
 
 위치: html > head > meta:nth-of-type(7) [content]
 
@@ -384,7 +438,7 @@ https://tkd992006.github.io/resume/toss/
 https://tkd992006.github.io/resume/modoodoc/
 `````
 
-### M19 · meta.og.image · 자동 파생
+### M22 · meta.og.image · 자동 파생
 
 위치: html > head > meta:nth-of-type(8) [content]
 
@@ -402,7 +456,37 @@ https://tkd992006.github.io/resume/toss/assets/images/onthemarket-app-1.webp
 https://tkd992006.github.io/resume/modoodoc/assets/images/onthemarket-app-1.webp
 `````
 
-### M20 · order.caseOrder.otm-receipt-case.class · 자동 파생
+### M23 · personalIntro · 신규 추가
+
+위치: #personal-intro
+
+이유: 기존 경험을 바탕으로 서비스에 대한 관심과 다음 팀에서의 기여·성장 방향을 소개합니다.
+
+변경 전 원문:
+
+`````html
+
+`````
+
+변경 후 원문:
+
+`````html
+            <section class="block card" id="personal-intro" aria-labelledby="personal-intro-title">
+              <div class="block-head">
+                <div>
+                  <p class="eyebrow mono">Who am I</p>
+                  <h2 id="personal-intro-title">다양한 문제를 제품으로 풀고, 성과를 내며 성장하고 싶습니다.</h2>
+                </div>
+              </div>
+              <div class="ai-copy">
+                <p>식자재 발주, 매장 상담, 내부 운영 도구처럼 서로 다른 분야의 일하는 방식과 요구를 분석하는 과정이 재미있었습니다. 요청받은 기능이 어떤 문제를 해결해야 하는지 파악하고, 제품으로 구체화하는 일을 좋아합니다.</p>
+                <p>모두닥에서도 새로운 도메인을 배우고, 만든 제품이 사용자와 사업에 어떤 결과를 내는지 동료들과 확인하며 개선하고 싶습니다. 서로의 경험에서 더 나은 판단을 배우고, 제품의 성과와 제 성장으로 이어가고 싶습니다.</p>
+              </div>
+            </section>
+
+`````
+
+### M24 · order.caseOrder.otm-receipt-case.class · 자동 파생
 
 위치: [data-case-open="otm-receipt-case"] [class]
 
@@ -420,7 +504,7 @@ case-study-trigger is-compact
 case-study-trigger is-wide is-highlighted
 `````
 
-### M21 · order.case.otm-receipt-case.label · 자동 파생
+### M25 · order.case.otm-receipt-case.label · 자동 파생
 
 위치: [data-case-open="otm-receipt-case"] .case-study-trigger-index
 
@@ -438,7 +522,7 @@ Solved issue 03
 Solved issue 01
 `````
 
-### M22 · order.case.otm-ledger-cycle-case.label · 자동 파생
+### M26 · order.case.otm-ledger-cycle-case.label · 자동 파생
 
 위치: [data-case-open="otm-ledger-cycle-case"] .case-study-trigger-index
 
@@ -456,7 +540,7 @@ Solved issue 04
 Solved issue 03
 `````
 
-### M23 · order.caseOrder.otm-payment-webview-case.class · 자동 파생
+### M27 · order.caseOrder.otm-payment-webview-case.class · 자동 파생
 
 위치: [data-case-open="otm-payment-webview-case"] [class]
 
@@ -474,7 +558,7 @@ case-study-trigger is-wide is-highlighted
 case-study-trigger is-compact
 `````
 
-### M24 · order.case.otm-payment-webview-case.label · 자동 파생
+### M28 · order.case.otm-payment-webview-case.label · 자동 파생
 
 위치: [data-case-open="otm-payment-webview-case"] .case-study-trigger-index
 
@@ -492,7 +576,7 @@ Solved issue 01
 Solved issue 04
 `````
 
-### M25 · order.case.otm-receipt-case.modalLabel · 자동 파생
+### M29 · order.case.otm-receipt-case.modalLabel · 자동 파생
 
 위치: #otm-receipt-case .case-modal-kicker
 
@@ -510,7 +594,7 @@ OnTheMarket · Solved issue 03
 OnTheMarket · Solved issue 01
 `````
 
-### M26 · order.case.otm-ledger-cycle-case.modalLabel · 자동 파생
+### M30 · order.case.otm-ledger-cycle-case.modalLabel · 자동 파생
 
 위치: #otm-ledger-cycle-case .case-modal-kicker
 
@@ -528,7 +612,7 @@ OnTheMarket · Solved issue 04
 OnTheMarket · Solved issue 03
 `````
 
-### M27 · order.case.otm-payment-webview-case.modalLabel · 자동 파생
+### M31 · order.case.otm-payment-webview-case.modalLabel · 자동 파생
 
 위치: #otm-payment-webview-case .case-modal-kicker
 
@@ -1054,7 +1138,127 @@ iOS·Android·Web 멀티플랫폼 주문 앱, 결제 흐름, AI 상담 서비스
 주문 서비스의 API·DB를 설계하고 관계 데이터·서비스 의존 구조를 개선했습니다. LLM 응답 검증과 탐색 엔진 확장 경험을 함께 정리했습니다.
 `````
 
-### D21 · meta.og.url · 자동 파생
+### D21 · ama.founder.followup2.question
+
+위치: [aria-controls="ama-founder-followup-2"]
+
+이유: 기존 창업 이후 진로 질문을 당근 지원 동기와 연결합니다.
+
+변경 전 원문:
+
+`````html
+
+                                      또 창업할 생각이 있나요?
+                                    
+`````
+
+변경 후 원문:
+
+`````html
+
+                                      다음에는 왜 당근에서 일하고 싶나요?
+                                    
+`````
+
+### D22 · ama.founder.followup2.answer
+
+위치: #ama-founder-followup-2 p
+
+이유: 사용자가 직접 밝힌 당근모임 이용 경험을 지원 동기로 연결하며, 지원 팀과 앞으로 배울 영역을 구분합니다.
+
+변경 전 원문:
+
+`````html
+당분간은 없습니다. 커리어 대부분을 1인 개발로 보냈고, 다음에는 저보다 뛰어난 사람들과 같은 제품을 오래 만들어 보고 싶습니다. 큰 임팩트를 내려면 이미 인프라와 사용자가 있는 조직이 빠르다는 것도 온더마켓에서 배웠습니다. 그래서 다음 커리어는 규모와 상관없이 서비스와 인프라가 갖춰진 곳에 기여하는 것으로 정했습니다.
+`````
+
+변경 후 원문:
+
+`````html
+당분간 다시 창업할 계획은 없습니다. 당근모임을 애용하는 사용자로서, 제가 좋아하는 서비스에 개발자로 기여하고 싶습니다. 지금까지는 대부분 1인 개발로 제품 전체를 맡았지만, 다음에는 동료들과 한 서비스를 오래 만들고 개선하고 싶습니다. 지원한 ML Data Platform 역할에서도 API·데이터 모델링과 문제 해결 경험을 바탕으로 새로운 도메인과 기술을 배우며 기여하고 싶습니다.
+`````
+
+### D23 · ama.collab.followup3.answer
+
+위치: #ama-collab-followup-3 p
+
+이유: 기존 협업 방식과 구현 사례를 보존하고, 다음 팀에서 기대하는 협업 방식을 덧붙입니다.
+
+변경 전 원문:
+
+`````html
+정답을 먼저 정하지 않고, 사용 맥락과 제약을 맞춘 뒤 작은 단위로 만들어 확인합니다. 온더마켓 결제 웹뷰 문제도 native와 웹 중 어느 쪽이 safe-area를 소유할지부터 정한 뒤 Android와 iOS를 따로 한 단계씩 붙였습니다.
+`````
+
+변경 후 원문:
+
+`````html
+정답을 먼저 정하지 않고, 사용 맥락과 제약을 맞춘 뒤 작은 단위로 만들어 확인합니다. 온더마켓 결제 웹뷰 문제도 native와 웹 중 어느 쪽이 safe-area를 소유할지부터 정한 뒤 Android와 iOS를 따로 한 단계씩 붙였습니다. 다음 팀에서도 제가 확인한 재현 조건과 시도한 방법을 공유하고, 동료의 리뷰를 받아 함께 판단하고 싶습니다.
+`````
+
+### D24 · ama.growth.question
+
+위치: #ama-question-growth
+
+이유: 보완점 중심 질문을 앞으로의 성장 방향까지 함께 읽을 수 있게 바꿉니다.
+
+변경 전 원문:
+
+`````html
+
+                                어떤 점을 보완하고 있나요?
+                              
+`````
+
+변경 후 원문:
+
+`````html
+
+                                어떤 개발자로 성장하고 싶나요?
+                              
+`````
+
+### D25 · ama.growth.followup1.question
+
+위치: [aria-controls="ama-growth-followup-1"]
+
+이유: 지원한 역할에서의 적응과 협업 계획을 질문에 드러냅니다.
+
+변경 전 원문:
+
+`````html
+
+                                      규모 있는 제품 조직 경험이 적은데 괜찮을까요?
+                                    
+`````
+
+변경 후 원문:
+
+`````html
+
+                                      새로운 팀과 도메인에는 어떻게 적응할 건가요?
+                                    
+`````
+
+### D26 · ama.growth.followup1.answer
+
+위치: #ama-growth-followup-1 p
+
+이유: 큰 제품 조직 경험이 적다는 한계를 유지하면서, 새로운 역할에서 배우고 협업하려는 방향을 설명합니다.
+
+변경 전 원문:
+
+`````html
+적은 것은 사실입니다. 대신 문제 정의부터 화면, API, 운영까지 전체를 맡아 왔고, 고객·공동창업자·프레임워크 팀의 피드백을 제품에 바로 반영하는 데 익숙합니다. 지금은 코드 리뷰와 문서화, 공동 의사결정이 촘촘한 환경에서 이 넓은 시야를 팀의 방식으로 쓰고 싶습니다.
+`````
+
+변경 후 원문:
+
+`````html
+규모 있는 제품 조직 경험은 아직 적습니다. 대신 문제 정의부터 화면, API, 운영까지 전체를 맡아 왔고, 고객·공동창업자·프레임워크 팀의 피드백을 제품에 반영해왔습니다. 새 팀에서는 코드 리뷰와 문서화, 공동 의사결정의 방식을 배우고 싶습니다. 지원한 역할의 데이터 흐름과 운영 방식을 익히면서, 제가 한 변경이 서비스 동작과 사용자 경험에 어떤 영향을 주는지 동료들과 함께 확인하는 개발자로 성장하고 싶습니다.
+`````
+
+### D27 · meta.og.url · 자동 파생
 
 위치: html > head > meta:nth-of-type(7) [content]
 
@@ -1072,7 +1276,7 @@ https://tkd992006.github.io/resume/toss/
 https://tkd992006.github.io/resume/daangn/
 `````
 
-### D22 · meta.og.image · 자동 파생
+### D28 · meta.og.image · 자동 파생
 
 위치: html > head > meta:nth-of-type(8) [content]
 
@@ -1090,7 +1294,37 @@ https://tkd992006.github.io/resume/toss/assets/images/onthemarket-app-1.webp
 https://tkd992006.github.io/resume/daangn/assets/images/onthemarket-app-1.webp
 `````
 
-### D23 · order.caseOrder.otm-order-case.class · 자동 파생
+### D29 · personalIntro · 신규 추가
+
+위치: #personal-intro
+
+이유: 기존 경험을 바탕으로 서비스에 대한 관심과 다음 팀에서의 기여·성장 방향을 소개합니다.
+
+변경 전 원문:
+
+`````html
+
+`````
+
+변경 후 원문:
+
+`````html
+            <section class="block card" id="personal-intro" aria-labelledby="personal-intro-title">
+              <div class="block-head">
+                <div>
+                  <p class="eyebrow mono">Who am I</p>
+                  <h2 id="personal-intro-title">제가 좋아하는 서비스를 함께 만들고 싶습니다.</h2>
+                </div>
+              </div>
+              <div class="ai-copy">
+                <p>당근모임을 즐겨 쓰는 열혈 사용자입니다. 제가 직접 쓰고 좋아하는 서비스에, 이제는 만드는 사람으로도 참여하고 싶어 당근에 지원했습니다.</p>
+                <p>외주와 창업으로 제품을 만들며 화면부터 API·데이터 모델, 운영까지 맡아왔습니다. 다음에는 동료들과 하나의 서비스를 오래 만들고, 사용자가 믿고 쓸 수 있도록 성능과 안정성을 개선해 나가고 싶습니다.</p>
+              </div>
+            </section>
+
+`````
+
+### D30 · order.caseOrder.otm-order-case.class · 자동 파생
 
 위치: [data-case-open="otm-order-case"] [class]
 
@@ -1108,7 +1342,7 @@ case-study-trigger is-wide
 case-study-trigger is-wide is-highlighted
 `````
 
-### D24 · order.case.otm-order-case.label · 자동 파생
+### D31 · order.case.otm-order-case.label · 자동 파생
 
 위치: [data-case-open="otm-order-case"] .case-study-trigger-index
 
@@ -1126,7 +1360,7 @@ Solved issue 02
 Solved issue 01
 `````
 
-### D25 · order.caseOrder.otm-ledger-cycle-case.class · 자동 파생
+### D32 · order.caseOrder.otm-ledger-cycle-case.class · 자동 파생
 
 위치: [data-case-open="otm-ledger-cycle-case"] [class]
 
@@ -1144,7 +1378,7 @@ case-study-trigger is-compact
 case-study-trigger is-wide
 `````
 
-### D26 · order.case.otm-ledger-cycle-case.label · 자동 파생
+### D33 · order.case.otm-ledger-cycle-case.label · 자동 파생
 
 위치: [data-case-open="otm-ledger-cycle-case"] .case-study-trigger-index
 
@@ -1162,7 +1396,7 @@ Solved issue 04
 Solved issue 02
 `````
 
-### D27 · order.caseOrder.otm-signal-types-case.class · 자동 파생
+### D34 · order.caseOrder.otm-signal-types-case.class · 자동 파생
 
 위치: [data-case-open="otm-signal-types-case"] [class]
 
@@ -1180,7 +1414,7 @@ case-study-trigger is-full
 case-study-trigger is-compact
 `````
 
-### D28 · order.case.otm-signal-types-case.label · 자동 파생
+### D35 · order.case.otm-signal-types-case.label · 자동 파생
 
 위치: [data-case-open="otm-signal-types-case"] .case-study-trigger-index
 
@@ -1198,7 +1432,7 @@ Solved issue 05
 Solved issue 03
 `````
 
-### D29 · order.caseOrder.otm-payment-webview-case.class · 자동 파생
+### D36 · order.caseOrder.otm-payment-webview-case.class · 자동 파생
 
 위치: [data-case-open="otm-payment-webview-case"] [class]
 
@@ -1216,7 +1450,7 @@ case-study-trigger is-wide is-highlighted
 case-study-trigger is-compact
 `````
 
-### D30 · order.case.otm-payment-webview-case.label · 자동 파생
+### D37 · order.case.otm-payment-webview-case.label · 자동 파생
 
 위치: [data-case-open="otm-payment-webview-case"] .case-study-trigger-index
 
@@ -1234,7 +1468,7 @@ Solved issue 01
 Solved issue 04
 `````
 
-### D31 · order.caseOrder.otm-receipt-case.class · 자동 파생
+### D38 · order.caseOrder.otm-receipt-case.class · 자동 파생
 
 위치: [data-case-open="otm-receipt-case"] [class]
 
@@ -1252,7 +1486,7 @@ case-study-trigger is-compact
 case-study-trigger is-full
 `````
 
-### D32 · order.case.otm-receipt-case.label · 자동 파생
+### D39 · order.case.otm-receipt-case.label · 자동 파생
 
 위치: [data-case-open="otm-receipt-case"] .case-study-trigger-index
 
@@ -1270,7 +1504,7 @@ Solved issue 03
 Solved issue 05
 `````
 
-### D33 · order.case.otm-order-case.modalLabel · 자동 파생
+### D40 · order.case.otm-order-case.modalLabel · 자동 파생
 
 위치: #otm-order-case .case-modal-kicker
 
@@ -1288,7 +1522,7 @@ OnTheMarket · Solved issue 02
 OnTheMarket · Solved issue 01
 `````
 
-### D34 · order.case.otm-ledger-cycle-case.modalLabel · 자동 파생
+### D41 · order.case.otm-ledger-cycle-case.modalLabel · 자동 파생
 
 위치: #otm-ledger-cycle-case .case-modal-kicker
 
@@ -1306,7 +1540,7 @@ OnTheMarket · Solved issue 04
 OnTheMarket · Solved issue 02
 `````
 
-### D35 · order.case.otm-signal-types-case.modalLabel · 자동 파생
+### D42 · order.case.otm-signal-types-case.modalLabel · 자동 파생
 
 위치: #otm-signal-types-case .case-modal-kicker
 
@@ -1324,7 +1558,7 @@ OnTheMarket · Solved issue 05
 OnTheMarket · Solved issue 03
 `````
 
-### D36 · order.case.otm-payment-webview-case.modalLabel · 자동 파생
+### D43 · order.case.otm-payment-webview-case.modalLabel · 자동 파생
 
 위치: #otm-payment-webview-case .case-modal-kicker
 
@@ -1342,7 +1576,7 @@ OnTheMarket · Solved issue 01
 OnTheMarket · Solved issue 04
 `````
 
-### D37 · order.case.otm-receipt-case.modalLabel · 자동 파생
+### D44 · order.case.otm-receipt-case.modalLabel · 자동 파생
 
 위치: #otm-receipt-case .case-modal-kicker
 

@@ -1,25 +1,25 @@
---- toss/index.html
-+++ daangn/index.html
+--- current/modoodoc/index.html
++++ current/daangn/index.html
 @@ -3,19 +3,19 @@
    <head>
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
--    <title>이상화 · Frontend / Product Engineer</title>
+-    <title>이상화 · Full-stack / Product Engineer</title>
 +    <title>이상화 · Software Engineer</title>
      <meta
        name="description"
--      content="프론트엔드·프로덕트 엔지니어 이상화의 포트폴리오. iOS·Android·Web 멀티플랫폼 주문 앱, 결제 흐름, AI 상담 서비스를 설계부터 운영까지 만들었습니다."
+-      content="풀스택·프로덕트 엔지니어 이상화의 포트폴리오. B2B 식자재 주문 제품의 개발·영업·운영을 맡고, 고객 요구를 화면·API·데이터 모델로 구체화해 납품했습니다."
 +      content="소프트웨어 엔지니어 이상화의 포트폴리오. 주문 서비스의 API·DB 설계, 관계 데이터 경량화, 서비스 의존 구조 개선과 LLM 응답 검증 경험을 정리했습니다."
      >
      <meta property="og:title" content="이상화 Portfolio">
      <meta
        property="og:description"
--      content="iOS·Android·Web 멀티플랫폼 주문 앱, 결제 흐름, AI 상담 서비스를 설계부터 운영까지 만든 프론트엔드·프로덕트 엔지니어입니다."
+-      content="B2B 식자재 주문 제품의 개발·영업·운영을 맡고, 고객 요구를 화면·API·데이터 모델로 구체화해 납품한 풀스택·프로덕트 엔지니어입니다."
 +      content="주문 서비스의 API·DB를 설계하고 관계 데이터·서비스 의존 구조를 개선했습니다. LLM 응답 검증과 탐색 엔진 확장 경험을 함께 정리했습니다."
      >
      <meta property="og:type" content="website">
--    <meta property="og:url" content="https://tkd992006.github.io/resume/toss/">
--    <meta property="og:image" content="https://tkd992006.github.io/resume/toss/assets/images/onthemarket-app-1.webp">
+-    <meta property="og:url" content="https://tkd992006.github.io/resume/modoodoc/">
+-    <meta property="og:image" content="https://tkd992006.github.io/resume/modoodoc/assets/images/onthemarket-app-1.webp">
 +    <meta property="og:url" content="https://tkd992006.github.io/resume/daangn/">
 +    <meta property="og:image" content="https://tkd992006.github.io/resume/daangn/assets/images/onthemarket-app-1.webp">
      <meta property="og:locale" content="ko_KR">
@@ -29,7 +29,7 @@
          <div>
            <h1 class="masthead-name">Lee Sanghwa<small>이상화</small></h1>
            <p class="masthead-meta mono">
--            <span><strong>Frontend / Product Engineer</strong> · KAIST CS</span>
+-            <span><strong>Full-stack / Product Engineer</strong> · KAIST CS</span>
 +            <span><strong>Software Engineer</strong> · KAIST CS</span>
            </p>
          </div>
@@ -38,9 +38,9 @@
                <div>
                  <p class="eyebrow mono">Who am I</p>
                  <p class="intro-lead">
--                      최근에는 <strong>iOS·Android·Web을 한 코드베이스로 다루는 식자재 주문 앱과 실결제 흐름</strong>을
--                  설계부터 운영까지 직접 맡아봤습니다. 음식점 식자재 발주, AI 스킨케어 상담,
--                  매장 비치용 iPad 웹앱처럼 사용 맥락이 다른 제품을 주로 웹 기반으로 개발하고 납품해왔습니다.
+-                      최근에는 <strong>B2B 식자재 주문 제품을 2인 팀으로 창업해 개발·점주 영업·운영</strong>까지 직접 맡았습니다.
+-                      음식점용 앱과 유통업체 웹사이트, API·DB·결제 흐름을 만들고, 점주가 가격을 먼저 확인할 수 있는 캠페인도 구현했습니다.
+-                      외주에서는 고객의 요구를 화면과 데이터 구조로 구체화해 제품을 개발하고 납품해왔습니다.
 +                      최근에는 <strong>식자재 주문 서비스의 API·DB 스키마를 설계하고, 느린 목록 조회와 기능 추가 중 생긴 서비스 의존성 문제</strong>를 해결했습니다. AI 상담 서비스에서는 LLM 응답을 검증해 저장과 화면으로 연결했고, 프론트엔드부터 서버, 운영까지 제품 전체를 다뤄왔습니다.
                  </p>
                  <div class="facts" id="profile">
@@ -59,26 +59,23 @@
                    </div>
                  </div>
                </div>
-@@ -151,6 +149,18 @@
-                 <img class="hero-shot shot-d" src="assets/images/playai-1.webp" alt="" width="1400" height="788">
-               </div>
-             </div>
-+            <section class="block card" id="personal-intro" aria-labelledby="personal-intro-title">
-+              <div class="block-head">
-+                <div>
-+                  <p class="eyebrow mono">Who am I</p>
-+                  <h2 id="personal-intro-title">제가 좋아하는 서비스를 함께 만들고 싶습니다.</h2>
-+                </div>
-+              </div>
-+              <div class="ai-copy">
-+                <p>당근모임을 즐겨 쓰는 열혈 사용자입니다. 제가 직접 쓰고 좋아하는 서비스에, 이제는 만드는 사람으로도 참여하고 싶어 당근에 지원했습니다.</p>
-+                <p>외주와 창업으로 제품을 만들며 화면부터 API·데이터 모델, 운영까지 맡아왔습니다. 다음에는 동료들과 하나의 서비스를 오래 만들고, 사용자가 믿고 쓸 수 있도록 성능과 안정성을 개선해 나가고 싶습니다.</p>
-+              </div>
-+            </section>
-             <div class="block" id="ama">
+@@ -155,12 +153,12 @@
                <div class="block-head">
                  <div>
-@@ -170,17 +180,15 @@
+                   <p class="eyebrow mono">Who am I</p>
+-                  <h2 id="personal-intro-title">다양한 문제를 제품으로 풀고, 성과를 내며 성장하고 싶습니다.</h2>
++                  <h2 id="personal-intro-title">제가 좋아하는 서비스를 함께 만들고 싶습니다.</h2>
+                 </div>
+               </div>
+               <div class="ai-copy">
+-                <p>식자재 발주, 매장 상담, 내부 운영 도구처럼 서로 다른 분야의 일하는 방식과 요구를 분석하는 과정이 재미있었습니다. 요청받은 기능이 어떤 문제를 해결해야 하는지 파악하고, 제품으로 구체화하는 일을 좋아합니다.</p>
+-                <p>모두닥에서도 새로운 도메인을 배우고, 만든 제품이 사용자와 사업에 어떤 결과를 내는지 동료들과 확인하며 개선하고 싶습니다. 서로의 경험에서 더 나은 판단을 배우고, 제품의 성과와 제 성장으로 이어가고 싶습니다.</p>
++                <p>당근모임을 즐겨 쓰는 열혈 사용자입니다. 제가 직접 쓰고 좋아하는 서비스에, 이제는 만드는 사람으로도 참여하고 싶어 당근에 지원했습니다.</p>
++                <p>외주와 창업으로 제품을 만들며 화면부터 API·데이터 모델, 운영까지 맡아왔습니다. 다음에는 동료들과 하나의 서비스를 오래 만들고, 사용자가 믿고 쓸 수 있도록 성능과 안정성을 개선해 나가고 싶습니다.</p>
+               </div>
+             </section>
+             <div class="block" id="ama">
+@@ -182,17 +180,15 @@
                                  어떻게 협업해왔나요?
                                </button>
                                <button class="ama-question" type="button" role="tab" aria-selected="false" aria-controls="ama-answer-growth" id="ama-question-growth" data-ama-target="ama-answer-growth" tabindex="-1">
@@ -89,18 +86,27 @@
                              <div class="ama-answers">
                                <article class="ama-answer is-active" role="tabpanel" id="ama-answer-work" aria-labelledby="ama-question-work">
 -                                <p class="project-kicker">Product translation</p>
--                                <h3>고객 요구를 화면·API·데이터 모델로 구체화해 납품했습니다. 온더마켓에서는 2인 팀으로 개발뿐 아니라 점주 영업과 운영까지 맡았습니다.</h3>
+-                                <h3>서로 다른 분야의 요구를 분석해 제품으로 만들고, 창업에서는 영업과 운영까지 맡았습니다.</h3>
 +                                <p class="project-kicker">Service implementation</p>
 +                                <h3>서비스의 화면·API·데이터 모델을 함께 만들고, 성능과 응답 안정성 문제를 해결했습니다.</h3>
                                  <p>
--                                  외주개발에서는 고객이 설명한 요구사항을 화면, API, 데이터 구조로 정리해 납품했고,
--                                  창업에서는 문제 발견부터 제품 구현, 영업, 운영까지 직접 부딪혔습니다.
--                                  음식점 식자재 발주, AI 스킨케어 상담, 개발외주사 내부 운영 도구 등 다양한 사용 맥락이 있는 제품을 만들었습니다.
+-                                  식자재 발주, AI 스킨케어 상담, 개발외주사 내부 운영 도구를 만들며 사용 맥락이 다른 요구를 화면, API, 데이터 구조로 정리했습니다.
+-                                  Akasys에서는 고객사 CS 관리 요청을 고객 관계 관리의 문제로 보고, 티켓과 리포트가 연결되는 운영 도구로 확장 제안했습니다.
+-                                  온더마켓에서는 제품 개발과 점주 영업·운영을 함께 맡았고, 가격 진단 캠페인으로 일부 가입 전환도 만들었습니다.
 +                                  외주개발에서는 고객 요구를 화면, API, 데이터 구조로 구체화해 납품했습니다. 온더마켓에서는 2인 팀으로 식자재 주문 서비스를 만들며 개발부터 점주 영업과 운영까지 맡았습니다. 주문 목록의 관계 데이터 경량화, NestJS 서비스의 순환 의존 해소, AI 상담의 LLM 응답 검증처럼 개발·운영 과정에서 드러난 문제를 코드와 데이터 흐름에서 추적해 해결했습니다.
                                  </p>
                                  <div class="ama-followups" aria-label="이어질 수 있는 질문">
                                    <div class="ama-followup">
-@@ -209,7 +217,7 @@
+@@ -211,7 +207,7 @@
+                                     </button>
+                                     <div class="ama-followup-answer" id="ama-work-followup-2">
+                                       <div>
+-                                        <p>먼저 고객이 요청한 기능과 그 기능으로 해결하려는 일을 함께 확인했습니다. Akasys에서는 고객사 CS 관리 툴 요청을 받고, 실제 필요가 고객사와의 관계 관리에 있다고 판단했습니다. 그래서 내부 티켓, 고객 요구사항, 주간·월간 리포트가 연결되는 운영 도구로 확장 제안했고 좋은 반응을 얻었습니다.</p>
++                                        <p>먼저 사용자나 클라이언트의 요구사항을 긴밀히 파악하고, 그 안에서 가장 중요한 지점을 화면과 데이터 구조로 옮겼습니다. Akasys라는 개발사 외주 관리 툴을 맡았을 때에는, 단순한 고객사 CS관리 툴 요청을 내부 티켓, 고객 요구사항, 주간/월간 리포트가 연결되는 운영 도구로 확장 제안하여 좋은 반응을 이끌었습니다. 클라이언트의 실제 깊은 니즈는 고객사와의 관계 관리이지, 매끄러운 CS처리가 전부가 아니라는 것을 파악하여 제안했습니다.</p>
+                                       </div>
+                                     </div>
+                                   </div>
+@@ -221,7 +217,7 @@
                                      </button>
                                      <div class="ama-followup-answer" id="ama-work-followup-3">
                                        <div>
@@ -109,7 +115,22 @@
                                        </div>
                                      </div>
                                    </div>
-@@ -237,11 +245,11 @@
+@@ -231,10 +227,10 @@
+                                 <p class="project-kicker">Founder lesson</p>
+                                 <h3>문제는 맞았지만, 유통과 영업 비용을 너무 늦게 검증했습니다.</h3>
+                                 <p>
+-                                  온더마켓에서는 점주가 가격을 빨리 알고 싶어한다는 문제를 확인했고, 가격 진단 캠페인으로 일부 가입 전환도 만들었습니다.
+-                                  하지만 시장 구조와 경쟁사를 잘못 파악했습니다. 더 싼 공급가, 신뢰 확보, 대면 영업, 안정적인 공급 운영이 함께 필요했고,
+-                                  작은 팀이 제품 개발과 시장 운영을 동시에 감당하기에는 사업 구조가 무거웠습니다.
+-                                  제품 완성도를 높이기 전에 유통 구조와 영업 비용부터 더 빨리 검증했어야 한다는 걸 배웠습니다.
++                                  음식점 식자재 주문 플랫폼 온더마켓을 운영하면서 점주가 가격을 빨리 알고 싶어한다는 문제는 명확했고, 가격 진단 캠페인으로 일부 가입 전환도 만들었습니다.
++                                  다만 B2B 식자재 시장은 신뢰 확보, 공급가 경쟁력, 대면 영업, 공급 운영이 함께 돌아가야 했고, 심지어 시장 구조와 경쟁사를 잘못 파악하여
++                                  작은 팀이 감당하기엔 사업 구조가 무겁다는 것을 알게되었습니다.
++                                  그래서 제품의 완성도만큼 유통 구조와 영업 비용을 빨리 검증했어야 한다는 걸 배웠습니다.
+                                 </p>
+                                 <div class="ama-followups" aria-label="이어질 수 있는 질문">
+                                   <div class="ama-followup">
+@@ -249,11 +245,11 @@
                                    </div>
                                    <div class="ama-followup">
                                      <button class="ama-followup-toggle" type="button" aria-expanded="false" aria-controls="ama-founder-followup-2">
@@ -118,21 +139,21 @@
                                      </button>
                                      <div class="ama-followup-answer" id="ama-founder-followup-2">
                                        <div>
--                                        <p>당분간은 없습니다. 커리어 대부분을 1인 개발로 보냈고, 다음에는 저보다 뛰어난 사람들과 같은 제품을 오래 만들어 보고 싶습니다. 큰 임팩트를 내려면 이미 인프라와 사용자가 있는 조직이 빠르다는 것도 온더마켓에서 배웠습니다. 그래서 다음 커리어는 규모와 상관없이 서비스와 인프라가 갖춰진 곳에 기여하는 것으로 정했습니다.</p>
+-                                        <p>당분간은 없습니다. 혼자 개발하는 시간을 많이 보냈고, 이제는 동료들과 같은 제품을 오래 만들며 성과를 내고 싶습니다. 온더마켓에서 제품 구현뿐 아니라 유통과 영업, 운영까지 맞아야 사업이 된다는 걸 배웠습니다. 이미 서비스와 운영 기반이 있는 곳에서 더 나은 판단을 배우고, 제품의 성장에 기여하고 싶습니다.</p>
 +                                        <p>당분간 다시 창업할 계획은 없습니다. 당근모임을 애용하는 사용자로서, 제가 좋아하는 서비스에 개발자로 기여하고 싶습니다. 지금까지는 대부분 1인 개발로 제품 전체를 맡았지만, 다음에는 동료들과 한 서비스를 오래 만들고 개선하고 싶습니다. 지원한 ML Data Platform 역할에서도 API·데이터 모델링과 문제 해결 경험을 바탕으로 새로운 도메인과 기술을 배우며 기여하고 싶습니다.</p>
                                        </div>
                                      </div>
                                    </div>
-@@ -263,7 +271,7 @@
+@@ -275,7 +271,7 @@
                                      </button>
                                      <div class="ama-followup-answer" id="ama-collab-followup-3">
                                        <div>
--                                        <p>정답을 먼저 정하지 않고, 사용 맥락과 제약을 맞춘 뒤 작은 단위로 만들어 확인합니다. 온더마켓 결제 웹뷰 문제도 native와 웹 중 어느 쪽이 safe-area를 소유할지부터 정한 뒤 Android와 iOS를 따로 한 단계씩 붙였습니다.</p>
+-                                        <p>정답을 먼저 정하지 않고, 함께 풀 문제와 제약을 맞춘 뒤 작은 단위로 만들어 확인합니다. 온더마켓 결제 웹뷰 문제도 native와 웹 중 어느 쪽이 safe-area를 소유할지부터 정하고 Android와 iOS를 단계별로 붙였습니다. 앞으로도 동료의 관점에서 놓친 가정을 찾고, 결과를 함께 확인하며 판단을 개선하고 싶습니다.</p>
 +                                        <p>정답을 먼저 정하지 않고, 사용 맥락과 제약을 맞춘 뒤 작은 단위로 만들어 확인합니다. 온더마켓 결제 웹뷰 문제도 native와 웹 중 어느 쪽이 safe-area를 소유할지부터 정한 뒤 Android와 iOS를 따로 한 단계씩 붙였습니다. 다음 팀에서도 제가 확인한 재현 조건과 시도한 방법을 공유하고, 동료의 리뷰를 받아 함께 판단하고 싶습니다.</p>
                                        </div>
                                      </div>
                                    </div>
-@@ -274,11 +282,11 @@
+@@ -286,11 +282,11 @@
                                  <div class="ama-followups" aria-label="이어질 수 있는 질문">
                                    <div class="ama-followup">
                                      <button class="ama-followup-toggle" type="button" aria-expanded="false" aria-controls="ama-growth-followup-1">
@@ -141,60 +162,33 @@
                                      </button>
                                      <div class="ama-followup-answer" id="ama-growth-followup-1">
                                        <div>
--                                        <p>적은 것은 사실입니다. 대신 문제 정의부터 화면, API, 운영까지 전체를 맡아 왔고, 고객·공동창업자·프레임워크 팀의 피드백을 제품에 바로 반영하는 데 익숙합니다. 지금은 코드 리뷰와 문서화, 공동 의사결정이 촘촘한 환경에서 이 넓은 시야를 팀의 방식으로 쓰고 싶습니다.</p>
+-                                        <p>규모 있는 제품 조직 경험이 적은 것은 사실입니다. 지금까지는 문제 정의부터 화면, API, 운영까지 맡으며 고객·공동창업자·프레임워크 팀의 피드백을 제품에 반영해 왔습니다. 앞으로는 코드 리뷰와 문서화, 공동 의사결정이 촘촘한 환경에서 제 판단을 점검받고 싶습니다. 동료들과 사용자 반응과 사업의 결과를 함께 확인하면서 제품을 개선하는 법을 더 배우고 싶습니다.</p>
 +                                        <p>규모 있는 제품 조직 경험은 아직 적습니다. 대신 문제 정의부터 화면, API, 운영까지 전체를 맡아 왔고, 고객·공동창업자·프레임워크 팀의 피드백을 제품에 반영해왔습니다. 새 팀에서는 코드 리뷰와 문서화, 공동 의사결정의 방식을 배우고 싶습니다. 지원한 역할의 데이터 흐름과 운영 방식을 익히면서, 제가 한 변경이 서비스 동작과 사용자 경험에 어떤 영향을 주는지 동료들과 함께 확인하는 개발자로 성장하고 싶습니다.</p>
                                        </div>
                                      </div>
                                    </div>
-@@ -360,9 +368,7 @@
+@@ -372,9 +368,7 @@
                      <h3>OnTheMarket</h3>
                      <p class="role mono">Co-founder · CTO · Full-stack Engineer</p>
                      <p>
--                      음식점과 유통업체 사이의 B2B 식자재 발주 제품을 2인 팀에서 만들었습니다.
--                      음식점용 크로스 플랫폼 웹앱, 유통업체 웹사이트, 관리자 페이지, 서버, DB 스키마,
--                      결제, 푸시, 분석 연동과 운영 개선까지 개발과 운영 전체를 맡았습니다. 전단지와 전화로 음식점 영업도 직접 했습니다.
+-                      음식점과 유통업체 사이의 B2B 식자재 발주 제품을 2인 팀으로 창업해 개발과 운영을 맡았습니다.
+-                      음식점용 크로스 플랫폼 웹앱, 유통업체 웹사이트, 관리자 페이지, 서버·DB 스키마와 결제·푸시·분석 연동을 구현했습니다.
+-                      전단지와 전화로 음식점 영업을 직접 했고, 점주의 주문 흐름과 가격 확인 시점을 제품에 반영했습니다.
 +                      음식점과 유통업체 사이의 B2B 식자재 발주 제품을 2인 팀에서 만들었습니다. 서버와 DB 스키마, 상품·거래처·장바구니·주문 API를 설계하고, 주문 목록의 관계 데이터 경량화와 NestJS 서비스의 순환 의존 해소를 진행했습니다. 음식점용 크로스 플랫폼 웹앱, 유통업체 웹사이트, 관리자 페이지와 결제·푸시·분석 연동도 맡았으며, 전단지와 전화로 음식점 영업도 직접 했습니다.
                      </p>
                    </div>
                  </article>
-@@ -372,8 +378,7 @@
+@@ -384,8 +378,7 @@
                      <h3>TingtingPlanet</h3>
                      <p class="role mono">Founder · Full-stack Engineer</p>
                      <p>
--                      외주와 자체 서비스를 오가며 AI, 채팅, 내부 운영 도구, 모바일 웹앱 프로젝트를
--                      개발 및 납품했습니다. 고객 상담에서 나온 기대 수준과 우선순위를 화면 순서와 기능 범위로 옮기는 일을 주로 했습니다.
+-                      외주와 자체 서비스를 오가며 AI, 채팅, 내부 운영 도구, 모바일 웹앱 프로젝트를 개발하고 납품했습니다.
+-                      고객 상담에서 기대 수준과 우선순위를 확인하고, 화면·API·데이터 구조와 납품할 기능 범위로 구체화했습니다.
 +                      외주와 자체 서비스를 오가며 AI 상담, 채팅, 내부 운영 도구, 모바일 웹앱을 개발 및 납품했습니다. 고객 요구를 화면·API·데이터 구조로 정리했고, AI 상담 서비스에서는 LLM 응답의 필수 필드와 타입을 검증해 결과 저장과 화면으로 연결했습니다.
                      </p>
                    </div>
                  </article>
-@@ -388,20 +393,20 @@
-               </div>
-               <div class="skills">
-                 <div class="skill">
-+                  <h3 class="mono">Backend / Data / Ops</h3>
-+                  <p>NestJS, GraphQL, MongoDB, PostgreSQL, Node.js, Python · Docker, Jenkins 배포 협업 경험</p>
-+                </div>
-+                <div class="skill">
-                   <h3 class="mono">Frontend</h3>
-                   <p>TypeScript, React, Next.js, Tailwind CSS, 모바일 웹앱·반응형 UI</p>
-                 </div>
-                 <div class="skill">
--                  <h3 class="mono">Multi-platform / Build</h3>
--                  <p>Capacitor 기반 iOS·Android 빌드와 배포, WebView-네이티브 브리지(Swift·Java 수정 포함), Nx·PNPM 모노레포</p>
--                </div>
--                <div class="skill">
-                   <h3 class="mono">Product Integration</h3>
-                   <p>TossPayments 결제, Firebase Push(APNs·FCM), Google Analytics, WebSocket 채팅, PDF 생성, AI 응답 UI</p>
-                 </div>
-                 <div class="skill">
--                  <h3 class="mono">Backend / Data / Ops</h3>
--                  <p>NestJS, GraphQL, MongoDB, PostgreSQL, Node.js, Python · Docker, Jenkins 배포 협업 경험</p>
-+                  <h3 class="mono">Multi-platform / Build</h3>
-+                  <p>Capacitor 기반 iOS·Android 빌드와 배포, WebView-네이티브 브리지(Swift·Java 수정 포함), Nx·PNPM 모노레포</p>
-                 </div>
-               </div>
-             </div>
-@@ -414,7 +419,7 @@
+@@ -426,23 +419,24 @@
                    <p class="eyebrow mono">Selected work · 2023 – 2026</p>
                    <h2 id="projects-title">대표 프로젝트</h2>
                  </div>
@@ -203,39 +197,46 @@
                </div>
                <div class="work-list">
                <button class="work-item is-feature" type="button" data-sheet-open="project-onthemarket">
-@@ -426,15 +431,6 @@
+                 <span class="work-period mono">2025.06 – 2026.02</span>
+                 <span class="work-main">
+                   <span class="work-kicker mono">B2B ordering</span>
+-                  <span class="work-title">OnTheMarket <small>2인 팀으로 개발·영업·운영을 맡은 B2B 식자재 발주 제품</small></span>
++                  <span class="work-title">OnTheMarket <small>음식점 점주가 유통업체에 식자재를 발주하는 모바일 중심 제품</small></span>
+                   <span class="work-chips"><span>iOS · Android · Web 단일 코드베이스</span><span>유통업체 7곳</span><span>가입 음식점 130+</span><span>3개월 거래액 2,000만원</span></span>
                  </span>
                  <span class="work-side"><span class="work-tag mono">Selected</span><span class="work-open mono">Open</span></span>
                </button>
--              <button class="work-item" type="button" data-sheet-open="project-syrs">
--                <span class="work-period mono">2024</span>
--                <span class="work-main">
--                  <span class="work-kicker mono">AI consultation</span>
--                  <span class="work-title">SYRS AI Lab <small>AI 기반 매장 상담 및 제품 추천 서비스</small></span>
--                  <span class="work-chips"><span>연희동 SYRS 플래그십 매장 사용</span><span>iPad 매장 상담용 웹앱</span></span>
--                </span>
--                <span class="work-side"><span class="work-tag mono">Selected</span><span class="work-open mono">Open</span></span>
--              </button>
-               <button class="work-item" type="button" data-sheet-open="project-gagageul">
-                 <span class="work-period mono">2025</span>
+-              <button class="work-item" type="button" data-sheet-open="project-akasys">
+-                <span class="work-period mono">2023</span>
++              <button class="work-item" type="button" data-sheet-open="project-gagageul">
++                <span class="work-period mono">2025</span>
                  <span class="work-main">
-@@ -444,6 +440,15 @@
+-                  <span class="work-kicker mono">Internal tool</span>
+-                  <span class="work-title">Akasys <small>고객 문의, 내부 티켓, 주간 리포트를 연결하는 사내 프로젝트 관리 도구</small></span>
++                  <span class="work-kicker mono">Algorithm tool</span>
++                  <span class="work-title">Gagageul <small>끝말잇기 탐색 조건 커스텀 프로젝트</small></span>
++                  <span class="work-chips"><span>7일+ 트리 탐색을 30분으로</span><span>탐색 엔진 확장</span></span>
                  </span>
                  <span class="work-side"><span class="work-open mono">Open</span></span>
                </button>
-+              <button class="work-item" type="button" data-sheet-open="project-syrs">
-+                <span class="work-period mono">2024</span>
-+                <span class="work-main">
-+                  <span class="work-kicker mono">AI consultation</span>
-+                  <span class="work-title">SYRS AI Lab <small>AI 기반 매장 상담 및 제품 추천 서비스</small></span>
-+                  <span class="work-chips"><span>연희동 SYRS 플래그십 매장 사용</span><span>iPad 매장 상담용 웹앱</span></span>
-+                </span>
-+                <span class="work-side"><span class="work-tag mono">Selected</span><span class="work-open mono">Open</span></span>
-+              </button>
-               <button class="work-item" type="button" data-sheet-open="project-akasys">
-                 <span class="work-period mono">2023</span>
+@@ -455,12 +449,11 @@
+                 </span>
+                 <span class="work-side"><span class="work-tag mono">Selected</span><span class="work-open mono">Open</span></span>
+               </button>
+-              <button class="work-item" type="button" data-sheet-open="project-gagageul">
+-                <span class="work-period mono">2025</span>
++              <button class="work-item" type="button" data-sheet-open="project-akasys">
++                <span class="work-period mono">2023</span>
                  <span class="work-main">
-@@ -475,6 +480,11 @@
+-                  <span class="work-kicker mono">Algorithm tool</span>
+-                  <span class="work-title">Gagageul <small>끝말잇기 탐색 조건 커스텀 프로젝트</small></span>
+-                  <span class="work-chips"><span>7일+ 트리 탐색을 30분으로</span><span>탐색 엔진 확장</span></span>
++                  <span class="work-kicker mono">Internal tool</span>
++                  <span class="work-title">Akasys <small>고객 문의, 내부 티켓, 주간 리포트를 연결하는 사내 프로젝트 관리 도구</small></span>
+                 </span>
+                 <span class="work-side"><span class="work-open mono">Open</span></span>
+               </button>
+@@ -487,6 +480,11 @@
                  <p class="block-lead">외주 납품, 해커톤, 자체 서비스로 만든 프로젝트입니다.</p>
                </div>
                <div class="folio-grid">
@@ -247,7 +248,7 @@
                <button class="folio-card" type="button" data-sheet-open="portfolio-chaptertwo">
                  <span class="folio-thumb two-up"><img src="assets/images/chaptertwo-1.webp" alt="ChapterTwo 리포트 화면" loading="lazy" decoding="async" width="900" height="488"><img src="assets/images/chaptertwo-2.webp" alt="ChapterTwo 설문 화면" loading="lazy" decoding="async" width="900" height="933"></span>
                  <span class="folio-title">ChapterTwo</span>
-@@ -505,11 +515,6 @@
+@@ -517,11 +515,6 @@
                  <span class="folio-title">Hashmoss</span>
                  <span class="folio-sub">NFT 기반 SNS 프로젝트 · 2022</span>
                </button>
@@ -259,12 +260,22 @@
                <button class="folio-card" type="button" data-sheet-open="portfolio-mounting">
                  <span class="folio-thumb is-text mono">Next.js · React Native · Capacitor · NestJS · Firebase Push</span>
                  <span class="folio-title">Mounting</span>
-@@ -536,27 +541,26 @@
+@@ -540,7 +533,7 @@
+           <div>
+             <p class="project-kicker">B2B ordering · 2025.06 – 2026.02</p>
+             <h2 id="project-onthemarket-title">OnTheMarket</h2>
+-            <p class="project-subtitle">2인 팀으로 개발·영업·운영을 맡은 B2B 식자재 발주 제품</p>
++            <p class="project-subtitle">음식점 점주가 유통업체에 식자재를 발주하는 모바일 중심 제품</p>
+             <div class="project-links"><a href="https://github.com/tkd992006/onTheMarket" target="_blank" rel="noreferrer">GitHub</a></div>
+           </div>
+           <button class="sheet-close" type="button" data-sheet-close aria-label="닫기">×</button>
+@@ -548,39 +541,19 @@
          <div class="sheet-body">
            <div class="impact-list" aria-label="OnTheMarket 성과"><span>iOS · Android · Web 단일 코드베이스</span><span>유통업체 7곳</span><span>OnTheMarket 가입 음식점 130+곳</span><span>3개월 누적 거래액 2,000만원</span></div>
            <p>
--            상품 탐색, 식자재 추가, 빠른 주문, 주문 확인, 결제로 이어지는 주문 흐름을 구현했습니다.
--            점주가 실제로 주문하는 순서에 맞춰 가격을 보여주는 시점과 확인 화면을 여러 번 고쳤습니다.
+-            음식점용 앱과 유통업체 웹사이트, 관리자 페이지, 서버·DB를 만들고 점주 영업과 운영도 직접 맡았습니다.
+-            상품 탐색부터 주문 확인·결제까지 구현하면서 가격을 보여주는 시점과 확인 화면을 여러 번 고쳤습니다.
+-            앱 설치 전에 가격을 비교할 수 있는 영수증 진단 캠페인을 만들었고, 일부 가입 전환으로 이어졌습니다.
 +            상품 탐색부터 주문 확인·결제까지 이어지는 서비스의 API와 DB 스키마, 클라이언트를 구현했습니다. 운영 중 느려진 주문 목록은 관계 데이터의 경계를 정리해 개선했고, 견적 요청 기능을 추가하며 생긴 NestJS 서비스의 순환 의존도 해소했습니다.
            </p>
  
@@ -272,108 +283,78 @@
              <button
                class="case-study-trigger is-wide is-highlighted"
                type="button"
--              data-case-open="otm-payment-webview-case"
-+              data-case-open="otm-order-case"
-               aria-haspopup="dialog"
--              aria-controls="otm-payment-webview-case"
-+              aria-controls="otm-order-case"
-             >
-               <span class="case-study-trigger-meta">
-                 <span class="case-study-trigger-index">Solved issue 01</span>
--                <span>Capacitor · Android · iOS · Payments</span>
-+                <span>GraphQL · Data Modeling · Performance</span>
-               </span>
-               <span class="case-study-trigger-copy">
--                <strong>PG 페이지를 다녀온 뒤 WebView 레이아웃 복원</strong>
-+                <strong>주문 목록 관계 데이터 경량화</strong>
-                 <span>
--                  다른 앱으로 내보내지 않고 웹뷰 안에서 결제사 페이지를 오가게 하면서 생긴 inset 문제를
--                  한 단계씩 좁혀, 복귀 시 safe-area·viewport가 다시 계산되도록 native에서 맞춰줬습니다.
-+                  10초 가까이 걸리던 점주 주문 목록의 관계 데이터 의존을 정리하고,
-+                  목록·중첩 관계에 Light 모델 경계를 세워 눈에 띄게 빠르게 만들었습니다.
-                 </span>
-               </span>
-               <span class="case-study-trigger-action">
-@@ -567,39 +571,34 @@
-             <button
-               class="case-study-trigger is-wide"
-               type="button"
--              data-case-open="otm-order-case"
-+              data-case-open="otm-ledger-cycle-case"
-               aria-haspopup="dialog"
--              aria-controls="otm-order-case"
-+              aria-controls="otm-ledger-cycle-case"
-             >
-               <span class="case-study-trigger-meta">
-                 <span class="case-study-trigger-index">Solved issue 02</span>
--                <span>GraphQL · Data Modeling · Performance</span>
-+                <span>NestJS DI · Domain Modeling · Atomicity</span>
-               </span>
-               <span class="case-study-trigger-copy">
--                <strong>주문 목록 관계 데이터 경량화</strong>
--                <span>
--                  10초 가까이 걸리던 점주 주문 목록의 관계 데이터 의존을 정리하고,
--                  목록·중첩 관계에 Light 모델 경계를 세워 눈에 띄게 빠르게 만들었습니다.
--                </span>
-+                <strong>장부·상품 서비스의 순환 의존 해소</strong>
-+                <span>견적 요청 기능을 붙이면서 장부·상품·식당 서비스가 서로를 주입하는 DI 순환이 생겼습니다. 두 서비스에 걸치는 작업을 resolver의 두 호출로 나눠 의존 방향을 장부 → 유통사·식당 한쪽으로 정리했습니다.</span>
-               </span>
--              <span class="case-study-trigger-action">
--                사례 보기 <span aria-hidden="true">↗</span>
--              </span>
-+              <span class="case-study-trigger-action">사례 보기 <span aria-hidden="true">↗</span></span>
-             </button>
-             <button
-               class="case-study-trigger is-compact"
-               type="button"
 -              data-case-open="otm-receipt-case"
-+              data-case-open="otm-signal-types-case"
-               aria-haspopup="dialog"
+-              aria-haspopup="dialog"
 -              aria-controls="otm-receipt-case"
-+              aria-controls="otm-signal-types-case"
-             >
-               <span class="case-study-trigger-meta">
-                 <span class="case-study-trigger-index">Solved issue 03</span>
+-            >
+-              <span class="case-study-trigger-meta">
+-                <span class="case-study-trigger-index">Solved issue 01</span>
 -                <span>Gemini · OCR · Product Flow</span>
-+                <span>TypeScript · AkanJS Signal · Build Performance</span>
-               </span>
-               <span class="case-study-trigger-copy">
+-              </span>
+-              <span class="case-study-trigger-copy">
 -                <strong>영수증 한 장으로 “온더마켓이었으면 얼마”를 보여주는 캠페인</strong>
 -                <span>앱 설치 전 점주가 영수증 사진만 올리면, 그 날짜의 온더마켓 최저가와 비교해 품목별 차액을 보여주는 신규 유입 캠페인을 만들었습니다.</span>
-+                <strong>타입 서버를 느리게 만든 nullable 인자 타입 폭발 추적</strong>
-+                <span>웹 빌드가 10분을 넘기기 시작했을 때, 타입이 퍼져 나가는 곳은 signal뿐이라고 보고 프레임워크의 인자 튜플 타입에서 2ⁿ으로 불어나는 지점을 찾아냈습니다.</span>
+-              </span>
+-              <span class="case-study-trigger-action">사례 보기 <span aria-hidden="true">↗</span></span>
+-            </button>
+-
+-            <button
+-              class="case-study-trigger is-wide"
+-              type="button"
+               data-case-open="otm-order-case"
+               aria-haspopup="dialog"
+               aria-controls="otm-order-case"
+             >
+               <span class="case-study-trigger-meta">
+-                <span class="case-study-trigger-index">Solved issue 02</span>
++                <span class="case-study-trigger-index">Solved issue 01</span>
+                 <span>GraphQL · Data Modeling · Performance</span>
+               </span>
+               <span class="case-study-trigger-copy">
+@@ -594,15 +567,16 @@
+                 사례 보기 <span aria-hidden="true">↗</span>
+               </span>
+             </button>
++
+             <button
+-              class="case-study-trigger is-compact"
++              class="case-study-trigger is-wide"
+               type="button"
+               data-case-open="otm-ledger-cycle-case"
+               aria-haspopup="dialog"
+               aria-controls="otm-ledger-cycle-case"
+             >
+               <span class="case-study-trigger-meta">
+-                <span class="case-study-trigger-index">Solved issue 03</span>
++                <span class="case-study-trigger-index">Solved issue 02</span>
+                 <span>NestJS DI · Domain Modeling · Atomicity</span>
+               </span>
+               <span class="case-study-trigger-copy">
+@@ -611,6 +585,23 @@
                </span>
                <span class="case-study-trigger-action">사례 보기 <span aria-hidden="true">↗</span></span>
              </button>
-@@ -607,34 +606,39 @@
++            <button
++              class="case-study-trigger is-compact"
++              type="button"
++              data-case-open="otm-signal-types-case"
++              aria-haspopup="dialog"
++              aria-controls="otm-signal-types-case"
++            >
++              <span class="case-study-trigger-meta">
++                <span class="case-study-trigger-index">Solved issue 03</span>
++                <span>TypeScript · AkanJS Signal · Build Performance</span>
++              </span>
++              <span class="case-study-trigger-copy">
++                <strong>타입 서버를 느리게 만든 nullable 인자 타입 폭발 추적</strong>
++                <span>웹 빌드가 10분을 넘기기 시작했을 때, 타입이 퍼져 나가는 곳은 signal뿐이라고 보고 프레임워크의 인자 튜플 타입에서 2ⁿ으로 불어나는 지점을 찾아냈습니다.</span>
++              </span>
++              <span class="case-study-trigger-action">사례 보기 <span aria-hidden="true">↗</span></span>
++            </button>
+ 
              <button
                class="case-study-trigger is-compact"
-               type="button"
--              data-case-open="otm-ledger-cycle-case"
-+              data-case-open="otm-payment-webview-case"
-               aria-haspopup="dialog"
--              aria-controls="otm-ledger-cycle-case"
-+              aria-controls="otm-payment-webview-case"
-             >
-               <span class="case-study-trigger-meta">
-                 <span class="case-study-trigger-index">Solved issue 04</span>
--                <span>NestJS DI · Domain Modeling · Atomicity</span>
-+                <span>Capacitor · Android · iOS · Payments</span>
-               </span>
-               <span class="case-study-trigger-copy">
--                <strong>장부·상품 서비스의 순환 의존 해소</strong>
--                <span>견적 요청 기능을 붙이면서 장부·상품·식당 서비스가 서로를 주입하는 DI 순환이 생겼습니다. 두 서비스에 걸치는 작업을 resolver의 두 호출로 나눠 의존 방향을 장부 → 유통사·식당 한쪽으로 정리했습니다.</span>
-+                <strong>PG 페이지를 다녀온 뒤 WebView 레이아웃 복원</strong>
-+                <span>
-+                  다른 앱으로 내보내지 않고 웹뷰 안에서 결제사 페이지를 오가게 하면서 생긴 inset 문제를
-+                  한 단계씩 좁혀, 복귀 시 safe-area·viewport가 다시 계산되도록 native에서 맞춰줬습니다.
-+                </span>
-               </span>
--              <span class="case-study-trigger-action">사례 보기 <span aria-hidden="true">↗</span></span>
-+              <span class="case-study-trigger-action">
-+                사례 보기 <span aria-hidden="true">↗</span>
-+              </span>
-             </button>
+@@ -637,17 +628,17 @@
              <button
                class="case-study-trigger is-full"
                type="button"
@@ -396,20 +377,20 @@
                </span>
                <span class="case-study-trigger-action">사례 보기 <span aria-hidden="true">↗</span></span>
              </button>
-@@ -644,10 +648,10 @@
+@@ -657,10 +648,10 @@
              <div>
                <h4>What I did</h4>
                <ul>
--                <li>React, Capacitor 기반 iOS / Android / Web 클라이언트 구현</li>
+-                <li>음식점용 iOS / Android / Web 앱, 유통업체 웹사이트, 관리자 페이지 개발 및 운영</li>
                  <li>상품, 거래처, 장바구니, 주문 상태를 위한 API와 DB 스키마 설계</li>
 +                <li>GraphQL 목록·중첩 관계 데이터 경량화 및 NestJS 서비스 의존 구조 정리</li>
 +                <li>React, Capacitor 기반 iOS / Android / Web 클라이언트 구현</li>
                  <li>TossPayments, Firebase Push, Google Analytics 연동</li>
--                <li>큰 글씨 설정, 기기별 레이아웃, 가격 표시 시점 조정</li>
+-                <li>점주의 주문 흐름에 맞춰 가격 표시 시점, 큰 글씨 설정, 기기별 레이아웃 조정</li>
                </ul>
              </div>
              <div>
-@@ -730,8 +734,7 @@
+@@ -743,8 +734,7 @@
          <div class="sheet-body">
            <div class="impact-list" aria-label="SYRS AI Lab 성과"><span>연희동 SYRS 플래그십 매장 사용</span><span>iPad 매장 상담용 웹앱</span></div>
            <p>
@@ -419,7 +400,7 @@
            </p>
  
            <div class="case-study-list" aria-label="SYRS 문제 해결 사례">
-@@ -763,9 +766,9 @@
+@@ -776,9 +766,9 @@
              <div>
                <h4>What I did</h4>
                <ul>
@@ -432,7 +413,7 @@
                  <li>AI 코멘트가 길어져도 무너지지 않는 화면 밀도 조정</li>
                </ul>
              </div>
-@@ -776,8 +779,7 @@
+@@ -789,8 +779,7 @@
              <div>
                <h4>Learned</h4>
                <p>
@@ -442,7 +423,7 @@
                </p>
              </div>
            </div>
-@@ -810,8 +812,7 @@
+@@ -823,8 +812,7 @@
          <div class="sheet-body">
            <div class="impact-list" aria-label="Gagageul 성과"><span>7일+ 트리 탐색을 30분으로</span><span>끝말잇기 단어 트리 탐색 엔진 확장</span></div>
            <p>
@@ -452,16 +433,24 @@
            </p>
            <div class="project-grid">
              <div>
-@@ -1063,7 +1064,7 @@
+@@ -866,7 +854,6 @@
+         </header>
+         <div class="sheet-body">
+           <p>
+-            고객사 CS 관리 툴 요청에서 고객 관계 관리의 필요를 파악해, 내부 티켓·고객 요구사항·주간·월간 리포트가 연결되는 운영 도구로 확장 제안했습니다.
+             반복해서 확인하는 정보를 빠르게 읽을 수 있도록 프로젝트 클러스터, 티켓 상태, 리포트 화면의 정보 구조를 정리했습니다.
+           </p>
+           <div class="project-grid">
+@@ -1077,7 +1064,7 @@
        <div class="case-modal-shell">
          <header class="case-modal-header">
            <div>
--            <p class="case-modal-kicker">OnTheMarket · Solved issue 04</p>
+-            <p class="case-modal-kicker">OnTheMarket · Solved issue 03</p>
 +            <p class="case-modal-kicker">OnTheMarket · Solved issue 02</p>
              <h2 id="ledger-cycle-case-title">장부·상품 서비스의 순환 의존 해소</h2>
              <p id="ledger-cycle-case-description">
                견적 요청 기능을 붙이면서 장부·상품·식당 서비스가 서로를 주입하는 DI 순환이 생겼습니다.
-@@ -1245,7 +1246,7 @@
+@@ -1259,7 +1246,7 @@
        <div class="case-modal-shell">
          <header class="case-modal-header">
            <div>
@@ -470,7 +459,7 @@
              <h2 id="signal-types-case-title">타입 서버를 느리게 만든 nullable 인자 타입 폭발 추적</h2>
              <p id="signal-types-case-description">
                웹 빌드가 10분을 넘기기 시작했을 때, 타입이 퍼져 나가는 곳은 signal뿐이라고 보고
-@@ -1415,7 +1416,7 @@
+@@ -1429,7 +1416,7 @@
        <div class="case-modal-shell">
          <header class="case-modal-header">
            <div>
@@ -479,31 +468,22 @@
              <h2 id="otm-order-case-title">주문 목록 관계 데이터 경량화</h2>
              <p id="otm-order-case-description">
                10초 가까이 걸리던 점주 주문 목록의 관계 데이터 의존을 정리하고,
-@@ -1654,7 +1655,7 @@
+@@ -1993,7 +1980,7 @@
        <div class="case-modal-shell">
          <header class="case-modal-header">
            <div>
 -            <p class="case-modal-kicker">OnTheMarket · Solved issue 01</p>
-+            <p class="case-modal-kicker">OnTheMarket · Solved issue 04</p>
-             <h2 id="payment-webview-case-title">PG 페이지를 다녀온 뒤 WebView 레이아웃 복원</h2>
-             <p id="payment-webview-case-description">
-               다른 앱으로 내보내지 않고 웹뷰 안에서 결제사 페이지를 오가게 하면서 생긴 inset 문제를
-@@ -1979,7 +1980,7 @@
-       <div class="case-modal-shell">
-         <header class="case-modal-header">
-           <div>
--            <p class="case-modal-kicker">OnTheMarket · Solved issue 03</p>
 +            <p class="case-modal-kicker">OnTheMarket · Solved issue 05</p>
              <h2 id="receipt-case-title">영수증 한 장으로 “온더마켓이었으면 얼마”를 보여주는 캠페인</h2>
              <p id="receipt-case-description">
                앱 설치 전 점주가 영수증 사진만 올리면, 그 날짜의 온더마켓 최저가와 비교해 품목별 차액과 절감액을 보여주는
---- toss/script.js
-+++ daangn/script.js
+--- current/modoodoc/script.js
++++ current/daangn/script.js
 @@ -462,7 +462,7 @@
  const railItems = $$(".rail-item");
  const stage = $("#stage");
  const DEFAULT_PANEL_ID = "who-am-i";
--const BASE_TITLE = "이상화 · Frontend / Product Engineer";
+-const BASE_TITLE = "이상화 · Full-stack / Product Engineer";
 +const BASE_TITLE = "이상화 · Software Engineer";
  const HASH_ALIASES = { projects: "selected-work", top: DEFAULT_PANEL_ID, stage: DEFAULT_PANEL_ID };
  

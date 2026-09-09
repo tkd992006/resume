@@ -18,9 +18,33 @@ export function loadSources() {
   return { common, locators, template: read('src/template.html'), scriptTemplate: read('src/script.js'), runtimeFormat: json('src/content/runtime-format.json') };
 }
 
-function fillHtml(sources, fields) {
+const escapeHtml = value => value.replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
+
+function personalIntroHtml(intro) {
+  if (intro === undefined) return '';
+  if (!intro || typeof intro !== 'object' || Array.isArray(intro) || Object.keys(intro).some(key => !['eyebrow', 'title', 'paragraphs'].includes(key))) throw new Error('Invalid personalIntro object');
+  if (typeof intro.eyebrow !== 'string' || !intro.eyebrow.trim() || typeof intro.title !== 'string' || !intro.title.trim() || !Array.isArray(intro.paragraphs) || !intro.paragraphs.length || intro.paragraphs.some(text => typeof text !== 'string' || !text.trim())) throw new Error('personalIntro requires an eyebrow, title, and nonempty paragraphs');
+  return `            <section class="block card" id="personal-intro" aria-labelledby="personal-intro-title">
+              <div class="block-head">
+                <div>
+                  <p class="eyebrow mono">${escapeHtml(intro.eyebrow)}</p>
+                  <h2 id="personal-intro-title">${escapeHtml(intro.title)}</h2>
+                </div>
+              </div>
+              <div class="ai-copy">
+${intro.paragraphs.map(text => `                <p>${escapeHtml(text)}</p>`).join('\n')}
+              </div>
+            </section>
+`;
+}
+
+function fillHtml(sources, fields, sections = {}) {
   const used = new Set();
-  const html = sources.template.replace(/\{\{(field|case):([\w.-]+)\}\}/g, (_, kind, key) => {
+  const html = sources.template.replace(/\{\{(field|case|section):([\w.-]+)\}\}/g, (_, kind, key) => {
+    if (kind === 'section') {
+      if (key !== 'personal-intro') throw new Error(`Unknown optional section: ${key}`);
+      return sections[key] ?? '';
+    }
     if (kind === 'case') {
       if (!sources.locators.cases.some(entry => entry.id === key)) throw new Error(`Unknown case: ${key}`);
       return read(`src/cases/${key}.html`);
@@ -31,7 +55,7 @@ function fillHtml(sources, fields) {
     return fields[key];
   });
   for (const key of Object.keys(fields)) if (!used.has(key)) throw new Error(`Unused or unknown common field: ${key}`);
-  if (/\{\{(?:field|case):/.test(html)) throw new Error('Unresolved template token');
+  if (/\{\{(?:field|case|section):/.test(html)) throw new Error('Unresolved template token');
   return html;
 }
 
@@ -186,7 +210,9 @@ export function resolveProfile(slug) {
   const titleDoc = parseHtml(`<title>${fields['meta.title']}</title>`);
   const runtime = { ...sources.common.runtime, BASE_TITLE: textContent(titleDoc, queryOne(titleDoc, 'title')) };
   const runtimeChanges = Object.keys(runtime).filter(key => !equal(runtime[key], sources.common.runtime[key])).map(key => ({ key, before: sources.common.runtime[key], after: runtime[key], reason: '문서 제목과 해시 이동 후 탭 제목을 일치시킵니다.' }));
-  const ordered = orderSections(fillHtml(sources, fields), profile);
+  const personalIntro = personalIntroHtml(profile.personalIntro);
+  if (personalIntro) resolvedChanges.push({ key: 'personalIntro', fieldKey: null, selector: '#personal-intro', before: '', after: personalIntro, reason: '기존 경험을 바탕으로 서비스에 대한 관심과 다음 팀에서의 기여·성장 방향을 소개합니다.', added: true });
+  const ordered = orderSections(fillHtml(sources, fields, { 'personal-intro': personalIntro }), profile);
   return { slug, profile, fields, runtime, resolvedChanges: [...resolvedChanges, ...ordered.derivedChanges], orderChanges: ordered.orderChanges, runtimeChanges, html: ordered.html };
 }
 
@@ -221,7 +247,7 @@ export function validateRendered(rendered) {
   }
   for (const track of rendered.runtime.CHRONO_TRACKS) for (const item of track.items) if (item.href?.startsWith('#') && !ids.has(item.href.slice(1))) missing.push(item.href);
   if (missing.length) throw new Error(`Missing page references: ${[...new Set(missing)].join(', ')}`);
-  if (/\{\{(?:field|case|runtime):/.test(rendered.html + rendered.script)) throw new Error('Unresolved build token');
+  if (/\{\{(?:field|case|section|runtime):/.test(rendered.html + rendered.script)) throw new Error('Unresolved build token');
   return { ids: ids.size, files: walkFiles(path.join(ROOT, 'src/assets')).length + 3 };
 }
 

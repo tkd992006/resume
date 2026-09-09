@@ -1,0 +1,917 @@
+{
+  "id": "toss-vs-modoodoc",
+  "prefix": "TM",
+  "type": "pairwise",
+  "left": "current/toss",
+  "right": "current/modoodoc",
+  "title": "토스 ↔ 모두닥 · 지원본 전체 비교",
+  "beforeLabel": "토스",
+  "afterLabel": "모두닥",
+  "records": [
+    {
+      "id": "TM-001",
+      "kind": "text",
+      "location": "document > html > head > title",
+      "before": "이상화 · Frontend / Product Engineer",
+      "after": "이상화 · Full-stack / Product Engineer",
+      "beforeText": "이상화 · Frontend / Product Engineer",
+      "afterText": "이상화 · Full-stack / Product Engineer"
+    },
+    {
+      "id": "TM-002",
+      "kind": "attribute",
+      "location": "meta[name=\"description\"]",
+      "before": "프론트엔드·프로덕트 엔지니어 이상화의 포트폴리오. iOS·Android·Web 멀티플랫폼 주문 앱, 결제 흐름, AI 상담 서비스를 설계부터 운영까지 만들었습니다.",
+      "after": "풀스택·프로덕트 엔지니어 이상화의 포트폴리오. B2B 식자재 주문 제품의 개발·영업·운영을 맡고, 고객 요구를 화면·API·데이터 모델로 구체화해 납품했습니다.",
+      "attribute": "content",
+      "beforePresent": true,
+      "afterPresent": true,
+      "beforeTag": "<meta\n      name=\"description\"\n      content=\"프론트엔드·프로덕트 엔지니어 이상화의 포트폴리오. iOS·Android·Web 멀티플랫폼 주문 앱, 결제 흐름, AI 상담 서비스를 설계부터 운영까지 만들었습니다.\"\n    >",
+      "afterTag": "<meta\n      name=\"description\"\n      content=\"풀스택·프로덕트 엔지니어 이상화의 포트폴리오. B2B 식자재 주문 제품의 개발·영업·운영을 맡고, 고객 요구를 화면·API·데이터 모델로 구체화해 납품했습니다.\"\n    >"
+    },
+    {
+      "id": "TM-003",
+      "kind": "attribute",
+      "location": "meta[property=\"og:description\"]",
+      "before": "iOS·Android·Web 멀티플랫폼 주문 앱, 결제 흐름, AI 상담 서비스를 설계부터 운영까지 만든 프론트엔드·프로덕트 엔지니어입니다.",
+      "after": "B2B 식자재 주문 제품의 개발·영업·운영을 맡고, 고객 요구를 화면·API·데이터 모델로 구체화해 납품한 풀스택·프로덕트 엔지니어입니다.",
+      "attribute": "content",
+      "beforePresent": true,
+      "afterPresent": true,
+      "beforeTag": "<meta\n      property=\"og:description\"\n      content=\"iOS·Android·Web 멀티플랫폼 주문 앱, 결제 흐름, AI 상담 서비스를 설계부터 운영까지 만든 프론트엔드·프로덕트 엔지니어입니다.\"\n    >",
+      "afterTag": "<meta\n      property=\"og:description\"\n      content=\"B2B 식자재 주문 제품의 개발·영업·운영을 맡고, 고객 요구를 화면·API·데이터 모델로 구체화해 납품한 풀스택·프로덕트 엔지니어입니다.\"\n    >"
+    },
+    {
+      "id": "TM-004",
+      "kind": "attribute",
+      "location": "meta[property=\"og:url\"]",
+      "before": "https://tkd992006.github.io/resume/toss/",
+      "after": "https://tkd992006.github.io/resume/modoodoc/",
+      "attribute": "content",
+      "beforePresent": true,
+      "afterPresent": true,
+      "beforeTag": "<meta property=\"og:url\" content=\"https://tkd992006.github.io/resume/toss/\">",
+      "afterTag": "<meta property=\"og:url\" content=\"https://tkd992006.github.io/resume/modoodoc/\">"
+    },
+    {
+      "id": "TM-005",
+      "kind": "attribute",
+      "location": "meta[property=\"og:image\"]",
+      "before": "https://tkd992006.github.io/resume/toss/assets/images/onthemarket-app-1.webp",
+      "after": "https://tkd992006.github.io/resume/modoodoc/assets/images/onthemarket-app-1.webp",
+      "attribute": "content",
+      "beforePresent": true,
+      "afterPresent": true,
+      "beforeTag": "<meta property=\"og:image\" content=\"https://tkd992006.github.io/resume/toss/assets/images/onthemarket-app-1.webp\">",
+      "afterTag": "<meta property=\"og:image\" content=\"https://tkd992006.github.io/resume/modoodoc/assets/images/onthemarket-app-1.webp\">"
+    },
+    {
+      "id": "TM-006",
+      "kind": "text",
+      "location": "document > html > body > div > header > div:nth-of-type(1) > p",
+      "before": "\n            <span><strong>Frontend / Product Engineer</strong> · KAIST CS</span>\n          ",
+      "after": "\n            <span><strong>Full-stack / Product Engineer</strong> · KAIST CS</span>\n          ",
+      "beforeText": "Frontend / Product Engineer · KAIST CS",
+      "afterText": "Full-stack / Product Engineer · KAIST CS"
+    },
+    {
+      "id": "TM-007",
+      "kind": "structure",
+      "location": "#who-am-i",
+      "before": "[\n  \"#who-title\",\n  \"#who-am-i > div:nth-of-type(1)\",\n  \"#ama\"\n]",
+      "after": "[\n  \"#who-title\",\n  \"#who-am-i > div:nth-of-type(1)\",\n  \"#personal-intro\",\n  \"#ama\"\n]"
+    },
+    {
+      "id": "TM-008",
+      "kind": "whitespace",
+      "location": "#who-am-i",
+      "before": "[\n  \"\\n            \",\n  \"\\n            \",\n  \"\\n            \",\n  \"\\n          \"\n]",
+      "after": "[\n  \"\\n            \",\n  \"\\n            \",\n  \"\\n            \",\n  \"\\n            \",\n  \"\\n          \"\n]"
+    },
+    {
+      "id": "TM-009",
+      "kind": "text",
+      "location": "#who-am-i > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "before": "\n                      최근에는 <strong>iOS·Android·Web을 한 코드베이스로 다루는 식자재 주문 앱과 실결제 흐름</strong>을\n                  설계부터 운영까지 직접 맡아봤습니다. 음식점 식자재 발주, AI 스킨케어 상담,\n                  매장 비치용 iPad 웹앱처럼 사용 맥락이 다른 제품을 주로 웹 기반으로 개발하고 납품해왔습니다.\n                ",
+      "after": "\n                      최근에는 <strong>B2B 식자재 주문 제품을 2인 팀으로 창업해 개발·점주 영업·운영</strong>까지 직접 맡았습니다.\n                      음식점용 앱과 유통업체 웹사이트, API·DB·결제 흐름을 만들고, 점주가 가격을 먼저 확인할 수 있는 캠페인도 구현했습니다.\n                      외주에서는 고객의 요구를 화면과 데이터 구조로 구체화해 제품을 개발하고 납품해왔습니다.\n                ",
+      "beforeText": "최근에는 iOS·Android·Web을 한 코드베이스로 다루는 식자재 주문 앱과 실결제 흐름을 설계부터 운영까지 직접 맡아봤습니다. 음식점 식자재 발주, AI 스킨케어 상담, 매장 비치용 iPad 웹앱처럼 사용 맥락이 다른 제품을 주로 웹 기반으로 개발하고 납품해왔습니다.",
+      "afterText": "최근에는 B2B 식자재 주문 제품을 2인 팀으로 창업해 개발·점주 영업·운영까지 직접 맡았습니다. 음식점용 앱과 유통업체 웹사이트, API·DB·결제 흐름을 만들고, 점주가 가격을 먼저 확인할 수 있는 캠페인도 구현했습니다. 외주에서는 고객의 요구를 화면과 데이터 구조로 구체화해 제품을 개발하고 납품해왔습니다."
+    },
+    {
+      "id": "TM-010",
+      "kind": "added-node",
+      "location": "#personal-intro",
+      "before": "",
+      "after": "<section class=\"block card\" id=\"personal-intro\" aria-labelledby=\"personal-intro-title\">\n              <div class=\"block-head\">\n                <div>\n                  <p class=\"eyebrow mono\">Who am I</p>\n                  <h2 id=\"personal-intro-title\">다양한 문제를 제품으로 풀고, 성과를 내며 성장하고 싶습니다.</h2>\n                </div>\n              </div>\n              <div class=\"ai-copy\">\n                <p>식자재 발주, 매장 상담, 내부 운영 도구처럼 서로 다른 분야의 일하는 방식과 요구를 분석하는 과정이 재미있었습니다. 요청받은 기능이 어떤 문제를 해결해야 하는지 파악하고, 제품으로 구체화하는 일을 좋아합니다.</p>\n                <p>모두닥에서도 새로운 도메인을 배우고, 만든 제품이 사용자와 사업에 어떤 결과를 내는지 동료들과 확인하며 개선하고 싶습니다. 서로의 경험에서 더 나은 판단을 배우고, 제품의 성과와 제 성장으로 이어가고 싶습니다.</p>\n              </div>\n            </section>",
+      "beforeText": "",
+      "afterText": "Who am I 다양한 문제를 제품으로 풀고, 성과를 내며 성장하고 싶습니다. 식자재 발주, 매장 상담, 내부 운영 도구처럼 서로 다른 분야의 일하는 방식과 요구를 분석하는 과정이 재미있었습니다. 요청받은 기능이 어떤 문제를 해결해야 하는지 파악하고, 제품으로 구체화하는 일을 좋아합니다. 모두닥에서도 새로운 도메인을 배우고, 만든 제품이 사용자와 사업에 어떤 결과를 내는지 동료들과 확인하며 개선하고 싶습니다. 서로의 경험에서 더 나은 판단을 배우고, 제품의 성과와 제 성장으로 이어가고 싶습니다."
+    },
+    {
+      "id": "TM-011",
+      "kind": "text",
+      "location": "#ama-answer-work > h3",
+      "before": "고객 요구를 화면·API·데이터 모델로 구체화해 납품했습니다. 온더마켓에서는 2인 팀으로 개발뿐 아니라 점주 영업과 운영까지 맡았습니다.",
+      "after": "서로 다른 분야의 요구를 분석해 제품으로 만들고, 창업에서는 영업과 운영까지 맡았습니다.",
+      "beforeText": "고객 요구를 화면·API·데이터 모델로 구체화해 납품했습니다. 온더마켓에서는 2인 팀으로 개발뿐 아니라 점주 영업과 운영까지 맡았습니다.",
+      "afterText": "서로 다른 분야의 요구를 분석해 제품으로 만들고, 창업에서는 영업과 운영까지 맡았습니다."
+    },
+    {
+      "id": "TM-012",
+      "kind": "text",
+      "location": "#ama-answer-work > p:nth-of-type(2)",
+      "before": "\n                                  외주개발에서는 고객이 설명한 요구사항을 화면, API, 데이터 구조로 정리해 납품했고,\n                                  창업에서는 문제 발견부터 제품 구현, 영업, 운영까지 직접 부딪혔습니다.\n                                  음식점 식자재 발주, AI 스킨케어 상담, 개발외주사 내부 운영 도구 등 다양한 사용 맥락이 있는 제품을 만들었습니다.\n                                ",
+      "after": "\n                                  식자재 발주, AI 스킨케어 상담, 개발외주사 내부 운영 도구를 만들며 사용 맥락이 다른 요구를 화면, API, 데이터 구조로 정리했습니다.\n                                  Akasys에서는 고객사 CS 관리 요청을 고객 관계 관리의 문제로 보고, 티켓과 리포트가 연결되는 운영 도구로 확장 제안했습니다.\n                                  온더마켓에서는 제품 개발과 점주 영업·운영을 함께 맡았고, 가격 진단 캠페인으로 일부 가입 전환도 만들었습니다.\n                                ",
+      "beforeText": "외주개발에서는 고객이 설명한 요구사항을 화면, API, 데이터 구조로 정리해 납품했고, 창업에서는 문제 발견부터 제품 구현, 영업, 운영까지 직접 부딪혔습니다. 음식점 식자재 발주, AI 스킨케어 상담, 개발외주사 내부 운영 도구 등 다양한 사용 맥락이 있는 제품을 만들었습니다.",
+      "afterText": "식자재 발주, AI 스킨케어 상담, 개발외주사 내부 운영 도구를 만들며 사용 맥락이 다른 요구를 화면, API, 데이터 구조로 정리했습니다. Akasys에서는 고객사 CS 관리 요청을 고객 관계 관리의 문제로 보고, 티켓과 리포트가 연결되는 운영 도구로 확장 제안했습니다. 온더마켓에서는 제품 개발과 점주 영업·운영을 함께 맡았고, 가격 진단 캠페인으로 일부 가입 전환도 만들었습니다."
+    },
+    {
+      "id": "TM-013",
+      "kind": "text",
+      "location": "#ama-work-followup-2 > div > p",
+      "before": "먼저 사용자나 클라이언트의 요구사항을 긴밀히 파악하고, 그 안에서 가장 중요한 지점을 화면과 데이터 구조로 옮겼습니다. Akasys라는 개발사 외주 관리 툴을 맡았을 때에는, 단순한 고객사 CS관리 툴 요청을 내부 티켓, 고객 요구사항, 주간/월간 리포트가 연결되는 운영 도구로 확장 제안하여 좋은 반응을 이끌었습니다. 클라이언트의 실제 깊은 니즈는 고객사와의 관계 관리이지, 매끄러운 CS처리가 전부가 아니라는 것을 파악하여 제안했습니다.",
+      "after": "먼저 고객이 요청한 기능과 그 기능으로 해결하려는 일을 함께 확인했습니다. Akasys에서는 고객사 CS 관리 툴 요청을 받고, 실제 필요가 고객사와의 관계 관리에 있다고 판단했습니다. 그래서 내부 티켓, 고객 요구사항, 주간·월간 리포트가 연결되는 운영 도구로 확장 제안했고 좋은 반응을 얻었습니다.",
+      "beforeText": "먼저 사용자나 클라이언트의 요구사항을 긴밀히 파악하고, 그 안에서 가장 중요한 지점을 화면과 데이터 구조로 옮겼습니다. Akasys라는 개발사 외주 관리 툴을 맡았을 때에는, 단순한 고객사 CS관리 툴 요청을 내부 티켓, 고객 요구사항, 주간/월간 리포트가 연결되는 운영 도구로 확장 제안하여 좋은 반응을 이끌었습니다. 클라이언트의 실제 깊은 니즈는 고객사와의 관계 관리이지, 매끄러운 CS처리가 전부가 아니라는 것을 파악하여 제안했습니다.",
+      "afterText": "먼저 고객이 요청한 기능과 그 기능으로 해결하려는 일을 함께 확인했습니다. Akasys에서는 고객사 CS 관리 툴 요청을 받고, 실제 필요가 고객사와의 관계 관리에 있다고 판단했습니다. 그래서 내부 티켓, 고객 요구사항, 주간·월간 리포트가 연결되는 운영 도구로 확장 제안했고 좋은 반응을 얻었습니다."
+    },
+    {
+      "id": "TM-014",
+      "kind": "text",
+      "location": "#ama-answer-founder > p:nth-of-type(2)",
+      "before": "\n                                  음식점 식자재 주문 플랫폼 온더마켓을 운영하면서 점주가 가격을 빨리 알고 싶어한다는 문제는 명확했고, 가격 진단 캠페인으로 일부 가입 전환도 만들었습니다.\n                                  다만 B2B 식자재 시장은 신뢰 확보, 공급가 경쟁력, 대면 영업, 공급 운영이 함께 돌아가야 했고, 심지어 시장 구조와 경쟁사를 잘못 파악하여\n                                  작은 팀이 감당하기엔 사업 구조가 무겁다는 것을 알게되었습니다.\n                                  그래서 제품의 완성도만큼 유통 구조와 영업 비용을 빨리 검증했어야 한다는 걸 배웠습니다.\n                                ",
+      "after": "\n                                  온더마켓에서는 점주가 가격을 빨리 알고 싶어한다는 문제를 확인했고, 가격 진단 캠페인으로 일부 가입 전환도 만들었습니다.\n                                  하지만 시장 구조와 경쟁사를 잘못 파악했습니다. 더 싼 공급가, 신뢰 확보, 대면 영업, 안정적인 공급 운영이 함께 필요했고,\n                                  작은 팀이 제품 개발과 시장 운영을 동시에 감당하기에는 사업 구조가 무거웠습니다.\n                                  제품 완성도를 높이기 전에 유통 구조와 영업 비용부터 더 빨리 검증했어야 한다는 걸 배웠습니다.\n                                ",
+      "beforeText": "음식점 식자재 주문 플랫폼 온더마켓을 운영하면서 점주가 가격을 빨리 알고 싶어한다는 문제는 명확했고, 가격 진단 캠페인으로 일부 가입 전환도 만들었습니다. 다만 B2B 식자재 시장은 신뢰 확보, 공급가 경쟁력, 대면 영업, 공급 운영이 함께 돌아가야 했고, 심지어 시장 구조와 경쟁사를 잘못 파악하여 작은 팀이 감당하기엔 사업 구조가 무겁다는 것을 알게되었습니다. 그래서 제품의 완성도만큼 유통 구조와 영업 비용을 빨리 검증했어야 한다는 걸 배웠습니다.",
+      "afterText": "온더마켓에서는 점주가 가격을 빨리 알고 싶어한다는 문제를 확인했고, 가격 진단 캠페인으로 일부 가입 전환도 만들었습니다. 하지만 시장 구조와 경쟁사를 잘못 파악했습니다. 더 싼 공급가, 신뢰 확보, 대면 영업, 안정적인 공급 운영이 함께 필요했고, 작은 팀이 제품 개발과 시장 운영을 동시에 감당하기에는 사업 구조가 무거웠습니다. 제품 완성도를 높이기 전에 유통 구조와 영업 비용부터 더 빨리 검증했어야 한다는 걸 배웠습니다."
+    },
+    {
+      "id": "TM-015",
+      "kind": "text",
+      "location": "#ama-founder-followup-2 > div > p",
+      "before": "당분간은 없습니다. 커리어 대부분을 1인 개발로 보냈고, 다음에는 저보다 뛰어난 사람들과 같은 제품을 오래 만들어 보고 싶습니다. 큰 임팩트를 내려면 이미 인프라와 사용자가 있는 조직이 빠르다는 것도 온더마켓에서 배웠습니다. 그래서 다음 커리어는 규모와 상관없이 서비스와 인프라가 갖춰진 곳에 기여하는 것으로 정했습니다.",
+      "after": "당분간은 없습니다. 혼자 개발하는 시간을 많이 보냈고, 이제는 동료들과 같은 제품을 오래 만들며 성과를 내고 싶습니다. 온더마켓에서 제품 구현뿐 아니라 유통과 영업, 운영까지 맞아야 사업이 된다는 걸 배웠습니다. 이미 서비스와 운영 기반이 있는 곳에서 더 나은 판단을 배우고, 제품의 성장에 기여하고 싶습니다.",
+      "beforeText": "당분간은 없습니다. 커리어 대부분을 1인 개발로 보냈고, 다음에는 저보다 뛰어난 사람들과 같은 제품을 오래 만들어 보고 싶습니다. 큰 임팩트를 내려면 이미 인프라와 사용자가 있는 조직이 빠르다는 것도 온더마켓에서 배웠습니다. 그래서 다음 커리어는 규모와 상관없이 서비스와 인프라가 갖춰진 곳에 기여하는 것으로 정했습니다.",
+      "afterText": "당분간은 없습니다. 혼자 개발하는 시간을 많이 보냈고, 이제는 동료들과 같은 제품을 오래 만들며 성과를 내고 싶습니다. 온더마켓에서 제품 구현뿐 아니라 유통과 영업, 운영까지 맞아야 사업이 된다는 걸 배웠습니다. 이미 서비스와 운영 기반이 있는 곳에서 더 나은 판단을 배우고, 제품의 성장에 기여하고 싶습니다."
+    },
+    {
+      "id": "TM-016",
+      "kind": "text",
+      "location": "#ama-collab-followup-3 > div > p",
+      "before": "정답을 먼저 정하지 않고, 사용 맥락과 제약을 맞춘 뒤 작은 단위로 만들어 확인합니다. 온더마켓 결제 웹뷰 문제도 native와 웹 중 어느 쪽이 safe-area를 소유할지부터 정한 뒤 Android와 iOS를 따로 한 단계씩 붙였습니다.",
+      "after": "정답을 먼저 정하지 않고, 함께 풀 문제와 제약을 맞춘 뒤 작은 단위로 만들어 확인합니다. 온더마켓 결제 웹뷰 문제도 native와 웹 중 어느 쪽이 safe-area를 소유할지부터 정하고 Android와 iOS를 단계별로 붙였습니다. 앞으로도 동료의 관점에서 놓친 가정을 찾고, 결과를 함께 확인하며 판단을 개선하고 싶습니다.",
+      "beforeText": "정답을 먼저 정하지 않고, 사용 맥락과 제약을 맞춘 뒤 작은 단위로 만들어 확인합니다. 온더마켓 결제 웹뷰 문제도 native와 웹 중 어느 쪽이 safe-area를 소유할지부터 정한 뒤 Android와 iOS를 따로 한 단계씩 붙였습니다.",
+      "afterText": "정답을 먼저 정하지 않고, 함께 풀 문제와 제약을 맞춘 뒤 작은 단위로 만들어 확인합니다. 온더마켓 결제 웹뷰 문제도 native와 웹 중 어느 쪽이 safe-area를 소유할지부터 정하고 Android와 iOS를 단계별로 붙였습니다. 앞으로도 동료의 관점에서 놓친 가정을 찾고, 결과를 함께 확인하며 판단을 개선하고 싶습니다."
+    },
+    {
+      "id": "TM-017",
+      "kind": "text",
+      "location": "#ama-growth-followup-1 > div > p",
+      "before": "적은 것은 사실입니다. 대신 문제 정의부터 화면, API, 운영까지 전체를 맡아 왔고, 고객·공동창업자·프레임워크 팀의 피드백을 제품에 바로 반영하는 데 익숙합니다. 지금은 코드 리뷰와 문서화, 공동 의사결정이 촘촘한 환경에서 이 넓은 시야를 팀의 방식으로 쓰고 싶습니다.",
+      "after": "규모 있는 제품 조직 경험이 적은 것은 사실입니다. 지금까지는 문제 정의부터 화면, API, 운영까지 맡으며 고객·공동창업자·프레임워크 팀의 피드백을 제품에 반영해 왔습니다. 앞으로는 코드 리뷰와 문서화, 공동 의사결정이 촘촘한 환경에서 제 판단을 점검받고 싶습니다. 동료들과 사용자 반응과 사업의 결과를 함께 확인하면서 제품을 개선하는 법을 더 배우고 싶습니다.",
+      "beforeText": "적은 것은 사실입니다. 대신 문제 정의부터 화면, API, 운영까지 전체를 맡아 왔고, 고객·공동창업자·프레임워크 팀의 피드백을 제품에 바로 반영하는 데 익숙합니다. 지금은 코드 리뷰와 문서화, 공동 의사결정이 촘촘한 환경에서 이 넓은 시야를 팀의 방식으로 쓰고 싶습니다.",
+      "afterText": "규모 있는 제품 조직 경험이 적은 것은 사실입니다. 지금까지는 문제 정의부터 화면, API, 운영까지 맡으며 고객·공동창업자·프레임워크 팀의 피드백을 제품에 반영해 왔습니다. 앞으로는 코드 리뷰와 문서화, 공동 의사결정이 촘촘한 환경에서 제 판단을 점검받고 싶습니다. 동료들과 사용자 반응과 사업의 결과를 함께 확인하면서 제품을 개선하는 법을 더 배우고 싶습니다."
+    },
+    {
+      "id": "TM-018",
+      "kind": "text",
+      "location": "#work-onthemarket > div > p:nth-of-type(2)",
+      "before": "\n                      음식점과 유통업체 사이의 B2B 식자재 발주 제품을 2인 팀에서 만들었습니다.\n                      음식점용 크로스 플랫폼 웹앱, 유통업체 웹사이트, 관리자 페이지, 서버, DB 스키마,\n                      결제, 푸시, 분석 연동과 운영 개선까지 개발과 운영 전체를 맡았습니다. 전단지와 전화로 음식점 영업도 직접 했습니다.\n                    ",
+      "after": "\n                      음식점과 유통업체 사이의 B2B 식자재 발주 제품을 2인 팀으로 창업해 개발과 운영을 맡았습니다.\n                      음식점용 크로스 플랫폼 웹앱, 유통업체 웹사이트, 관리자 페이지, 서버·DB 스키마와 결제·푸시·분석 연동을 구현했습니다.\n                      전단지와 전화로 음식점 영업을 직접 했고, 점주의 주문 흐름과 가격 확인 시점을 제품에 반영했습니다.\n                    ",
+      "beforeText": "음식점과 유통업체 사이의 B2B 식자재 발주 제품을 2인 팀에서 만들었습니다. 음식점용 크로스 플랫폼 웹앱, 유통업체 웹사이트, 관리자 페이지, 서버, DB 스키마, 결제, 푸시, 분석 연동과 운영 개선까지 개발과 운영 전체를 맡았습니다. 전단지와 전화로 음식점 영업도 직접 했습니다.",
+      "afterText": "음식점과 유통업체 사이의 B2B 식자재 발주 제품을 2인 팀으로 창업해 개발과 운영을 맡았습니다. 음식점용 크로스 플랫폼 웹앱, 유통업체 웹사이트, 관리자 페이지, 서버·DB 스키마와 결제·푸시·분석 연동을 구현했습니다. 전단지와 전화로 음식점 영업을 직접 했고, 점주의 주문 흐름과 가격 확인 시점을 제품에 반영했습니다."
+    },
+    {
+      "id": "TM-019",
+      "kind": "text",
+      "location": "#work-tingtingplanet > div > p:nth-of-type(2)",
+      "before": "\n                      외주와 자체 서비스를 오가며 AI, 채팅, 내부 운영 도구, 모바일 웹앱 프로젝트를\n                      개발 및 납품했습니다. 고객 상담에서 나온 기대 수준과 우선순위를 화면 순서와 기능 범위로 옮기는 일을 주로 했습니다.\n                    ",
+      "after": "\n                      외주와 자체 서비스를 오가며 AI, 채팅, 내부 운영 도구, 모바일 웹앱 프로젝트를 개발하고 납품했습니다.\n                      고객 상담에서 기대 수준과 우선순위를 확인하고, 화면·API·데이터 구조와 납품할 기능 범위로 구체화했습니다.\n                    ",
+      "beforeText": "외주와 자체 서비스를 오가며 AI, 채팅, 내부 운영 도구, 모바일 웹앱 프로젝트를 개발 및 납품했습니다. 고객 상담에서 나온 기대 수준과 우선순위를 화면 순서와 기능 범위로 옮기는 일을 주로 했습니다.",
+      "afterText": "외주와 자체 서비스를 오가며 AI, 채팅, 내부 운영 도구, 모바일 웹앱 프로젝트를 개발하고 납품했습니다. 고객 상담에서 기대 수준과 우선순위를 확인하고, 화면·API·데이터 구조와 납품할 기능 범위로 구체화했습니다."
+    },
+    {
+      "id": "TM-020",
+      "kind": "structure",
+      "location": "#skills > div:nth-of-type(2)",
+      "before": "[\n  \"#skills .skill[heading=\\\"Frontend\\\"]\",\n  \"#skills .skill[heading=\\\"Multi-platform / Build\\\"]\",\n  \"#skills .skill[heading=\\\"Product Integration\\\"]\",\n  \"#skills .skill[heading=\\\"Backend / Data / Ops\\\"]\"\n]",
+      "after": "[\n  \"#skills .skill[heading=\\\"Backend / Data / Ops\\\"]\",\n  \"#skills .skill[heading=\\\"Frontend\\\"]\",\n  \"#skills .skill[heading=\\\"Product Integration\\\"]\",\n  \"#skills .skill[heading=\\\"Multi-platform / Build\\\"]\"\n]"
+    },
+    {
+      "id": "TM-021",
+      "kind": "structure",
+      "location": "#selected-work > div > div:nth-of-type(2)",
+      "before": "[\n  \"[data-sheet-open=\\\"project-onthemarket\\\"]\",\n  \"[data-sheet-open=\\\"project-syrs\\\"]\",\n  \"[data-sheet-open=\\\"project-gagageul\\\"]\",\n  \"[data-sheet-open=\\\"project-akasys\\\"]\",\n  \"[data-sheet-open=\\\"project-local-jobs\\\"]\"\n]",
+      "after": "[\n  \"[data-sheet-open=\\\"project-onthemarket\\\"]\",\n  \"[data-sheet-open=\\\"project-akasys\\\"]\",\n  \"[data-sheet-open=\\\"project-syrs\\\"]\",\n  \"[data-sheet-open=\\\"project-gagageul\\\"]\",\n  \"[data-sheet-open=\\\"project-local-jobs\\\"]\"\n]"
+    },
+    {
+      "id": "TM-022",
+      "kind": "text",
+      "location": "[data-sheet-open=\"project-onthemarket\"] > span:nth-of-type(2) > span:nth-of-type(2)",
+      "before": "OnTheMarket <small>음식점 점주가 유통업체에 식자재를 발주하는 모바일 중심 제품</small>",
+      "after": "OnTheMarket <small>2인 팀으로 개발·영업·운영을 맡은 B2B 식자재 발주 제품</small>",
+      "beforeText": "OnTheMarket 음식점 점주가 유통업체에 식자재를 발주하는 모바일 중심 제품",
+      "afterText": "OnTheMarket 2인 팀으로 개발·영업·운영을 맡은 B2B 식자재 발주 제품"
+    },
+    {
+      "id": "TM-023",
+      "kind": "text",
+      "location": "#project-onthemarket > div > header > div > p:nth-of-type(2)",
+      "before": "음식점 점주가 유통업체에 식자재를 발주하는 모바일 중심 제품",
+      "after": "2인 팀으로 개발·영업·운영을 맡은 B2B 식자재 발주 제품",
+      "beforeText": "음식점 점주가 유통업체에 식자재를 발주하는 모바일 중심 제품",
+      "afterText": "2인 팀으로 개발·영업·운영을 맡은 B2B 식자재 발주 제품"
+    },
+    {
+      "id": "TM-024",
+      "kind": "text",
+      "location": "#project-onthemarket > div > div > p",
+      "before": "\n            상품 탐색, 식자재 추가, 빠른 주문, 주문 확인, 결제로 이어지는 주문 흐름을 구현했습니다.\n            점주가 실제로 주문하는 순서에 맞춰 가격을 보여주는 시점과 확인 화면을 여러 번 고쳤습니다.\n          ",
+      "after": "\n            음식점용 앱과 유통업체 웹사이트, 관리자 페이지, 서버·DB를 만들고 점주 영업과 운영도 직접 맡았습니다.\n            상품 탐색부터 주문 확인·결제까지 구현하면서 가격을 보여주는 시점과 확인 화면을 여러 번 고쳤습니다.\n            앱 설치 전에 가격을 비교할 수 있는 영수증 진단 캠페인을 만들었고, 일부 가입 전환으로 이어졌습니다.\n          ",
+      "beforeText": "상품 탐색, 식자재 추가, 빠른 주문, 주문 확인, 결제로 이어지는 주문 흐름을 구현했습니다. 점주가 실제로 주문하는 순서에 맞춰 가격을 보여주는 시점과 확인 화면을 여러 번 고쳤습니다.",
+      "afterText": "음식점용 앱과 유통업체 웹사이트, 관리자 페이지, 서버·DB를 만들고 점주 영업과 운영도 직접 맡았습니다. 상품 탐색부터 주문 확인·결제까지 구현하면서 가격을 보여주는 시점과 확인 화면을 여러 번 고쳤습니다. 앱 설치 전에 가격을 비교할 수 있는 영수증 진단 캠페인을 만들었고, 일부 가입 전환으로 이어졌습니다."
+    },
+    {
+      "id": "TM-025",
+      "kind": "structure",
+      "location": "#project-onthemarket > div > div > div:nth-of-type(2)",
+      "before": "[\n  \"[data-case-open=\\\"otm-payment-webview-case\\\"]\",\n  \"[data-case-open=\\\"otm-order-case\\\"]\",\n  \"[data-case-open=\\\"otm-receipt-case\\\"]\",\n  \"[data-case-open=\\\"otm-ledger-cycle-case\\\"]\",\n  \"[data-case-open=\\\"otm-signal-types-case\\\"]\"\n]",
+      "after": "[\n  \"[data-case-open=\\\"otm-receipt-case\\\"]\",\n  \"[data-case-open=\\\"otm-order-case\\\"]\",\n  \"[data-case-open=\\\"otm-ledger-cycle-case\\\"]\",\n  \"[data-case-open=\\\"otm-payment-webview-case\\\"]\",\n  \"[data-case-open=\\\"otm-signal-types-case\\\"]\"\n]"
+    },
+    {
+      "id": "TM-026",
+      "kind": "attribute",
+      "location": "[data-case-open=\"otm-payment-webview-case\"]",
+      "before": "case-study-trigger is-wide is-highlighted",
+      "after": "case-study-trigger is-compact",
+      "attribute": "class",
+      "beforePresent": true,
+      "afterPresent": true,
+      "beforeTag": "<button\n              class=\"case-study-trigger is-wide is-highlighted\"\n              type=\"button\"\n              data-case-open=\"otm-payment-webview-case\"\n              aria-haspopup=\"dialog\"\n              aria-controls=\"otm-payment-webview-case\"\n            >",
+      "afterTag": "<button\n              class=\"case-study-trigger is-compact\"\n              type=\"button\"\n              data-case-open=\"otm-payment-webview-case\"\n              aria-haspopup=\"dialog\"\n              aria-controls=\"otm-payment-webview-case\"\n            >"
+    },
+    {
+      "id": "TM-027",
+      "kind": "text",
+      "location": "[data-case-open=\"otm-payment-webview-case\"] > span:nth-of-type(1) > span:nth-of-type(1)",
+      "before": "Solved issue 01",
+      "after": "Solved issue 04",
+      "beforeText": "Solved issue 01",
+      "afterText": "Solved issue 04"
+    },
+    {
+      "id": "TM-028",
+      "kind": "attribute",
+      "location": "[data-case-open=\"otm-receipt-case\"]",
+      "before": "case-study-trigger is-compact",
+      "after": "case-study-trigger is-wide is-highlighted",
+      "attribute": "class",
+      "beforePresent": true,
+      "afterPresent": true,
+      "beforeTag": "<button\n              class=\"case-study-trigger is-compact\"\n              type=\"button\"\n              data-case-open=\"otm-receipt-case\"\n              aria-haspopup=\"dialog\"\n              aria-controls=\"otm-receipt-case\"\n            >",
+      "afterTag": "<button\n              class=\"case-study-trigger is-wide is-highlighted\"\n              type=\"button\"\n              data-case-open=\"otm-receipt-case\"\n              aria-haspopup=\"dialog\"\n              aria-controls=\"otm-receipt-case\"\n            >"
+    },
+    {
+      "id": "TM-029",
+      "kind": "text",
+      "location": "[data-case-open=\"otm-receipt-case\"] > span:nth-of-type(1) > span:nth-of-type(1)",
+      "before": "Solved issue 03",
+      "after": "Solved issue 01",
+      "beforeText": "Solved issue 03",
+      "afterText": "Solved issue 01"
+    },
+    {
+      "id": "TM-030",
+      "kind": "text",
+      "location": "[data-case-open=\"otm-ledger-cycle-case\"] > span:nth-of-type(1) > span:nth-of-type(1)",
+      "before": "Solved issue 04",
+      "after": "Solved issue 03",
+      "beforeText": "Solved issue 04",
+      "afterText": "Solved issue 03"
+    },
+    {
+      "id": "TM-031",
+      "kind": "text",
+      "location": "#project-onthemarket > div > div > div:nth-of-type(3) > div:nth-of-type(1) > ul",
+      "before": "\n                <li>React, Capacitor 기반 iOS / Android / Web 클라이언트 구현</li>\n                <li>상품, 거래처, 장바구니, 주문 상태를 위한 API와 DB 스키마 설계</li>\n                <li>TossPayments, Firebase Push, Google Analytics 연동</li>\n                <li>큰 글씨 설정, 기기별 레이아웃, 가격 표시 시점 조정</li>\n              ",
+      "after": "\n                <li>음식점용 iOS / Android / Web 앱, 유통업체 웹사이트, 관리자 페이지 개발 및 운영</li>\n                <li>상품, 거래처, 장바구니, 주문 상태를 위한 API와 DB 스키마 설계</li>\n                <li>TossPayments, Firebase Push, Google Analytics 연동</li>\n                <li>점주의 주문 흐름에 맞춰 가격 표시 시점, 큰 글씨 설정, 기기별 레이아웃 조정</li>\n              ",
+      "beforeText": "React, Capacitor 기반 iOS / Android / Web 클라이언트 구현 상품, 거래처, 장바구니, 주문 상태를 위한 API와 DB 스키마 설계 TossPayments, Firebase Push, Google Analytics 연동 큰 글씨 설정, 기기별 레이아웃, 가격 표시 시점 조정",
+      "afterText": "음식점용 iOS / Android / Web 앱, 유통업체 웹사이트, 관리자 페이지 개발 및 운영 상품, 거래처, 장바구니, 주문 상태를 위한 API와 DB 스키마 설계 TossPayments, Firebase Push, Google Analytics 연동 점주의 주문 흐름에 맞춰 가격 표시 시점, 큰 글씨 설정, 기기별 레이아웃 조정"
+    },
+    {
+      "id": "TM-032",
+      "kind": "text",
+      "location": "#project-akasys > div > div > p",
+      "before": "\n            반복해서 확인하는 정보를 빠르게 읽을 수 있도록 프로젝트 클러스터, 티켓 상태, 리포트 화면의 정보 구조를 정리했습니다.\n          ",
+      "after": "\n            고객사 CS 관리 툴 요청에서 고객 관계 관리의 필요를 파악해, 내부 티켓·고객 요구사항·주간·월간 리포트가 연결되는 운영 도구로 확장 제안했습니다.\n            반복해서 확인하는 정보를 빠르게 읽을 수 있도록 프로젝트 클러스터, 티켓 상태, 리포트 화면의 정보 구조를 정리했습니다.\n          ",
+      "beforeText": "반복해서 확인하는 정보를 빠르게 읽을 수 있도록 프로젝트 클러스터, 티켓 상태, 리포트 화면의 정보 구조를 정리했습니다.",
+      "afterText": "고객사 CS 관리 툴 요청에서 고객 관계 관리의 필요를 파악해, 내부 티켓·고객 요구사항·주간·월간 리포트가 연결되는 운영 도구로 확장 제안했습니다. 반복해서 확인하는 정보를 빠르게 읽을 수 있도록 프로젝트 클러스터, 티켓 상태, 리포트 화면의 정보 구조를 정리했습니다."
+    },
+    {
+      "id": "TM-033",
+      "kind": "text",
+      "location": "#otm-ledger-cycle-case > div > header > div > p:nth-of-type(1)",
+      "before": "OnTheMarket · Solved issue 04",
+      "after": "OnTheMarket · Solved issue 03",
+      "beforeText": "OnTheMarket · Solved issue 04",
+      "afterText": "OnTheMarket · Solved issue 03"
+    },
+    {
+      "id": "TM-034",
+      "kind": "text",
+      "location": "#otm-payment-webview-case > div > header > div > p:nth-of-type(1)",
+      "before": "OnTheMarket · Solved issue 01",
+      "after": "OnTheMarket · Solved issue 04",
+      "beforeText": "OnTheMarket · Solved issue 01",
+      "afterText": "OnTheMarket · Solved issue 04"
+    },
+    {
+      "id": "TM-035",
+      "kind": "text",
+      "location": "#otm-receipt-case > div > header > div > p:nth-of-type(1)",
+      "before": "OnTheMarket · Solved issue 03",
+      "after": "OnTheMarket · Solved issue 01",
+      "beforeText": "OnTheMarket · Solved issue 03",
+      "afterText": "OnTheMarket · Solved issue 01"
+    }
+  ],
+  "files": [
+    {
+      "name": "index.html",
+      "same": false,
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "name": "index.html",
+        "sourcePath": "toss/index.html",
+        "snapshot": "snapshots/current/toss/index.html.txt",
+        "bytes": 152528,
+        "sha256": "86ea1a0f4fa6794ad7952ddc35272efd2a875338bf3daa3f8cd09bf9bb43daea"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "name": "index.html",
+        "sourcePath": "modoodoc/index.html",
+        "snapshot": "snapshots/current/modoodoc/index.html.txt",
+        "bytes": 154359,
+        "sha256": "9754d5c05be76c68ab6ce534a120c77da12b776d69adfc3dc79ae6d3d6b7bd59"
+      }
+    },
+    {
+      "name": "script.js",
+      "same": false,
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "name": "script.js",
+        "sourcePath": "toss/script.js",
+        "snapshot": "snapshots/current/toss/script.js.txt",
+        "bytes": 23133,
+        "sha256": "25fde7aef78c4c471691eb908513ba424618da1086d5b4bac52710806c13cff5"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "name": "script.js",
+        "sourcePath": "modoodoc/script.js",
+        "snapshot": "snapshots/current/modoodoc/script.js.txt",
+        "bytes": 23135,
+        "sha256": "a8eea66b86c9022805e28145f1ff79ead89b7661361987b0bf0b39f1dd6d844e"
+      }
+    },
+    {
+      "name": "styles.css",
+      "same": true,
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "name": "styles.css",
+        "sourcePath": "toss/styles.css",
+        "snapshot": "snapshots/current/toss/styles.css.txt",
+        "bytes": 67073,
+        "sha256": "c0ad3dbdabc74cd688efc019cd621abcbcb0222db997fe3d390dadbaceba87f6"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "name": "styles.css",
+        "sourcePath": "modoodoc/styles.css",
+        "snapshot": "snapshots/current/modoodoc/styles.css.txt",
+        "bytes": 67073,
+        "sha256": "c0ad3dbdabc74cd688efc019cd621abcbcb0222db997fe3d390dadbaceba87f6"
+      }
+    }
+  ],
+  "assets": [
+    {
+      "asset": "assets/favicon.svg",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/favicon.svg",
+        "asset": "assets/favicon.svg",
+        "bytes": 518,
+        "sha256": "d9abf268746963c9988ca633c363bde3d23c6a1b263e7368a81a490767e14ea4"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/favicon.svg",
+        "asset": "assets/favicon.svg",
+        "bytes": 518,
+        "sha256": "d9abf268746963c9988ca633c363bde3d23c6a1b263e7368a81a490767e14ea4"
+      }
+    },
+    {
+      "asset": "assets/images/akasys.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/akasys.webp",
+        "asset": "assets/images/akasys.webp",
+        "bytes": 48336,
+        "sha256": "4157a9b19a412bdda83a6e4b42f6ab5ecc839f9bec1b44cbdcffc96985fd7db2"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/akasys.webp",
+        "asset": "assets/images/akasys.webp",
+        "bytes": 48336,
+        "sha256": "4157a9b19a412bdda83a6e4b42f6ab5ecc839f9bec1b44cbdcffc96985fd7db2"
+      }
+    },
+    {
+      "asset": "assets/images/chaptertwo-1.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/chaptertwo-1.webp",
+        "asset": "assets/images/chaptertwo-1.webp",
+        "bytes": 4854,
+        "sha256": "df1e9211a2a00394cc7c95a16d817a3859c656614b5e3e718af979b40da35b7f"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/chaptertwo-1.webp",
+        "asset": "assets/images/chaptertwo-1.webp",
+        "bytes": 4854,
+        "sha256": "df1e9211a2a00394cc7c95a16d817a3859c656614b5e3e718af979b40da35b7f"
+      }
+    },
+    {
+      "asset": "assets/images/chaptertwo-2.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/chaptertwo-2.webp",
+        "asset": "assets/images/chaptertwo-2.webp",
+        "bytes": 37886,
+        "sha256": "8b532246e0f5bc52d47d387f11e66d931e68473cde7805182c22cb3e6dfa3e70"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/chaptertwo-2.webp",
+        "asset": "assets/images/chaptertwo-2.webp",
+        "bytes": 37886,
+        "sha256": "8b532246e0f5bc52d47d387f11e66d931e68473cde7805182c22cb3e6dfa3e70"
+      }
+    },
+    {
+      "asset": "assets/images/clackclack-1.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/clackclack-1.webp",
+        "asset": "assets/images/clackclack-1.webp",
+        "bytes": 19318,
+        "sha256": "5d597e4d80cee42ebe7c6bba712686b97d4784c57d9177ff65c578d59fe3c1fa"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/clackclack-1.webp",
+        "asset": "assets/images/clackclack-1.webp",
+        "bytes": 19318,
+        "sha256": "5d597e4d80cee42ebe7c6bba712686b97d4784c57d9177ff65c578d59fe3c1fa"
+      }
+    },
+    {
+      "asset": "assets/images/clackclack-2.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/clackclack-2.webp",
+        "asset": "assets/images/clackclack-2.webp",
+        "bytes": 32922,
+        "sha256": "c7e1a31d33659f43365c6c03d695cd8bfe189d22a37b7f611c333fea585cb803"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/clackclack-2.webp",
+        "asset": "assets/images/clackclack-2.webp",
+        "bytes": 32922,
+        "sha256": "c7e1a31d33659f43365c6c03d695cd8bfe189d22a37b7f611c333fea585cb803"
+      }
+    },
+    {
+      "asset": "assets/images/gagageul.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/gagageul.webp",
+        "asset": "assets/images/gagageul.webp",
+        "bytes": 51820,
+        "sha256": "7fc26872a600bf3bec12144b66efd429c38f6b0dac7dcbb0ea42b7498a5b353b"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/gagageul.webp",
+        "asset": "assets/images/gagageul.webp",
+        "bytes": 51820,
+        "sha256": "7fc26872a600bf3bec12144b66efd429c38f6b0dac7dcbb0ea42b7498a5b353b"
+      }
+    },
+    {
+      "asset": "assets/images/hashmoss.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/hashmoss.webp",
+        "asset": "assets/images/hashmoss.webp",
+        "bytes": 71262,
+        "sha256": "8ccad4a44097ec2393c8a7c0a1a7455999e3eb58d18cfe7365e034dbc572b5f3"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/hashmoss.webp",
+        "asset": "assets/images/hashmoss.webp",
+        "bytes": 71262,
+        "sha256": "8ccad4a44097ec2393c8a7c0a1a7455999e3eb58d18cfe7365e034dbc572b5f3"
+      }
+    },
+    {
+      "asset": "assets/images/jobonger-1.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/jobonger-1.webp",
+        "asset": "assets/images/jobonger-1.webp",
+        "bytes": 52512,
+        "sha256": "3ee48a23ffffdc236caaafd18deecf572a0086c8282bc13063c30565bb11ab1a"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/jobonger-1.webp",
+        "asset": "assets/images/jobonger-1.webp",
+        "bytes": 52512,
+        "sha256": "3ee48a23ffffdc236caaafd18deecf572a0086c8282bc13063c30565bb11ab1a"
+      }
+    },
+    {
+      "asset": "assets/images/local-jobs.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/local-jobs.webp",
+        "asset": "assets/images/local-jobs.webp",
+        "bytes": 45656,
+        "sha256": "8f7f35fff48534671aee54876352f215d1535efc828d649ad3a8930ec40f2a1c"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/local-jobs.webp",
+        "asset": "assets/images/local-jobs.webp",
+        "bytes": 45656,
+        "sha256": "8f7f35fff48534671aee54876352f215d1535efc828d649ad3a8930ec40f2a1c"
+      }
+    },
+    {
+      "asset": "assets/images/onthemarket-app-1.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/onthemarket-app-1.webp",
+        "asset": "assets/images/onthemarket-app-1.webp",
+        "bytes": 31638,
+        "sha256": "11b52031be30d6d61e0f0fc2e67dafcc1f96ba4280c7ec2d1aca644db3fe7f4b"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/onthemarket-app-1.webp",
+        "asset": "assets/images/onthemarket-app-1.webp",
+        "bytes": 31638,
+        "sha256": "11b52031be30d6d61e0f0fc2e67dafcc1f96ba4280c7ec2d1aca644db3fe7f4b"
+      }
+    },
+    {
+      "asset": "assets/images/onthemarket-app-2.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/onthemarket-app-2.webp",
+        "asset": "assets/images/onthemarket-app-2.webp",
+        "bytes": 22486,
+        "sha256": "3ef26e903900ed704ad0bddc35bc6845851b45769c9f68a9c5c1ec29a73d2115"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/onthemarket-app-2.webp",
+        "asset": "assets/images/onthemarket-app-2.webp",
+        "bytes": 22486,
+        "sha256": "3ef26e903900ed704ad0bddc35bc6845851b45769c9f68a9c5c1ec29a73d2115"
+      }
+    },
+    {
+      "asset": "assets/images/onthemarket-app-3.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/onthemarket-app-3.webp",
+        "asset": "assets/images/onthemarket-app-3.webp",
+        "bytes": 29552,
+        "sha256": "8440082907150155c2711f4fbb96398f384ec410cab2f931fa0c91443513d902"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/onthemarket-app-3.webp",
+        "asset": "assets/images/onthemarket-app-3.webp",
+        "bytes": 29552,
+        "sha256": "8440082907150155c2711f4fbb96398f384ec410cab2f931fa0c91443513d902"
+      }
+    },
+    {
+      "asset": "assets/images/onthemarket-app-4.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/onthemarket-app-4.webp",
+        "asset": "assets/images/onthemarket-app-4.webp",
+        "bytes": 29250,
+        "sha256": "233c892f09e756e6e095930f7b548a0b54cd09d46cb6217d604dd999de6ad458"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/onthemarket-app-4.webp",
+        "asset": "assets/images/onthemarket-app-4.webp",
+        "bytes": 29250,
+        "sha256": "233c892f09e756e6e095930f7b548a0b54cd09d46cb6217d604dd999de6ad458"
+      }
+    },
+    {
+      "asset": "assets/images/onthemarket-app-5.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/onthemarket-app-5.webp",
+        "asset": "assets/images/onthemarket-app-5.webp",
+        "bytes": 31940,
+        "sha256": "8e7aab3aa0a805fddac9441c8a1d4c08f8c1c35f5ffce9b478ff44f6b30b58d3"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/onthemarket-app-5.webp",
+        "asset": "assets/images/onthemarket-app-5.webp",
+        "bytes": 31940,
+        "sha256": "8e7aab3aa0a805fddac9441c8a1d4c08f8c1c35f5ffce9b478ff44f6b30b58d3"
+      }
+    },
+    {
+      "asset": "assets/images/onthemarket-app-6.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/onthemarket-app-6.webp",
+        "asset": "assets/images/onthemarket-app-6.webp",
+        "bytes": 18078,
+        "sha256": "fdce2e9b14f461c5a26e9147add12b5c877624a48a0074b0afbbf869dc492732"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/onthemarket-app-6.webp",
+        "asset": "assets/images/onthemarket-app-6.webp",
+        "bytes": 18078,
+        "sha256": "fdce2e9b14f461c5a26e9147add12b5c877624a48a0074b0afbbf869dc492732"
+      }
+    },
+    {
+      "asset": "assets/images/onthemarket-price-1.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/onthemarket-price-1.webp",
+        "asset": "assets/images/onthemarket-price-1.webp",
+        "bytes": 23770,
+        "sha256": "736d3b73d5b0da2fa4a42cda9543934d21cac0c05b809aa94a15c8a52f2054dc"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/onthemarket-price-1.webp",
+        "asset": "assets/images/onthemarket-price-1.webp",
+        "bytes": 23770,
+        "sha256": "736d3b73d5b0da2fa4a42cda9543934d21cac0c05b809aa94a15c8a52f2054dc"
+      }
+    },
+    {
+      "asset": "assets/images/onthemarket-price-2.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/onthemarket-price-2.webp",
+        "asset": "assets/images/onthemarket-price-2.webp",
+        "bytes": 19486,
+        "sha256": "4f44d7681dc0615a0b9797a7d55c62b0842d6c5b75332f85a9ae2694808974cd"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/onthemarket-price-2.webp",
+        "asset": "assets/images/onthemarket-price-2.webp",
+        "bytes": 19486,
+        "sha256": "4f44d7681dc0615a0b9797a7d55c62b0842d6c5b75332f85a9ae2694808974cd"
+      }
+    },
+    {
+      "asset": "assets/images/onthemarket-price-5.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/onthemarket-price-5.webp",
+        "asset": "assets/images/onthemarket-price-5.webp",
+        "bytes": 19868,
+        "sha256": "e33a72f883239cfc774c357d409a38f8662e4fe80b0863eb01dce6067f9dcb29"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/onthemarket-price-5.webp",
+        "asset": "assets/images/onthemarket-price-5.webp",
+        "bytes": 19868,
+        "sha256": "e33a72f883239cfc774c357d409a38f8662e4fe80b0863eb01dce6067f9dcb29"
+      }
+    },
+    {
+      "asset": "assets/images/onthemarket-price-6.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/onthemarket-price-6.webp",
+        "asset": "assets/images/onthemarket-price-6.webp",
+        "bytes": 34974,
+        "sha256": "a4869ed9acf1e9be5c65f454d1ff7637798f4775eb3522309a553256f6d1ccd4"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/onthemarket-price-6.webp",
+        "asset": "assets/images/onthemarket-price-6.webp",
+        "bytes": 34974,
+        "sha256": "a4869ed9acf1e9be5c65f454d1ff7637798f4775eb3522309a553256f6d1ccd4"
+      }
+    },
+    {
+      "asset": "assets/images/playai-1.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/playai-1.webp",
+        "asset": "assets/images/playai-1.webp",
+        "bytes": 14744,
+        "sha256": "2b31f2ad022b94046e1c979216b2ad599d5edf1d540717b7c053d78a4ce441a9"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/playai-1.webp",
+        "asset": "assets/images/playai-1.webp",
+        "bytes": 14744,
+        "sha256": "2b31f2ad022b94046e1c979216b2ad599d5edf1d540717b7c053d78a4ce441a9"
+      }
+    },
+    {
+      "asset": "assets/images/sloths.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/sloths.webp",
+        "asset": "assets/images/sloths.webp",
+        "bytes": 22220,
+        "sha256": "383a177e4d0af55aea8cac88afb0d39c0a43f2a32f7cd31263743820c5565ea3"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/sloths.webp",
+        "asset": "assets/images/sloths.webp",
+        "bytes": 22220,
+        "sha256": "383a177e4d0af55aea8cac88afb0d39c0a43f2a32f7cd31263743820c5565ea3"
+      }
+    },
+    {
+      "asset": "assets/images/syrs-1.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/syrs-1.webp",
+        "asset": "assets/images/syrs-1.webp",
+        "bytes": 17570,
+        "sha256": "5103c0bd73e96af82c0f7adb0fd2000625b87d93ec6df5a4655dd55aa6025ece"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/syrs-1.webp",
+        "asset": "assets/images/syrs-1.webp",
+        "bytes": 17570,
+        "sha256": "5103c0bd73e96af82c0f7adb0fd2000625b87d93ec6df5a4655dd55aa6025ece"
+      }
+    },
+    {
+      "asset": "assets/images/syrs-2.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/syrs-2.webp",
+        "asset": "assets/images/syrs-2.webp",
+        "bytes": 15638,
+        "sha256": "360722044a1e94625ed90ec5fd072d5d6272957e4249b52672e4d1e6c733b76c"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/syrs-2.webp",
+        "asset": "assets/images/syrs-2.webp",
+        "bytes": 15638,
+        "sha256": "360722044a1e94625ed90ec5fd072d5d6272957e4249b52672e4d1e6c733b76c"
+      }
+    },
+    {
+      "asset": "assets/images/syrs-reel.webp",
+      "status": "same",
+      "before": {
+        "revision": "current",
+        "slug": "toss",
+        "sourcePath": "toss/assets/images/syrs-reel.webp",
+        "asset": "assets/images/syrs-reel.webp",
+        "bytes": 793806,
+        "sha256": "5507cbceb866a10b51c5392e0e75d678f6fed1af8ea823dbaf1a9dcf7d54d281"
+      },
+      "after": {
+        "revision": "current",
+        "slug": "modoodoc",
+        "sourcePath": "modoodoc/assets/images/syrs-reel.webp",
+        "asset": "assets/images/syrs-reel.webp",
+        "bytes": 793806,
+        "sha256": "5507cbceb866a10b51c5392e0e75d678f6fed1af8ea823dbaf1a9dcf7d54d281"
+      }
+    }
+  ],
+  "assetSummary": {
+    "total": 25,
+    "same": 25,
+    "changed": 0,
+    "added": 0,
+    "removed": 0
+  },
+  "patch": {
+    "file": "toss-vs-modoodoc.patch",
+    "bytes": 31037,
+    "sha256": "776aa162fbb00f4d451d569e29fa990228e616a71e6aca39535b37a32231c017"
+  }
+}
