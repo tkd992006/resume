@@ -73,7 +73,6 @@ ul { padding-left: 1.2em; }
 .skill-item .skill-tools { margin-top: 10px; color: var(--muted); font-size: 14px; }
 .skill-experience { margin: 10px 0 0; color: var(--fg-2); font-size: 15px; }
 .skill-experience li + li { margin-top: 8px; }
-.collaboration { margin-top: 24px; color: var(--muted); font-size: 14px; }
 .project { padding: 40px 0; }
 .project + .project { border-top: 1px solid var(--line); }
 .project:last-child { padding-bottom: 0; }
