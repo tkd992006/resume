@@ -15,25 +15,24 @@
   "skills": [
     {
       "title": "프론트엔드",
-      "tools": "TypeScript · React · Next.js · AkanJS · Tailwind CSS · daisyUI · Radix UI · Framer Motion · Swiper · Chart.js · Capacitor · iOS · Android · Camera · Geolocation · Preferences · WebView · TossPayments · 지급대행 API · Webhook · Firebase Cloud Messaging · Solapi · 카카오 알림톡",
-      "description": "웹·앱의 업무 화면과 반응형 UI를 구현하고, 카메라·위치·앱 저장소 등 네이티브 기능을 연결했습니다. 주문 결제와 지급·정산, 웹훅, 앱 푸시와 거래 안내 메시지를 연동했습니다."
+      "tools": "TypeScript · React · Next.js · AkanJS · Capacitor · TossPayments · Firebase Cloud Messaging · Solapi · 카카오 알림톡",
+      "description": "사용자의 요구사항을 웹·앱 화면과 기능으로 구현해왔습니다. 반응형 UI와 모바일 앱을 개발하고, 결제·푸시 알림·메시지 발송 등 외부 서비스를 연동한 경험이 있습니다."
     },
     {
       "title": "백엔드·데이터",
-      "tools": "Node.js · NestJS · AkanJS · GraphQL · MongoDB · Redis · JWT · Gemini API · OpenAI API · Sharp · Google Analytics 4 · Firebase Analytics",
-      "description": "데이터 모델과 API, 인증·권한, 주문·거래처·정산 흐름을 설계하고 조회 성능을 개선했습니다. 영수증 OCR과 상품·가격 대조, AI 상담 응답 검증, 이미지 처리와 캠페인 이벤트 측정을 구현했습니다."
+      "tools": "Node.js · NestJS · AkanJS · GraphQL · MongoDB · Gemini API · OpenAI API",
+      "description": "서비스의 요구사항에 맞춰 데이터베이스와 API를 설계하고 서버 기능을 구현해왔습니다. 인증·권한 관리, 데이터 조회 성능 개선, AI API를 활용한 기능 개발을 경험했습니다."
     },
     {
       "title": "AI experience",
       "tools": "Claude Code · OpenClaw · Hermes · Oh My OpenCode · Codex",
       "items": [
-        "OpenClaw로 Threads의 댓글과 글을 자동 게시하는 봇을 활용합니다.",
-        "Hermes로 개인 일정과 일기장을 관리합니다.",
-        "Claude Code, Oh My OpenCode, Codex를 코딩할 때 활용합니다."
+        "OpenClaw로 Threads의 댓글과 글을 자동 게시하는 봇을 활용해봤습니다.",
+        "Hermes로 개인 일정과 일기장을 관리해봤습니다.",
+        "Claude Code, Oh My OpenCode, Codex를 코딩할 때 활용해봤습니다."
       ]
     }
   ],
-  "collaboration": "Git으로 협업합니다.",
   "projectsIntro": "직접 개발한 서비스 중 세 가지를 소개합니다.",
   "projects": [
     {
