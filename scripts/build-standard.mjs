@@ -27,6 +27,12 @@ export function renderStandard(slug) {
     return `<a href="#${escape(id)}" data-solved-issue="${escape(id)}" aria-haspopup="dialog" aria-controls="${escape(id)}">${issue.title}<span aria-hidden="true"> ↗</span></a>`;
   }
   const assetPaths = new Set(['assets/favicon.svg']);
+  const heroImages = ['onthemarket-app-1', 'syrs-1', 'gagageul', 'playai-1'];
+  const heroScreenshots = heroImages.map((name, index) => {
+    const src = `assets/images/${name}.webp`;
+    assetPaths.add(src);
+    return `<img class="hero-shot shot-${'abcd'[index]}" src="${src}" alt="" decoding="async">`;
+  }).join('');
   const projects = content.projects.map(project => {
     const images = project.images.map((image, index) => {
       if (!/^assets\/images\/[a-z0-9-]+\.webp$/.test(image.src)) throw Error(`Invalid image source: ${image.src}`);
@@ -70,12 +76,15 @@ export function renderStandard(slug) {
 <header class="site-header"><div class="header-inner"><a class="brand" href="#about">${escape(content.name)}</a><nav aria-label="주요 메뉴"><a href="#about">소개</a><a href="#skills">기술</a><a href="#projects">프로젝트</a><a href="#experience">경력</a></nav></div></header>
 <main class="container" id="main" tabindex="-1">
   <section class="hero" id="about" aria-labelledby="about-title">
+    <div class="hero-background" aria-hidden="true"><div class="hero-media">${heroScreenshots}</div><div class="hero-scrim"></div></div>
+    <div class="hero-content">
     <p class="role">${escape(content.role)}</p>
     <h1 id="about-title">${escape(content.name)}</h1>
     <p class="lead">${escape(content.lead)}</p>
     <div class="hero-copy">${content.about.map(paragraph).join('')}</div>
     <div class="contact-links"><a href="mailto:${escape(content.email)}">${escape(content.email)}</a><a href="${escape(content.github)}" target="_blank" rel="noreferrer">GitHub ↗</a></div>
     <nav class="quick-links" aria-label="바로 가기"><a href="#skills">기술 역량</a><a href="#projects">대표 프로젝트</a><a href="#experience">경력과 학력</a></nav>
+    </div>
   </section>
   <section class="section" id="skills" aria-labelledby="skills-title"><h2 id="skills-title">기술 역량</h2><div class="skills-grid">${content.skills.map(skill => `<article class="skill-item"><h3>${escape(skill.title)}</h3><p class="skill-tools">${escape(skill.tools)}</p>${skill.description ? paragraph(skill.description) : ''}${skill.items?.length ? `<ul class="skill-experience">${skill.items.map(item => `<li>${escape(item)}</li>`).join('')}</ul>` : ''}</article>`).join('')}</div></section>
   <section class="section" id="projects" aria-labelledby="projects-title"><h2 id="projects-title">대표 프로젝트</h2><p class="section-intro">${escape(content.projectsIntro)}</p><div class="project-list">${projects}</div></section>
