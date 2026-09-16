@@ -2,9 +2,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ROOT, ACTIVE_PROFILES, build, verifyFrozen } from './build.mjs';
+import { STANDARD_PROFILES, buildStandard } from './build-standard.mjs';
 
 const destination = path.join(ROOT, '.pages-dist');
-const pages = ['toss', ...ACTIVE_PROFILES];
+const pages = ['toss', ...ACTIVE_PROFILES, ...STANDARD_PROFILES];
 const pageFiles = ['index.html', 'styles.css', 'script.js'];
 const stat = filename => fs.lstatSync(filename, { throwIfNoEntry: false });
 function inspect(directory) {
@@ -30,6 +31,7 @@ export function packageSite() {
   inspect(path.join(ROOT, 'src/assets'));
   for (const page of pages) inspect(path.join(ROOT, page));
   build();
+  buildStandard();
   const frozenCount = verifyFrozen();
   const allowed = new Set(['index.html', '.nojekyll']);
   for (const page of pages) {

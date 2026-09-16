@@ -1,5 +1,22 @@
 # Resume
 
+## Simple 웹 포트폴리오
+
+`/simple/`는 소개 → 기술 역량 → 대표 프로젝트 → 경력과 학력 → 일하는 방식 순서로 이어 읽는 포트폴리오입니다. 서비스 설명과 역할은 본문에서 바로 확인하고, 자세한 기술 사례는 선택해서 엽니다. 이력서는 별도 문서로 관리합니다.
+
+- 문구와 프로젝트 순서: `src/content/simple.json`
+- 공통 레이아웃 빌드: `scripts/build-standard.mjs`
+- 디자인과 동작: `src/standard.css`, `src/standard.js`
+- 사례 제목과 상세: `src/content/common.json`의 `caseSummaries` 및 기존 `src/cases/*.html` 재사용
+
+각 프로젝트와 전체 사례 목록은 같은 모달 ID를 엽니다. 이미지 확대, 키보드 탐색, 사례 직접 주소, 뒤로 가기와 원래 위치 복귀를 지원합니다. 페이지에는 다른 회사 지원본 링크를 표시하지 않습니다.
+
+`npm run build`, `npm run check`, `npm run verify`, `npm run package:site`에 포함됩니다. `node scripts/build-standard.mjs`로 `/simple/`만 다시 생성할 수도 있습니다. 원본 JSON과 보고서는 배포 산출물에 포함하지 않습니다.
+
+- 공개 주소: https://tkd992006.github.io/resume/simple/
+- 배포 브랜치: `codex/pages`
+- 최초 추가 시 기존 공개 페이지를 보존하고 `simple/`만 게시했습니다.
+
 지원용 포트폴리오를 같은 디자인으로 관리하는 정적 사이트입니다. 루트 `index.html`은 빈 페이지이며 지원본 목록이나 이동 링크를 표시하지 않습니다.
 
 ## 구조
