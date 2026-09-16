@@ -1445,3 +1445,24 @@ ul { padding-left: 1.2em; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Additional project context and grouped image galleries. */
+[hidden] { display: none !important; }
+.etc-list { margin: 8px 0 0; color: var(--fg-2); font-size: 15px; }
+.case-count { color: var(--muted); }
+.other-projects { margin-top: 22px; }
+.other-projects > summary { color: var(--blue); cursor: pointer; }
+.other-project-list { margin-top: 18px; }
+.other-project-list article { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.other-project-list article:last-child { border-bottom: 0; padding-bottom: 0; }
+.other-project-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 18px; }
+.other-project-heading h3 { font-size: 18px; }
+.other-project-heading span, .other-project-subtitle { color: var(--muted); font-size: 14px; }
+.other-project-list article > p:last-child { max-width: 820px; margin-top: 7px; color: var(--fg-2); font-size: 15px; }
+.lightbox img { max-height: calc(100dvh - 240px); min-height: 100px; }
+.lightbox figure { margin: 0; }
+.lightbox figcaption { min-height: 24px; margin: 12px 8px 0; text-align: center; font-size: 14px; color: var(--fg-2); }
+.gallery-controls { display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 12px; }
+.gallery-controls button { min-height: 44px; padding: 7px 15px; border: 1px solid var(--line); color: var(--blue); background: white; font-size: 14px; }
+#gallery-position { min-width: 65px; text-align: center; font-size: 14px; font-variant-numeric: tabular-nums; }
+@media (max-width: 420px) { .gallery-controls { gap: 12px; } }
