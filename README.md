@@ -1,8 +1,20 @@
 # Resume
 
+## Original 웹 포트폴리오
+
+`/original/`은 `portfolio` 저장소의 2026년 6월 24일 마지막 커밋(`dc9f424`) UI에 현재 `/simple/` 내용을 표시하는 비교용 버전입니다. 두 버전은 `src/content/simple.json`을 공유하므로 문구를 별도로 복제하지 않습니다.
+
+- 6월 UI 원본: `src/original/june24.css` (원본 해시와 커밋은 `provenance.json`)
+- 현재 콘텐츠·캐러셀·모달에 필요한 조정: `src/original/adaptations.css`
+- 생성: `scripts/build-original.mjs`; `npm run build/check/verify/package:site`에 포함
+- 상세 사례·이미지 캐러셀: 현재 공통 사례와 `src/standard.js` 재사용
+- 공개 주소: https://tkd992006.github.io/resume/original/
+
+현재 소개, 기술 2개 그룹, AI experience, 대표 프로젝트 3개, 경력·학력·Etc., 기타 프로젝트 10개를 6월 UI의 카드와 타임라인에 배치합니다. 기존 `/simple/`, 제출용 페이지와 `portfolio` 저장소의 6월 복원본은 수정하지 않습니다.
+
 ## Simple 웹 포트폴리오
 
-`/simple/`는 소개 → 기술 역량 → 대표 프로젝트 → 경력과 학력 → 일하는 방식 순서로 이어 읽는 포트폴리오입니다. 서비스 설명과 역할은 본문에서 바로 확인하고, 자세한 기술 사례는 선택해서 엽니다. 이력서는 별도 문서로 관리합니다.
+`/simple/`는 소개 → 기술 역량 → 대표 프로젝트 → 경력과 학력 → 기타 프로젝트 순서로 이어 읽는 포트폴리오입니다. 서비스 설명과 역할은 본문에서 바로 확인하고, 자세한 기술 사례는 선택해서 엽니다. 이력서는 별도 문서로 관리합니다.
 
 - 문구와 프로젝트 순서: `src/content/simple.json`
 - 공통 레이아웃 빌드: `scripts/build-standard.mjs`

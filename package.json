@@ -3,9 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build.mjs && node scripts/build-standard.mjs",
-    "check": "node scripts/build.mjs --check && node scripts/build-standard.mjs --check",
-    "verify": "node scripts/verify.mjs && node scripts/build-standard.mjs --verify",
+    "build": "node scripts/build.mjs && node scripts/build-standard.mjs && node scripts/build-original.mjs",
+    "check": "node scripts/build.mjs --check && node scripts/build-standard.mjs --check && node scripts/build-original.mjs --check",
+    "verify": "node scripts/verify.mjs && node scripts/build-standard.mjs --verify && node scripts/build-original.mjs --verify",
     "review": "node scripts/review.mjs",
     "package:site": "node scripts/package-site.mjs"
   },
