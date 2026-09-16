@@ -3,7 +3,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { ROOT, verifyFrozen } from './build.mjs';
-import { renderStandard, validateStandard } from './build-standard.mjs';
+import { renderStandard, renderStandardCase, validateStandard } from './build-standard.mjs';
 import { parseHtml, queryOne, textContent } from './html.mjs';
 
 export const ORIGINAL_PROFILES = Object.freeze(['original']);
@@ -62,7 +62,7 @@ export function renderOriginal() {
     <section id="contact" class="contact-section" aria-labelledby="contact-title"><p class="eyebrow">Contact</p><h2 id="contact-title">${escape(content.name)}</h2><div class="contact-links"><a href="mailto:${escape(content.email)}">${escape(content.email)}</a><a href="${escape(content.github)}" target="_blank" rel="noreferrer">${escape(content.github.replace('https://', ''))}</a></div></section>
   </main>
   <footer class="site-footer"><span>${escape(content.name)} · ${escape(content.role)}</span><a href="#top">Back to top</a></footer>
-  ${selectedCases.map(id => read(`src/cases/${id}.html`)).join('\n')}
+  ${selectedCases.map(renderStandardCase).join('\n')}
   <dialog class="lightbox" id="lightbox" aria-label="프로젝트 화면 확대"><button class="lightbox-close" type="button" data-lightbox-close aria-label="확대 화면 닫기">×</button><figure><img alt=""><figcaption id="gallery-caption"></figcaption></figure><div class="gallery-controls"><button type="button" data-gallery-step="-1" aria-label="이전 이미지">← 이전</button><span id="gallery-position" role="status" aria-live="polite" aria-atomic="true"></span><button type="button" data-gallery-step="1" aria-label="다음 이미지">다음 →</button></div></dialog>
   <script src="script.js" defer></script>
 </body></html>\n`;

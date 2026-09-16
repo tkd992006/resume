@@ -994,6 +994,12 @@ h4 {
 }
 
 /* Case studies: readable prose with diagrams and code as supporting evidence. */
+.case-product-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 20px; margin-top: 20px; }
+.case-product-gallery figure { min-width: 0; margin: 0; }
+.case-product-gallery a { display: block; cursor: zoom-in; }
+.case-product-gallery img { display: block; width: 100%; height: auto; max-height: 480px; object-fit: contain; background: #f6f7f9; }
+.case-product-gallery figcaption { margin-top: 8px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+@media (max-width: 600px) { .case-product-gallery { grid-template-columns: minmax(0, 1fr); } }
 .case-modal { width: min(960px, calc(100% - 40px)); max-width: none; max-height: calc(100dvh - 40px); margin: auto; overflow: hidden; border: 1px solid var(--line); border-radius: 4px; padding: 0; background: #fff; color: var(--ink); font-size: 16px; }
 .case-modal-shell { display: flex; flex-direction: column; max-height: calc(100dvh - 40px); }
 .case-modal-header { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 24px; flex-shrink: 0; max-height: 40dvh; overflow: auto; border-bottom: 1px solid var(--line); padding: 24px 32px; }

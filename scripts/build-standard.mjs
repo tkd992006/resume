@@ -2,12 +2,20 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ROOT, verifyFrozen } from './build.mjs';
-import { parseHtml, queryOne, innerHtml } from './html.mjs';
+import { parseHtml, queryOne, innerHtml, applyRanges } from './html.mjs';
 
 export const STANDARD_PROFILES = Object.freeze(['simple']);
 const read = name => fs.readFileSync(path.join(ROOT, name), 'utf8');
 const escape = value => String(value).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch]);
 const paragraph = value => `<p>${escape(value)}</p>`;
+
+export function renderStandardCase(id) {
+  const html = read(`src/cases/${id}.html`);
+  if (id !== 'otm-receipt-case') return html;
+  const doc = parseHtml(html);
+  const result = queryOne(doc, '[aria-labelledby="receipt-result"]');
+  return applyRanges(html, [{ start: result.closeStart, end: result.closeStart, value: read('src/case-media/otm-receipt-case.html') }]);
+}
 
 export function renderStandard(slug) {
   if (!STANDARD_PROFILES.includes(slug)) throw Error(`Unknown standard profile: ${slug}`);
@@ -27,6 +35,13 @@ export function renderStandard(slug) {
     return `<a href="#${escape(id)}" data-solved-issue="${escape(id)}" aria-haspopup="dialog" aria-controls="${escape(id)}">${issue.title}<span aria-hidden="true"> ↗</span></a>`;
   }
   const assetPaths = new Set(['assets/favicon.svg']);
+  const caseHtml = selectedCases.map(renderStandardCase).join('\n');
+  for (const node of parseHtml(caseHtml).nodes) {
+    const src = node.attrs.src;
+    if (!src) continue;
+    if (!/^assets\/images\/[a-z0-9-]+\.webp$/.test(src)) throw Error(`Invalid case image source: ${src}`);
+    assetPaths.add(src);
+  }
   const heroImages = ['onthemarket-app-1', 'syrs-1', 'gagageul', 'playai-1'];
   const heroScreenshots = heroImages.map((name, index) => {
     const src = `assets/images/${name}.webp`;
@@ -93,7 +108,7 @@ export function renderStandard(slug) {
   <section class="section" id="other-projects" aria-labelledby="other-projects-title"><h2 id="other-projects-title">그 외 프로젝트</h2><details class="other-projects"><summary>프로젝트 ${content.otherProjects.length}개 보기</summary><div class="other-project-list">${content.otherProjects.map(project => `<article><div class="other-project-heading"><h3>${escape(project.name)}</h3><span>${escape(project.period)}</span></div><p class="other-project-subtitle">${escape(project.subtitle)}</p>${paragraph(project.description)}</article>`).join('')}</div></details></section>
 </main>
 <footer class="site-footer"><div class="container"><p>${escape(content.name)} · ${escape(content.role)}</p><a href="mailto:${escape(content.email)}">${escape(content.email)}</a></div></footer>
-${selectedCases.map(id => read(`src/cases/${id}.html`)).join('\n')}
+${caseHtml}
 <dialog class="lightbox" id="lightbox" aria-label="프로젝트 화면 확대"><button type="button" data-lightbox-close aria-label="확대 화면 닫기">×</button><figure><img alt=""><figcaption id="gallery-caption"></figcaption></figure><div class="gallery-controls"><button type="button" data-gallery-step="-1" aria-label="이전 이미지">← 이전</button><span id="gallery-position" role="status" aria-live="polite" aria-atomic="true"></span><button type="button" data-gallery-step="1" aria-label="다음 이미지">다음 →</button></div></dialog>
 <script src="script.js" defer></script>
 </body>
@@ -118,7 +133,7 @@ export function validateStandard(output) {
     }
   }
   for (const id of output.selectedCases) {
-    const source = parseHtml(read(`src/cases/${id}.html`));
+    const source = parseHtml(renderStandardCase(id));
     if (innerHtml(doc, queryOne(doc, `#${id} .case-modal-content`)) !== innerHtml(source, queryOne(source, '.case-modal-content'))) throw Error(`Changed case body: ${id}`);
     const entryPoints = doc.nodes.filter(node => node.attrs['data-solved-issue'] === id);
     if (entryPoints.length !== 2) throw Error(`Expected two shared entry points: ${id}`);
