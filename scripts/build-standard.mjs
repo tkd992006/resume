@@ -68,7 +68,7 @@ export function renderStandard(slug) {
     </div>
     <figure class="project-visual${project.images.length > 1 ? ' has-pair' : ''}"><div class="project-images">${images}</div><figcaption>${escape(project.caption)}</figcaption></figure>
   </div>
-  ${project.cases.length ? `<details class="project-details"><summary>기술적 문제 해결 <span class="case-count">(${project.cases.length})</span></summary><div class="case-links">${project.cases.map(caseLink).join('')}</div></details>` : ''}
+  ${project.cases.length ? `<details class="project-details"><summary>더 보기 <span class="case-count">(${project.cases.length})</span></summary><div class="case-links">${project.cases.map(caseLink).join('')}</div></details>` : ''}
 </article>`;
   }).join('\n');
   const html = `<!doctype html>
