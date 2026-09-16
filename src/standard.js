@@ -37,7 +37,7 @@
     if (dialog) return { kind: 'case', dialog, element, id };
     return { element, id };
   };
-  const fallbackTrigger = (target) => target.trigger ?? caseLinks.find((link) => link.dataset.solvedIssue === target.dialog?.id);
+  const fallbackTrigger = (target) => (target.trigger?.hidden ? imageButtons.find(button => !button.hidden && button.dataset.gallery === target.trigger.dataset.gallery) : target.trigger) ?? caseLinks.find((link) => link.dataset.solvedIssue === target.dialog?.id);
   const triggerFromState = (state, target) => {
     if (!state || state.id !== target.id) return fallbackTrigger(target);
     return (state.kind === 'image' ? imageButtons : caseLinks)[state.triggerIndex] ?? fallbackTrigger(target);
@@ -47,7 +47,7 @@
     closing = false;
     const target = routeTarget();
     const previous = current;
-    const changesDialog = previous && (previous.dialog !== target.dialog || previous.id !== target.id);
+    const changesDialog = previous && (previous.dialog !== target.dialog);
     if (changesDialog) {
       current = null;
       if (previous.dialog.open) previous.dialog.close();
@@ -63,8 +63,13 @@
       };
       if (target.kind === 'image') {
         const img = lightbox.querySelector('img');
-        img.src = trigger.dataset.lightbox;
-        img.alt = trigger.querySelector('img')?.alt ?? '프로젝트 화면';
+        const media = target.trigger;
+        img.src = media.dataset.lightbox;
+        img.alt = media.querySelector('img')?.alt ?? '프로젝트 화면';
+        const gallery = imageButtons.filter(button => button.dataset.gallery === media.dataset.gallery);
+        lightbox.querySelector('#gallery-caption').textContent = img.alt;
+        lightbox.querySelector('#gallery-position').textContent = `${gallery.indexOf(media) + 1} / ${gallery.length}`;
+        lightbox.querySelectorAll('[data-gallery-step]').forEach(button => { button.hidden = gallery.length < 2; });
         lightbox.setAttribute('aria-label', img.alt + ' 크게 보기');
       }
       if (!target.dialog.open) {
@@ -124,9 +129,41 @@
     }
   };
 
+  const stepGallery = (step) => {
+    if (current?.kind !== 'image') return;
+    const media = routeTarget().trigger;
+    const gallery = imageButtons.filter(button => button.dataset.gallery === media.dataset.gallery);
+    if (gallery.length < 2) return;
+    const next = gallery[(gallery.indexOf(media) + step + gallery.length) % gallery.length];
+    const id = `image-${imageButtons.indexOf(next) + 1}`;
+    const state = { ...(history.state ?? {}) };
+    state.standardModal = { ...(state.standardModal ?? {}), kind: 'image', id,
+      triggerIndex: imageButtons.indexOf(current.trigger), origin: current.origin, scroll: current.scroll };
+    history.replaceState(state, '', '#' + id);
+    route();
+  };
+  document.addEventListener('keydown', event => {
+    if (current?.kind !== 'image' || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    event.preventDefault();
+    stepGallery(event.key === 'ArrowRight' ? 1 : -1);
+  });
+  let touchStart = null;
+  lightbox?.addEventListener('touchstart', event => {
+    touchStart = event.touches.length === 1 ? { x: event.touches[0].clientX, y: event.touches[0].clientY } : null;
+  }, { passive: true });
+  lightbox?.addEventListener('touchend', event => {
+    if (!touchStart || !event.changedTouches.length) return;
+    const dx = event.changedTouches[0].clientX - touchStart.x;
+    const dy = event.changedTouches[0].clientY - touchStart.y;
+    touchStart = null;
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) stepGallery(dx < 0 ? 1 : -1);
+  }, { passive: true });
+
   document.addEventListener('click', (event) => {
     if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     const target = event.target instanceof Element ? event.target : null;
+    const galleryStep = target?.closest('[data-gallery-step]');
+    if (galleryStep) { event.preventDefault(); stepGallery(Number(galleryStep.dataset.galleryStep)); return; }
     const close = target?.closest('[data-case-close], [data-lightbox-close]');
     if (close) { event.preventDefault(); dismiss(close.closest('dialog')); return; }
     const issue = target?.closest('[data-solved-issue]');
