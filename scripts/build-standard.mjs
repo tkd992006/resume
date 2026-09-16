@@ -42,7 +42,7 @@ export function renderStandard(slug) {
       <p class="project-summary">${escape(project.summary)}</p>
       <ul class="project-points">${project.points.map(point => `<li>${escape(point)}</li>`).join('')}</ul>
       <p class="project-result">${escape(project.result)}</p>
-      <p class="project-stack">${escape(project.stack)}</p>
+      ${project.stack ? `<p class="project-stack">${escape(project.stack)}</p>` : ''}
       ${(project.links ?? []).length ? `<div class="project-links">${project.links.map(link => `<a href="${escape(link.href)}" target="_blank" rel="noreferrer">${escape(link.label)} ↗</a>`).join('')}</div>` : ''}
     </div>
     <figure class="project-visual${project.images.length > 1 ? ' has-pair' : ''}"><div class="project-images">${images}</div><figcaption>${escape(project.caption)}</figcaption></figure>
@@ -67,7 +67,7 @@ export function renderStandard(slug) {
 </head>
 <body class="standard-portfolio">
 <a class="skip-link" href="#main">본문으로 바로 가기</a>
-<header class="site-header"><div class="header-inner"><a class="brand" href="#about">${escape(content.name)}</a><nav aria-label="주요 메뉴"><a href="#about">소개</a><a href="#skills">기술</a><a href="#projects">프로젝트</a><a href="#experience">경력</a><a href="#ama">일하는 방식</a></nav></div></header>
+<header class="site-header"><div class="header-inner"><a class="brand" href="#about">${escape(content.name)}</a><nav aria-label="주요 메뉴"><a href="#about">소개</a><a href="#skills">기술</a><a href="#projects">프로젝트</a><a href="#experience">경력</a></nav></div></header>
 <main class="container" id="main" tabindex="-1">
   <section class="hero" id="about" aria-labelledby="about-title">
     <p class="role">${escape(content.role)}</p>
@@ -75,12 +75,11 @@ export function renderStandard(slug) {
     <p class="lead">${escape(content.lead)}</p>
     <div class="hero-copy">${content.about.map(paragraph).join('')}</div>
     <div class="contact-links"><a href="mailto:${escape(content.email)}">${escape(content.email)}</a><a href="${escape(content.github)}" target="_blank" rel="noreferrer">GitHub ↗</a></div>
-    <nav class="quick-links" aria-label="바로 가기"><a href="#skills">기술 역량</a><a href="#projects">대표 프로젝트</a><a href="#experience">경력과 학력</a><a href="#ama">일하는 방식</a></nav>
+    <nav class="quick-links" aria-label="바로 가기"><a href="#skills">기술 역량</a><a href="#projects">대표 프로젝트</a><a href="#experience">경력과 학력</a></nav>
   </section>
-  <section class="section" id="skills" aria-labelledby="skills-title"><h2 id="skills-title">기술 역량</h2><div class="skills-grid">${content.skills.map(skill => `<article class="skill-item"><h3>${escape(skill.title)}</h3><p class="skill-tools">${escape(skill.tools)}</p>${paragraph(skill.description)}</article>`).join('')}</div><p class="collaboration">${escape(content.collaboration)}</p></section>
+  <section class="section" id="skills" aria-labelledby="skills-title"><h2 id="skills-title">기술 역량</h2><div class="skills-grid">${content.skills.map(skill => `<article class="skill-item"><h3>${escape(skill.title)}</h3><p class="skill-tools">${escape(skill.tools)}</p>${skill.description ? paragraph(skill.description) : ''}${skill.items?.length ? `<ul class="skill-experience">${skill.items.map(item => `<li>${escape(item)}</li>`).join('')}</ul>` : ''}</article>`).join('')}</div><p class="collaboration">${escape(content.collaboration)}</p></section>
   <section class="section" id="projects" aria-labelledby="projects-title"><h2 id="projects-title">대표 프로젝트</h2><p class="section-intro">${escape(content.projectsIntro)}</p><div class="project-list">${projects}</div></section>
   <section class="section" id="experience" aria-labelledby="experience-title"><h2 id="experience-title">경력과 학력</h2><div class="experience-list">${content.experience.map(item => `<article class="experience-item"><h3>${escape(item.name)}</h3><p class="meta">${escape(item.period)} · ${escape(item.role)}</p>${item.description ? paragraph(item.description) : ''}</article>`).join('')}<article class="experience-item"><h3>Etc.</h3><ul class="etc-list">${(content.etc ?? []).map(item => `<li>${escape(item)}</li>`).join('')}</ul></article></div></section>
-  <section class="section" id="ama" aria-labelledby="ama-title"><h2 id="ama-title">일하는 방식</h2><div class="ama-list">${content.ama.map(item => `<details><summary>${escape(item.question)}</summary>${paragraph(item.answer)}</details>`).join('')}</div></section>
   <section class="section" id="solved-problems" aria-label="문제 해결 사례 전체"><details class="all-cases"><summary>문제 해결 사례 전체 보기</summary><p>각 프로젝트의 구현 과정과 판단을 조금 더 자세히 정리했습니다.</p><div class="case-links">${selectedCases.map(caseLink).join('')}</div></details></section>
   <section class="section" id="other-projects" aria-labelledby="other-projects-title"><h2 id="other-projects-title">그 외 프로젝트</h2><details class="other-projects"><summary>프로젝트 ${content.otherProjects.length}개 보기</summary><div class="other-project-list">${content.otherProjects.map(project => `<article><div class="other-project-heading"><h3>${escape(project.name)}</h3><span>${escape(project.period)}</span></div><p class="other-project-subtitle">${escape(project.subtitle)}</p>${paragraph(project.description)}</article>`).join('')}</div></details></section>
 </main>
