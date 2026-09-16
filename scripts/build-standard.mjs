@@ -10,7 +10,8 @@ const escape = value => String(value).replace(/[&<>"']/g, ch => ({ '&': '&amp;',
 const paragraph = value => `<p>${escape(value)}</p>`;
 
 export function renderStandardCase(id) {
-  const html = read(`src/cases/${id}.html`);
+  const updatedCase = `src/standard-cases/${id}.html`;
+  const html = read(fs.existsSync(path.join(ROOT, updatedCase)) ? updatedCase : `src/cases/${id}.html`);
   if (id !== 'otm-receipt-case') return html;
   const doc = parseHtml(html);
   const result = queryOne(doc, '[aria-labelledby="receipt-result"]');

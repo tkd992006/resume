@@ -1,0 +1,191 @@
+<dialog
+      class="case-modal"
+      id="otm-ledger-cycle-case"
+      aria-labelledby="ledger-cycle-case-title"
+      aria-describedby="ledger-cycle-case-description"
+    >
+      <div class="case-modal-shell">
+        <header class="case-modal-header">
+          <div>
+            <p class="case-modal-kicker">OnTheMarket · Solved issue 04</p>
+            <h2 id="ledger-cycle-case-title">장부·상품 서비스의 순환 의존 해소</h2>
+            <p id="ledger-cycle-case-description">
+              가입 후 주문을 시작하지 않거나 가격 확인 단계에 도달하지 못한 점주도 서비스의 가격을 경험할 수 있도록,
+              튜토리얼에서 식자재를 고르고 견적을 요청한 뒤 카카오톡으로 결과를 받는 흐름을 만들었습니다.
+              이 알림에 필요한 음식점 정보와 유통업체 가격을 조회하면서 서비스 간 의존이 순환하지 않도록 구조를 정리했습니다.
+            </p>
+          </div>
+          <button class="case-modal-close" type="button" data-case-close aria-label="문제 해결 사례 닫기">×</button>
+        </header>
+
+        <div class="case-modal-content case-narrative is-compact">
+          <section class="case-section" aria-labelledby="ledger-cycle-problem">
+            <header class="case-section-header">
+              <p class="case-section-kicker">Problem &amp; constraints</p>
+              <h3 id="ledger-cycle-problem">주문을 시작하기 전에도 “여기서 사면 얼마인지” 알 수 있어야 했습니다.</h3>
+              <p>
+                온더마켓은 음식점 점주가 식자재를 고르고 유통업체를 비교해 주문하는 서비스입니다.
+                기존에는 주문할 식자재를 담은 뒤 유통업체를 선택하는 단계까지 가야 업체별 가격을 확인할 수 있었습니다.
+                가입과 온보딩을 마쳐도 주문을 시작하지 않거나 그 단계까지 도달하지 못하면, 점주는 실제 구매 가격을 확인하지 못한 채 이탈할 수 있었습니다.
+              </p>
+              <p>
+                그래서 주문 흐름을 끝까지 진행하지 않아도 가격을 경험할 수 있는 튜토리얼을 만들었습니다.
+                점주가 자주 사는 식자재를 고르면 예상 최저가를 보여주고, “견적받고 온더마켓 시작하기”로 견적을 요청할 수 있게 했습니다.
+                이후 공급 가능한 유통업체의 가격을 비교해 카카오톡으로 알려주고, 알림에서 업체 비교·주문 화면으로 다시 이어지도록 했습니다.
+              </p>
+            </header>
+            <ol aria-label="점주의 견적 확인 흐름">
+              <li>튜토리얼에서 구매할 식자재와 수량을 선택하고 예상 가격을 확인합니다.</li>
+              <li>견적을 신청하면 선택한 품목을 저장하고, 결과가 준비되면 카카오톡으로 안내합니다.</li>
+              <li>점주는 알림에 담긴 최저가 업체·금액을 보고 업체 비교 또는 주문 화면으로 이동합니다.</li>
+            </ol>
+            <p>
+              주문 과정에서 추천 유통업체가 아직 없는 점주도 같은 견적 요청을 할 수 있습니다.
+              알림의 대상은 실제로 견적을 신청한 음식점입니다. 가입만 했거나 주문 이력이 없다는 이유로 자동 발송하는 조건은 아닙니다.
+            </p>
+            <h4>이 사용자 흐름을 서버에서 처리하는 방식</h4>
+            <dl class="domain-model-list" aria-label="견적 알림에 필요한 데이터와 역할">
+              <dt><code>Ledger</code> 장부</dt>
+              <dd>식자재와 수량을 저장하는 목록입니다. 견적 신청 시 선택한 품목으로 새 장부를 만들고 <code>quote</code> 상태로 저장합니다. 여기서 <code>quote</code>는 견적 결과 알림을 기다리는 요청을 뜻하며, 발송 성공 후에는 <code>closed</code>로 바꿉니다.</dd>
+              <dt><code>Restaurant</code> 음식점</dt>
+              <dd>알림을 받을 음식점의 이름과 전화번호를 제공합니다.</dd>
+              <dt><code>Distributor</code> 유통업체</dt>
+              <dd>선택한 식자재와 수량에 대한 업체별 총액을 계산하고, 최저가 업체를 찾습니다.</dd>
+              <dt><code>Catalog</code> 상품</dt>
+              <dd>식자재의 기준 정보입니다. 장부와 유통업체 가격표가 같은 상품을 참조하며, 판매를 중단한 상품은 장부에서도 정리해야 합니다.</dd>
+            </dl>
+            <p class="case-afterthought">
+              정기 배치는 <code>quote</code> 장부가 있고 해당 음식점의 활성 공급 등록(<code>BidTicket</code>)이 3건 이상이면 가격을 조회합니다.
+              음식점 전화번호와 비교 가능한 업체가 있을 때 알림을 보냅니다. 공급 등록은 음식점 기준으로 집계하므로, 이번 요청 이후 새로 들어온 입찰만 세는 것은 아닙니다.
+              이 처리를 맡은 <code>LedgerService</code>에는 가격을 조회하는 <code>DistributorService</code>와
+              수신자 정보를 조회하는 <code>RestaurantService</code>가 새로 필요해졌습니다.
+            </p>
+          </section>
+
+          <section class="case-section" aria-labelledby="ledger-cycle-observed">
+            <header class="case-section-header">
+              <p class="case-section-kicker">Observed before</p>
+              <h3 id="ledger-cycle-observed">기존 의존을 그대로 두고 알림 기능을 추가하면 순환하는 구조였습니다.</h3>
+              <p>
+                기존에 <code>RestaurantService</code>는 장부 목록을 조회했을 때 장부가 없으면 기본 장부를 만들고, 그 id를 <code>restaurant.ledgers</code>에 넣기 위해(<code>initLedger</code>)
+                <code>LedgerService</code>를 주입받았고, <code>CatalogService</code>는 상품 비활성화 시 모든 장부의 <code>lineItems</code>에서 그 상품을 지우려고(<code>removeAllLineItemsByCatalogId</code>)
+                역시 <code>LedgerService</code>를 주입받았습니다. <code>DistributorService</code>는 가격표 갱신과 입찰 처리를 위해 원래부터
+                <code>CatalogService</code>·<code>RestaurantService</code>·<code>BidTicketService</code>에 의존했습니다.
+                이 상태에서 장부 서비스가 유통업체·음식점 서비스를 다시 주입받으면 아래와 같은 순환 경로가 생깁니다.
+                새 의존을 추가하는 커밋에서 기존의 역방향 의존도 함께 제거했습니다. 아래 그림은 기존 구조에 새 의존만 추가했을 때의 경로입니다.
+              </p>
+            </header>
+            <div class="case-inline-trace compact-trace" aria-label="기존 의존을 유지하고 새 의존을 추가할 때의 순환 경로 1">
+              <strong>DistributorService</strong><span aria-hidden="true">→</span>
+              <strong>CatalogService</strong><span aria-hidden="true">→</span>
+              <strong>LedgerService</strong><span aria-hidden="true">→</span>
+              <strong>DistributorService</strong><span aria-hidden="true">↺ 순환</span>
+            </div>
+            <div class="case-inline-trace compact-trace" aria-label="기존 의존을 유지하고 새 의존을 추가할 때의 순환 경로 2">
+              <strong>RestaurantService</strong><span aria-hidden="true">→</span>
+              <strong>LedgerService</strong><span aria-hidden="true">→</span>
+              <strong>RestaurantService</strong><span aria-hidden="true">↺ 순환</span>
+            </div>
+          </section>
+
+          <section class="case-section" aria-labelledby="ledger-cycle-solution">
+            <header class="case-section-header">
+              <p class="case-section-kicker">Solution</p>
+              <h3 id="ledger-cycle-solution">장부 초기화 책임을 옮기고, 상품 상태 변경과 장부 정리는 resolver에서 연결했습니다.</h3>
+              <p>
+                견적 알림에 필요한 장부 → 유통업체·음식점 의존은 두고, 상품·음식점 서비스에서 장부 서비스를 직접 주입받던 부분을 제거했습니다.
+                <code>CatalogService.inactivateCatalog</code>는 상품 상태만 바꾸고, 장부에서 품목을 지우는 호출은 GraphQL resolver인
+                <code>catalog.signal.ts</code>가 이어서 하도록 옮겼습니다. <code>initLedger</code>는 <code>RestaurantService</code>에서
+                <code>LedgerService</code>로 옮겨 장부를 만든 뒤 <code>restaurantService</code>로 식당의 <code>ledgers</code>를 갱신하게 했고,
+                <code>restaurant.signal.ts</code>가 <code>ledgerService.initLedger</code>를 부르게 했습니다.
+              </p>
+            </header>
+            <div class="case-inline-trace compact-trace" aria-label="정리된 의존 방향">
+              <strong>LedgerService</strong><span aria-hidden="true">→</span>
+              <strong>DistributorService</strong><span aria-hidden="true">·</span>
+              <strong>RestaurantService</strong><span aria-hidden="true">Catalog·Restaurant의 LedgerService 주입 제거</span>
+            </div>
+            <div class="change-ledger" aria-label="의존 방향 정리 순서">
+              <div><span>01 · 의존 제거</span><strong>Catalog · Restaurant에서 <code>@Srv() ledgerService</code> 삭제</strong></div>
+              <span aria-hidden="true">→</span>
+              <div><span>02 · 책임 이동</span><strong><code>initLedger</code>를 LedgerService로</strong></div>
+              <span aria-hidden="true">→</span>
+              <div><span>03 · 조합 지점</span><strong>Signal이 두 서비스를 순서대로 호출</strong></div>
+            </div>
+          </section>
+
+          <section class="case-section" aria-labelledby="ledger-cycle-code-change">
+            <header class="case-section-header">
+              <p class="case-section-kicker">Code change</p>
+              <h3 id="ledger-cycle-code-change">서비스 안에서 이어지던 두 작업을 resolver의 두 줄로 나눴습니다.</h3>
+            </header>
+            <div class="code-change-grid">
+              <article class="code-card is-before">
+                <header><span>Before</span><strong>catalog.service.ts가 ledgerService를 직접 호출</strong></header>
+                <pre><code>@Service("CatalogService")
+export class CatalogService extends DbService(db.catalogDb) {
+  @Srv() ledgerService: srv.LedgerService;
+
+  async inactivateCatalog(catalogId: string) {
+    const catalog = await this.getCatalog(catalogId);
+    await catalog.set({ status: "inactive" }).save();
+    await this.ledgerService
+      .removeAllLineItemsByCatalogId(catalogId);
+  }
+}</code></pre>
+              </article>
+              <article class="code-card is-after">
+                <header><span>After</span><strong>catalog.signal.ts에서 두 서비스를 차례로 호출</strong></header>
+                <pre><code>// catalog.signal.ts
+@Mutation.Admin(() =&gt; Boolean)
+async inactivateCatalog(
+  @Arg.Body("catalogId", () =&gt; String) catalogId: string
+) {
+  await this.catalogService.inactivateCatalog(catalogId);
+  await this.ledgerService
+    .removeAllLineItemsByCatalogId(catalogId);
+  return true;
+}
+
+// ledger.service.ts
+@Srv() distributorService: srv.DistributorService;
+@Srv() restaurantService: srv.RestaurantService;</code></pre>
+              </article>
+            </div>
+            <p class="code-caption">
+              한 달 뒤 후속 커밋에서는 <code>createRestaurant</code> 직후에도 <code>ledgerService.initLedger(restaurant.id)</code>를 호출하도록 보완해,
+              첫 장부 목록 조회 전에도 기본 장부가 생기도록 했습니다.
+            </p>
+          </section>
+
+          <section class="case-section" aria-labelledby="ledger-cycle-result">
+            <header class="case-section-header">
+              <p class="case-section-kicker">Outcome &amp; trade-off</p>
+              <h3 id="ledger-cycle-result">알림에 필요한 조회를 연결하면서 역방향 의존을 제거했습니다.</h3>
+            </header>
+            <div class="compact-outcome-grid">
+              <article>
+                <span>Outcome</span>
+                <strong>Ledger → Distributor · Restaurant 단방향</strong>
+                <p><code>LedgerService</code>가 음식점 정보와 유통업체 가격을 조회할 수 있게 하고, <code>CatalogService</code>·<code>RestaurantService</code>가 다시 장부 서비스를 주입받는 관계를 제거했습니다.</p>
+              </article>
+              <article>
+                <span>Trade-off</span>
+                <strong>상품 비활성 후 장부 정리 실패 가능</strong>
+                <p>첫 호출은 성공하고 두 번째가 실패하면 상품은 비활성인데 장부에는 품목이 남는 중간 상태가 생깁니다. 트랜잭션이나 보상 로직은 두지 않았습니다.</p>
+              </article>
+            </div>
+            <p class="case-afterthought">
+              두 호출을 순서대로 실행하는 것만으로 함께 성공하거나 함께 취소되는 것은 아닙니다.
+              상품 상태 변경 후 장부 정리가 실패하면 중간 상태가 남을 수 있으며, 이 부분은 트랜잭션이나 실패한 정리 작업의 재시도로 보완할 수 있습니다.
+            </p>
+          </section>
+
+          <footer class="case-evidence">
+            <span>Code evidence</span>
+            <a href="https://github.com/tkd992006/onTheMarket/commit/4f377f0ec7377de0fe3e01f247d222223fd01fd1" target="_blank" rel="noreferrer">4f377f0 · cyclic dependency</a>
+            <a href="https://github.com/tkd992006/onTheMarket/commit/6cc85dc6507c596c1969d22132ea4a5feb6c38b2" target="_blank" rel="noreferrer">6cc85dc · ledger creation</a>
+          </footer>
+        </div>
+      </div>
+    </dialog>
