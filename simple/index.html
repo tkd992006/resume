@@ -388,21 +388,10 @@ favoriteDistributors: LightDistributor[];</code></pre>
 
           <section class="case-section" aria-labelledby="order-result">
             <header class="case-section-header">
-              <p class="case-section-kicker">Outcome &amp; trade-off</p>
-              <h3 id="order-result">10초 가까이 걸리던 주문 목록이 바로 뜨는 수준이 됐고, 프레임워크의 Full·Light 규칙은 그대로 유지했습니다.</h3>
+              <h3 id="order-result">Outcome</h3>
             </header>
-            <div class="result-card-grid">
-              <article class="result-card is-strong">
-                <span>Outcome</span>
-                <strong>직접 유통사 가격 객체 최대 2,000 → 0</strong>
-                <p>기본 20건 목록 기준 구조적 상한입니다. 점주 화면에서 주문 내역이 거의 바로 뜨게 됐습니다.</p>
-              </article>
-              <article class="result-card is-caution">
-                <span>Trade-off</span>
-                <strong>화면 전용 DTO가 아닌 공용 Light 계약</strong>
-                <p>다른 화면과의 호환을 위해 <code>restaurantAddr</code>, 출입 정보, <code>ledgers</code> 같은 값은 Light에 남겼습니다. 화면 전용 DTO를 새로 만들지 않아 다른 화면의 오류나 DB 마이그레이션 부담 없이 바꿀 수 있었습니다.</p>
-              </article>
-            </div>
+            <p>화면 전용 DTO를 새로 만들지 않아 다른 화면의 오류나 DB 마이그레이션 부담 없이 바꿀 수 있었습니다.</p>
+            <p>10초 가까이 걸리던 주문 목록이 바로 뜨는 수준이 됐고, 프레임워크의 Full·Light 규칙은 그대로 유지했습니다.</p>
           </section>
 
           <footer class="case-evidence">

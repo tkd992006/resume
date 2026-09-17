@@ -1,0 +1,227 @@
+<dialog
+      class="case-modal"
+      id="otm-order-case"
+      aria-labelledby="otm-order-case-title"
+      aria-describedby="otm-order-case-description"
+    >
+      <div class="case-modal-shell">
+        <header class="case-modal-header">
+          <div>
+            <p class="case-modal-kicker">OnTheMarket · Solved issue 02</p>
+            <h2 id="otm-order-case-title">주문 목록 관계 데이터 경량화</h2>
+            <p id="otm-order-case-description">
+              10초 가까이 걸리던 점주 주문 목록의 관계 데이터 의존을 정리하고,
+              목록·중첩 관계에 Light 모델 경계를 세워 눈에 띄게 빠르게 만들었습니다.
+            </p>
+          </div>
+          <button class="case-modal-close" type="button" data-case-close aria-label="문제 해결 사례 닫기">×</button>
+        </header>
+
+        <div class="case-modal-content case-narrative">
+          <section class="case-section" aria-labelledby="order-problem">
+            <header class="case-section-header">
+              <p class="case-section-kicker">Problem &amp; constraints</p>
+              <h3 id="order-problem">음식점 주문 목록 화면이 뜨는 데 10초 정도씩 걸렸습니다.</h3>
+              <p>
+                점주가 앱에서 주문 내역 탭을 열면 목록이 뜨기까지 10초 가까이 기다려야 했습니다.
+                주문 카드는 판매자명·연락처·납품서용 사업자 정보를 바로 보여줘야 했으므로, 주문(Order)이 유통사·식당 데이터를
+                필드로 들고 있는 구조 자체는 유지해야 했습니다.
+              </p>
+            </header>
+          </section>
+
+          <section class="case-section" aria-labelledby="order-model-contract">
+            <header class="case-section-header">
+              <p class="case-section-kicker">Framework rule · Full &amp; Light</p>
+              <h3 id="order-model-contract">akanjs는 모델마다 Full·Light 두 벌의 GraphQL fragment를 기본으로 만들고, 배열 조회에는 Light를 자동으로 씁니다.</h3>
+              <p>
+                akanjs에서 모델 하나를 정의하면 fragment가 두 벌 생깁니다. Light는 <code>via(Object, [필드 목록])</code>으로 고른 목록용 필드만 담고,
+                Full은 Light를 포함한 전체 필드를 담습니다. 조회 결과가 배열이면 프레임워크가 Light fragment를, 단건이면 Full fragment를 알아서 고릅니다.
+                그래서 관계 필드까지 Light 타입으로 선언해 이 규칙을 존중하면, 목록 응답을 얇게 유지하는 일은 프레임워크가 대신 해 줍니다.
+              </p>
+            </header>
+
+            <div class="code-change-grid">
+              <article class="code-card">
+                <header><span>Light · 목록·중첩 관계용</span><strong>LightDistributor · 12 fields</strong></header>
+                <pre><code>@Model.Light("LightDistributor")
+export class LightDistributor extends via(DistributorObject, [
+  "name", "tags", "monthlyOrder", "status",
+  "image", "description", "totalCost", "phone",
+  "avgScore", "reviewCount", "businessId", "businessAddrName",
+] as const) {}</code></pre>
+              </article>
+              <article class="code-card">
+                <header><span>Full · 단건 상세·편집용</span><strong>Distributor · 전체 필드</strong></header>
+                <pre><code>@Model.Full("Distributor")
+export class Distributor
+  extends via(DistributorObject, LightDistributor) {}
+
+// Light 12개 + pricingCatalogs[] · bankAccount
+// · tosspaymentsStatus 같은 가격·정산·설정 필드</code></pre>
+              </article>
+            </div>
+
+            <div class="case-rule-note">
+              <span>자동 규칙의 한계</span>
+              <p>
+                배열 조회는 <code>getLightModelRef</code>로 Light fragment를 고르지만, fragment 본문은 관계 필드에 선언된 타입을 그대로 따라 재귀로 펼쳐집니다.
+                Light 모델 안의 관계 필드가 <code>Distributor</code>처럼 Full 타입이면 목록 안에서 Full fragment가 다시 열립니다.
+              </p>
+            </div>
+          </section>
+
+          <section class="case-section" aria-labelledby="order-observed">
+            <header class="case-section-header">
+              <p class="case-section-kicker">Observed before</p>
+              <h3 id="order-observed">관계 필드가 자동으로 전부 조회되면서 가격표와 이미지 메타데이터까지 따라왔습니다.</h3>
+              <p>
+                주문 목록 조회 자체는 배열이라 <code>LightOrder</code> fragment로 나갔지만, 1인 개발 편의상 그 안의 <code>distributor</code>·<code>restaurant</code>
+                관계 필드는 Full 타입으로 선언해 둔 채였습니다. fragment가 선언된 타입을 따라 펼쳐지면서 목록 20건마다 유통사 Full fragment가 붙고,
+                그 안의 상품별 가격표 약 100개가 Catalog와 image 메타데이터까지 연쇄로 따라와 서버가 받아 오는 데이터가 너무 많아졌습니다.
+              </p>
+            </header>
+
+            <div class="payload-map" aria-label="변경 전 주문 목록의 연쇄 데이터 구조">
+              <div class="payload-root">
+                <span>List query</span>
+                <strong>LightOrder[] · 기본 20건</strong>
+              </div>
+              <div class="payload-stem" aria-hidden="true"></div>
+              <div class="payload-branches">
+                <article class="payload-branch is-danger">
+                  <div class="payload-node">
+                    <span>Full relation</span>
+                    <strong>Distributor</strong>
+                  </div>
+                  <span class="payload-arrow" aria-hidden="true">↓</span>
+                  <div class="payload-node is-heavy">
+                    <span>유통사별 약 100개</span>
+                    <strong>pricingCatalogs[]</strong>
+                    <small>costPrice · sellingPrice · date + Catalog 도메인 필드 8개</small>
+                  </div>
+                  <span class="payload-arrow" aria-hidden="true">↓</span>
+                  <div class="payload-node is-heavy">
+                    <span>각 가격 항목마다</span>
+                    <strong>Catalog → image → File metadata</strong>
+                    <small>상품명·단위·규격·상태 뒤에, 이미지가 있으면 파일명·MIME·URL·가로/세로·용량 등 11개 메타 필드로 확장</small>
+                  </div>
+                </article>
+
+                <article class="payload-branch is-danger">
+                  <div class="payload-node">
+                    <span>Full relation</span>
+                    <strong>Restaurant</strong>
+                  </div>
+                  <div class="payload-split">
+                    <div>
+                      <span class="payload-arrow" aria-hidden="true">↓</span>
+                      <div class="payload-node is-heavy">
+                        <span>Ledger[]</span>
+                        <strong>lineItems[] → Catalog → image</strong>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="payload-arrow" aria-hidden="true">↓</span>
+                      <div class="payload-node is-heavy">
+                        <span>favoriteDistributors[]</span>
+                        <strong>pricingCatalogs[] → Catalog → image</strong>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="payload-impact">
+                <span>확인한 운영 데이터 구조</span>
+                <strong>20 orders × 100 prices = 직접 유통사 경로에서 최대 2,000개 가격 객체 반복 가능</strong>
+                <p>과거 로그의 가격표 블록 33개가 모두 100개 항목이었고, 주문 목록의 기본 page size는 20이었습니다.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="case-section" aria-labelledby="order-solution">
+            <header class="case-section-header">
+              <p class="case-section-kicker">Solution</p>
+              <h3 id="order-solution">데이터 의존 관계를 그려 보고, 목록에 필요한 필드와 아닌 필드를 나눴습니다.</h3>
+              <p>
+                Order → Distributor → PricingCatalog → Catalog → image로 이어지는 관계 그래프를 따라가며 목록이 실제로 읽는 값을 확인했습니다.
+                판매자명·연락처·사업자번호·표시 주소처럼 카드와 납품서에 쓰는 값은 남기고, 상품별 가격표·정산 계좌·PG 입점 상태처럼
+                가격 관리나 설정 화면에서만 쓰는 값은 뺐습니다.
+              </p>
+            </header>
+            <div class="case-rule-note">
+              <span>경계</span>
+              <p>
+                새 DTO를 만들지 않고 프레임워크의 Full·Light 규칙을 다시 따르게 했습니다. 목록과 중첩 관계는
+                <code>LightDistributor</code>·<code>LightRestaurant</code>·<code>LightLedger</code>로 선언해 경계를 세우고, 단건 상세 조회는 Full을 그대로 두었습니다.
+              </p>
+            </div>
+          </section>
+
+          <section class="case-section" aria-labelledby="order-code-change">
+            <header class="case-section-header">
+              <p class="case-section-kicker">Code change</p>
+              <h3 id="order-code-change">필요 필드를 먼저 보존하고, Full 전파 지점을 Light로 바꿨습니다.</h3>
+            </header>
+
+            <div class="code-change-grid">
+              <article class="code-card is-before">
+                <header><span>Before</span><strong>목록 안에서 Full 관계 재확장</strong></header>
+                <pre><code>@Field.Prop(() =&gt; Distributor)
+distributor: Distributor;
+
+@Field.Prop(() =&gt; Restaurant)
+restaurant: Restaurant;
+
+// RestaurantInput
+@Field.Prop(() =&gt; [Ledger])
+ledgers: Ledger[];
+
+@Field.Prop(() =&gt; [Distributor])
+favoriteDistributors: Distributor[];</code></pre>
+              </article>
+              <article class="code-card is-after">
+                <header><span>After</span><strong>목록 관계의 깊이를 명시적으로 제한</strong></header>
+                <pre><code>@Field.Prop(() =&gt; LightDistributor)
+distributor: LightDistributor;
+
+@Field.Prop(() =&gt; LightRestaurant)
+restaurant: LightRestaurant;
+
+// RestaurantInput
+@Field.Prop(() =&gt; [LightLedger])
+ledgers: LightLedger[];
+
+@Field.Prop(() =&gt; [LightDistributor])
+favoriteDistributors: LightDistributor[];</code></pre>
+              </article>
+            </div>
+
+            <div class="change-ledger" aria-label="변경 순서">
+              <div><span>01 · 관련 경로</span><strong>PricingLogs의 Full 유통사 제거</strong></div>
+              <span aria-hidden="true">→</span>
+              <div><span>02 · 호환성 확보</span><strong>납품서 필드를 Light에 승격</strong></div>
+              <span aria-hidden="true">→</span>
+              <div><span>03 · 핵심 관계</span><strong>Order · Restaurant의 Full 전파 차단</strong></div>
+            </div>
+          </section>
+
+          <section class="case-section" aria-labelledby="order-result">
+            <header class="case-section-header">
+              <h3 id="order-result">Outcome</h3>
+            </header>
+            <p>화면 전용 DTO를 새로 만들지 않아 다른 화면의 오류나 DB 마이그레이션 부담 없이 바꿀 수 있었습니다.</p>
+            <p>10초 가까이 걸리던 주문 목록이 바로 뜨는 수준이 됐고, 프레임워크의 Full·Light 규칙은 그대로 유지했습니다.</p>
+          </section>
+
+          <footer class="case-evidence">
+            <span>Code evidence</span>
+            <a href="https://github.com/tkd992006/onTheMarket/commit/cc27b5ba1a38a1e41888d45fb4eb441f5139204f" target="_blank" rel="noreferrer">cc27b5b · Light fields</a>
+            <a href="https://github.com/tkd992006/onTheMarket/commit/0f62ccd8870344732ad447e99ec92cc21d4af5bc" target="_blank" rel="noreferrer">0f62ccd · projection</a>
+            <a href="https://github.com/tkd992006/onTheMarket/commit/767b97d3b6585f57684b901de9de6dc5be6bbea8" target="_blank" rel="noreferrer">767b97d3 · order relations</a>
+            <a href="https://github.com/tkd992006/onTheMarket/commit/333d78256f09feb9507ea48e6307d16fb0397a15" target="_blank" rel="noreferrer">333d7825 · lighter data</a>
+            <a href="https://github.com/tkd992006/onTheMarket/commit/feded1381f0bcfdc72dada3e729d8ef18fd4e2d6" target="_blank" rel="noreferrer">feded138 · pricing logs</a>
+          </footer>
+        </div>
+      </div>
+    </dialog>
