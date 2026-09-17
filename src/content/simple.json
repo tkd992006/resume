@@ -118,6 +118,12 @@
         "otm-payment-webview-case",
         "otm-ledger-cycle-case",
         "otm-signal-types-case"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/tkd992006/onTheMarket"
+        }
       ]
     },
     {
@@ -218,7 +224,17 @@
       "name": "Gagageul",
       "period": "2025",
       "subtitle": "끝말잇기 탐색 조건 커스텀 프로젝트",
-      "description": "기존 끝말잇기 탐색 서비스를 기반으로 사용자가 탐색 조건과 우선순위를 직접 바꿀 수 있게 확장했습니다. 기존 코드 구조를 읽고 알고리즘 흐름에 조건 엔진을 연결한 프로젝트입니다."
+      "description": "기존 끝말잇기 탐색 서비스를 기반으로 사용자가 탐색 조건과 우선순위를 직접 바꿀 수 있게 확장했습니다. 기존 코드 구조를 읽고 알고리즘 흐름에 조건 엔진을 연결한 프로젝트입니다.",
+      "links": [
+        {
+          "label": "서비스 보기",
+          "href": "https://tingtingplanet.github.io/gagageul/"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/tingtingplanet/gagageul"
+        }
+      ]
     },
     {
       "name": "Local Jobs",
@@ -254,7 +270,13 @@
       "name": "SLOTHS ON THE RUN",
       "period": "2023",
       "subtitle": "Web3 해커톤 프로젝트",
-      "description": "지갑 연결, NFT 예금, mint, redeem 흐름과 랜딩 페이지를 구현했습니다."
+      "description": "지갑 연결, NFT 예금, mint, redeem 흐름과 랜딩 페이지를 구현했습니다.",
+      "links": [
+        {
+          "label": "시연 영상",
+          "href": "https://youtu.be/YgUZfjVnLFM"
+        }
+      ]
     },
     {
       "name": "Hashmoss",
