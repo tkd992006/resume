@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { ROOT, verifyFrozen } from './build.mjs';
 import { parseHtml, queryOne, innerHtml, applyRanges } from './html.mjs';
@@ -72,6 +73,8 @@ export function renderStandard(slug) {
   ${project.cases.length ? `<details class="project-details"><summary>개발 이야기 <span class="case-count">(${project.cases.length})</span></summary><div class="case-links">${project.cases.map(caseLink).join('')}</div></details>` : ''}
 </article>`;
   }).join('\n');
+  const css = read('src/standard.css');
+  const cssVersion = createHash('sha256').update(css).digest('hex').slice(0, 12);
   const html = `<!doctype html>
 <html lang="ko">
 <head>
@@ -85,7 +88,7 @@ export function renderStandard(slug) {
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tkd992006.github.io/resume/${slug}/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=${cssVersion}">
 </head>
 <body class="standard-portfolio">
 <a class="skip-link" href="#main">본문으로 바로 가기</a>
@@ -115,7 +118,7 @@ ${caseHtml}
 </body>
 </html>\n`;
   const normalizedHtml = html.replace(/[ \t]+$/gm, '');
-  return { slug, content, html: normalizedHtml, css: read('src/standard.css'), script: read('src/standard.js'), assetPaths: [...assetPaths], selectedCases };
+  return { slug, content, html: normalizedHtml, css, script: read('src/standard.js'), assetPaths: [...assetPaths], selectedCases };
 }
 
 export function validateStandard(output) {
@@ -130,7 +133,7 @@ export function validateStandard(output) {
       const value = node.attrs[attr];
       if (!value || /^(?:[a-z]+:|\/\/)/i.test(value)) continue;
       if (value.startsWith('#')) { if (!ids.includes(value.slice(1))) throw Error(`Missing fragment: ${value}`); }
-      else if (!['styles.css', 'script.js'].includes(value) && !fs.existsSync(path.join(ROOT, 'src', value))) throw Error(`Missing asset: ${value}`);
+      else if (!['styles.css', 'script.js'].includes(value.split('?')[0]) && !fs.existsSync(path.join(ROOT, 'src', value))) throw Error(`Missing asset: ${value}`);
     }
   }
   for (const id of output.selectedCases) {
