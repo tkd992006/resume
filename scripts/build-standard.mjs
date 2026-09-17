@@ -16,7 +16,11 @@ export function renderStandardCase(id) {
   if (id !== 'otm-receipt-case') return html;
   const doc = parseHtml(html);
   const result = queryOne(doc, '[aria-labelledby="receipt-result"]');
-  return applyRanges(html, [{ start: result.closeStart, end: result.closeStart, value: read('src/case-media/otm-receipt-case.html') }]);
+  return applyRanges(html, [{
+    start: result.start,
+    end: result.end,
+    value: `<section class="case-section" id="receipt-result" aria-label="가격 진단 캠페인 제품 화면">\n${read('src/case-media/otm-receipt-case.html')}\n          </section>`,
+  }]);
 }
 
 export function renderStandard(slug) {
