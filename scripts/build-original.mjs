@@ -35,7 +35,7 @@ export function renderOriginal() {
     <p>${escape(project.summary)}</p>
     <div class="project-grid current-project-grid"><div><h4>What I did</h4><ul>${project.points.map(point => `<li>${escape(point)}</li>`).join('')}</ul></div><div class="project-aside"><div><h4>Result</h4>${paragraph(project.result)}</div>${project.stack ? `<div><h4>Tech Stack</h4><p class="current-stack">${escape(project.stack)}</p></div>` : ''}</div></div>
     <figure class="current-gallery"><div class="media-grid current-previews${project.images.length === 1 ? ' is-single' : ''}">${project.images.map((image, i) => `<button class="media-button contain-shot" type="button" data-lightbox="${escape(image.src)}" data-gallery="${project.id}"${i >= 2 ? ' hidden' : ''} aria-label="${escape(image.alt)} 확대"><img src="${escape(image.src)}" alt="${escape(image.alt)}" width="${image.width}" height="${image.height}" loading="lazy" decoding="async"></button>`).join('')}</div><figcaption>${escape(project.caption)}</figcaption></figure>
-    ${project.cases.length ? `<details class="project-details"><summary>기술적 문제 해결 (${project.cases.length})</summary><div class="case-links">${project.cases.map(caseLink).join('')}</div></details>` : ''}
+    ${project.cases.length ? `<details class="project-details"><summary>개발 이야기 (${project.cases.length})</summary><div class="case-links">${project.cases.map(caseLink).join('')}</div></details>` : ''}
   </article>`).join('\n');
   const html = `<!doctype html>
 <html lang="ko">
